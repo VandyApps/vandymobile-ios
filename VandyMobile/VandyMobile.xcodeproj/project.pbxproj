@@ -1,0 +1,264 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
+		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
+		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
+		F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */; };
+		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
+		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F7ACC58B1566903100CDE5A9 /* VandyMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VandyMobile-Info.plist"; sourceTree = "<group>"; };
+		F7ACC58D1566903100CDE5A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F7ACC58F1566903100CDE5A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VandyMobile-Prefix.pch"; sourceTree = "<group>"; };
+		F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
+		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7ACC57C1566903100CDE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */,
+				F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */,
+				F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7ACC5741566903100CDE5A9 = {
+			isa = PBXGroup;
+			children = (
+				F7ACC5891566903100CDE5A9 /* VandyMobile */,
+				F7ACC5821566903100CDE5A9 /* Frameworks */,
+				F7ACC5801566903100CDE5A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7ACC5801566903100CDE5A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC57F1566903100CDE5A9 /* VandyMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7ACC5821566903100CDE5A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC5831566903100CDE5A9 /* UIKit.framework */,
+				F7ACC5851566903100CDE5A9 /* Foundation.framework */,
+				F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7ACC5891566903100CDE5A9 /* VandyMobile */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
+				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
+				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
+			);
+			path = VandyMobile;
+			sourceTree = "<group>";
+		};
+		F7ACC58A1566903100CDE5A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC58B1566903100CDE5A9 /* VandyMobile-Info.plist */,
+				F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */,
+				F7ACC58F1566903100CDE5A9 /* main.m */,
+				F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7ACC57E1566903100CDE5A9 /* VandyMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7ACC5971566903100CDE5A9 /* Build configuration list for PBXNativeTarget "VandyMobile" */;
+			buildPhases = (
+				F7ACC57B1566903100CDE5A9 /* Sources */,
+				F7ACC57C1566903100CDE5A9 /* Frameworks */,
+				F7ACC57D1566903100CDE5A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VandyMobile;
+			productName = VandyMobile;
+			productReference = F7ACC57F1566903100CDE5A9 /* VandyMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7ACC5761566903100CDE5A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VM;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = F7ACC5791566903100CDE5A9 /* Build configuration list for PBXProject "VandyMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F7ACC5741566903100CDE5A9;
+			productRefGroup = F7ACC5801566903100CDE5A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7ACC57E1566903100CDE5A9 /* VandyMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7ACC57D1566903100CDE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7ACC57B1566903100CDE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7ACC5901566903100CDE5A9 /* main.m in Sources */,
+				F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7ACC58D1566903100CDE5A9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7ACC5951566903100CDE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F7ACC5961566903100CDE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7ACC5981566903100CDE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
+				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F7ACC5991566903100CDE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
+				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7ACC5791566903100CDE5A9 /* Build configuration list for PBXProject "VandyMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7ACC5951566903100CDE5A9 /* Debug */,
+				F7ACC5961566903100CDE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7ACC5971566903100CDE5A9 /* Build configuration list for PBXNativeTarget "VandyMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7ACC5981566903100CDE5A9 /* Debug */,
+				F7ACC5991566903100CDE5A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7ACC5761566903100CDE5A9 /* Project object */;
+}
