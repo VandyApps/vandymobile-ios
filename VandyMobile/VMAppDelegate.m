@@ -7,6 +7,7 @@
 //
 
 #import "VMAppDelegate.h"
+#import "VMMeetingsTableViewController.h"
 
 @implementation VMAppDelegate
 
@@ -16,7 +17,9 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+	VMMeetingsTableViewController *VMMeetingsTVC = [[VMMeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController"
+																								bundle:nil];
+	self.window.rootViewController = VMMeetingsTVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
