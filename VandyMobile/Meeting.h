@@ -22,9 +22,14 @@
 
 @interface Meeting : NSObject
 
-@property (copy,nonatomic) NSString *name;
-@property (copy,nonatomic) NSString *title;
-@property (copy,nonatomic) NSString *content;
+@property (copy,nonatomic) NSString *day;
+@property (copy,nonatomic) NSString *date;
+@property (copy,nonatomic) NSString *time; 
+@property bool hasFood;
+@property bool hasSpeaker;
+@property (copy,nonatomic) NSString *speakerName;
+@property (copy,nonatomic) NSString *speakerTopic;
+
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
-	[[MeetingsAPIClient sharedInstance] getPath:@"posts.json" parameters:nil
+	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
 											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
@@ -70,8 +70,8 @@
 	}
 	
 	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
-	cell.textLabel.text = meeting.title;
-	cell.detailTextLabel.text = meeting.content;
+	cell.textLabel.text = meeting.date;
+	cell.detailTextLabel.text = meeting.time;
 	
 	return cell;
 }

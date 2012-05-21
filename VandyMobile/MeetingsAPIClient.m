@@ -20,7 +20,6 @@
 	dispatch_once(&onceToken, ^{
 		__sharedInstance = [[MeetingsAPIClient alloc] initWithBaseURL:[NSURL URLWithString:MeetingsAPIBaseURLString]];
 	});
-	NSLog(@"Shared instance = %@", __sharedInstance);
 	return __sharedInstance;
 }
 
