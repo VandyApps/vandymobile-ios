@@ -70,8 +70,14 @@
 	}
 	
 	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
-	cell.textLabel.text = meeting.date;
-	cell.detailTextLabel.text = meeting.time;
+	cell.textLabel.text = meeting.topic;
+	if([meeting.topic isEqualToString:@""]) {
+		cell.textLabel.text = @"Work day";
+	}
+	cell.detailTextLabel.text = meeting.date;
+	
+	UIImage *image = [UIImage imageNamed:@"default-meeting-image.png"];
+	cell.imageView.image = image;
 	
 	return cell;
 }

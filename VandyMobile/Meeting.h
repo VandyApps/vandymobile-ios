@@ -28,7 +28,7 @@
 @property bool hasFood;
 @property bool hasSpeaker;
 @property (copy,nonatomic) NSString *speakerName;
-@property (copy,nonatomic) NSString *speakerTopic;
+@property (copy,nonatomic) NSString *topic;
 
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;

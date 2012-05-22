@@ -12,6 +12,7 @@
 		F72CA084156988DA001EFBC8 /* VMMeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* VMMeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F7A1B1D6156B2E5100A7F940 /* default-meeting-image.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A1B1D5156B2E5100A7F940 /* default-meeting-image.png */; };
 		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
 		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
 		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
@@ -30,6 +31,7 @@
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F7A1B1D5156B2E5100A7F940 /* default-meeting-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default-meeting-image.png"; path = "../../../Downloads/default-meeting-image.png"; sourceTree = "<group>"; };
 		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -57,12 +59,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7A1B1D3156B2E2600A7F940 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7A1B1D5156B2E5100A7F940 /* default-meeting-image.png */,
+			);
+			name = Resources;
+			path = VandyMobile;
+			sourceTree = "<group>";
+		};
 		F7ACC5741566903100CDE5A9 = {
 			isa = PBXGroup;
 			children = (
 				F7ACC5891566903100CDE5A9 /* VandyMobile */,
 				F7ACC5821566903100CDE5A9 /* Frameworks */,
 				F7ACC5801566903100CDE5A9 /* Products */,
+				F7A1B1D3156B2E2600A7F940 /* Resources */,
 				30627BEF8DB04C51B7EE752A /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +180,7 @@
 			files = (
 				F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */,
 				F72CA084156988DA001EFBC8 /* VMMeetingsTableViewController.xib in Resources */,
+				F7A1B1D6156B2E5100A7F940 /* default-meeting-image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

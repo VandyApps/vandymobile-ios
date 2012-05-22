@@ -16,7 +16,7 @@
 @synthesize hasFood = _hasFood;
 @synthesize hasSpeaker = _hasSpeaker;
 @synthesize speakerName = _speakerName;
-@synthesize speakerTopic = _speakerTopic;
+@synthesize topic = _topic;
 
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
@@ -28,7 +28,7 @@
 		self.hasFood = [dictionary objectForKey:@"food"];
 		self.hasSpeaker = [dictionary objectForKey:@"speaker"];
 		self.speakerName = [dictionary objectForKey:@"speaker_name"];
-		self.speakerTopic = [dictionary objectForKey:@"speaker_topic"];
+		self.topic = [dictionary objectForKey:@"topic"];
 	}
 	return self;
 }
