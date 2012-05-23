@@ -16,10 +16,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController"
-																								bundle:nil];
-	self.window.rootViewController = VMMeetingsTVC;
+	
+	// Create TabBarController
+	UITabBarController *tabBarController =	[[UITabBarController alloc] init];
+	
+	// Create view controllers with tabBarItems
+	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController" bundle:nil];
+	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"112-group.png"] tag:0];
+	VMMeetingsTVC.tabBarItem = meetingItem;
+	
+	// Add view controllers to an array
+	NSArray *viewControllers = [NSArray arrayWithObject:VMMeetingsTVC];
+	
+	// Add view controllers array to tabBar
+	tabBarController.viewControllers = viewControllers;
+	
+	// Set rootViewController
+	self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
 }
