@@ -24,16 +24,16 @@
 	if (self) {
 		self.day = [dictionary objectForKey:@"day"];
 		self.date = [self convertDateToFormattedStringWithJSONString:[dictionary objectForKey:@"date"]];
-		self.time = [self convertTimeToStringWithJSONString:[dictionary objectForKey:@"date"]];		
-		self.hasFood = [dictionary objectForKey:@"food"];
-		self.hasSpeaker = [dictionary objectForKey:@"speaker"];
+		self.time = [self convertTimeToStringWithJSONString:[dictionary objectForKey:@"date"]];
+		self.hasFood = [NSNumber numberWithInt:[[dictionary objectForKey:@"food"] boolValue]];
+		self.hasSpeaker = [NSNumber numberWithInt:[[dictionary objectForKey:@"speaker"]boolValue]];
 		self.speakerName = [dictionary objectForKey:@"speaker_name"];
 		self.topic = [dictionary objectForKey:@"topic"];
 	}
 	return self;
 }
 
--(NSString *)convertDateToFormattedStringWithJSONString:(NSString *)dateString {
+- (NSString *)convertDateToFormattedStringWithJSONString:(NSString *)dateString {
 	//Converts JSON date to a formatted date string
 	NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
@@ -52,7 +52,7 @@
 	return formattedDateString;
 }
 
--(NSString *)convertTimeToStringWithJSONString:(NSString *)dateString {
+- (NSString *)convertTimeToStringWithJSONString:(NSString *)dateString {
 	//Converts JSON date to a time string
 	NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
 	[timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
