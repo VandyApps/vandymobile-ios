@@ -6,16 +6,16 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "VMMeetingsTableViewController.h"
+#import "MeetingsTableViewController.h"
 #import "AFNetworking.h"
 #import "MeetingsAPIClient.h"
 #import "Meeting.h"
 
-@interface VMMeetingsTableViewController ()
+@interface MeetingsTableViewController ()
 
 @end
 
-@implementation VMMeetingsTableViewController
+@implementation MeetingsTableViewController
 @synthesize tableView = _tableView;
 @synthesize results = _results;
 

@@ -7,7 +7,7 @@
 //
 
 #import "VMAppDelegate.h"
-#import "VMMeetingsTableViewController.h"
+#import "MeetingsTableViewController.h"
 
 @implementation VMAppDelegate
 
@@ -17,7 +17,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-	VMMeetingsTableViewController *VMMeetingsTVC = [[VMMeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController"
+	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController"
 																								bundle:nil];
 	self.window.rootViewController = VMMeetingsTVC;
     [self.window makeKeyAndVisible];

@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
-		F72CA083156988DA001EFBC8 /* VMMeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* VMMeetingsTableViewController.m */; };
-		F72CA084156988DA001EFBC8 /* VMMeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* VMMeetingsTableViewController.xib */; };
+		F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */; };
+		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
 		F7A1B1D6156B2E5100A7F940 /* default-meeting-image.png in Resources */ = {isa = PBXBuildFile; fileRef = F7A1B1D5156B2E5100A7F940 /* default-meeting-image.png */; };
@@ -24,9 +24,9 @@
 /* Begin PBXFileReference section */
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F72CA080156988DA001EFBC8 /* VMMeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMMeetingsTableViewController.h; sourceTree = "<group>"; };
-		F72CA081156988DA001EFBC8 /* VMMeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMMeetingsTableViewController.m; sourceTree = "<group>"; };
-		F72CA082156988DA001EFBC8 /* VMMeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VMMeetingsTableViewController.xib; sourceTree = "<group>"; };
+		F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = MeetingsTableViewController.h; sourceTree = "<group>"; };
+		F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsTableViewController.m; sourceTree = "<group>"; };
+		F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
 		F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsAPIClient.h; sourceTree = "<group>"; };
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
@@ -103,9 +103,9 @@
 			children = (
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
-				F72CA080156988DA001EFBC8 /* VMMeetingsTableViewController.h */,
-				F72CA081156988DA001EFBC8 /* VMMeetingsTableViewController.m */,
-				F72CA082156988DA001EFBC8 /* VMMeetingsTableViewController.xib */,
+				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
+				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
+				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
 				F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */,
 				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
@@ -179,7 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */,
-				F72CA084156988DA001EFBC8 /* VMMeetingsTableViewController.xib in Resources */,
+				F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */,
 				F7A1B1D6156B2E5100A7F940 /* default-meeting-image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,7 +210,7 @@
 			files = (
 				F7ACC5901566903100CDE5A9 /* main.m in Sources */,
 				F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */,
-				F72CA083156988DA001EFBC8 /* VMMeetingsTableViewController.m in Sources */,
+				F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */,
 				F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */,
 				F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */,
 			);

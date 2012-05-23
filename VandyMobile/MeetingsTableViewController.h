@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VMMeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *results;
 @end
