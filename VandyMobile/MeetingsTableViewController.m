@@ -76,7 +76,15 @@
 	}
 	cell.detailTextLabel.text = meeting.date;
 	
-	UIImage *image = [UIImage imageNamed:@"default-meeting-image.png"];
+	UIImage *image;
+	if([meeting.hasSpeaker boolValue]) {
+		image = [UIImage imageNamed:@"124-bullhorn.png"];
+	} else if ([meeting.hasFood boolValue]) {
+		image = [UIImage imageNamed:@"125-food.png"];
+	} else {
+		image = [UIImage imageNamed:@"112-group.png"];
+	}
+	
 	cell.imageView.image = image;
 	
 	return cell;
