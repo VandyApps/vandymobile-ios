@@ -21,7 +21,7 @@
 	UITabBarController *tabBarController =	[[UITabBarController alloc] init];
 	
 	// Create view controllers with tabBarItems
-	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"VMMeetingsTableViewController" bundle:nil];
+	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"112-group.png"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
 	
