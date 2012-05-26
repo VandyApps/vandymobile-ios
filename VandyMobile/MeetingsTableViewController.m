@@ -74,7 +74,8 @@
 	if([meeting.topic isEqualToString:@""]) {
 		cell.textLabel.text = @"Work day";
 	}
-	cell.detailTextLabel.text = meeting.date;
+	cell.detailTextLabel.text = [[meeting.date stringByAppendingString:@" @ "] stringByAppendingString:meeting.time];
+	
 	
 	UIImage *image;
 	if([meeting.hasSpeaker boolValue]) {
