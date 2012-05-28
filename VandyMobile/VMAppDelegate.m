@@ -18,15 +18,17 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
 	// Create TabBarController
-	UITabBarController *tabBarController =	[[UITabBarController alloc] init];
+	UITabBarController *tabBarController = [[UITabBarController alloc] init];
 	
 	// Create view controllers with tabBarItems
 	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"112-group.png"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
+    // Create Meeting NavigationController
+    UINavigationController *meetingNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
 	
 	// Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObject:VMMeetingsTVC];
+	NSArray *viewControllers = [NSArray arrayWithObject:meetingNavigationController];
 	
 	// Add view controllers array to tabBar
 	tabBarController.viewControllers = viewControllers;
