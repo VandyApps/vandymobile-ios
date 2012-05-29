@@ -121,13 +121,13 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
-		F7874EE4156C7BF300F81183 /* xibs */ = {
+		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 			);
-			name = xibs;
+			name = GUI;
 			sourceTree = "<group>";
 		};
 		F7A1B1D3156B2E2600A7F940 /* Resources */ = {
@@ -178,7 +178,7 @@
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
 				F7874EE1156C7BAC00F81183 /* ViewControllers */,
-				F7874EE4156C7BF300F81183 /* xibs */,
+				F7874EE4156C7BF300F81183 /* GUI */,
 				F7874EE2156C7BBB00F81183 /* APICients */,
 				F7874EE3156C7BCE00F81183 /* Models */,
 			);

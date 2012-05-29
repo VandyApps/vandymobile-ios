@@ -15,15 +15,6 @@
 
 @interface MeetingDetailViewController : UIViewController <MKMapViewDelegate>
 
-//@property (strong, nonatomic) NSDate *created;
-//@property (strong, nonatomic) NSDate *date;
-//@property (strong, nonatomic) NSString *dayOfWeek;
-//@property BOOL food;
-//@property BOOL speaker;
-//@property (strong, nonatomic) NSString *speakerName;
-//@property (strong, nonatomic) NSString *topic;
-//@property (strong, nonatomic) NSString *updatedAt;
-
 @property (strong, nonatomic) Meeting *meeting;
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

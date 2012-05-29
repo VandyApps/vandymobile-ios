@@ -16,15 +16,6 @@
 
 @implementation MeetingDetailViewController
 
-//@synthesize created = _created;
-//@synthesize date = _date;
-//@synthesize dayOfWeek = _dayOfWeek;
-//@synthesize food;
-//@synthesize speaker;
-//@synthesize speakerName = _speakerName;
-//@synthesize topic = _topic;
-//@synthesize updatedAt = _updatedAt;
-
 @synthesize meeting = _meeting;
 
 @synthesize mapView = _mapView;
@@ -95,29 +86,6 @@
     self.descriptionLabel.text = self.meeting.topic;
 }
 
-#pragma mark - MapView Delegate Methods
-
-//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
-//    
-//    static NSString *identifier = @"MyLocation";   
-//    if ([annotation isKindOfClass:[MyLocation class]]) {
-//        
-//        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
-//        if (annotationView == nil) {
-//            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
-//        } else {
-//            annotationView.annotation = annotation;
-//        }
-//        
-//        annotationView.enabled = YES;
-//        annotationView.canShowCallout = YES;
-//        annotationView.image=[UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
-//        
-//        return annotationView;
-//    }
-//    
-//    return nil;    
-//}
 
 - (void)viewDidUnload
 {
