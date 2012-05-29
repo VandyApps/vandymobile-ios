@@ -8,6 +8,7 @@
 
 #import "MeetingDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "VMAnnotation.h"
 
 @interface MeetingDetailViewController ()
 
@@ -57,9 +58,24 @@
     
     // Round corners of map view (QuartzCore)
     self.mapView.layer.cornerRadius = 11;
-    self.descriptionLabel.clipsToBounds = YES;
-    self.descriptionLabel.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.descriptionLabel.layer.borderWidth = .5;
+    self.mapView.clipsToBounds = YES;
+    self.mapView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.mapView.layer.borderWidth = .5;
+    
+    // Zoom MapView to coordinates
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = 36.143566;
+    zoomLocation.longitude= -86.805906;
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
+    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+    [self.mapView setRegion:adjustedRegion animated:YES]; 
+    
+    // Set annotation in MapView
+    VMAnnotation *anno = [[VMAnnotation alloc] init];
+    [anno setCoordinate:CLLocationCoordinate2DMake(36.143566, -86.805906)]; 
+    [anno setTitle:@"Test Title"];
+    [anno setSubtitle:@"Test Subtitle"];
+    [self.mapView addAnnotation:anno];
     
     // Set speaker name, or "General Meeting" if no speaker
     if (self.meeting.hasSpeaker) {
@@ -78,6 +94,30 @@
     // Set description text
     self.descriptionLabel.text = self.meeting.topic;
 }
+
+#pragma mark - MapView Delegate Methods
+
+//- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
+//    
+//    static NSString *identifier = @"MyLocation";   
+//    if ([annotation isKindOfClass:[MyLocation class]]) {
+//        
+//        MKPinAnnotationView *annotationView = (MKPinAnnotationView *) [_mapView dequeueReusableAnnotationViewWithIdentifier:identifier];
+//        if (annotationView == nil) {
+//            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
+//        } else {
+//            annotationView.annotation = annotation;
+//        }
+//        
+//        annotationView.enabled = YES;
+//        annotationView.canShowCallout = YES;
+//        annotationView.image=[UIImage imageNamed:@"arrest.png"];//here we use a nice image instead of the default pins
+//        
+//        return annotationView;
+//    }
+//    
+//    return nil;    
+//}
 
 - (void)viewDidUnload
 {

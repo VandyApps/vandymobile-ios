@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Meeting.h"
 
-@interface MeetingDetailViewController : UIViewController
+#define METERS_PER_MILE 1609.344
+
+@interface MeetingDetailViewController : UIViewController <MKMapViewDelegate>
 
 //@property (strong, nonatomic) NSDate *created;
 //@property (strong, nonatomic) NSDate *date;
