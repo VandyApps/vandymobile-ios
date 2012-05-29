@@ -24,11 +24,12 @@
 	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"112-group.png"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
+	
     // Create Meeting NavigationController
-    UINavigationController *meetingNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
+    UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
 	
 	// Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObject:meetingNavigationController];
+	NSArray *viewControllers = [NSArray arrayWithObject:meetingsNavigationController];
 	
 	// Add view controllers array to tabBar
 	tabBarController.viewControllers = viewControllers;
