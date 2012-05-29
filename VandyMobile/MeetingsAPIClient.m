@@ -9,7 +9,7 @@
 #import "MeetingsAPIClient.h"
 #import "AFNetworking.h"
 
-#define MeetingsAPIBaseURLString @"http://70.138.50.84/"
+#define MeetingsAPIBaseURLString @"http://70.138.50.84"
 #define MeetingsAPIToken @"1234abcd"
 
 @implementation MeetingsAPIClient
