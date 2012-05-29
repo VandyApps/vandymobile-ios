@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "MeetingsAPIClient.h"
 #import "Meeting.h"
+#import "MeetingDetailViewController.h"
 
 @interface MeetingsTableViewController ()
 
@@ -17,15 +18,31 @@
 
 @implementation MeetingsTableViewController
 @synthesize tableView = _tableView;
+@synthesize loadMeetings = _loadMeetings;
 @synthesize results = _results;
 
 #pragma mark - View Life Cycle
 
 - (void)viewDidLoad
 {
+    self.title = [self.tabBarItem title];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 	
+    // Prepare failure subview
+    UILabel *noMeetingsMessage = [[UILabel alloc] initWithFrame:self.view.frame];
+    noMeetingsMessage.lineBreakMode = UILineBreakModeWordWrap;
+    noMeetingsMessage.text = @"No meetings could be loaded.";
+    noMeetingsMessage.textAlignment = UITextAlignmentCenter;
+    
+    
+    // Remove subview from view if it's there.
+    if ([self.view.subviews containsObject:noMeetingsMessage]) {
+        [noMeetingsMessage removeFromSuperview];
+    }
+    
+    [self.loadMeetings startAnimating];
+    
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
 											NSLog(@"Response: %@", response);
@@ -35,18 +52,36 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
+                                            [[NSUserDefaults standardUserDefaults] setObject:self.results forKey:@"meetings"];
+                                            [[NSUserDefaults standardUserDefaults] synchronize];
 											[self.tableView reloadData];
+                                            [self.loadMeetings stopAnimating];
+                                            [self.loadMeetings removeFromSuperview];
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											NSLog(@"Error fetching meetings!");
 											NSLog(@"%@",error);
+                                            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"]) {
+                                                NSLog(@"Loading meetings from User Defaults...");
+                                                self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
+                                                NSLog(@"...Done!");
+                                            }
+                                            else {
+                                                NSLog(@"No meetings to load!");
+                                                
+                                                [self.view addSubview:noMeetingsMessage];
+                                            }
+                                            [self.loadMeetings stopAnimating];
+                                            [self.loadMeetings removeFromSuperview];
 										}];
+    
 
 }
 
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setLoadMeetings:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -78,7 +113,7 @@
 	
 	
 	UIImage *image;
-	if([meeting.hasSpeaker boolValue]) {
+	if ([meeting.hasSpeaker boolValue]) {
 		image = [UIImage imageNamed:@"124-bullhorn.png"];
 	} else if ([meeting.hasFood boolValue]) {
 		image = [UIImage imageNamed:@"125-food.png"];
@@ -89,6 +124,24 @@
 	cell.imageView.image = image;
 	
 	return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    // Deselect the row
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Create new MeetingDVC
+    MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
+    
+    // Grab the meeting at the index path
+    Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    
+    // Prepare meetingDVC
+    meetingDVC.title = meeting.topic;
+    meetingDVC.meeting = meeting;
+    [self.navigationController pushViewController:meetingDVC animated:YES];
+    
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
