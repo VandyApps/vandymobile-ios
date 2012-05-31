@@ -40,7 +40,7 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-											[SVProgressHUD dismissWithSuccess:@"Meetings loaded!" afterDelay:1];
+											[SVProgressHUD dismiss];
 											[self.tableView reloadData];
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
