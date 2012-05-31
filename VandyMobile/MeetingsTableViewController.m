@@ -18,7 +18,6 @@
 
 @implementation MeetingsTableViewController
 @synthesize tableView = _tableView;
-@synthesize loadMeetings = _loadMeetings;
 @synthesize results = _results;
 
 #pragma mark - View Life Cycle
@@ -27,22 +26,22 @@
 {
     self.title = [self.tabBarItem title];
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	
+	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeBlack];
 	
     // Prepare failure subview
     UILabel *noMeetingsMessage = [[UILabel alloc] initWithFrame:self.view.frame];
     noMeetingsMessage.lineBreakMode = UILineBreakModeWordWrap;
     noMeetingsMessage.text = @"No meetings could be loaded.";
     noMeetingsMessage.textAlignment = UITextAlignmentCenter;
+	// Status indicator. Takes place of network spinner and if no meetings are loaded
+	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
     
     // Remove subview from view if it's there.
     if ([self.view.subviews containsObject:noMeetingsMessage]) {
         [noMeetingsMessage removeFromSuperview];
     }
-    
-    [self.loadMeetings startAnimating];
-    
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
 											NSLog(@"Response: %@", response);
@@ -54,13 +53,14 @@
 											self.results = results;
                                             [[NSUserDefaults standardUserDefaults] setObject:self.results forKey:@"meetings"];
                                             [[NSUserDefaults standardUserDefaults] synchronize];
+											[SVProgressHUD dismiss];
+											[SVProgressHUD dismissWithSuccess:@"Meetings loaded!" afterDelay:1];
 											[self.tableView reloadData];
-                                            [self.loadMeetings stopAnimating];
-                                            [self.loadMeetings removeFromSuperview];
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											NSLog(@"Error fetching meetings!");
 											NSLog(@"%@",error);
+											[SVProgressHUD dismissWithError:@"Error loading meetings!"];
                                             if ([[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"]) {
                                                 NSLog(@"Loading meetings from User Defaults...");
                                                 self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
@@ -71,8 +71,6 @@
                                                 
                                                 [self.view addSubview:noMeetingsMessage];
                                             }
-                                            [self.loadMeetings stopAnimating];
-                                            [self.loadMeetings removeFromSuperview];
 										}];
     
 
@@ -81,7 +79,6 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
-    [self setLoadMeetings:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

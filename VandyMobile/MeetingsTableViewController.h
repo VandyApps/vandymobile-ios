@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SVProgressHUD.h"
 
 @interface MeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loadMeetings;
 @property (strong, nonatomic) NSArray *results;
 @end
