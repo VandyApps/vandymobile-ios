@@ -27,21 +27,10 @@
     self.title = [self.tabBarItem title];
     [super viewDidLoad];
 	
-	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeBlack];
-	
-    // Prepare failure subview
-    UILabel *noMeetingsMessage = [[UILabel alloc] initWithFrame:self.view.frame];
-    noMeetingsMessage.lineBreakMode = UILineBreakModeWordWrap;
-    noMeetingsMessage.text = @"No meetings could be loaded.";
-    noMeetingsMessage.textAlignment = UITextAlignmentCenter;
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
     
-    // Remove subview from view if it's there.
-    if ([self.view.subviews containsObject:noMeetingsMessage]) {
-        [noMeetingsMessage removeFromSuperview];
-    }
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
 											NSLog(@"Response: %@", response);
@@ -51,9 +40,6 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-                                            [[NSUserDefaults standardUserDefaults] setObject:self.results forKey:@"meetings"];
-                                            [[NSUserDefaults standardUserDefaults] synchronize];
-											[SVProgressHUD dismiss];
 											[SVProgressHUD dismissWithSuccess:@"Meetings loaded!" afterDelay:1];
 											[self.tableView reloadData];
 										}
@@ -61,16 +47,9 @@
 											NSLog(@"Error fetching meetings!");
 											NSLog(@"%@",error);
 											[SVProgressHUD dismissWithError:@"Error loading meetings!"];
-                                            if ([[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"]) {
                                                 NSLog(@"Loading meetings from User Defaults...");
                                                 self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
                                                 NSLog(@"...Done!");
-                                            }
-                                            else {
-                                                NSLog(@"No meetings to load!");
-                                                
-                                                [self.view addSubview:noMeetingsMessage];
-                                            }
 										}];
     
 
