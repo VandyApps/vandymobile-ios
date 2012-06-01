@@ -41,6 +41,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
+    // UI Customization
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2"]];
+    
     // Round corners of description label (QuartzCore)
     self.descriptionLabel.layer.cornerRadius = 11;
     self.descriptionLabel.clipsToBounds = YES;
