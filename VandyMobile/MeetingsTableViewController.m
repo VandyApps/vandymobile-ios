@@ -30,6 +30,8 @@
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2@2x"]];
+    
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
@@ -85,7 +87,7 @@
 	if([meeting.topic isEqualToString:@""]) {
 		cell.textLabel.text = @"Work day";
 	}
-	cell.detailTextLabel.text = [[meeting.date stringByAppendingString:@" @ "] stringByAppendingString:meeting.time];
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", meeting.speakerName, [[meeting.date stringByAppendingString:@" @ "] stringByAppendingString:meeting.time]];
 	
 	
 	UIImage *image;

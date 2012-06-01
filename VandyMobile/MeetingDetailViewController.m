@@ -58,17 +58,17 @@
     
     // Zoom MapView to coordinates
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = 36.143566;
-    zoomLocation.longitude= -86.805906;
+    zoomLocation.latitude = self.meeting.loc.latitude;
+    zoomLocation.longitude= self.meeting.loc.longitude;
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
     MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
     [self.mapView setRegion:adjustedRegion animated:YES]; 
     
     // Set annotation in MapView
     VMAnnotation *anno = [[VMAnnotation alloc] init];
-    [anno setCoordinate:CLLocationCoordinate2DMake(36.143566, -86.805906)]; 
-    [anno setTitle:@"Test Title"];
-    [anno setSubtitle:@"Test Subtitle"];
+    [anno setCoordinate:self.meeting.loc]; 
+//    [anno setTitle:@"Test Title"];
+//    [anno setSubtitle:@"Test Subtitle"];
     [self.mapView addAnnotation:anno];
     
     // Set speaker name, or "General Meeting" if no speaker
@@ -81,12 +81,12 @@
     // Set date, time, and food served
     self.dateLabel.text = self.meeting.date;
     self.timeLabel.text = self.meeting.time;
-    if (!self.meeting.hasFood) {
+    if ([self.meeting.hasFood doubleValue] == 0) {
         self.foodLabel.hidden = YES;
     }
     
     // Set description text
-    self.descriptionLabel.text = self.meeting.topic;
+    self.descriptionLabel.text = self.meeting.description;
 }
 
 

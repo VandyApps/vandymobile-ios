@@ -17,7 +17,8 @@
 @synthesize hasSpeaker = _hasSpeaker;
 @synthesize speakerName = _speakerName;
 @synthesize topic = _topic;
-
+@synthesize loc = _loc;
+@synthesize description = _description;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
@@ -29,6 +30,14 @@
 		self.hasSpeaker = [NSNumber numberWithInt:[[dictionary objectForKey:@"speaker"]boolValue]];
 		self.speakerName = [dictionary objectForKey:@"speaker_name"];
 		self.topic = [dictionary objectForKey:@"topic"];
+        
+        // Protection on coordinate.
+        if ([dictionary objectForKey:@"xcoordinate"] && [dictionary objectForKey:@"ycoordinate"]) {
+            self.loc = CLLocationCoordinate2DMake([[dictionary objectForKey:@"xcoordinate"] doubleValue], [[dictionary objectForKey:@"ycoordinate"] doubleValue]);
+        }
+        
+        self.description = [dictionary objectForKey:@"description"];
+
 	}
 	return self;
 }

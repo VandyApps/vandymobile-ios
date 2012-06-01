@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface Meeting : NSObject
 
@@ -17,7 +18,8 @@
 @property (retain,nonatomic) NSNumber *hasSpeaker;
 @property (copy,nonatomic) NSString *speakerName;
 @property (copy,nonatomic) NSString *topic;
-
+@property (nonatomic) CLLocationCoordinate2D loc;
+@property (copy, nonatomic) NSString *description;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 
