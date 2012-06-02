@@ -101,7 +101,7 @@
 	if([meeting.topic isEqualToString:@""]) {
 		cell.textLabel.text = @"Work day";
 	}
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", meeting.speakerName, [[meeting.date stringByAppendingString:@" @ "] stringByAppendingString:meeting.time]];
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
 	
     CGRect myFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"125-food"]].frame;
 
@@ -119,7 +119,7 @@
     cell.backgroundColor = [UIColor clearColor];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13.0];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14.0];
 	
 	return cell;
 }

@@ -105,6 +105,9 @@
     }
 }
 
+- (IBAction)sharePressed {
+}
+
 - (IBAction)addToCalendarPressed {
     EKEventStore *eventDB = [[EKEventStore alloc] init];
     EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
@@ -128,6 +131,19 @@
     [alert show];
 	
 }
+
+- (IBAction)checkInPressed {
+}
+
+- (IBAction)showOnMapPressed {
+        
+    
+    NSString *googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%1.6f,%1.6f",
+                                     self.meeting.loc.latitude, self.meeting.loc.longitude];
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
+}
+
 
 - (void)viewDidUnload
 {
