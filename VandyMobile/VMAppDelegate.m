@@ -22,8 +22,21 @@
 	
 	// Create view controllers with tabBarItems
 	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
-	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"112-group.png"] tag:0];
+	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"08-chat"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
+    
+    UIViewController *myVMViewController = [[UIViewController alloc] init];
+    UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
+    myVMViewController.tabBarItem = myVMItem;
+    
+    UIViewController *teamsViewController = [[UIViewController alloc] init];
+    UITabBarItem* teamsItem = [[UITabBarItem alloc] initWithTitle:@"Teams" image:[UIImage imageNamed:@"112-group"] tag:0];
+    teamsViewController.tabBarItem = teamsItem;
+    
+    UIViewController *newsViewController = [[UIViewController alloc] init];
+    UITabBarItem* newsItem = [[UITabBarItem alloc] initWithTitle:@"News" image:[UIImage imageNamed:@"66-microphone"] tag:0];
+    newsViewController.tabBarItem = newsItem;
+    
 	
     // Create Meeting NavigationController
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
@@ -38,7 +51,7 @@
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
      
 	// Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObject:meetingsNavigationController];
+	NSArray *viewControllers = [NSArray arrayWithObjects:newsViewController, meetingsNavigationController, teamsViewController, myVMViewController, nil];
 	
 	// Add view controllers array to tabBar
 	tabBarController.viewControllers = viewControllers;

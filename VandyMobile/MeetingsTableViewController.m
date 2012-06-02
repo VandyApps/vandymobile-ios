@@ -76,7 +76,20 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     // Set the background image for *all* UINavigationBars
-    [self.navigationController.navigationBar addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    if ([[self.navigationController.navigationBar subviews] count] > 2) {
+        
+        NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+        
+        NSLog(@"%@", navSubviews);
+        
+        for (UIView * subview in navSubviews) {
+            if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+                [subview removeFromSuperview];
+            }
+        }
+    }
+    [self.navigationController.navigationBar addSubview:logo];
 }
 
 #pragma mark - TableViewDatasource Methods
@@ -107,7 +120,12 @@
 
 	UIImage *image;
     if ([meeting.hasFood boolValue]) {
-    image = [UIImage imageNamed:@"125-food.png"];
+        if ([meeting.hasSpeaker boolValue]) {
+            image = [UIImage imageNamed:@"bullhorn-food-combo"];
+        }
+        else {
+            image = [UIImage imageNamed:@"125-food.png"];
+        }
 	} else if ([meeting.hasSpeaker boolValue]) {
 		image = [UIImage imageNamed:@"124-bullhorn.png"];
 	} else {
