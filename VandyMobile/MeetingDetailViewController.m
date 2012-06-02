@@ -44,6 +44,11 @@
     // UI Customization
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2"]];
     
+
+//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
+    
+
+    
     // Round corners of description label (QuartzCore)
     self.descriptionLabel.layer.cornerRadius = 11;
     self.descriptionLabel.clipsToBounds = YES;
@@ -87,6 +92,16 @@
     
     // Set description text
     self.descriptionLabel.text = self.meeting.description;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+    NSLog(@"%@", navSubviews);
+    for (UIView * subview in navSubviews) {
+        if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+            [subview removeFromSuperview];
+        }
+    }
 }
 
 

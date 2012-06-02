@@ -8,11 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
+		D2445A141579DBF300A7E297 /* NewNavBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A131579DBF200A7E297 /* NewNavBar@2x.png */; };
+		D2445A161579DF8500A7E297 /* NewNavBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */; };
+		D2445A1C1579E40300A7E297 /* NewNavBar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */; };
+		D2445A1E1579E51900A7E297 /* NewNavBar4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A1D1579E51800A7E297 /* NewNavBar4@2x.png */; };
+		D2445A201579E52500A7E297 /* NewNavBarText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */; };
+		D2445A241579F1EF00A7E297 /* NewBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
+		D2A49B7E1579AAF9005241EA /* NewBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A49B7C1579AAF9005241EA /* NewBackButton@2x.png */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
@@ -34,6 +41,12 @@
 /* Begin PBXFileReference section */
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2445A131579DBF200A7E297 /* NewNavBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar@2x.png"; sourceTree = "<group>"; };
+		D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar2@2x.png"; sourceTree = "<group>"; };
+		D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar3@2x.png"; sourceTree = "<group>"; };
+		D2445A1D1579E51800A7E297 /* NewNavBar4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar4@2x.png"; sourceTree = "<group>"; };
+		D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBarText@2x.png"; sourceTree = "<group>"; };
+		D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewBarButton@2x.png"; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
 		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
@@ -41,6 +54,7 @@
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
 		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
+		D2A49B7C1579AAF9005241EA /* NewBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewBackButton@2x.png"; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
@@ -92,6 +106,13 @@
 				F7283E0015715DC900F6E24D /* VandyMobileIconRetina5.png */,
 				D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */,
 				D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */,
+				D2A49B7C1579AAF9005241EA /* NewBackButton@2x.png */,
+				D2445A131579DBF200A7E297 /* NewNavBar@2x.png */,
+				D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */,
+				D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */,
+				D2445A1D1579E51800A7E297 /* NewNavBar4@2x.png */,
+				D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */,
+				D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -264,6 +285,13 @@
 				D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */,
 				D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */,
 				D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */,
+				D2A49B7E1579AAF9005241EA /* NewBackButton@2x.png in Resources */,
+				D2445A141579DBF300A7E297 /* NewNavBar@2x.png in Resources */,
+				D2445A161579DF8500A7E297 /* NewNavBar2@2x.png in Resources */,
+				D2445A1C1579E40300A7E297 /* NewNavBar3@2x.png in Resources */,
+				D2445A1E1579E51900A7E297 /* NewNavBar4@2x.png in Resources */,
+				D2445A201579E52500A7E297 /* NewNavBarText@2x.png in Resources */,
+				D2445A241579F1EF00A7E297 /* NewBarButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

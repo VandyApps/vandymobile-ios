@@ -24,9 +24,16 @@
 
 - (void)viewDidLoad
 {
-    self.title = [self.tabBarItem title];
+    //self.title = [self.tabBarItem title];
     [super viewDidLoad];
-	
+    
+    // Create resizable UINavigationBar image
+    UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
+    [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+    
+//    // Create info button
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
+    
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
@@ -63,6 +70,12 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    // Set the background image for *all* UINavigationBars
+    [self.navigationController.navigationBar addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]]];
 }
 
 #pragma mark - TableViewDatasource Methods

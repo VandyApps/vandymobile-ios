@@ -50,7 +50,7 @@
 	
 	NSDate *date = [dateFormatter dateFromString:dateString];
 	
-	[dateFormatter setDateStyle:NSDateFormatterShortStyle];
+	[dateFormatter setDateStyle:NSDateFormatterLongStyle];
 	[dateFormatter setTimeStyle:NSDateFormatterNoStyle];
 	
 	NSTimeInterval timeInterval = [date timeIntervalSinceReferenceDate];

@@ -16,7 +16,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-	
+    
 	// Create TabBarController
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
 	
@@ -27,7 +27,15 @@
 	
     // Create Meeting NavigationController
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
-	
+    
+    // Set the background image for *all* UINavigationItems
+    UIImage *buttonBack30 = [[UIImage imageNamed:@"NewBackButton"] 
+                             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    UIImage *button30 = [[UIImage imageNamed:@"NewBarButton"] 
+                         resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+     
 	// Add view controllers to an array
 	NSArray *viewControllers = [NSArray arrayWithObject:meetingsNavigationController];
 	
