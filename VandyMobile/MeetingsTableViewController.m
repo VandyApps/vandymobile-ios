@@ -72,7 +72,7 @@
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
     
     // Set the background image for *all* UINavigationBars
     [self.navigationController.navigationBar addSubview:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]]];

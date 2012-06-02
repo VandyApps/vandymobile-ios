@@ -32,6 +32,7 @@
     UIImage *buttonBack30 = [[UIImage imageNamed:@"NewBackButton"] 
                              resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     UIImage *button30 = [[UIImage imageNamed:@"NewBarButton"] 
                          resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
