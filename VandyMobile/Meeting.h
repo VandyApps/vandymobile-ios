@@ -13,6 +13,7 @@
 
 @property (copy,nonatomic) NSString *day;
 @property (copy,nonatomic) NSString *date;
+@property (copy,nonatomic) NSDate *dateUnformatted;
 @property (copy,nonatomic) NSString *time; 
 @property (retain,nonatomic) NSNumber *hasFood;
 @property (retain,nonatomic) NSNumber *hasSpeaker;

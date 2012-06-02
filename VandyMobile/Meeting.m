@@ -19,6 +19,7 @@
 @synthesize topic = _topic;
 @synthesize loc = _loc;
 @synthesize description = _description;
+@synthesize dateUnformatted = _dateUnformatted;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
@@ -30,6 +31,7 @@
 		self.hasSpeaker = [NSNumber numberWithInt:[[dictionary objectForKey:@"speaker"]boolValue]];
 		self.speakerName = [dictionary objectForKey:@"speaker_name"];
 		self.topic = [dictionary objectForKey:@"topic"];
+        self.dateUnformatted = [dictionary objectForKey:@"date"];
         
         // Protection on coordinate.
         if ([dictionary objectForKey:@"xcoordinate"] && [dictionary objectForKey:@"ycoordinate"]) {

@@ -9,6 +9,7 @@
 #import "MeetingDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "VMAnnotation.h"
+#import <EventKit/EventKit.h>
 
 @interface MeetingDetailViewController ()
 
@@ -104,6 +105,29 @@
     }
 }
 
+- (IBAction)addToCalendarPressed {
+    EKEventStore *eventDB = [[EKEventStore alloc] init];
+    EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
+    myEvent.title = self.meeting.topic;
+    myEvent.startDate = [[NSDate alloc] init];
+    myEvent.endDate = [[NSDate alloc] init];
+    myEvent.allDay = NO;
+    
+    [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
+    
+    NSError *err;
+    
+    [eventDB saveEvent:myEvent span:EKSpanThisEvent error:&err]; 
+    
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Event added!"
+                          message:[NSString stringWithFormat:@"%@ added to calendar.", myEvent.title]
+                          delegate:nil
+                          cancelButtonTitle:@"Okay"
+                          otherButtonTitles:nil];
+    [alert show];
+	
+}
 
 - (void)viewDidUnload
 {
