@@ -38,6 +38,7 @@
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
     self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2@2x"]];
+    self.tableView.rowHeight = 50;
     
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
@@ -102,17 +103,23 @@
 	}
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", meeting.speakerName, [[meeting.date stringByAppendingString:@" @ "] stringByAppendingString:meeting.time]];
 	
-	
+    CGRect myFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"125-food"]].frame;
+
 	UIImage *image;
-	if ([meeting.hasSpeaker boolValue]) {
+    if ([meeting.hasFood boolValue]) {
+    image = [UIImage imageNamed:@"125-food.png"];
+	} else if ([meeting.hasSpeaker boolValue]) {
 		image = [UIImage imageNamed:@"124-bullhorn.png"];
-	} else if ([meeting.hasFood boolValue]) {
-		image = [UIImage imageNamed:@"125-food.png"];
 	} else {
 		image = [UIImage imageNamed:@"112-group.png"];
 	}
 	
 	cell.imageView.image = image;
+    cell.imageView.frame = myFrame;
+    cell.backgroundColor = [UIColor clearColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13.0];
 	
 	return cell;
 }
