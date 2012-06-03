@@ -11,6 +11,7 @@
 #import "MeetingsAPIClient.h"
 #import "Meeting.h"
 #import "MeetingDetailViewController.h"
+#import "AddMeetingViewController.h"
 
 @interface MeetingsTableViewController ()
 
@@ -32,6 +33,12 @@
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+	
+	// Create add meeting button
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																					  target:self 
+																					  action:@selector(addMeeting)];
+	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
@@ -96,6 +103,11 @@
         }
     }
     [self.navigationController.navigationBar addSubview:logo];
+}
+
+- (void)addMeeting {
+	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithNibName:@"AddMeetingViewController" bundle:nil];
+	[self.navigationController pushViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods

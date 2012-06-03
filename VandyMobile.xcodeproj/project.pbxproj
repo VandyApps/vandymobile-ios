@@ -49,6 +49,8 @@
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
+		F74346FA157BF73600AD1C26 /* AddMeetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */; };
 		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
 		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
 		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
@@ -107,6 +109,9 @@
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
+		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
+		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
 		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -180,6 +185,8 @@
 				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
 				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
+				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
@@ -368,6 +376,7 @@
 				D2445ABA157AF00F00A7E297 /* 114.png in Resources */,
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
 				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
+				F74346FA157BF73600AD1C26 /* AddMeetingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,6 +413,7 @@
 				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
+				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
