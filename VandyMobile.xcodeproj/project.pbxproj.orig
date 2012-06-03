@@ -37,8 +37,6 @@
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
-		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
-		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
@@ -48,6 +46,8 @@
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F74346A8157AE3CE00AD1C26 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346A6157AE3CE00AD1C26 /* NewsViewController.m */; };
+		F74346A9157AE3CE00AD1C26 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74346A7157AE3CE00AD1C26 /* NewsViewController.xib */; };
 		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
 		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
 		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
@@ -90,9 +90,6 @@
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
 		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
-		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
-		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
-		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
@@ -105,6 +102,9 @@
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F74346A5157AE3CE00AD1C26 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		F74346A6157AE3CE00AD1C26 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		F74346A7157AE3CE00AD1C26 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsViewController.xib; sourceTree = "<group>"; };
 		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -173,10 +173,10 @@
 			children = (
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
 				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
+				F74346A5157AE3CE00AD1C26 /* NewsViewController.h */,
+				F74346A6157AE3CE00AD1C26 /* NewsViewController.m */,
 				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
 				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
-				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -204,7 +204,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
+				F74346A7157AE3CE00AD1C26 /* NewsViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 			);
@@ -361,10 +361,14 @@
 				D2445A9A157AE0D000A7E297 /* 66-microphone.png in Resources */,
 				D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */,
 				D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */,
+<<<<<<< HEAD
 				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
 				D2445AB8157AF00700A7E297 /* Icon.png in Resources */,
 				D2445ABA157AF00F00A7E297 /* 114.png in Resources */,
-				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
+=======
+				D2445A9D157AE0D000A7E297 /* bullhorn-food-combo@2x.psd in Resources */,
+				F74346A9157AE3CE00AD1C26 /* NewsViewController.xib in Resources */,
+>>>>>>> dev
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +404,7 @@
 				F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */,
 				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
-				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
+				F74346A8157AE3CE00AD1C26 /* NewsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

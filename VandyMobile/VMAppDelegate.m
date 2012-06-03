@@ -8,6 +8,7 @@
 
 #import "VMAppDelegate.h"
 #import "MeetingsTableViewController.h"
+#import "NewsViewController.h"
 
 @implementation VMAppDelegate
 
@@ -33,7 +34,7 @@
     UITabBarItem* teamsItem = [[UITabBarItem alloc] initWithTitle:@"Teams" image:[UIImage imageNamed:@"112-group"] tag:0];
     teamsViewController.tabBarItem = teamsItem;
     
-    UIViewController *newsViewController = [[UIViewController alloc] init];
+    NewsViewController *newsViewController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
     UITabBarItem* newsItem = [[UITabBarItem alloc] initWithTitle:@"News" image:[UIImage imageNamed:@"66-microphone"] tag:0];
     newsViewController.tabBarItem = newsItem;
     
