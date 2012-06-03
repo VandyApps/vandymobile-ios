@@ -205,8 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
-				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
+				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
