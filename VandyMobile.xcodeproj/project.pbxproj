@@ -29,7 +29,9 @@
 		D2445A9A157AE0D000A7E297 /* 66-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A90157AE0D000A7E297 /* 66-microphone.png */; };
 		D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */; };
 		D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */; };
-		D2445A9D157AE0D000A7E297 /* bullhorn-food-combo@2x.psd in Resources */ = {isa = PBXBuildFile; fileRef = D2445A93157AE0D000A7E297 /* bullhorn-food-combo@2x.psd */; };
+		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
+		D2445AB8157AF00700A7E297 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB7157AF00700A7E297 /* Icon.png */; };
+		D2445ABA157AF00F00A7E297 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB9157AF00F00A7E297 /* 114.png */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
@@ -76,7 +78,9 @@
 		D2445A90157AE0D000A7E297 /* 66-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone.png"; sourceTree = "<group>"; };
 		D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
 		D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullhorn-food-combo@2x.png"; sourceTree = "<group>"; };
-		D2445A93157AE0D000A7E297 /* bullhorn-food-combo@2x.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "bullhorn-food-combo@2x.psd"; sourceTree = "<group>"; };
+		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
+		D2445AB7157AF00700A7E297 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D2445AB9157AF00F00A7E297 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
 		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
@@ -139,7 +143,6 @@
 				D2445A90157AE0D000A7E297 /* 66-microphone.png */,
 				D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */,
 				D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */,
-				D2445A93157AE0D000A7E297 /* bullhorn-food-combo@2x.psd */,
 				F7283DFD15715DC900F6E24D /* 112-group.png */,
 				F7283DFE15715DC900F6E24D /* 124-bullhorn.png */,
 				F7283DFF15715DC900F6E24D /* 125-food.png */,
@@ -148,6 +151,7 @@
 				D2445A5C157A7C8D00A7E297 /* 124-bullhorn@2x.png */,
 				D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */,
 				D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */,
+				D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */,
 				D2445A131579DBF200A7E297 /* NewNavBar@2x.png */,
 				D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */,
 				D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */,
@@ -211,6 +215,8 @@
 		F7ACC5741566903100CDE5A9 = {
 			isa = PBXGroup;
 			children = (
+				D2445AB9157AF00F00A7E297 /* 114.png */,
+				D2445AB7157AF00700A7E297 /* Icon.png */,
 				F7ACC5891566903100CDE5A9 /* VandyMobile */,
 				F7ACC5821566903100CDE5A9 /* Frameworks */,
 				F7ACC5801566903100CDE5A9 /* Products */,
@@ -347,7 +353,9 @@
 				D2445A9A157AE0D000A7E297 /* 66-microphone.png in Resources */,
 				D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */,
 				D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */,
-				D2445A9D157AE0D000A7E297 /* bullhorn-food-combo@2x.psd in Resources */,
+				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
+				D2445AB8157AF00700A7E297 /* Icon.png in Resources */,
+				D2445ABA157AF00F00A7E297 /* 114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,13 +435,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,13 +505,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -509,13 +523,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DSTROOT = /tmp/xcodeproj.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SKIP_INSTALL = YES;
 				WRAPPER_EXTENSION = app;
 			};

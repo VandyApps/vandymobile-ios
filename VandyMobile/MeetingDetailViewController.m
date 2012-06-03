@@ -27,6 +27,7 @@
 @synthesize descriptionLabel = _descriptionLabel;
 @synthesize checkInButton = _checkInButton;
 @synthesize addToCalendarButton = _addToCalendarButton;
+@synthesize backgroundView = _backgroundView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,7 +44,7 @@
 	// Do any additional setup after loading the view.
     
     // UI Customization
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2"]];
+    self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
     
 
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
@@ -156,6 +157,7 @@
     [self setCheckInButton:nil];
     [self setCheckInButton:nil];
     [self setAddToCalendarButton:nil];
+    [self setBackgroundView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
