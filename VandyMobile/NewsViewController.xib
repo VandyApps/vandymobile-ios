@@ -36,7 +36,7 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIImageView" id="216983506">
+					<object class="IBUIImageView" id="100544971">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 367}</string>
@@ -61,6 +61,10 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIAlwaysBounceVertical">YES</bool>
 						<int key="IBUISeparatorStyle">1</int>
+						<object class="NSColor" key="IBUISeparatorColor">
+							<int key="NSColorSpace">1</int>
+							<bytes key="NSRGB">MC40MTM4MzM5MjE4IDAuNDI4NTcxNDI4NiAwLjQwODQ5MTM2ODcgMC4zAA</bytes>
+						</object>
 						<int key="IBUISectionIndexMinimumDisplayRowCount">0</int>
 						<bool key="IBUIShowsSelectionImmediatelyOnTouchBegin">YES</bool>
 						<float key="IBUIRowHeight">44</float>
@@ -108,7 +112,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">backgroundImageView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="216983506"/>
+						<reference key="destination" ref="100544971"/>
 					</object>
 					<int key="connectionID">9</int>
 				</object>
@@ -142,7 +146,7 @@
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="682347985"/>
-							<reference ref="216983506"/>
+							<reference ref="100544971"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -164,7 +168,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">8</int>
-						<reference key="object" ref="216983506"/>
+						<reference key="object" ref="100544971"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>

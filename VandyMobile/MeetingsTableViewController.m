@@ -19,6 +19,7 @@
 @implementation MeetingsTableViewController
 @synthesize tableView = _tableView;
 @synthesize backgroundImageView = _backgroundImageView;
+@synthesize nextMeetingImageView = _nextMeetingImageView;
 @synthesize results = _results;
 
 #pragma mark - View Life Cycle
@@ -32,16 +33,13 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
     
-//    // Create info button
-//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:nil action:nil];
-    
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
-//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2@2x"]];
     self.tableView.rowHeight = 50;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeeting"];
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
@@ -71,6 +69,7 @@
 {
     [self setTableView:nil];
     [self setBackgroundImageView:nil];
+    [self setNextMeetingImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
