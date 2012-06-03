@@ -214,10 +214,10 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
-				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
+				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
+				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";

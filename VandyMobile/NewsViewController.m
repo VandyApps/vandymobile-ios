@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "AFNetworking.h"
+#import "SVProgressHUD.h"
 
 @interface NewsViewController ()
 
@@ -41,7 +42,7 @@
 	
 	// Get twitter URL
 	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile"];
-
+    [SVProgressHUD showWithStatus:@"Loading news..."];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation;
 	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request 
@@ -49,10 +50,12 @@
 																	NSLog(@"Response: %@", jsonObject);
 																	self.tweets = jsonObject;
 																	[self.tableView reloadData];
+                                                                    [SVProgressHUD dismissWithSuccess:@"Done!"];
 																} 
 																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonObject) {
 																	NSLog(@"Error fetching meetings!");
 																	NSLog(@"%@",error);
+                                                                    [SVProgressHUD dismissWithError:@"Download failed!"];
 																}];
 
 	[operation start];

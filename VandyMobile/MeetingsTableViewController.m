@@ -57,7 +57,7 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-											[SVProgressHUD dismiss];
+											[SVProgressHUD dismissWithSuccess:@"Done!"];
 											[self.tableView reloadData];
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
