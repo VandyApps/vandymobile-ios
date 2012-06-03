@@ -40,23 +40,14 @@
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
 	
 	// Get twitter URL
-	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile&include_rts=0"];
+	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile"];
+
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation;
 	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request 
 																success:^(NSURLRequest *request, NSHTTPURLResponse *response, id jsonObject) {
 																	NSLog(@"Response: %@", jsonObject);
 																	self.tweets = jsonObject;
-                                                                    
-                                                                    // My attempt at fixing this mess of data. Not working right now. Scott - 6/2/12
-                                                                    self.tweets = [[NSOrderedSet orderedSetWithArray:self.tweets] array];
-                                                                    NSDictionary *head = [self.tweets objectAtIndex:0];
-                                                                    for (NSDictionary *tweet in self.tweets) {
-                                                                        if ([[tweet objectForKey:@"text"] isEqualToString:[head objectForKey:@"text"]] && [self.tweets indexOfObject:tweet] != 0) {
-                                                                            self.tweets = [self.tweets subarrayWithRange:NSMakeRange(0, [self.tweets indexOfObject:tweet])];
-                                                                        }
-                                                                    }
-                                                                    
 																	[self.tableView reloadData];
 																} 
 																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonObject) {
@@ -110,12 +101,12 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+	}
         NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
         
         cell.textLabel.text = [tweet objectForKey:@"text"];
         
         NSString *url = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-//        NSLog(@"url = %@", url);
         [cell.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"08-chat.png"]];
         
         cell.backgroundColor = [UIColor clearColor];
@@ -128,7 +119,7 @@
         UIView *goldenColor = [[UIView alloc] init];
         goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
         cell.selectedBackgroundView = goldenColor;
-	}
+
 
     return cell;
 }
