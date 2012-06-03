@@ -142,6 +142,9 @@
 	return cell;
 }
 
+#pragma mark - TableViewDelegate Methods
+
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
  
     // Deselect the row
