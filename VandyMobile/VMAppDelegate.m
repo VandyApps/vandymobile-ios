@@ -41,6 +41,7 @@
 	
     // Create Meeting NavigationController
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
+    UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     
     // Set the background image for *all* UINavigationItems
     UIImage *buttonBack30 = [[UIImage imageNamed:@"NewBackButton"] 
@@ -52,7 +53,7 @@
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
      
 	// Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObjects:newsViewController, meetingsNavigationController, teamsViewController, myVMViewController, nil];
+	NSArray *viewControllers = [NSArray arrayWithObjects:newsNavigationController, meetingsNavigationController, teamsViewController, myVMViewController, nil];
 	
 	// Add view controllers array to tabBar
 	tabBarController.viewControllers = viewControllers;

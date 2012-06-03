@@ -248,7 +248,6 @@
 				D2445A61157A801000A7E297 /* EventKitUI.framework */,
 				D27291A41573E408009AA12F /* CoreLocation.framework */,
 				D27291A21573E401009AA12F /* MapKit.framework */,
-				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
 				F7ACC5831566903100CDE5A9 /* UIKit.framework */,
 				F7ACC5851566903100CDE5A9 /* Foundation.framework */,
 				F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */,
@@ -260,6 +259,7 @@
 		F7ACC5891566903100CDE5A9 /* VandyMobile */ = {
 			isa = PBXGroup;
 			children = (
+				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
 				F7874EE1156C7BAC00F81183 /* ViewControllers */,
@@ -279,7 +279,6 @@
 				F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			path = VandyMobile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

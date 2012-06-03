@@ -18,6 +18,7 @@
 
 @implementation MeetingsTableViewController
 @synthesize tableView = _tableView;
+@synthesize backgroundImageView = _backgroundImageView;
 @synthesize results = _results;
 
 #pragma mark - View Life Cycle
@@ -37,13 +38,14 @@
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
     
-    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2@2x"]];
+//    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"VandyMobileBackgroundV2@2x"]];
     self.tableView.rowHeight = 50;
-    
+    self.tableView.backgroundColor = [UIColor clearColor];
+    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
 										success:^(AFHTTPRequestOperation *operation, id response) {
-											NSLog(@"Response: %@", response);
+//											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
 											for (id meetingDictionary in response) {
 												Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
@@ -68,6 +70,7 @@
 - (void)viewDidUnload
 {
     [self setTableView:nil];
+    [self setBackgroundImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -75,13 +78,17 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     
+
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     // Set the background image for *all* UINavigationBars
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
     if ([[self.navigationController.navigationBar subviews] count] > 2) {
         
         NSArray *navSubviews = [self.navigationController.navigationBar subviews];
         
-        NSLog(@"%@", navSubviews);
+        //        NSLog(@"%@", navSubviews);
         
         for (UIView * subview in navSubviews) {
             if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
@@ -107,37 +114,40 @@
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-	}
-	
-	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
-	cell.textLabel.text = meeting.topic;
-	if([meeting.topic isEqualToString:@""]) {
-		cell.textLabel.text = @"Work day";
-	}
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
-	
-    CGRect myFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"125-food"]].frame;
-
-	UIImage *image;
-    if ([meeting.hasFood boolValue]) {
-        if ([meeting.hasSpeaker boolValue]) {
-            image = [UIImage imageNamed:@"bullhorn-food-combo"];
+        Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+        cell.textLabel.text = meeting.topic;
+        if([meeting.topic isEqualToString:@""]) {
+            cell.textLabel.text = @"Work day";
         }
-        else {
-            image = [UIImage imageNamed:@"125-food.png"];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
+        
+        CGRect myFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"125-food"]].frame;
+        
+        UIImage *image;
+        if ([meeting.hasFood boolValue]) {
+            if ([meeting.hasSpeaker boolValue]) {
+                image = [UIImage imageNamed:@"bullhorn-food-combo"];
+            }
+            else {
+                image = [UIImage imageNamed:@"125-food.png"];
+            }
+        } else if ([meeting.hasSpeaker boolValue]) {
+            image = [UIImage imageNamed:@"124-bullhorn.png"];
+        } else {
+            image = [UIImage imageNamed:@"112-group.png"];
         }
-	} else if ([meeting.hasSpeaker boolValue]) {
-		image = [UIImage imageNamed:@"124-bullhorn.png"];
-	} else {
-		image = [UIImage imageNamed:@"112-group.png"];
+        
+        cell.imageView.image = image;
+        cell.imageView.frame = myFrame;
+        cell.backgroundColor = [UIColor clearColor];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
+        cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14.0];
+        
+        UIView *goldenColor = [[UIView alloc] init];
+        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+        cell.selectedBackgroundView = goldenColor;
 	}
-	
-	cell.imageView.image = image;
-    cell.imageView.frame = myFrame;
-    cell.backgroundColor = [UIColor clearColor];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14.0];
 	
 	return cell;
 }
