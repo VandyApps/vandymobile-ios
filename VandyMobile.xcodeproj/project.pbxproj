@@ -40,6 +40,14 @@
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
 		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
+		D2C8FA8E157EDF1E00932EFF /* NewSegControl2-uns-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA89157EDF1E00932EFF /* NewSegControl2-uns-sel.png */; };
+		D2C8FA8F157EDF1E00932EFF /* NewSegControl2-sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA8A157EDF1E00932EFF /* NewSegControl2-sel-uns.png */; };
+		D2C8FA90157EDF1E00932EFF /* NewSegControl2-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA8B157EDF1E00932EFF /* NewSegControl2-uns.png */; };
+		D2C8FA92157EDF1E00932EFF /* NewSegControl2-uns-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA8D157EDF1E00932EFF /* NewSegControl2-uns-uns.png */; };
+		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
+		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
+		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
+		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
@@ -97,6 +105,15 @@
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
 		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
+		D2C8FA89157EDF1E00932EFF /* NewSegControl2-uns-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl2-uns-sel.png"; path = "../../NewSegControl2-uns-sel.png"; sourceTree = "<group>"; };
+		D2C8FA8A157EDF1E00932EFF /* NewSegControl2-sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl2-sel-uns.png"; path = "../../NewSegControl2-sel-uns.png"; sourceTree = "<group>"; };
+		D2C8FA8B157EDF1E00932EFF /* NewSegControl2-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl2-uns.png"; path = "../../NewSegControl2-uns.png"; sourceTree = "<group>"; };
+		D2C8FA8D157EDF1E00932EFF /* NewSegControl2-uns-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl2-uns-uns.png"; path = "../../NewSegControl2-uns-uns.png"; sourceTree = "<group>"; };
+		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
+		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
+		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
@@ -146,6 +163,12 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
+				D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */,
+				D2C8FA89157EDF1E00932EFF /* NewSegControl2-uns-sel.png */,
+				D2C8FA8A157EDF1E00932EFF /* NewSegControl2-sel-uns.png */,
+				D2C8FA8B157EDF1E00932EFF /* NewSegControl2-uns.png */,
+				D2C8FA8D157EDF1E00932EFF /* NewSegControl2-uns-uns.png */,
 				D2445A8A157AE0D000A7E297 /* 08-chat.png */,
 				D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */,
 				D2445A8C157AE0D000A7E297 /* 09-chat-2.png */,
@@ -179,12 +202,14 @@
 		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
+				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
 				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
 				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
 				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
-				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
 				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 			);
@@ -214,9 +239,10 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
+				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
-				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
 			);
 			name = GUI;
@@ -377,6 +403,13 @@
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
 				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
 				F74346FA157BF73600AD1C26 /* AddMeetingViewController.xib in Resources */,
+				D2C8FA8E157EDF1E00932EFF /* NewSegControl2-uns-sel.png in Resources */,
+				D2C8FA8F157EDF1E00932EFF /* NewSegControl2-sel-uns.png in Resources */,
+				D2C8FA90157EDF1E00932EFF /* NewSegControl2-uns.png in Resources */,
+				D2C8FA92157EDF1E00932EFF /* NewSegControl2-uns-uns.png in Resources */,
+				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
+				D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */,
+				D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +447,7 @@
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
 				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
+				D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

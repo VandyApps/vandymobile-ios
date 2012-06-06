@@ -64,12 +64,16 @@
     self.mapView.layer.borderWidth = .5;
     
     // Zoom MapView to coordinates
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = self.meeting.loc.latitude;
-    zoomLocation.longitude= self.meeting.loc.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES]; 
+    if (CLLocationCoordinate2DIsValid(self.meeting.loc)) {
+        CLLocationCoordinate2D zoomLocation;
+        zoomLocation.latitude = self.meeting.loc.latitude;
+        zoomLocation.longitude= self.meeting.loc.longitude;
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
+        MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+        [self.mapView setRegion:adjustedRegion animated:YES]; 
+    } else {
+        self.mapView.hidden = YES;
+    }
     
     // Set annotation in MapView
     VMAnnotation *anno = [[VMAnnotation alloc] init];

@@ -9,6 +9,7 @@
 #import "NewsViewController.h"
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
+#import "NewsDetailViewController.h"
 
 @interface NewsViewController ()
 
@@ -19,6 +20,7 @@
 @synthesize tableView = _tableView;
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize tweets = _tweets;
+@synthesize segControl = _segControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +41,39 @@
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    
+    // Customize Segmented Control
+    UIImage *segmentSelected = 
+    [[UIImage imageNamed:@"NewSegControl2-sel.png"] 
+     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+    UIImage *segmentUnselected = 
+    [[UIImage imageNamed:@"NewSegControl2-uns.png"] 
+     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
+    UIImage *segmentSelectedUnselected = 
+    [UIImage imageNamed:@"NewSegControl2-sel-uns.png"];
+    UIImage *segUnselectedSelected = 
+    [UIImage imageNamed:@"NewSegControl2-uns-sel.png"];
+    UIImage *segmentUnselectedUnselected = 
+    [UIImage imageNamed:@"NewSegControl2-uns-uns.png"];
+    
+    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected 
+                                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected 
+                                               forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+    
+    [[UISegmentedControl appearance] setDividerImage:segmentUnselectedUnselected 
+                                 forLeftSegmentState:UIControlStateNormal 
+                                   rightSegmentState:UIControlStateNormal 
+                                          barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] setDividerImage:segmentSelectedUnselected 
+                                 forLeftSegmentState:UIControlStateSelected 
+                                   rightSegmentState:UIControlStateNormal 
+                                          barMetrics:UIBarMetricsDefault];
+    [[UISegmentedControl appearance] 
+     setDividerImage:segUnselectedSelected 
+     forLeftSegmentState:UIControlStateNormal 
+     rightSegmentState:UIControlStateSelected 
+     barMetrics:UIBarMetricsDefault];
 	
 	// Get twitter URL
 	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile"];
@@ -83,6 +118,7 @@
 {
 	[self setTableView:nil];
     [self setBackgroundImageView:nil];
+    [self setSegControl:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -131,6 +167,20 @@
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Deselect the row
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Create new NewsDVC
+    NewsDetailViewController *newsDVC = [[NewsDetailViewController alloc] init];
+    
+    // Grab the meeting at the index path
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+    
+    // Prepare meetingDVC
+    newsDVC.title = @"Tweet";
+    newsDVC.tweet = tweet;
+    [self.navigationController pushViewController:newsDVC animated:YES];
     
 }
 

@@ -51,6 +51,11 @@
     UIImage *button30 = [[UIImage imageNamed:@"NewBarButton"] 
                          resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+
+    //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
+
      
 	// Add view controllers to an array
 	NSArray *viewControllers = [NSArray arrayWithObjects:newsNavigationController, meetingsNavigationController, teamsViewController, myVMViewController, nil];
