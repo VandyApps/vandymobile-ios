@@ -21,6 +21,9 @@
 @synthesize tableView = _tableView;
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize nextMeetingImageView = _nextMeetingImageView;
+@synthesize nextMeetingTopic = _nextMeetingTopic;
+@synthesize nextMeetingTime = _nextMeetingTime;
+@synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
 
 #pragma mark - View Life Cycle
@@ -49,7 +52,7 @@
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeeting"];
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
-										success:^(AFHTTPRequestOperation *operation, id response) {
+                                        success:^(AFHTTPRequestOperation *operation, id response) {
 //											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
 											for (id meetingDictionary in response) {
@@ -57,8 +60,29 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-											[SVProgressHUD dismissWithSuccess:@"Done!"];
+                                            
+                                            // Sort array by date
+                                            NSMutableArray *copy = [self.results mutableCopy];
+                                            self.results = [copy sortedArrayUsingComparator:^(id a, id b) {
+                                                NSDate *first = [(Meeting*)a dateUnformatted];
+                                                NSDate *second = [(Meeting*)b dateUnformatted];
+                                                return [first compare:second];
+                                            }];
+                                            self.nextMeeting = [self.results objectAtIndex:0];
+                                            NSMutableArray *temp = [self.results mutableCopy];
+                                            [temp removeObject:self.nextMeeting];
+                                            self.results = temp;
+                                            self.nextMeetingTopic.text = self.nextMeeting.topic;
+                                            NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
+                                            //NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
+                                            
+                                            //if ((double)interval < 86400) {
+                                            //    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
+                                            //}
+                                            self.nextMeetingTime.text = [NSString stringWithFormat:@"%@ at %@", self.nextMeeting.date, self.nextMeeting.time];
+                                            
 											[self.tableView reloadData];
+											[SVProgressHUD dismissWithSuccess:@"Done!"];
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											NSLog(@"Error fetching meetings!");
@@ -69,7 +93,6 @@
                                                 NSLog(@"...Done!");
 										}];
     
-
 }
 
 - (void)viewDidUnload
@@ -77,15 +100,14 @@
     [self setTableView:nil];
     [self setBackgroundImageView:nil];
     [self setNextMeetingImageView:nil];
+    [self setNextMeetingTopic:nil];
+    [self setNextMeetingTime:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    
 
-}
 
 - (void)viewWillAppear:(BOOL)animated {
     // Set the background image for *all* UINavigationBars
@@ -103,6 +125,13 @@
         }
     }
     [self.navigationController.navigationBar addSubview:logo];
+}
+
+- (Meeting *)nextMeeting {
+    if (!_nextMeeting) {
+        _nextMeeting = [[Meeting alloc] init];
+    }
+    return _nextMeeting;
 }
 
 - (void)addMeeting {

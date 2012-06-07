@@ -42,38 +42,38 @@
     self.tableView.backgroundColor = [UIColor clearColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
     
-    // Customize Segmented Control
-    UIImage *segmentSelected = 
-    [[UIImage imageNamed:@"NewSegControl2-sel.png"] 
-     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
-    UIImage *segmentUnselected = 
-    [[UIImage imageNamed:@"NewSegControl2-uns.png"] 
-     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
-    UIImage *segmentSelectedUnselected = 
-    [UIImage imageNamed:@"NewSegControl2-sel-uns.png"];
-    UIImage *segUnselectedSelected = 
-    [UIImage imageNamed:@"NewSegControl2-uns-sel.png"];
-    UIImage *segmentUnselectedUnselected = 
-    [UIImage imageNamed:@"NewSegControl2-uns-uns.png"];
-    
-    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected 
-                                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected 
-                                               forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
-    
-    [[UISegmentedControl appearance] setDividerImage:segmentUnselectedUnselected 
-                                 forLeftSegmentState:UIControlStateNormal 
-                                   rightSegmentState:UIControlStateNormal 
-                                          barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] setDividerImage:segmentSelectedUnselected 
-                                 forLeftSegmentState:UIControlStateSelected 
-                                   rightSegmentState:UIControlStateNormal 
-                                          barMetrics:UIBarMetricsDefault];
-    [[UISegmentedControl appearance] 
-     setDividerImage:segUnselectedSelected 
-     forLeftSegmentState:UIControlStateNormal 
-     rightSegmentState:UIControlStateSelected 
-     barMetrics:UIBarMetricsDefault];
+//    // Customize Segmented Control
+//    UIImage *segmentSelected = 
+//    [[UIImage imageNamed:@"NewSegControl2-sel.png"] 
+//     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+//    UIImage *segmentUnselected = 
+//    [[UIImage imageNamed:@"NewSegControl2-uns.png"] 
+//     resizableImageWithCapInsets:UIEdgeInsetsMake(0, 20, 0, 20)];
+//    UIImage *segmentSelectedUnselected = 
+//    [UIImage imageNamed:@"NewSegControl2-sel-uns.png"];
+//    UIImage *segUnselectedSelected = 
+//    [UIImage imageNamed:@"NewSegControl2-uns-sel.png"];
+//    UIImage *segmentUnselectedUnselected = 
+//    [UIImage imageNamed:@"NewSegControl2-uns-uns.png"];
+//    
+//    [[UISegmentedControl appearance] setBackgroundImage:segmentUnselected 
+//                                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+//    [[UISegmentedControl appearance] setBackgroundImage:segmentSelected 
+//                                               forState:UIControlStateSelected barMetrics:UIBarMetricsDefault];
+//    
+//    [[UISegmentedControl appearance] setDividerImage:segmentUnselectedUnselected 
+//                                 forLeftSegmentState:UIControlStateNormal 
+//                                   rightSegmentState:UIControlStateNormal 
+//                                          barMetrics:UIBarMetricsDefault];
+//    [[UISegmentedControl appearance] setDividerImage:segmentSelectedUnselected 
+//                                 forLeftSegmentState:UIControlStateSelected 
+//                                   rightSegmentState:UIControlStateNormal 
+//                                          barMetrics:UIBarMetricsDefault];
+//    [[UISegmentedControl appearance] 
+//     setDividerImage:segUnselectedSelected 
+//     forLeftSegmentState:UIControlStateNormal 
+//     rightSegmentState:UIControlStateSelected 
+//     barMetrics:UIBarMetricsDefault];
 	
 	// Get twitter URL
 	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile"];
@@ -82,7 +82,7 @@
 	AFJSONRequestOperation *operation;
 	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request 
 																success:^(NSURLRequest *request, NSHTTPURLResponse *response, id jsonObject) {
-																	NSLog(@"Response: %@", jsonObject);
+																	//NSLog(@"Response: %@", jsonObject);
 																	self.tweets = jsonObject;
 																	[self.tableView reloadData];
                                                                     [SVProgressHUD dismissWithSuccess:@"Done!"];

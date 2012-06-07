@@ -162,7 +162,7 @@
 					<object class="IBUILabel" id="466826426">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{9, 25}, {131, 37}}</string>
+						<string key="NSFrame">{{9, 25}, {217, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="99733977"/>
@@ -235,7 +235,7 @@
 					<object class="IBUILabel" id="626979671">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{9, 62}, {132, 22}}</string>
+						<string key="NSFrame">{{9, 62}, {217, 22}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1018359895"/>
@@ -351,6 +351,22 @@
 						<reference key="destination" ref="73725622"/>
 					</object>
 					<int key="connectionID">22</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">nextMeetingTopic</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="466826426"/>
+					</object>
+					<int key="connectionID">23</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">nextMeetingTime</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="626979671"/>
+					</object>
+					<int key="connectionID">24</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -479,7 +495,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">22</int>
+			<int key="maxID">24</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -489,6 +505,8 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundImageView">UIImageView</string>
 						<string key="nextMeetingImageView">UIImageView</string>
+						<string key="nextMeetingTime">UILabel</string>
+						<string key="nextMeetingTopic">UILabel</string>
 						<string key="tableView">UITableView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -499,6 +517,14 @@
 						<object class="IBToOneOutletInfo" key="nextMeetingImageView">
 							<string key="name">nextMeetingImageView</string>
 							<string key="candidateClassName">UIImageView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="nextMeetingTime">
+							<string key="name">nextMeetingTime</string>
+							<string key="candidateClassName">UILabel</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="nextMeetingTopic">
+							<string key="name">nextMeetingTopic</string>
+							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tableView">
 							<string key="name">tableView</string>
