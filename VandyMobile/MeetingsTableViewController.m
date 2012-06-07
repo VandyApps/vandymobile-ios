@@ -60,27 +60,9 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-                                            
-                                            // Sort array by date
-                                            NSMutableArray *copy = [self.results mutableCopy];
-                                            self.results = [copy sortedArrayUsingComparator:^(id a, id b) {
-                                                NSDate *first = [(Meeting*)a dateUnformatted];
-                                                NSDate *second = [(Meeting*)b dateUnformatted];
-                                                return [first compare:second];
-                                            }];
-                                            self.nextMeeting = [self.results objectAtIndex:0];
-                                            NSMutableArray *temp = [self.results mutableCopy];
-                                            [temp removeObject:self.nextMeeting];
-                                            self.results = temp;
-                                            self.nextMeetingTopic.text = self.nextMeeting.topic;
-                                            NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
-                                            //NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
-                                            
-                                            //if ((double)interval < 86400) {
-                                            //    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
-                                            //}
-                                            self.nextMeetingTime.text = [NSString stringWithFormat:@"%@ at %@", self.nextMeeting.date, self.nextMeeting.time];
-                                            
+                                            [self sortDates];
+											[self addNextMeetingCell];
+                                                                                       
 											[self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
 										}
@@ -93,6 +75,31 @@
                                                 NSLog(@"...Done!");
 										}];
     
+}
+
+- (void)sortDates {
+	// Sort array by date
+	NSMutableArray *copy = [self.results mutableCopy];
+	self.results = [copy sortedArrayUsingComparator:^(id a, id b) {
+		NSDate *first = [(Meeting*)a dateUnformatted];
+		NSDate *second = [(Meeting*)b dateUnformatted];
+		return [first compare:second];
+	}];
+}
+
+- (void)addNextMeetingCell {
+	self.nextMeeting = [self.results objectAtIndex:0];
+	NSMutableArray *temp = [self.results mutableCopy];
+	[temp removeObject:self.nextMeeting];
+	self.results = temp;
+	self.nextMeetingTopic.text = self.nextMeeting.topic;
+	NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
+	//NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
+	
+	//if ((double)interval < 86400) {
+	//    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
+	//}
+	self.nextMeetingTime.text = [NSString stringWithFormat:@"%@ at %@", self.nextMeeting.date, self.nextMeeting.time];
 }
 
 - (void)viewDidUnload
