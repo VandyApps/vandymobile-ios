@@ -44,7 +44,7 @@
 	// Do any additional setup after loading the view.
     
     // UI Customization
-    self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
 
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
