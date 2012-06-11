@@ -23,6 +23,7 @@
 @synthesize nextMeetingImageView = _nextMeetingImageView;
 @synthesize nextMeetingTopic = _nextMeetingTopic;
 @synthesize nextMeetingTime = _nextMeetingTime;
+@synthesize nextMeetingButton = _nextMeetingButton;
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
 
@@ -48,8 +49,8 @@
     
     self.tableView.rowHeight = 50;
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
-    self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeeting"];
+    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
+    self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
@@ -93,13 +94,14 @@
 	[temp removeObject:self.nextMeeting];
 	self.results = temp;
 	self.nextMeetingTopic.text = self.nextMeeting.topic;
-	NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
+	//NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
 	//NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
 	
 	//if ((double)interval < 86400) {
 	//    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
 	//}
 	self.nextMeetingTime.text = [NSString stringWithFormat:@"%@ at %@", self.nextMeeting.date, self.nextMeeting.time];
+    self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
 }
 
 - (void)viewDidUnload
@@ -109,6 +111,7 @@
     [self setNextMeetingImageView:nil];
     [self setNextMeetingTopic:nil];
     [self setNextMeetingTime:nil];
+    [self setNextMeetingButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
