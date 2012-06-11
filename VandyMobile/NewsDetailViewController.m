@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     self.newsText.text = [self.tweet objectForKey:@"text"];
     self.timestampLabel.textColor = [UIColor colorWithRed:0.639 green:0.639 blue:0.639 alpha:1] /*#a3a3a3*/;
     self.timestampLabel.text = [self.tweet objectForKey:@"created_at"];
@@ -42,6 +42,7 @@
     self.commentFrame.clipsToBounds = YES;
     self.commentFrame.layer.borderColor = [[UIColor grayColor] CGColor];
     self.commentFrame.layer.borderWidth = .5;
+    self.commentFrame.backgroundColor = [UIColor whiteColor];
     
     // Resize stuff
     UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:15];

@@ -117,8 +117,15 @@
     EKEventStore *eventDB = [[EKEventStore alloc] init];
     EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
     myEvent.title = self.meeting.topic;
-    myEvent.startDate = [[NSDate alloc] init];
-    myEvent.endDate = [[NSDate alloc] init];
+//    NSDate *today = self.meeting.dateUnformatted;
+//    NSCalendar *gregorian = [[NSCalendar alloc]
+//                             initWithCalendarIdentifier:NSGregorianCalendar];
+//    NSDateComponents *weekdayComponents =
+//    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+//    NSInteger day = [weekdayComponents day];
+//    NSInteger weekday = [weekdayComponents weekday];
+    //myEvent.startDate = [self.meeting.dateUnformatted copy]; //[[NSDate alloc] initWithTimeIntervalSinceNow:self.meeting.dateUnformatted.timeIntervalSinceNow];
+    //myEvent.endDate = [[NSDate alloc] initWithTimeIntervalSince1970:myEvent.startDate.timeIntervalSince1970 + 3600];
     myEvent.allDay = NO;
     
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];

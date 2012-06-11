@@ -55,10 +55,12 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
 
     //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
-
+    
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV2"]];
+//    [[UITabBarItem appearance] setBackgroundColor:[UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1] /*#303030*/ ];
      
 	// Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObjects:newsNavigationController, meetingsNavigationController, teamsViewController, myVMViewController, nil];
+	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, teamsViewController, myVMViewController, nil];
 	
 	// Add view controllers array to tabBar
 	tabBarController.viewControllers = viewControllers;

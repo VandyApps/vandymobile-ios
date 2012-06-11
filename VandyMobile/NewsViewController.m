@@ -40,7 +40,7 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
 //    // Customize Segmented Control
 //    UIImage *segmentSelected = 
@@ -145,19 +145,19 @@
         
         cell.textLabel.text = [tweet objectForKey:@"text"];
         
-        NSString *url = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-        [cell.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"08-chat.png"]];
-        
-        cell.backgroundColor = [UIColor clearColor];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = 0;
-        cell.detailTextLabel.text = [tweet objectForKey:@"created_at"];
-        
-        UIView *goldenColor = [[UIView alloc] init];
-        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-        cell.selectedBackgroundView = goldenColor;
+//        NSString *url = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+//        [cell.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"08-chat.png"]];
+    [cell.imageView setImage:[UIImage imageNamed:@"08-chat"]];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 0;
+    cell.detailTextLabel.text = [tweet objectForKey:@"created_at"];
+    
+    UIView *goldenColor = [[UIView alloc] init];
+    goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+    cell.selectedBackgroundView = goldenColor;
 
 
     return cell;
