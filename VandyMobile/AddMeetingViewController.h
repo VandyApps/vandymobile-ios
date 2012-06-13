@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddMeetingViewController : UIViewController
+@interface AddMeetingViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NSArray *formFields;
 
 @end
