@@ -51,6 +51,10 @@
 		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
+		D2E6215D15891F6200CBC47F /* NewSegControl2-uns-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */; };
+		D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */; };
+		D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */; };
+		D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
 		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
@@ -118,6 +122,10 @@
 		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
+		D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-uns.png"; sourceTree = "<group>"; };
+		D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns.png"; sourceTree = "<group>"; };
+		D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel-uns.png"; sourceTree = "<group>"; };
+		D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-sel.png"; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
 		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
@@ -168,6 +176,10 @@
 				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
 				D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */,
 				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
+				D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */,
+				D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */,
+				D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */,
+				D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */,
 				D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */,
 				D2445A8A157AE0D000A7E297 /* 08-chat.png */,
 				D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */,
@@ -414,6 +426,10 @@
 				D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */,
 				D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */,
 				D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */,
+				D2E6215D15891F6200CBC47F /* NewSegControl2-uns-uns.png in Resources */,
+				D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */,
+				D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */,
+				D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

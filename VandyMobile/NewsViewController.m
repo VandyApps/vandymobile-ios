@@ -40,6 +40,7 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
     self.tableView.backgroundColor = [UIColor clearColor];
+    self.tableView.backgroundView.hidden = YES;
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
 //    // Customize Segmented Control
@@ -112,6 +113,12 @@
         }
     }
     [self.navigationController.navigationBar addSubview:logo];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    if ([SVProgressHUD isVisible]) {
+        [SVProgressHUD dismiss];
+    }
 }
 
 - (void)viewDidUnload

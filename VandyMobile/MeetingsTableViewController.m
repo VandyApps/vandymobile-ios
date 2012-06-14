@@ -44,13 +44,15 @@
 																					  action:@selector(addMeeting)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
-	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
-    
     self.tableView.rowHeight = 50;
     self.tableView.backgroundColor = [UIColor clearColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
+    
+	// Status indicator. Takes place of network spinner and if no meetings are loaded
+	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
+    
+    
     
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
@@ -171,24 +173,25 @@
         }
         cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
         
-        CGRect myFrame = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"125-food"]].frame;
-        
-        UIImage *image;
-        if ([meeting.hasFood boolValue]) {
-            if ([meeting.hasSpeaker boolValue]) {
-                image = [UIImage imageNamed:@"bullhorn-food-combo"];
-            }
-            else {
-                image = [UIImage imageNamed:@"125-food.png"];
-            }
-        } else if ([meeting.hasSpeaker boolValue]) {
-            image = [UIImage imageNamed:@"124-bullhorn.png"];
-        } else {
-            image = [UIImage imageNamed:@"112-group.png"];
-        }
-        
-        cell.imageView.image = image;
-        cell.imageView.frame = myFrame;
+//        CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
+//        
+//        UIImage *image;
+//        if ([meeting.hasFood boolValue]) {
+//            if ([meeting.hasSpeaker boolValue]) {
+//                image = [UIImage imageNamed:@"bullhorn-food-combo"];
+//            }
+//            else {
+//                image = [UIImage imageNamed:@"125-food.png"];
+//            }
+//        } else if ([meeting.hasSpeaker boolValue]) {
+//            image = [UIImage imageNamed:@"124-bullhorn.png"];
+//        } else {
+//            image = [UIImage imageNamed:@"112-group.png"];
+//        }
+//        
+//        cell.imageView.image = image;
+//        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
+
         cell.backgroundColor = [UIColor clearColor];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
