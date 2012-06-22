@@ -11,5 +11,7 @@
 @interface VMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UITabBarController *root;
+@property (strong, nonatomic) NSNumber *userIsLoggedIn;
 
 @end

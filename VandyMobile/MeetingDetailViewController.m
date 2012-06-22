@@ -55,16 +55,17 @@
     self.descriptionLabel.layer.cornerRadius = 11;
     self.descriptionLabel.clipsToBounds = YES;
     self.descriptionLabel.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.descriptionLabel.layer.borderWidth = .5;
-    
-    // Round corners of map view (QuartzCore)
-    self.mapView.layer.cornerRadius = 11;
-    self.mapView.clipsToBounds = YES;
-    self.mapView.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.mapView.layer.borderWidth = .5;
+    self.descriptionLabel.layer.borderWidth = .75;
+
     
     // Zoom MapView to coordinates
     if (CLLocationCoordinate2DIsValid(self.meeting.loc)) {
+        // Round corners of map view (QuartzCore)
+        self.mapView.layer.cornerRadius = 11;
+        self.mapView.clipsToBounds = YES;
+        self.mapView.layer.borderColor = [[UIColor grayColor] CGColor];
+        self.mapView.layer.borderWidth = .75;
+        
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = self.meeting.loc.latitude;
         zoomLocation.longitude= self.meeting.loc.longitude;

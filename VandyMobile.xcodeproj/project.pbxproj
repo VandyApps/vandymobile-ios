@@ -35,6 +35,8 @@
 		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
 		D2445AB8157AF00700A7E297 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB7157AF00700A7E297 /* Icon.png */; };
 		D2445ABA157AF00F00A7E297 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB9157AF00F00A7E297 /* 114.png */; };
+		D256B82F1594FB7100348AB3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256B82E1594FB7100348AB3 /* LoginViewController.xib */; };
+		D256B8331594FC0500348AB3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D256B8321594FC0500348AB3 /* LoginViewController.m */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
@@ -106,6 +108,9 @@
 		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
 		D2445AB7157AF00700A7E297 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		D2445AB9157AF00F00A7E297 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
+		D256B82E1594FB7100348AB3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D256B8311594FC0500348AB3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		D256B8321594FC0500348AB3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
 		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
@@ -226,6 +231,8 @@
 		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D256B8311594FC0500348AB3 /* LoginViewController.h */,
+				D256B8321594FC0500348AB3 /* LoginViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
 				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
@@ -265,6 +272,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				D256B82E1594FB7100348AB3 /* LoginViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
@@ -443,6 +451,7 @@
 				D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */,
 				D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */,
 				D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */,
+				D256B82F1594FB7100348AB3 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,6 +491,7 @@
 				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
 				D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */,
 				D20E5466158D0AE600E4164B /* Sizer.m in Sources */,
+				D256B8331594FC0500348AB3 /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 #import "VMAppDelegate.h"
 #import "MeetingsTableViewController.h"
 #import "NewsViewController.h"
+#import "LoginViewController.h"
 
 @implementation VMAppDelegate
 
@@ -21,7 +22,37 @@
 	// Create TabBarController
 	UITabBarController *tabBarController = [[UITabBarController alloc] init];
 	
-	// Create view controllers with tabBarItems
+
+    // Set the background image for *all* UINavigationItems
+    UIImage *buttonBack30 = [[UIImage imageNamed:@"NewBackButton"] 
+                             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
+    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    UIImage *button30 = [[UIImage imageNamed:@"NewBarButton"] 
+                         resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
+    [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    
+
+    //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
+    
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV3"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"NewTabBarSelected"]];
+//    [[UITabBarItem appearance] setBackgroundColor:[UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1] /*#303030*/ ];
+     
+	// Set rootViewController
+	self.window.rootViewController = tabBarController;
+    self.root = (UITabBarController *)self.window.rootViewController;
+    [self.window makeKeyAndVisible];
+    
+    self.userIsLoggedIn = [NSNumber numberWithBool:NO];
+    // Show login screen
+    if (![self.userIsLoggedIn boolValue]) {
+        [self startLoginProcess];
+    }
+    
+    // Create view controllers with tabBarItems
 	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"08-chat"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
@@ -43,34 +74,20 @@
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     
-    // Set the background image for *all* UINavigationItems
-    UIImage *buttonBack30 = [[UIImage imageNamed:@"NewBackButton"] 
-                             resizableImageWithCapInsets:UIEdgeInsetsMake(0, 13, 0, 5)];
-    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:buttonBack30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
-    UIImage *button30 = [[UIImage imageNamed:@"NewBarButton"] 
-                         resizableImageWithCapInsets:UIEdgeInsetsMake(0, 5, 0, 5)];
-    [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
-    
-
-    //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
-    
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV3"]];
-    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"NewTabBarSelected"]];
-//    [[UITabBarItem appearance] setBackgroundColor:[UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1] /*#303030*/ ];
-     
-	// Add view controllers to an array
+    // Add view controllers to an array
 	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, teamsViewController, myVMViewController, nil];
 	
 	// Add view controllers array to tabBar
-	tabBarController.viewControllers = viewControllers;
-	
-	// Set rootViewController
-	self.window.rootViewController = tabBarController;
-    [self.window makeKeyAndVisible];
+	self.root.viewControllers = viewControllers;
+    
     return YES;
+}
+
+- (void)startLoginProcess {
+    LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    [self.root presentModalViewController:loginViewController animated:YES];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
