@@ -37,6 +37,7 @@
 		D2445ABA157AF00F00A7E297 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB9157AF00F00A7E297 /* 114.png */; };
 		D256B82F1594FB7100348AB3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D256B82E1594FB7100348AB3 /* LoginViewController.xib */; };
 		D256B8331594FC0500348AB3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D256B8321594FC0500348AB3 /* LoginViewController.m */; };
+		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
@@ -111,6 +112,7 @@
 		D256B82E1594FB7100348AB3 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D256B8311594FC0500348AB3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D256B8321594FC0500348AB3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
 		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */,
 				D2445A4C157A6B7B00A7E297 /* NewNavBar4@2x.png */,
 				D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */,
+				D256B834159509D700348AB3 /* NewLoginScreen.png */,
 				D2445A58157A722700A7E297 /* NewBackButton@2x.png */,
 				D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */,
 				D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */,
@@ -452,6 +455,7 @@
 				D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */,
 				D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */,
 				D256B82F1594FB7100348AB3 /* LoginViewController.xib in Resources */,
+				D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
