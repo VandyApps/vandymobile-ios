@@ -53,10 +53,12 @@
     [[UIBarButtonItem appearance] setBackgroundImage:button30 forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+    
 
     //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
     
-    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV2"]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV3"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"NewTabBarSelected"]];
 //    [[UITabBarItem appearance] setBackgroundColor:[UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1] /*#303030*/ ];
      
 	// Add view controllers to an array

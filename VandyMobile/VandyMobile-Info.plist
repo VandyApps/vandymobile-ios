@@ -22,11 +22,11 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>edu.vanderbilt.cs292.mobiletourguide</string>
+	<string>edu.vanderbilt.vandymobile.myVM</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>mobiletourguide</string>
+	<string>myVM</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
