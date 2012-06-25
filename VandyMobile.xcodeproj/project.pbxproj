@@ -55,6 +55,7 @@
 		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
 		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
 		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
+		D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0B9A9159649DE00702102 /* IL_Share2.png */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
 		D2E6215D15891F6200CBC47F /* NewSegControl2-uns-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */; };
@@ -134,6 +135,7 @@
 		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		D2D0B9A9159649DE00702102 /* IL_Share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IL_Share2.png; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
 		D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-uns.png"; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2D0B9A9159649DE00702102 /* IL_Share2.png */,
 				D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */,
 				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
 				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
@@ -456,6 +459,7 @@
 				D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */,
 				D256B82F1594FB7100348AB3 /* LoginViewController.xib in Resources */,
 				D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */,
+				D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

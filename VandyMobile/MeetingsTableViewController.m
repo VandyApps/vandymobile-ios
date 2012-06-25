@@ -148,7 +148,7 @@
 
 - (void)addMeeting {
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithNibName:@"AddMeetingViewController" bundle:nil];
-	[self.navigationController pushViewController:addMeetingVC animated:YES];
+	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods

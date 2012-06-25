@@ -15,7 +15,10 @@
 
 @synthesize window = _window;
 @synthesize root = _root;
+<<<<<<< HEAD
 @synthesize userIsLoggedIn = _userIsLoggedIn;	
+=======
+>>>>>>> f9f847096836b8d866b71534d13259032679eec0
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

@@ -10,4 +10,7 @@
 
 @interface AddMeetingViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIToolbar *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+
 @end
