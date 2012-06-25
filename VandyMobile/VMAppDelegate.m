@@ -14,6 +14,7 @@
 @implementation VMAppDelegate
 
 @synthesize window = _window;
+@synthesize root = _root;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
