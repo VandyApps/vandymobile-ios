@@ -14,6 +14,8 @@
 @implementation VMAppDelegate
 
 @synthesize window = _window;
+@synthesize root = _root;
+@synthesize userIsLoggedIn = _userIsLoggedIn;	
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
