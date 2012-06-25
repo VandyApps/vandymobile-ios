@@ -1,0 +1,9 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - JSONKit (1.5pre)
+  - SVProgressHUD (0.7)
+
+DEPENDENCIES:
+  - AFNetworking
+  - JSONKit
+  - SVProgressHUD
