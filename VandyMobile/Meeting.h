@@ -21,7 +21,9 @@
 @property (copy,nonatomic) NSString *topic;
 @property (nonatomic) CLLocationCoordinate2D loc;
 @property (copy, nonatomic) NSString *description;
+@property (strong, nonatomic) NSDictionary *meetingDict;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)meetingDictionary;
 
 @end

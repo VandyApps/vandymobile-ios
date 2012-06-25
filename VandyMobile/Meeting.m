@@ -20,10 +20,12 @@
 @synthesize loc = _loc;
 @synthesize description = _description;
 @synthesize dateUnformatted = _dateUnformatted;
+@synthesize meetingDict = _meetingDict;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
 	if (self) {
+		self.meetingDict = dictionary;
 		self.day = [dictionary objectForKey:@"day"];
 		self.date = [self convertDateToFormattedStringWithJSONString:[dictionary objectForKey:@"date"]];
 		self.time = [self convertTimeToStringWithJSONString:[dictionary objectForKey:@"date"]];
@@ -42,6 +44,10 @@
 
 	}
 	return self;
+}
+
+- (NSDictionary *)meetingDictionary {
+	return self.meetingDict;
 }
 
 - (NSString *)convertDateToFormattedStringWithJSONString:(NSString *)dateString {

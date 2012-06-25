@@ -8,6 +8,7 @@
 
 #import "MeetingsAPIClient.h"
 #import "AFNetworking.h"
+#import "Meeting.h"
 
 #define MeetingsAPIBaseURLString @"http://70.138.50.84"
 #define MeetingsAPIToken @"1234abcd"
@@ -35,6 +36,17 @@
 	 
 	 return self;
  }
+
+- (void)createMeeting:(Meeting *)newMeeting {
+	NSString *path = [MeetingsAPIBaseURLString stringByAppendingString:@"/meetings"];
+	[self postPath:path parameters:[newMeeting meetingDictionary]
+		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+			   NSLog(@"response = %@", responseObject);
+		   } 
+		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			   NSLog(@"error = %@", error);
+		   }];
+}
 
 
 @end
