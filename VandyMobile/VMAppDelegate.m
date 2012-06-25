@@ -86,6 +86,7 @@
 
 - (void)startLoginProcess {
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
+    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.root presentModalViewController:loginViewController animated:YES];
     
 }

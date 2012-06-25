@@ -71,7 +71,9 @@
         zoomLocation.longitude= self.meeting.loc.longitude;
         MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
         MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-        [self.mapView setRegion:adjustedRegion animated:YES]; 
+        [self.mapView setRegion:adjustedRegion animated:YES];
+        self.mapView.userInteractionEnabled = NO;
+
     } else {
         self.mapView.hidden = YES;
     }
@@ -99,6 +101,14 @@
     
     // Set description text
     self.descriptionLabel.text = self.meeting.description;
+    
+    // Share button
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+																					  target:self 
+																					  action:@selector(sharePressed)];
+	[self.navigationItem setRightBarButtonItem:shareButton animated:NO];
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -149,8 +159,9 @@
 }
 
 - (IBAction)showOnMapPressed {
-        
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Load Maps?" message:@"Showing the map will exit VandyMobile and load Maps. Are you sure you want to proceed?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil ];
+    [alert show];
     NSString *googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%1.6f,%1.6f",
                                      self.meeting.loc.latitude, self.meeting.loc.longitude];
     
