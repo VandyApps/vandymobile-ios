@@ -44,7 +44,7 @@
 	// Do any additional setup after loading the view.
     
     // UI Customization
-    self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundV3"];
+    self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
 
 //    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
@@ -64,12 +64,16 @@
     self.mapView.layer.borderWidth = .5;
     
     // Zoom MapView to coordinates
-    CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = self.meeting.loc.latitude;
-    zoomLocation.longitude= self.meeting.loc.longitude;
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
-    MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
-    [self.mapView setRegion:adjustedRegion animated:YES]; 
+    if (CLLocationCoordinate2DIsValid(self.meeting.loc)) {
+        CLLocationCoordinate2D zoomLocation;
+        zoomLocation.latitude = self.meeting.loc.latitude;
+        zoomLocation.longitude= self.meeting.loc.longitude;
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
+        MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
+        [self.mapView setRegion:adjustedRegion animated:YES]; 
+    } else {
+        self.mapView.hidden = YES;
+    }
     
     // Set annotation in MapView
     VMAnnotation *anno = [[VMAnnotation alloc] init];
@@ -98,7 +102,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     NSArray *navSubviews = [self.navigationController.navigationBar subviews];
-    NSLog(@"%@", navSubviews);
+//    NSLog(@"%@", navSubviews);
     for (UIView * subview in navSubviews) {
         if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
             [subview removeFromSuperview];
@@ -113,8 +117,15 @@
     EKEventStore *eventDB = [[EKEventStore alloc] init];
     EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
     myEvent.title = self.meeting.topic;
-    myEvent.startDate = [[NSDate alloc] init];
-    myEvent.endDate = [[NSDate alloc] init];
+//    NSDate *today = self.meeting.dateUnformatted;
+//    NSCalendar *gregorian = [[NSCalendar alloc]
+//                             initWithCalendarIdentifier:NSGregorianCalendar];
+//    NSDateComponents *weekdayComponents =
+//    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
+//    NSInteger day = [weekdayComponents day];
+//    NSInteger weekday = [weekdayComponents weekday];
+    //myEvent.startDate = [self.meeting.dateUnformatted copy]; //[[NSDate alloc] initWithTimeIntervalSinceNow:self.meeting.dateUnformatted.timeIntervalSinceNow];
+    //myEvent.endDate = [[NSDate alloc] initWithTimeIntervalSince1970:myEvent.startDate.timeIntervalSince1970 + 3600];
     myEvent.allDay = NO;
     
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];

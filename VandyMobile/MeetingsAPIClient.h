@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "AFHTTPClient.h"
+#import "Meeting.h"
 
 @interface MeetingsAPIClient : AFHTTPClient
 
 + (id)sharedInstance;
+- (void)createMeeting:(Meeting *)newMeeting;
 
 @end

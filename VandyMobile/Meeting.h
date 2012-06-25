@@ -13,7 +13,7 @@
 
 @property (copy,nonatomic) NSString *day;
 @property (copy,nonatomic) NSString *date;
-@property (copy,nonatomic) NSDate *dateUnformatted;
+@property (strong, nonatomic) NSDate *dateUnformatted;
 @property (copy,nonatomic) NSString *time; 
 @property (retain,nonatomic) NSNumber *hasFood;
 @property (retain,nonatomic) NSNumber *hasSpeaker;
@@ -21,7 +21,9 @@
 @property (copy,nonatomic) NSString *topic;
 @property (nonatomic) CLLocationCoordinate2D loc;
 @property (copy, nonatomic) NSString *description;
+@property (strong, nonatomic) NSDictionary *meetingDict;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)meetingDictionary;
 
 @end

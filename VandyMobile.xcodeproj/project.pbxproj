@@ -39,6 +39,16 @@
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
+		D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */; };
+		D29E6C9715856BAE0065E1CC /* NextMeetingCanvasV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */; };
+		D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */; };
+		D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */; };
+		D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */; };
+		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
+		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
+		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
+		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
+		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
@@ -48,12 +58,16 @@
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
+		F74346FA157BF73600AD1C26 /* AddMeetingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */; };
 		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
 		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
 		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
 		F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */; };
 		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
+		F7CD31D915977BF0004151EC /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CD31D815977BF0004151EC /* VMFormCell.m */; };
+		F7CD31E015977DDE004151EC /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CD31DF15977DDE004151EC /* VMTextInputCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +107,17 @@
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
+		D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeetingCanvas@2x.png"; sourceTree = "<group>"; };
+		D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeetingCanvasV2@2x.png"; sourceTree = "<group>"; };
+		D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundCanvas@2x.png"; sourceTree = "<group>"; };
+		D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBar@2x.png"; sourceTree = "<group>"; };
+		D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV2@2x.png"; sourceTree = "<group>"; };
+		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
+		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
+		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
+		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
@@ -105,6 +130,9 @@
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
+		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
+		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
 		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +143,10 @@
 		F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VandyMobile-Prefix.pch"; sourceTree = "<group>"; };
 		F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
 		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+		F7CD31D715977BF0004151EC /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
+		F7CD31D815977BF0004151EC /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
+		F7CD31DE15977DDE004151EC /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
+		F7CD31DF15977DDE004151EC /* VMTextInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTextInputCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +171,10 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
+				D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */,
+				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
+				D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */,
 				D2445A8A157AE0D000A7E297 /* 08-chat.png */,
 				D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */,
 				D2445A8C157AE0D000A7E297 /* 09-chat-2.png */,
@@ -157,6 +193,9 @@
 				D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */,
 				D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */,
 				D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */,
+				D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */,
+				D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */,
+				D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */,
 				D2445A131579DBF200A7E297 /* NewNavBar@2x.png */,
 				D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */,
 				D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */,
@@ -164,6 +203,7 @@
 				D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */,
 				D2445A58157A722700A7E297 /* NewBackButton@2x.png */,
 				D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */,
+				D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -171,12 +211,16 @@
 		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
+				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
 				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
 				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
 				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
-				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
+				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -205,8 +249,10 @@
 			isa = PBXGroup;
 			children = (
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
-				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
+				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
+				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
+				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -248,7 +294,6 @@
 				D2445A61157A801000A7E297 /* EventKitUI.framework */,
 				D27291A41573E408009AA12F /* CoreLocation.framework */,
 				D27291A21573E401009AA12F /* MapKit.framework */,
-				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
 				F7ACC5831566903100CDE5A9 /* UIKit.framework */,
 				F7ACC5851566903100CDE5A9 /* Foundation.framework */,
 				F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */,
@@ -260,6 +305,8 @@
 		F7ACC5891566903100CDE5A9 /* VandyMobile */ = {
 			isa = PBXGroup;
 			children = (
+				F7CD31DA15977CAF004151EC /* Cells */,
+				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
 				F7874EE1156C7BAC00F81183 /* ViewControllers */,
@@ -279,7 +326,17 @@
 				F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			path = VandyMobile;
+			sourceTree = "<group>";
+		};
+		F7CD31DA15977CAF004151EC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F7CD31D715977BF0004151EC /* VMFormCell.h */,
+				F7CD31D815977BF0004151EC /* VMFormCell.m */,
+				F7CD31DE15977DDE004151EC /* VMTextInputCell.h */,
+				F7CD31DF15977DDE004151EC /* VMTextInputCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,6 +422,16 @@
 				D2445AB8157AF00700A7E297 /* Icon.png in Resources */,
 				D2445ABA157AF00F00A7E297 /* 114.png in Resources */,
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
+				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
+				F74346FA157BF73600AD1C26 /* AddMeetingViewController.xib in Resources */,
+				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
+				D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */,
+				D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */,
+				D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */,
+				D29E6C9715856BAE0065E1CC /* NextMeetingCanvasV2@2x.png in Resources */,
+				D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */,
+				D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */,
+				D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +468,10 @@
 				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
+				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
+				D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */,
+				F7CD31D915977BF0004151EC /* VMFormCell.m in Sources */,
+				F7CD31E015977DDE004151EC /* VMTextInputCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +523,7 @@
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -521,7 +592,7 @@
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -540,7 +611,7 @@
 				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
