@@ -9,13 +9,12 @@
 #import "VMAppDelegate.h"
 #import "MeetingsTableViewController.h"
 #import "NewsViewController.h"
-#import "LoginViewController.h"
+#import "MyVMViewController.h"
 
 @implementation VMAppDelegate
 
 @synthesize window = _window;
 @synthesize root = _root;
-@synthesize userIsLoggedIn = _userIsLoggedIn;	
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -48,18 +47,12 @@
     self.root = (UITabBarController *)self.window.rootViewController;
     [self.window makeKeyAndVisible];
     
-    self.userIsLoggedIn = [NSNumber numberWithBool:NO];
-    // Show login screen
-    if (![self.userIsLoggedIn boolValue]) {
-        [self startLoginProcess];
-    }
-    
     // Create view controllers with tabBarItems
 	MeetingsTableViewController *VMMeetingsTVC = [[MeetingsTableViewController alloc] initWithNibName:@"MeetingsTableViewController" bundle:nil];
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"08-chat"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
     
-    UIViewController *myVMViewController = [[UIViewController alloc] init];
+    UIViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
     UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
     myVMViewController.tabBarItem = myVMItem;
     
@@ -84,13 +77,6 @@
 	self.root.viewControllers = viewControllers;
     
     return YES;
-}
-
-- (void)startLoginProcess {
-    LoginViewController *loginViewController = [[LoginViewController alloc] init];
-    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self.root presentModalViewController:loginViewController animated:YES];
-    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -13,12 +13,13 @@
 @end
 
 @implementation LoginViewController
+@synthesize closeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+		
     }
     return self;
 }
@@ -26,8 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+
 }
+
+- (void)closeLoginScreen {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 - (IBAction)loginPressed:(id)sender {
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -43,4 +51,8 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)viewDidUnload {
+	[self setCloseButton:nil];
+	[super viewDidUnload];
+}
 @end
