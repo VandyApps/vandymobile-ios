@@ -1,24 +1,25 @@
 //
-//  TeamsViewControllerViewController.m
+//  MyVMViewController.m
 //  VandyMobile
 //
 //  Created by Graham Gaylor on 6/30/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "TeamsViewControllerViewController.h"
+#import "MyVMViewController.h"
+#import "LoginViewController.h"
 
-@interface TeamsViewControllerViewController ()
+@interface MyVMViewController ()
 
 @end
 
-@implementation TeamsViewControllerViewController
+@implementation MyVMViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+
     }
     return self;
 }
@@ -26,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+	[self presentModalViewController:loginViewController animated:YES];
+
 }
 
 - (void)viewDidUnload

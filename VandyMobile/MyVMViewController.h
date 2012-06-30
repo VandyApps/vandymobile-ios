@@ -1,5 +1,5 @@
 //
-//  TeamsViewControllerViewController.h
+//  MyVMViewController.h
 //  VandyMobile
 //
 //  Created by Graham Gaylor on 6/30/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TeamsViewControllerViewController : UIViewController
+@interface MyVMViewController : UIViewController
 
 @end
