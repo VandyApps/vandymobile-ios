@@ -147,7 +147,7 @@
 }
 
 - (void)addMeeting {
-	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithNibName:@"AddMeetingViewController" bundle:nil];
+	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] init];
 	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 

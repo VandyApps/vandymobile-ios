@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VMTextInputCell.h"
 
-@interface AddMeetingViewController : UIViewController
+@interface AddMeetingViewController : UITableViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UIToolbar *navBar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) VMTextInputCell *dayCell;
+@property (nonatomic, strong) VMTextInputCell *dateCell;
+@property (nonatomic, strong) VMTextInputCell *speakerCell;
+@property (nonatomic, strong) VMTextInputCell *topicCell;
+@property (nonatomic, strong) VMTextInputCell *descriptionCell;
+
 
 @end
