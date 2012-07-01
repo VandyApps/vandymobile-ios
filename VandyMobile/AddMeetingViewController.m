@@ -8,26 +8,36 @@
 
 #import "AddMeetingViewController.h"
 
+/* TableView Sections */
 enum VMMeetingSections {
     VMMeetingSection_DateFields = 0,
     VMMeetingSection_SpeakerFields,
 	VMMeetingSection_Count,
 };
 
+/* Rows in Date Section */
 enum VMDateSectionRows {
     VMDateSection_Day,
 	VMDateSection_Date,
 	VMDateSection_RowCount,
 
-
 };
 
+/* Rows in Speaker Section */
 enum VMSpeakerSectionRows {
     VMSpeakerSection_Speaker,
     VMSpeakerSection_Topic,
 	VMSpeakerSection_Description,
 	VMSpeakerSection_RowCount,
+};
 
+/* TextField tags */
+enum VMAddMeetingTags {
+    VMAddMeetingTags_DayTextField = 0,
+	VMAddMeetingTags_DateTextField,
+	VMAddMeetingTags_SpeakerTextField,
+	VMAddMeetingTags_TopicTextField,
+	VMAddMeetingTags_DescriptionTextField,
 };
 
 
@@ -56,35 +66,35 @@ enum VMSpeakerSectionRows {
         self.dayCell											= [VMTextInputCell textFieldCellWithTitle:@"Day" forDelegate:self];    
         self.dayCell.textField.autocorrectionType				= UITextAutocorrectionTypeNo;
         self.dayCell.textField.autocapitalizationType			= UITextAutocapitalizationTypeNone;
-        self.dayCell.textField.tag								= 0;
+        self.dayCell.textField.tag								= VMAddMeetingTags_DayTextField;
     }
     
     if (!self.dateCell) {
         self.dateCell											= [VMTextInputCell textFieldCellWithTitle:@"Date" forDelegate:self];
         self.dateCell.textField.autocorrectionType				= UITextAutocorrectionTypeNo;
         self.dateCell.textField.autocapitalizationType			= UITextAutocapitalizationTypeNone;
-        self.dateCell.textField.tag								= 1;
+        self.dateCell.textField.tag								= VMAddMeetingTags_DateTextField;
     }
     
     if (!self.speakerCell) {
         self.speakerCell										= [VMTextInputCell textFieldCellWithTitle:@"Speaker" forDelegate:self];
         self.speakerCell.textField.autocorrectionType			= UITextAutocorrectionTypeNo;
         self.speakerCell.textField.autocapitalizationType		= UITextAutocapitalizationTypeNone;
-        self.speakerCell.textField.tag							= 2;
+        self.speakerCell.textField.tag							= VMAddMeetingTags_SpeakerTextField;
     }
     
     if (!self.topicCell) {
         self.topicCell											= [VMTextInputCell textFieldCellWithTitle:@"Topic" forDelegate:self];
         self.topicCell.textField.autocorrectionType				= UITextAutocorrectionTypeNo;
         self.topicCell.textField.autocapitalizationType			= UITextAutocapitalizationTypeNone;
-        self.topicCell.textField.tag							= 3;
+        self.topicCell.textField.tag							= VMAddMeetingTags_TopicTextField;
     }
 	
 	if (!self.descriptionCell) {
         self.descriptionCell									= [VMTextInputCell textFieldCellWithTitle:@"Description" forDelegate:self];
         self.descriptionCell.textField.autocorrectionType		= UITextAutocorrectionTypeNo;
         self.descriptionCell.textField.autocapitalizationType	= UITextAutocapitalizationTypeNone;
-        self.descriptionCell.textField.tag						= 4;
+        self.descriptionCell.textField.tag						= VMAddMeetingTags_DescriptionTextField;
     }
 }
 
@@ -101,6 +111,34 @@ enum VMSpeakerSectionRows {
 	[self setTableView:nil];
     [super viewDidUnload];
 
+}
+
+#pragma mark - TextField Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    int tag = textField.tag;
+    
+    switch (tag) {
+        case VMAddMeetingTags_DayTextField:
+            [self.dateCell.textField becomeFirstResponder];
+            break;
+        case VMAddMeetingTags_DateTextField:
+            [self.speakerCell.textField becomeFirstResponder];
+            break;
+        case VMAddMeetingTags_SpeakerTextField:
+            [self.topicCell.textField becomeFirstResponder];
+            break;
+        case VMAddMeetingTags_TopicTextField:
+			[self.descriptionCell.textField becomeFirstResponder];
+            break;
+        case VMAddMeetingTags_DescriptionTextField:
+            break;
+        default:
+            break;
+    }
+    
+    return YES;
 }
 
 #pragma mark - TableView Datasource Methods
@@ -152,7 +190,6 @@ enum VMSpeakerSectionRows {
     
     return nil;
 }
-
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
