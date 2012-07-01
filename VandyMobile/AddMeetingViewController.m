@@ -45,6 +45,7 @@ enum VMSpeakerSectionRows {
 @synthesize descriptionCell = _descriptionCell;
 
 
+
 - (id)init {
     self = [super initWithStyle:UITableViewStyleGrouped];
     return self;
@@ -92,13 +93,11 @@ enum VMSpeakerSectionRows {
 {
     [super viewDidLoad];
 	[self setupCells];
-
     
 }
 
 - (void)viewDidUnload
 {
-	[self setTableView:nil];
 	[self setTableView:nil];
     [super viewDidUnload];
 

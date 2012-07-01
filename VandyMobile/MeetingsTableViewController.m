@@ -41,7 +41,7 @@
 	// Create add meeting button
 	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
 																					  target:self 
-																					  action:@selector(addMeeting)];
+																					  action:@selector(createMeeting)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
     self.tableView.rowHeight = 50;
@@ -146,9 +146,9 @@
     return _nextMeeting;
 }
 
-- (void)addMeeting {
+- (void)createMeeting {
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] init];
-	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
+	[self.navigationController pushViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods
