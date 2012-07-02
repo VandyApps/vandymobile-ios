@@ -8,6 +8,7 @@
 
 #import "AddMeetingViewController.h"
 #import "Meeting.h"
+#import "MeetingsAPIClient.h"
 
 /* TableView Sections */
 enum VMMeetingSections {
@@ -109,7 +110,14 @@ enum VMAddMeetingTags {
 }
 
 - (void)addMeetingTapped {
+	Meeting *meeting = [[Meeting alloc] init];
+	[meeting setDay:self.dayCell.textField.text];
+	[meeting setDate:self.dateCell.textField.text];
+	[meeting setSpeakerName:self.speakerCell.textField.text];
+	[meeting setTopic:self.topicCell.textField.text];
+	[meeting setDescription:self.descriptionCell.textField.text];
 	
+	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting];
 }
 
 - (void)viewDidLoad
@@ -118,7 +126,6 @@ enum VMAddMeetingTags {
 	[self setupCells];
 	[self setupAddMeetingButton];
 	
-
 }
 
 - (void)viewDidUnload
