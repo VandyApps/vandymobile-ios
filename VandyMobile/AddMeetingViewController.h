@@ -17,5 +17,10 @@
 @property (nonatomic, strong) VMTextInputCell *topicCell;
 @property (nonatomic, strong) VMTextInputCell *descriptionCell;
 
+@property (nonatomic, strong) UIDatePicker *datePickerView;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+@property (nonatomic, strong) UIButton *donePickingButton;
+
+
 
 @end

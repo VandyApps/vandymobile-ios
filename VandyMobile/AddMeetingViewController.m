@@ -9,6 +9,7 @@
 #import "AddMeetingViewController.h"
 #import "Meeting.h"
 #import "MeetingsAPIClient.h"
+#import "SVProgressHUD.h"
 
 /* TableView Sections */
 enum VMMeetingSections {
@@ -54,6 +55,9 @@ enum VMAddMeetingTags {
 @synthesize speakerCell = _speakerCell;
 @synthesize topicCell = _topicCell;
 @synthesize descriptionCell = _descriptionCell;
+@synthesize datePickerView = _datePickerView;
+@synthesize dateFormatter = _dateFormatter;
+@synthesize donePickingButton = _donePickingButton;
 
 
 
@@ -64,7 +68,7 @@ enum VMAddMeetingTags {
 
 - (void)setupCells {
     if (!self.dayCell) {
-        self.dayCell											= [VMTextInputCell textFieldCellWithTitle:@"Day" forDelegate:self];    
+        self.dayCell											= [VMTextInputCell textFieldCellWithTitle:@"Day" forDelegate:self]; 
         self.dayCell.textField.autocorrectionType				= UITextAutocorrectionTypeNo;
         self.dayCell.textField.autocapitalizationType			= UITextAutocapitalizationTypeNone;
         self.dayCell.textField.tag								= VMAddMeetingTags_DayTextField;
@@ -118,6 +122,29 @@ enum VMAddMeetingTags {
 	[meeting setDescription:self.descriptionCell.textField.text];
 	
 	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting];
+	[self.navigationController popViewControllerAnimated:YES];
+	[SVProgressHUD showWithStatus:@"Adding Meeting..."];
+}
+
+- (void)setupDateFormatter {
+	self.dateFormatter = [[NSDateFormatter alloc] init];
+//	[self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
+//	[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	
+	[self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+	[self.dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];	
+	
+
+}
+
+- (void)setupDatePickerView {
+	CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+	CGSize pickerSize = [self.datePickerView sizeThatFits:CGSizeZero];
+	CGRect startRect = CGRectMake(0.0,
+								  screenRect.origin.y + screenRect.size.height,
+								  pickerSize.width, pickerSize.height);
+	
+	self.datePickerView = [[UIDatePicker alloc] initWithFrame:startRect];
 }
 
 - (void)viewDidLoad
@@ -125,15 +152,70 @@ enum VMAddMeetingTags {
     [super viewDidLoad];
 	[self setupCells];
 	[self setupAddMeetingButton];
-	
+	[self setupDateFormatter];
+	[self setupDatePickerView];	
 }
 
 - (void)viewDidUnload
 {
 	[self setTableView:nil];
     [super viewDidUnload];
-	
+}
 
+#pragma mark - DatePicker Methods
+
+- (void)openDatePicker {
+//	self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
+	
+	// check if our date picker is already on screen
+	if (self.datePickerView.superview == nil) {
+		[self.view.window addSubview: self.datePickerView];
+		
+		// size up the picker view to our screen and compute the start/end frame origin for our slide up animation
+		//
+		// compute the start frame
+		CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+		CGSize pickerSize = [self.datePickerView sizeThatFits:CGSizeZero];
+		CGRect startRect = CGRectMake(0.0,
+									  screenRect.origin.y + screenRect.size.height,
+									  pickerSize.width, pickerSize.height);
+		self.datePickerView.frame = startRect;
+		
+		// compute the end frame
+		CGRect pickerRect = CGRectMake(0.0,
+									   screenRect.origin.y + screenRect.size.height - pickerSize.height,
+									   pickerSize.width,
+									   pickerSize.height);
+		// start the slide up animation
+		[UIView beginAnimations:nil context:NULL];
+		[UIView setAnimationDuration:0.3];
+		
+		// we need to perform some post operations after the animation is complete
+		[UIView setAnimationDelegate:self];
+		
+		self.datePickerView.frame = pickerRect;
+		
+		// shrink the table vertical size to make room for the date picker
+		CGRect newFrame = self.tableView.frame;
+//		newFrame.size.height -= self.datePickerView.frame.size.height;
+		self.tableView.frame = newFrame;
+		[UIView commitAnimations];
+		
+		[self.datePickerView addTarget:self action:@selector(pickerChanged:) forControlEvents:UIControlEventValueChanged];
+		
+		UIBarButtonItem *doneButton= [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemDone target:self action:nil];;
+		self.navigationItem.rightBarButtonItem = doneButton;
+	}
+}
+
+- (void)dismissDatePicker {
+	[self.datePickerView removeFromSuperview];
+	self.navigationItem.rightBarButtonItem = nil;
+}
+
+- (void)pickerChanged:(id)sender
+{
+	self.dateCell.textField.text = [self.dateFormatter stringFromDate:self.datePickerView.date];
 }
 
 #pragma mark - TextField Methods
@@ -176,7 +258,33 @@ enum VMAddMeetingTags {
 	CGPoint contentOffset = self.tableView.contentOffset;
 	contentOffset.y += 35;// Adjust this value as you need
 	[self.tableView setContentOffset:contentOffset animated:YES];
+	
+	if (textField.tag == VMAddMeetingTags_DateTextField) {
+		[self.dateCell.textField resignFirstResponder];
+		[self openDatePicker];
+		self.dateCell.selectionStyle = UITableViewCellSelectionStyleBlue;
+		[self.dateCell setSelected:YES];
+	} else {
+		[self dismissDatePicker];
+		[self.dateCell setSelected:NO];
+	}
 }
+		 
+ - (void)dismissKeyboard {
+	 if ([self.dayCell.textField isFirstResponder]) {
+		 [self.dayCell.textField resignFirstResponder];
+	 }
+	 if ([self.dateCell.textField isFirstResponder]) {
+		 [self.dateCell.textField resignFirstResponder];
+	 }
+	 if ([self.speakerCell.textField isFirstResponder]) {
+		 [self.speakerCell.textField resignFirstResponder];
+	 }
+	 if ([self.topicCell.textField isFirstResponder]) {
+		 [self.descriptionCell.textField resignFirstResponder];
+	 }
+ }
+
 
 #pragma mark - TableView Datasource Methods
 
@@ -247,7 +355,6 @@ enum VMAddMeetingTags {
 	
     return cell;
 }
-
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

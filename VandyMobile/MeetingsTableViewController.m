@@ -149,6 +149,7 @@
 - (void)createMeeting {
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] init];
 	[self.navigationController pushViewController:addMeetingVC animated:YES];
+//	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods

@@ -57,6 +57,7 @@
 - (NSDictionary *)meetingDictionary {
 	NSMutableDictionary *meetingDict = [NSMutableDictionary dictionaryWithCapacity:4];
 	[meetingDict setObject:self.day forKey:DAY_KEY];
+	[meetingDict setObject:self.date forKey:DATE_KEY];
 	[meetingDict setObject:self.speakerName forKey:SPEAKER_KEY];
 	[meetingDict setObject:self.topic forKey:TOPIC_KEY];
 	[meetingDict setObject:self.description forKey:DESCRIPTION_KEY];

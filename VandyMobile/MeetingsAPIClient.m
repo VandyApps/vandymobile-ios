@@ -9,6 +9,7 @@
 #import "MeetingsAPIClient.h"
 #import "AFNetworking.h"
 #import "JSONKit.h"
+#import "SVProgressHUD.h"
 
 
 #define MeetingsAPIBaseURLString @"http://70.138.50.84"
@@ -47,9 +48,11 @@
 	[self postPath:postPath parameters:meetingDict
 		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
 			   NSLog(@"response = %@", responseObject);
+			   [SVProgressHUD dismissWithSuccess:@"Meeting added!"];
 		   } 
 		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 			   NSLog(@"error = %@", error);
+			   [SVProgressHUD dismissWithError:@"Couldn't add meeting. Try again later"];
 		   }];
 }
 
