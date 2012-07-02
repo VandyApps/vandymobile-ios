@@ -39,7 +39,7 @@
 }
 
 - (void)addMeetingtoServer:(Meeting *)meeting {
-	NSString *postPath = [MeetingsAPIBaseURLString stringByAppendingString:@"/meetings"];
+	NSString *postPath = [MeetingsAPIBaseURLString stringByAppendingString:@"/meetings.json"];
 	NSDictionary *meetingDict = [meeting meetingDictionary];
 
 	[self setParameterEncoding:AFJSONParameterEncoding];
