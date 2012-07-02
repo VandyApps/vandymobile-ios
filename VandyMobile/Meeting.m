@@ -65,9 +65,6 @@
 }
 
 - (NSString *)convertDateToFormattedStringWithJSONString:(NSString *)dateString {
-	if (!dateString) {
-		return @"N/a";
-	}
 	//Converts JSON date to a formatted date string
 	NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
@@ -87,9 +84,6 @@
 }
 
 - (NSString *)convertTimeToStringWithJSONString:(NSString *)dateString {
-	if (!dateString) {
-		return @"N/a";
-	}
 	//Converts JSON date to a time string
 	NSDateFormatter *timeFormatter = [[NSDateFormatter alloc]init];
 	[timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
