@@ -7,6 +7,7 @@
 //
 
 #import "AddMeetingViewController.h"
+#import "Meeting.h"
 
 /* TableView Sections */
 enum VMMeetingSections {
@@ -97,11 +98,27 @@ enum VMAddMeetingTags {
     }
 }
 
+- (void)setupAddMeetingButton {
+	UIButton *addMeetingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+	[addMeetingButton addTarget:self action:@selector(addMeetingTapped) forControlEvents:UIControlEventTouchUpInside];
+	[addMeetingButton setTitle:@"Add Meeting" forState:UIControlStateNormal];
+	addMeetingButton.frame = CGRectMake(80.0, 280.0, 160.0, 40.0);
+	
+	[self.view addSubview:addMeetingButton];
+	[self.view bringSubviewToFront:addMeetingButton];
+}
+
+- (void)addMeetingTapped {
+	
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	[self setupCells];
+	[self setupAddMeetingButton];
+	
+
 }
 
 - (void)viewDidUnload
