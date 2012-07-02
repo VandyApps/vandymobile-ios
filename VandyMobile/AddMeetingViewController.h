@@ -11,8 +11,6 @@
 
 @interface AddMeetingViewController : UITableViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic, strong) VMTextInputCell *dayCell;
 @property (nonatomic, strong) VMTextInputCell *dateCell;
 @property (nonatomic, strong) VMTextInputCell *speakerCell;

@@ -47,7 +47,6 @@ enum VMAddMeetingTags {
 
 @implementation AddMeetingViewController
 
-@synthesize tableView = _tableView;
 @synthesize dayCell = _dayCell;
 @synthesize dateCell = _dateCell;
 @synthesize speakerCell = _speakerCell;
@@ -103,13 +102,13 @@ enum VMAddMeetingTags {
 {
     [super viewDidLoad];
 	[self setupCells];
-    
 }
 
 - (void)viewDidUnload
 {
 	[self setTableView:nil];
     [super viewDidUnload];
+	
 
 }
 
@@ -122,15 +121,23 @@ enum VMAddMeetingTags {
     switch (tag) {
         case VMAddMeetingTags_DayTextField:
             [self.dateCell.textField becomeFirstResponder];
+			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMDateSection_Date inSection:VMMeetingSection_DateFields] 
+								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_DateTextField:
             [self.speakerCell.textField becomeFirstResponder];
+			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Speaker inSection:VMMeetingSection_SpeakerFields] 
+								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_SpeakerTextField:
             [self.topicCell.textField becomeFirstResponder];
+			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Topic inSection:VMMeetingSection_SpeakerFields] 
+								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_TopicTextField:
 			[self.descriptionCell.textField becomeFirstResponder];
+			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Description inSection:VMMeetingSection_SpeakerFields] 
+								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_DescriptionTextField:
             break;
@@ -139,6 +146,12 @@ enum VMAddMeetingTags {
     }
     
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+	CGPoint contentOffset = self.tableView.contentOffset;
+	contentOffset.y += 35;// Adjust this value as you need
+	[self.tableView setContentOffset:contentOffset animated:YES];
 }
 
 #pragma mark - TableView Datasource Methods
