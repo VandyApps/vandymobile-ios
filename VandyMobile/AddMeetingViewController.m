@@ -164,8 +164,7 @@ enum VMAddMeetingTags {
 	self.datePickerOpen = NO;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
 	[self setupAddMeetingButton];
 	[self setupDateFormatter];
@@ -178,6 +177,15 @@ enum VMAddMeetingTags {
 {
 	[self setTableView:nil];
     [super viewDidUnload];
+}
+
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+		// back button was pressed.  We know this is true because self is no longer
+		// in the navigation stack.  
+		[self dismissDatePicker];
+    }
+    [super viewWillDisappear:animated];
 }
 
 #pragma mark - DatePicker Methods
