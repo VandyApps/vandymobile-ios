@@ -14,6 +14,7 @@
 /* TableView Sections */
 enum VMMeetingSections {
     VMMeetingSection_DateFields = 0,
+	VMMeetingSection_CheckboxFields,
     VMMeetingSection_SpeakerFields,
 	VMMeetingSection_Count,
 };
@@ -23,8 +24,14 @@ enum VMDateSectionRows {
     VMDateSection_Day,
 	VMDateSection_Date,
 	VMDateSection_RowCount,
-
 };
+
+/* Rows in Checkbox section */
+enum VMCheckboxSectionRows {
+	VMCheckboxSection_hasFood,
+	VMCheckboxSection_hasSpeaker,
+	VMCheckboxSection_RowCount,
+	};
 
 /* Rows in Speaker Section */
 enum VMSpeakerSectionRows {
@@ -34,10 +41,12 @@ enum VMSpeakerSectionRows {
 	VMSpeakerSection_RowCount,
 };
 
-/* TextField tags */
+/* TextField/Checkbox tags */
 enum VMAddMeetingTags {
     VMAddMeetingTags_DayTextField = 0,
-	VMAddMeetingTags_DateTextField,
+	VMAddMeetingTags_DateLabel,
+	VMAddMeetingTags_hasFoodCheckboxField,
+	VMAddMeetingTags_hasSpeakerCheckboxField,
 	VMAddMeetingTags_SpeakerTextField,
 	VMAddMeetingTags_TopicTextField,
 	VMAddMeetingTags_DescriptionTextField,
@@ -52,12 +61,16 @@ enum VMAddMeetingTags {
 
 @synthesize dayCell = _dayCell;
 @synthesize dateCell = _dateCell;
+@synthesize hasFoodCell = _hasFoodCell;
+@synthesize hasSpeakerCell = _hasSpeakerCell;
 @synthesize speakerCell = _speakerCell;
 @synthesize topicCell = _topicCell;
 @synthesize descriptionCell = _descriptionCell;
 @synthesize datePickerView = _datePickerView;
+@synthesize datePickerOpen = _datePickerOpen;
 @synthesize dateFormatter = _dateFormatter;
-@synthesize donePickingButton = _donePickingButton;
+@synthesize addMeetingButton = _addMeetingButton;
+
 
 
 
@@ -75,10 +88,25 @@ enum VMAddMeetingTags {
     }
     
     if (!self.dateCell) {
-        self.dateCell											= [VMTextInputCell textFieldCellWithTitle:@"Date" forDelegate:self];
-        self.dateCell.textField.autocorrectionType				= UITextAutocorrectionTypeNo;
-        self.dateCell.textField.autocapitalizationType			= UITextAutocapitalizationTypeNone;
-        self.dateCell.textField.tag								= VMAddMeetingTags_DateTextField;
+        self.dateCell											= [VMDatePickerCell textFieldCellWithTitle:@"Date"];
+		self.dateCell.dateLabel.text							= [self.dateFormatter stringFromDate:[NSDate date]];
+		[self switchDateFormatters];
+		self.dateCell.formattedDate								= [self.dateFormatter stringFromDate:self.datePickerView.date];
+		[self switchDateFormatters];
+		self.dateCell.delegate									= self;
+        self.dateCell.dateLabel.tag								= VMAddMeetingTags_DateLabel;
+    }
+	
+	if (!self.hasFoodCell) {
+        self.hasFoodCell										= [[VMCheckboxCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"hasFoodCell"];
+		[self.hasFoodCell.textLabel setText:@"Food"];
+		self.hasFoodCell.checkBox.tag							= VMAddMeetingTags_hasFoodCheckboxField;
+    }
+	
+	if (!self.hasSpeakerCell) {
+        self.hasSpeakerCell										= [[VMCheckboxCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"hasSpeakerCell"];
+		[self.hasSpeakerCell.textLabel setText:@"Speaker"];
+		self.hasSpeakerCell.checkBox.tag						= VMAddMeetingTags_hasSpeakerCheckboxField;
     }
     
     if (!self.speakerCell) {
@@ -104,23 +132,22 @@ enum VMAddMeetingTags {
 }
 
 - (void)setupAddMeetingButton {
-	UIButton *addMeetingButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[addMeetingButton addTarget:self action:@selector(addMeetingTapped) forControlEvents:UIControlEventTouchUpInside];
-	[addMeetingButton setTitle:@"Add Meeting" forState:UIControlStateNormal];
-	addMeetingButton.frame = CGRectMake(80.0, 280.0, 160.0, 40.0);
+	self.addMeetingButton = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonSystemItemAdd target:self action:@selector(addMeetingTapped)];
+	self.navigationItem.rightBarButtonItem = self.addMeetingButton;
 	
-	[self.view addSubview:addMeetingButton];
-	[self.view bringSubviewToFront:addMeetingButton];
 }
+
 
 - (void)addMeetingTapped {
 	Meeting *meeting = [[Meeting alloc] init];
 	[meeting setDay:self.dayCell.textField.text];
-	[meeting setDate:self.dateCell.textField.text];
+	[meeting setDate:self.dateCell.formattedDate];
+	[meeting setHasFood:[NSNumber numberWithBool:self.hasFoodCell.checkBox.isOn]];
+	[meeting setHasSpeaker:[NSNumber numberWithBool:self.hasSpeakerCell.checkBox.isOn]];
 	[meeting setSpeakerName:self.speakerCell.textField.text];
 	[meeting setTopic:self.topicCell.textField.text];
 	[meeting setDescription:self.descriptionCell.textField.text];
-	
+		
 	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting];
 	[self.navigationController popViewControllerAnimated:YES];
 	[SVProgressHUD showWithStatus:@"Adding Meeting..."];
@@ -128,13 +155,18 @@ enum VMAddMeetingTags {
 
 - (void)setupDateFormatter {
 	self.dateFormatter = [[NSDateFormatter alloc] init];
-//	[self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
-//	[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-	
-	[self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
-	[self.dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];	
-	
+	[self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
+	[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];	
+}
 
+- (void)switchDateFormatters {
+	if (self.dateFormatter.dateStyle == NSDateFormatterShortStyle) {
+		[self.dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+		[self.dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];	
+	} else {
+		[self.dateFormatter setDateStyle:NSDateFormatterShortStyle];
+		[self.dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+	}
 }
 
 - (void)setupDatePickerView {
@@ -145,15 +177,17 @@ enum VMAddMeetingTags {
 								  pickerSize.width, pickerSize.height);
 	
 	self.datePickerView = [[UIDatePicker alloc] initWithFrame:startRect];
+	self.datePickerOpen = NO;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self setupCells];
 	[self setupAddMeetingButton];
 	[self setupDateFormatter];
-	[self setupDatePickerView];	
+	[self setupDatePickerView];
+	[self setupCells];
+
 }
 
 - (void)viewDidUnload
@@ -168,7 +202,9 @@ enum VMAddMeetingTags {
 //	self.datePicker.date = [self.dateFormatter dateFromString:targetCell.detailTextLabel.text];
 	
 	// check if our date picker is already on screen
-	if (self.datePickerView.superview == nil) {
+//	if (self.datePickerView.superview == nil) {
+	
+
 		[self.view.window addSubview: self.datePickerView];
 		
 		// size up the picker view to our screen and compute the start/end frame origin for our slide up animation
@@ -203,19 +239,58 @@ enum VMAddMeetingTags {
 		
 		[self.datePickerView addTarget:self action:@selector(pickerChanged:) forControlEvents:UIControlEventValueChanged];
 		
-		UIBarButtonItem *doneButton= [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemDone target:self action:nil];;
+		UIBarButtonItem *doneButton= [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonSystemItemDone target:self action:@selector(donePressed)];
 		self.navigationItem.rightBarButtonItem = doneButton;
-	}
+	
+	self.datePickerOpen = YES;
+//	}
+}
+
+- (void)donePressed {
+	[self dismissDatePicker];
 }
 
 - (void)dismissDatePicker {
-	[self.datePickerView removeFromSuperview];
+	CGRect screenRect = [[UIScreen mainScreen] applicationFrame];
+	CGRect endFrame = self.datePickerView.frame;
+	endFrame.origin.y = screenRect.origin.y + screenRect.size.height;
+	
+	// start the slide down animation
+	[UIView beginAnimations:nil context:NULL];
+	[UIView setAnimationDuration:0.3];
+	
+	// we need to perform some post operations after the animation is complete
+	[UIView setAnimationDelegate:self];
+	[UIView setAnimationDidStopSelector:@selector(slideDownDidStop)];
+	
+	self.datePickerView.frame = endFrame;
+	[UIView commitAnimations];
+	
+	// grow the table back again in vertical size to make room for the date picker
+	CGRect newFrame = self.tableView.frame;
+	newFrame.size.height += self.datePickerView.frame.size.height;
+	self.tableView.frame = newFrame;
+	
+	// remove the "Done" button in the nav bar
 	self.navigationItem.rightBarButtonItem = nil;
+	
+	// deselect the current table row
+	NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+	[self.dateCell setSelected:NO];
+	
+	// add back "Add" tool bar button
+	self.navigationItem.rightBarButtonItem = self.addMeetingButton;
+	
+	self.datePickerOpen = NO;
+
 }
 
-- (void)pickerChanged:(id)sender
-{
-	self.dateCell.textField.text = [self.dateFormatter stringFromDate:self.datePickerView.date];
+- (void)pickerChanged:(id)sender {
+	self.dateCell.dateLabel.text = [self.dateFormatter stringFromDate:self.datePickerView.date];
+	[self switchDateFormatters];
+	self.dateCell.formattedDate = [self.dateFormatter stringFromDate:self.datePickerView.date];
+	[self switchDateFormatters];
 }
 
 #pragma mark - TextField Methods
@@ -226,24 +301,24 @@ enum VMAddMeetingTags {
     
     switch (tag) {
         case VMAddMeetingTags_DayTextField:
-            [self.dateCell.textField becomeFirstResponder];
-			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMDateSection_Date inSection:VMMeetingSection_DateFields] 
-								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
+            [self.dateCell.dateLabel becomeFirstResponder];
+//			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMDateSection_Date inSection:VMMeetingSection_DateFields] 
+//								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
-        case VMAddMeetingTags_DateTextField:
-            [self.speakerCell.textField becomeFirstResponder];
-			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Speaker inSection:VMMeetingSection_SpeakerFields] 
-								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
-            break;
+//        case VMAddMeetingTags_DateTextField:
+//            [self.speakerCell.textField becomeFirstResponder];
+//			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Speaker inSection:VMMeetingSection_SpeakerFields] 
+//								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
+//            break;
         case VMAddMeetingTags_SpeakerTextField:
             [self.topicCell.textField becomeFirstResponder];
-			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Topic inSection:VMMeetingSection_SpeakerFields] 
-								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
+//			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Topic inSection:VMMeetingSection_SpeakerFields] 
+//								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_TopicTextField:
 			[self.descriptionCell.textField becomeFirstResponder];
-			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Description inSection:VMMeetingSection_SpeakerFields] 
-								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
+//			[self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:VMSpeakerSection_Description inSection:VMMeetingSection_SpeakerFields] 
+//								  atScrollPosition:UITableViewRowAnimationNone animated:YES];
             break;
         case VMAddMeetingTags_DescriptionTextField:
             break;
@@ -255,34 +330,38 @@ enum VMAddMeetingTags {
 }
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
-	CGPoint contentOffset = self.tableView.contentOffset;
-	contentOffset.y += 35;// Adjust this value as you need
-	[self.tableView setContentOffset:contentOffset animated:YES];
+//	CGPoint contentOffset = self.tableView.contentOffset;
+//	contentOffset.y += 10*textField.tag;
 	
-	if (textField.tag == VMAddMeetingTags_DateTextField) {
-		[self.dateCell.textField resignFirstResponder];
-		[self openDatePicker];
-		self.dateCell.selectionStyle = UITableViewCellSelectionStyleBlue;
-		[self.dateCell setSelected:YES];
-	} else {
+	CGPoint contentOffset = CGPointMake(0, 35*textField.tag);
+//	NSLog(@"content offset = %f", contentOffset.y);
+	[self.tableView setContentOffset:contentOffset animated:NO];
+	if (self.datePickerOpen) {
 		[self dismissDatePicker];
-		[self.dateCell setSelected:NO];
 	}
+
 }
 		 
  - (void)dismissKeyboard {
-	 if ([self.dayCell.textField isFirstResponder]) {
-		 [self.dayCell.textField resignFirstResponder];
-	 }
-	 if ([self.dateCell.textField isFirstResponder]) {
-		 [self.dateCell.textField resignFirstResponder];
-	 }
-	 if ([self.speakerCell.textField isFirstResponder]) {
-		 [self.speakerCell.textField resignFirstResponder];
-	 }
-	 if ([self.topicCell.textField isFirstResponder]) {
-		 [self.descriptionCell.textField resignFirstResponder];
-	 }
+//	 if ([self.dayCell.textField isFirstResponder]) {
+//		 [self.dayCell.textField resignFirstResponder];
+//	 }
+//	 if ([self.dateCell.textField isFirstResponder]) {
+//		 [self.dateCell.textField resignFirstResponder];
+//	 }
+//	 if ([self.hasFoodCell.checkBox isFirstResponder]) {
+//		 [self.hasFoodCell.checkBox resignFirstResponder];
+//	 }
+//	 if ([self.hasSpeakerCell.checkBox isFirstResponder]) {
+//		 [self.hasSpeakerCell.checkBox resignFirstResponder];
+//	 }
+//	 if ([self.speakerCell.textField isFirstResponder]) {
+//		 [self.speakerCell.textField resignFirstResponder];
+//	 }
+//	 if ([self.topicCell.textField isFirstResponder]) {
+//		 [self.descriptionCell.textField resignFirstResponder];
+//	 }
+	 [self.view endEditing:YES];
  }
 
 
@@ -291,11 +370,15 @@ enum VMAddMeetingTags {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	switch (section) {
         case VMMeetingSection_DateFields:
-			NSLog(@"%d",VMDateSection_RowCount);
+//			NSLog(@"%d",VMDateSection_RowCount);
             return VMDateSection_RowCount;
+			
+		case VMMeetingSection_CheckboxFields:
+//			NSLog(@"%d",VMCheckboxSection_RowCount);
+			return VMCheckboxSection_RowCount;
             
         case VMMeetingSection_SpeakerFields:
-			NSLog(@"%d",VMSpeakerSection_RowCount);
+//			NSLog(@"%d",VMSpeakerSection_RowCount);
             return VMSpeakerSection_RowCount;
 			
         default:
@@ -314,6 +397,19 @@ enum VMAddMeetingTags {
             return self.dayCell;  
         case VMDateSection_Date:
             return self.dateCell;
+        default:
+            break;
+    }
+    
+    return nil;
+}
+
+- (VMFormCell *)cellForCheckboxFieldAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case VMCheckboxSection_hasFood:
+            return self.hasFoodCell;  
+        case VMCheckboxSection_hasSpeaker:
+            return self.hasSpeakerCell;
         default:
             break;
     }
@@ -343,6 +439,9 @@ enum VMAddMeetingTags {
 		case VMMeetingSection_DateFields:
 			cell = [self cellForDateFieldAtIndexPath:indexPath];            
             break;
+		case VMMeetingSection_CheckboxFields:
+			cell = [self cellForCheckboxFieldAtIndexPath:indexPath];
+			break;
         case VMMeetingSection_SpeakerFields:
             cell = [self cellForSpeakerFieldAtIndexPath:indexPath];
             break;			
@@ -354,12 +453,6 @@ enum VMAddMeetingTags {
     }
 	
     return cell;
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 @end
