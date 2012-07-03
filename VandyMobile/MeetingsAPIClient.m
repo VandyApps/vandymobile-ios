@@ -39,7 +39,7 @@
 	 return self;
 }
 
-- (void)addMeetingtoServer:(Meeting *)meeting {
+- (void)addMeetingtoServer:(Meeting *)meeting withCompletionBlock:(void(^)(void))completionBlock {
 	NSString *postPath = [MeetingsAPIBaseURLString stringByAppendingString:@"/meetings.json"];
 	NSDictionary *meetingDict = [meeting meetingDictionary];
 	
@@ -50,6 +50,7 @@
 		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
 			   NSLog(@"response = %@", responseObject);
 			   [SVProgressHUD dismissWithSuccess:@"Meeting added!"];
+			   completionBlock();
 		   } 
 		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 			   NSLog(@"error = %@", error);

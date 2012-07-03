@@ -64,12 +64,14 @@ enum VMAddMeetingTags {
 @synthesize datePickerOpen = _datePickerOpen;
 @synthesize dateFormatter = _dateFormatter;
 @synthesize addMeetingButton = _addMeetingButton;
+@synthesize completionBlock = _completionBlock;
 
 
 
 
-- (id)init {
+- (id)initWithCompletionBlock:(void(^)(void))completionBlock {
     self = [super initWithStyle:UITableViewStyleGrouped];
+	self.completionBlock = completionBlock;
     return self;
 }
 
@@ -130,7 +132,7 @@ enum VMAddMeetingTags {
 	[meeting setTopic:self.topicCell.textField.text];
 	[meeting setDescription:self.descriptionCell.textField.text];
 		
-	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting];
+	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting withCompletionBlock:self.completionBlock];
 	[self.navigationController popViewControllerAnimated:YES];
 	[SVProgressHUD showWithStatus:@"Adding Meeting..."];
 }

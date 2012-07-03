@@ -25,6 +25,10 @@
 @property (nonatomic, strong) NSDateFormatter *dateFormatter;
 
 @property (nonatomic, strong) UIBarButtonItem *addMeetingButton;
+@property (nonatomic, strong) void(^completionBlock)(void);
+
+- (id)initWithCompletionBlock:(void(^)(void))completionBlock;
+
 
 
 
