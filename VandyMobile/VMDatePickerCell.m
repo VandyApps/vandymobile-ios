@@ -29,7 +29,7 @@
         [self addSubview:self.titleLabel];
         
         
-        self.dateLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(115, 12, 180, 35)];
+        self.dateLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(115, 8, 180, 35)];
 		self.dateLabel.backgroundColor = [UIColor clearColor];
         [self addSubview:self.dateLabel];
         
