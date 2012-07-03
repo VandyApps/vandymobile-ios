@@ -9,6 +9,8 @@
 #import "Meeting.h"
 
 #define DAY_KEY @"day"
+#define X_COORDINATE_KEY @"xcoordinate"
+#define Y_COORDINATE_KEY @"ycoordinate"
 #define DATE_KEY @"date"
 #define TIME_KEY @"date"
 #define HAS_FOOD_KEY @"food"
@@ -57,6 +59,8 @@
 - (NSDictionary *)meetingDictionary {
 	NSMutableDictionary *meetingDict = [NSMutableDictionary dictionaryWithCapacity:4];
 	[meetingDict setObject:self.day forKey:DAY_KEY];
+	[meetingDict setObject:[NSNumber numberWithFloat:36.143566] forKey:X_COORDINATE_KEY];
+	[meetingDict setObject:[NSNumber numberWithFloat:-86.805906] forKey:Y_COORDINATE_KEY];
 	[meetingDict setObject:self.date forKey:DATE_KEY];
 	[meetingDict setObject:self.hasFood forKey:HAS_FOOD_KEY];
 	[meetingDict setObject:self.hasSpeaker forKey:HAS_SPEAKER_KEY];
