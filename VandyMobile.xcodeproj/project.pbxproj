@@ -78,6 +78,8 @@
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
 		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
+		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
+		F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -169,6 +171,10 @@
 		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
 		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
 		F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTextInputCell.m; sourceTree = "<group>"; };
+		F7E4347315A263D70025CA3D /* VMCheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMCheckboxCell.h; sourceTree = "<group>"; };
+		F7E4347415A263D70025CA3D /* VMCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCheckboxCell.m; sourceTree = "<group>"; };
+		F7E4347A15A27F9D0025CA3D /* VMDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMDatePickerCell.h; sourceTree = "<group>"; };
+		F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMDatePickerCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +375,10 @@
 				F7D4F06A159FF50500F80CC0 /* VMFormCell.m */,
 				F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */,
 				F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */,
+				F7E4347315A263D70025CA3D /* VMCheckboxCell.h */,
+				F7E4347415A263D70025CA3D /* VMCheckboxCell.m */,
+				F7E4347A15A27F9D0025CA3D /* VMDatePickerCell.h */,
+				F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -516,6 +526,8 @@
 				D256B8331594FC0500348AB3 /* LoginViewController.m in Sources */,
 				F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */,
 				F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */,
+				F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */,
+				F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
