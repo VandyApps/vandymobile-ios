@@ -27,6 +27,7 @@
         
         
         self.textField                  = [[UITextField alloc] initWithFrame:CGRectMake(115, 17, 180, 35)];
+		self.textField.text				= @"";
         [self addSubview:self.textField];
         
         UIGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
