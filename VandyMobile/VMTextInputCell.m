@@ -17,7 +17,7 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.backgroundColor            = [UIColor clearColor];
+        self.backgroundColor			= [UIColor colorWithWhite:.4 alpha:.3];
 		
         self.titleLabel                 = [[UILabel alloc] initWithFrame:CGRectMake(20, 22, 90, 15)];
         self.titleLabel.textColor       = [UIColor blackColor];

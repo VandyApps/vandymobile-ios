@@ -11,8 +11,8 @@
 
 @interface VMTextInputCell : VMFormCell
 
-@property (nonatomic, retain) UILabel       *titleLabel;
-@property (nonatomic, retain) UITextField   *textField;
+@property (nonatomic, strong) UILabel       *titleLabel;
+@property (nonatomic, strong) UITextField   *textField;
 
 + (VMTextInputCell *)textFieldCellWithTitle:(NSString *)title forDelegate:(id)target;
 
