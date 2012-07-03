@@ -41,7 +41,7 @@
 	// Create add meeting button
 	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
 																					  target:self 
-																					  action:@selector(addMeeting)];
+																					  action:@selector(createMeeting)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
     self.tableView.rowHeight = 50;
@@ -49,14 +49,16 @@
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     
+    [self pullMeetingsFromServer];
+
+}
+
+- (void)pullMeetingsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
-    
-    
-    
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
-//											NSLog(@"Response: %@", response);
+											//											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
 											for (id meetingDictionary in response) {
 												Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
@@ -65,7 +67,7 @@
 											self.results = results;
                                             [self sortDates];
 											[self addNextMeetingCell];
-                                                                                       
+											
 											[self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
 										}
@@ -73,11 +75,10 @@
 											NSLog(@"Error fetching meetings!");
 											NSLog(@"%@",error);
 											[SVProgressHUD dismissWithError:@"Error loading meetings!"];
-                                                NSLog(@"Loading meetings from User Defaults...");
-                                                self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
-                                                NSLog(@"...Done!");
+											NSLog(@"Loading meetings from User Defaults...");
+											self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
+											NSLog(@"...Done!");
 										}];
-    
 }
 
 - (void)sortDates {
@@ -146,9 +147,12 @@
     return _nextMeeting;
 }
 
-- (void)addMeeting {
-	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithNibName:@"AddMeetingViewController" bundle:nil];
-	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
+- (void)createMeeting {
+	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithCompletionBlock:^ {
+		[self pullMeetingsFromServer];
+	}];
+	[self.navigationController pushViewController:addMeetingVC animated:YES];
+//	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods
