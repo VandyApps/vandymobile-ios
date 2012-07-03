@@ -13,10 +13,8 @@
 
 @interface AddMeetingViewController : UITableViewController <UITextFieldDelegate, VMDatePickerCellDelegate>
 
-@property (nonatomic, strong) VMTextInputCell *dayCell;
 @property (nonatomic, strong) VMDatePickerCell *dateCell;
 @property (nonatomic, strong) VMCheckboxCell  *hasFoodCell;
-@property (nonatomic, strong) VMCheckboxCell  *hasSpeakerCell;
 @property (nonatomic, strong) VMTextInputCell *speakerCell;
 @property (nonatomic, strong) VMTextInputCell *topicCell;
 @property (nonatomic, strong) VMTextInputCell *descriptionCell;
