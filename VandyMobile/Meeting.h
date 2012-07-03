@@ -23,5 +23,6 @@
 @property (copy, nonatomic) NSString *description;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)meetingDictionary;
 
 @end

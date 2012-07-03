@@ -72,7 +72,7 @@
     newsViewController.tabBarItem = newsItem;
     
 	
-    // Create Meeting NavigationController
+    // Create Meeting NavigationControllers
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     

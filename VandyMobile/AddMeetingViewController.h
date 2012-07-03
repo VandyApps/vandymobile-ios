@@ -7,10 +7,29 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VMTextInputCell.h"
+#import "VMCheckboxCell.h"
+#import "VMDatePickerCell.h"
 
-@interface AddMeetingViewController : UIViewController
+@interface AddMeetingViewController : UITableViewController <UITextFieldDelegate, VMDatePickerCellDelegate>
 
-@property (weak, nonatomic) IBOutlet UIToolbar *navBar;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, strong) VMDatePickerCell *dateCell;
+@property (nonatomic, strong) VMCheckboxCell  *hasFoodCell;
+@property (nonatomic, strong) VMTextInputCell *speakerCell;
+@property (nonatomic, strong) VMTextInputCell *topicCell;
+@property (nonatomic, strong) VMTextInputCell *descriptionCell;
+
+
+@property (nonatomic, strong) UIDatePicker *datePickerView;
+@property (nonatomic) BOOL datePickerOpen;
+@property (nonatomic, strong) NSDateFormatter *dateFormatter;
+
+@property (nonatomic, strong) UIBarButtonItem *addMeetingButton;
+@property (nonatomic, strong) void(^completionBlock)(void);
+
+- (id)initWithCompletionBlock:(void(^)(void))completionBlock;
+
+
+
 
 @end
