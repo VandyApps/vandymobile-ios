@@ -9,34 +9,15 @@
 #import "VMAppDelegate.h"
 #import "MeetingsTableViewController.h"
 #import "NewsViewController.h"
-<<<<<<< HEAD
 #import "MyVMViewController.h"
-=======
-#import "LoginViewController.h"
-#import "SDURLCache.h"
->>>>>>> dev
 
 @implementation VMAppDelegate
 
 @synthesize window = _window;
 @synthesize root = _root;
-<<<<<<< HEAD
-=======
-@synthesize userIsLoggedIn = _userIsLoggedIn;
->>>>>>> dev
 
-- (void)prepareCache {
-    SDURLCache *cache = [[SDURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
-                                                      diskCapacity:20 * 1024 * 1024
-                                                          diskPath:[SDURLCache defaultCachePath]];
-    cache.minCacheInterval = 0;
-    [NSURLCache setSharedURLCache:cache];
-    NSLog(@"Cache is being logged to: %@", [SDURLCache defaultCachePath]);
-}
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-	[self prepareCache];
-	
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 	// Create TabBarController
@@ -84,7 +65,7 @@
     newsViewController.tabBarItem = newsItem;
     
 	
-    // Create Meeting NavigationControllers
+    // Create Meeting NavigationController
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
     
