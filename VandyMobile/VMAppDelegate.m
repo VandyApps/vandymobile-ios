@@ -10,15 +10,26 @@
 #import "MeetingsTableViewController.h"
 #import "NewsViewController.h"
 #import "LoginViewController.h"
+#import "SDURLCache.h"
 
 @implementation VMAppDelegate
 
 @synthesize window = _window;
 @synthesize root = _root;
-@synthesize userIsLoggedIn = _userIsLoggedIn;	
+@synthesize userIsLoggedIn = _userIsLoggedIn;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (void)prepareCache {
+    SDURLCache *cache = [[SDURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024
+                                                      diskCapacity:20 * 1024 * 1024
+                                                          diskPath:[SDURLCache defaultCachePath]];
+    cache.minCacheInterval = 0;
+    [NSURLCache setSharedURLCache:cache];
+    NSLog(@"Cache is being logged to: %@", [SDURLCache defaultCachePath]);
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+	[self prepareCache];
+	
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
 	// Create TabBarController
