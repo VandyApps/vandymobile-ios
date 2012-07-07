@@ -1,5 +1,5 @@
 //
-//  AppsTableViewControllerViewController.h
+//  AppsTableViewController.h
 //  VandyMobile
 //
 //  Created by Graham Gaylor on 7/7/12.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppsTableViewControllerViewController : UIViewController
+@interface AppsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *results;
 
 @end
