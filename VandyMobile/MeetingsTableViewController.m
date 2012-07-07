@@ -138,8 +138,8 @@
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithCompletionBlock:^ {
 		[self pullMeetingsFromServer];
 	}];
-    //	[self.navigationController pushViewController:addMeetingVC animated:YES];
-	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
+    [self.navigationController pushViewController:addMeetingVC animated:YES];
+//	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 
 #pragma mark - TableViewDatasource Methods
