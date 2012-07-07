@@ -10,4 +10,12 @@
 
 @interface App : NSObject
 
+@property (nonatomic, copy) NSString *team;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *OS;
+@property (nonatomic, copy) NSString *description;
+
+- (id)initWithDictionary:(NSDictionary *)dictionary;
+
+
 @end
