@@ -10,4 +10,9 @@
 
 @interface VMFormCell : UITableViewCell
 
+//@property (nonatomic, retain) UIImageView   *backgroundImage;
+
+//+ (CGFloat)cellHeightForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
+
 @end
