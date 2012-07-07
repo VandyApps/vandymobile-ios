@@ -10,4 +10,6 @@
 
 @interface AppsAPIClient : AFHTTPClient
 
++ (id)sharedInstance;
+
 @end
