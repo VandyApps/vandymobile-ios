@@ -68,6 +68,10 @@
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
 		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
+		F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B315A89F7600FD15B8 /* AppsAPIClient.m */; };
+		F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B715A8A03900FD15B8 /* AppsTableViewController.m */; };
+		F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */; };
+		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
 		F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77D76E7159F9C200009AD6B /* MyVMViewController.m */; };
 		F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76E8159F9C200009AD6B /* MyVMViewController.xib */; };
 		F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76FC159FAB410009AD6B /* LoginViewController.xib */; };
@@ -157,6 +161,13 @@
 		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
 		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
 		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
+		F76105B215A89F7600FD15B8 /* AppsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsAPIClient.h; sourceTree = "<group>"; };
+		F76105B315A89F7600FD15B8 /* AppsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsAPIClient.m; sourceTree = "<group>"; };
+		F76105B615A8A03900FD15B8 /* AppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsTableViewController.h; sourceTree = "<group>"; };
+		F76105B715A8A03900FD15B8 /* AppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsTableViewController.m; sourceTree = "<group>"; };
+		F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewController.xib; sourceTree = "<group>"; };
+		F76105BB15A8A27300FD15B8 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		F76105BC15A8A27300FD15B8 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		F77D76E6159F9C200009AD6B /* MyVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVMViewController.h; sourceTree = "<group>"; };
 		F77D76E7159F9C200009AD6B /* MyVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVMViewController.m; sourceTree = "<group>"; };
 		F77D76E8159F9C200009AD6B /* MyVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVMViewController.xib; sourceTree = "<group>"; };
@@ -267,6 +278,8 @@
 				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
 				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
 				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
+				F76105B615A8A03900FD15B8 /* AppsTableViewController.h */,
+				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -276,6 +289,8 @@
 			children = (
 				F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */,
 				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
+				F76105B215A89F7600FD15B8 /* AppsAPIClient.h */,
+				F76105B315A89F7600FD15B8 /* AppsAPIClient.m */,
 			);
 			name = APICients;
 			sourceTree = "<group>";
@@ -289,6 +304,8 @@
 				D27291BB15744B56009AA12F /* VMAnnotation.m */,
 				F72CA09D1569A3AF001EFBC8 /* Meeting.h */,
 				F72CA09E1569A3AF001EFBC8 /* Meeting.m */,
+				F76105BB15A8A27300FD15B8 /* App.h */,
+				F76105BC15A8A27300FD15B8 /* App.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -296,6 +313,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F77D76FC159FAB410009AD6B /* LoginViewController.xib */,
@@ -495,6 +513,7 @@
 				D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */,
 				F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */,
 				F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */,
+				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +559,9 @@
 				F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */,
 				F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */,
 				F7E434C915A410FA0025CA3D /* LoginViewController.m in Sources */,
+				F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */,
+				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
+				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
