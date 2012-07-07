@@ -10,6 +10,7 @@
 #import "MeetingsTableViewController.h"
 #import "NewsViewController.h"
 #import "MyVMViewController.h"
+#import "AppsTableViewController.h"
 #import "LoginViewController.h"
 #import "SDURLCache.h"
 
@@ -68,9 +69,9 @@
     UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
     myVMViewController.tabBarItem = myVMItem;
     
-    UIViewController *teamsViewController = [[UIViewController alloc] init];
-    UITabBarItem* teamsItem = [[UITabBarItem alloc] initWithTitle:@"Teams" image:[UIImage imageNamed:@"112-group"] tag:0];
-    teamsViewController.tabBarItem = teamsItem;
+    AppsTableViewController	*appsTVC = [[AppsTableViewController alloc] initWithNibName:@"AppsTableViewController" bundle:nil];
+    UITabBarItem* appsItem = [[UITabBarItem alloc] initWithTitle:@"Apps" image:[UIImage imageNamed:@"112-group"] tag:0];
+    appsTVC.tabBarItem = appsItem;
     
     NewsViewController *newsViewController = [[NewsViewController alloc] initWithNibName:@"NewsViewController" bundle:nil];
     UITabBarItem* newsItem = [[UITabBarItem alloc] initWithTitle:@"News" image:[UIImage imageNamed:@"66-microphone"] tag:0];
@@ -80,10 +81,11 @@
     // Create Meeting NavigationControllers
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
+	UINavigationController *appsNavigationController = [[UINavigationController alloc] initWithRootViewController:appsTVC];
     
     
     // Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, teamsViewController, myVMViewController, nil];
+	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, appsNavigationController, myVMViewController, nil];
 	
 	// Add view controllers array to tabBar
 	self.root.viewControllers = viewControllers;
