@@ -44,8 +44,6 @@
 																					  action:@selector(createMeeting)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
-    self.tableView.rowHeight = 50;
-    self.tableView.backgroundColor = [UIColor clearColor];
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     
@@ -65,7 +63,6 @@
 												[results addObject:meeting];
 											}
 											self.results = results;
-                                            [self sortDates];
 											[self addNextMeetingCell];
 											
 											[self.tableView reloadData];
@@ -79,16 +76,6 @@
 											self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
 											NSLog(@"...Done!");
 										}];
-}
-
-- (void)sortDates {
-	// Sort array by date
-	NSMutableArray *copy = [self.results mutableCopy];
-	self.results = [copy sortedArrayUsingComparator:^(id a, id b) {
-		NSDate *first = [(Meeting*)a dateUnformatted];
-		NSDate *second = [(Meeting*)b dateUnformatted];
-		return [first compare:second];
-	}];
 }
 
 - (void)addNextMeetingCell {
@@ -167,9 +154,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	VMFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+		cell = [[VMFormCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         Meeting *meeting = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = meeting.topic;
         if([meeting.topic isEqualToString:@""]) {
@@ -196,14 +183,8 @@
 //        cell.imageView.image = image;
 //        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
 
-        cell.backgroundColor = [UIColor clearColor];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
-        cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14.0];
-        
-        UIView *goldenColor = [[UIView alloc] init];
-        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-        cell.selectedBackgroundView = goldenColor;
+		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
+
 	}
 	
 	return cell;

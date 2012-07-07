@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import "AppsAPIClient.h"
 #import "App.h"
+#import "VMFormCell.h"
 
 
 @interface AppsTableViewController ()
@@ -76,40 +77,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	VMFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+		cell = [[VMFormCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         App *app = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = app.name;
         cell.detailTextLabel.text = app.team;
-        
-		//        CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
-		//        
-		//        UIImage *image;
-		//        if ([meeting.hasFood boolValue]) {
-		//            if ([meeting.hasSpeaker boolValue]) {
-		//                image = [UIImage imageNamed:@"bullhorn-food-combo"];
-		//            }
-		//            else {
-		//                image = [UIImage imageNamed:@"125-food.png"];
-		//            }
-		//        } else if ([meeting.hasSpeaker boolValue]) {
-		//            image = [UIImage imageNamed:@"124-bullhorn.png"];
-		//        } else {
-		//            image = [UIImage imageNamed:@"112-group.png"];
-		//        }
-		//        
-		//        cell.imageView.image = image;
-		//        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
-		
-        cell.backgroundColor = [UIColor clearColor];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
-        cell.detailTextLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:14.0];
-        
-        UIView *goldenColor = [[UIView alloc] init];
-        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-        cell.selectedBackgroundView = goldenColor;
+		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
 	
 	return cell;
