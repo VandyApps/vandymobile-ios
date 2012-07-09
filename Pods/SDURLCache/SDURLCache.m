@@ -19,6 +19,9 @@ static float const kSDURLCacheDefault = 3600; // Default cache expiration delay 
 
 @implementation NSCachedURLResponse(NSCoder)
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wobjc-protocol-method-implementation"
+
 - (void)encodeWithCoder:(NSCoder *)coder
 {
     [coder encodeDataObject:self.data];
@@ -34,6 +37,9 @@ static float const kSDURLCacheDefault = 3600; // Default cache expiration delay 
                          userInfo:[coder decodeObjectForKey:@"userInfo"]
                     storagePolicy:[coder decodeIntForKey:@"storagePolicy"]];
 }
+
+
+#pragma clang diagnostic pop
 
 @end
 
