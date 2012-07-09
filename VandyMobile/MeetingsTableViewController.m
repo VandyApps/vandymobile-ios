@@ -182,6 +182,8 @@
         
         cell.detailTextLabel.text = [self checkMeetingDateOfMeeting:meeting];
                 
+        // Code to set cell image (broken)
+        
 //        CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
 //        
 //        UIImage *image;
@@ -202,7 +204,6 @@
 //        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
-
 	}
 	
 	return cell;

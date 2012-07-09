@@ -125,20 +125,25 @@
 }
 
 - (IBAction)addToCalendarPressed {
+    
+    // New event
     EKEventStore *eventDB = [[EKEventStore alloc] init];
     EKEvent *myEvent = [EKEvent eventWithEventStore:eventDB];
+    
+    // Name is topic
     myEvent.title = self.meeting.topic;
-//    NSDate *today = self.meeting.dateUnformatted;
-//    NSCalendar *gregorian = [[NSCalendar alloc]
-//                             initWithCalendarIdentifier:NSGregorianCalendar];
-//    NSDateComponents *weekdayComponents =
-//    [gregorian components:(NSDayCalendarUnit | NSWeekdayCalendarUnit) fromDate:today];
-//    NSInteger day = [weekdayComponents day];
-//    NSInteger weekday = [weekdayComponents weekday];
-    //myEvent.startDate = [self.meeting.dateUnformatted copy]; //[[NSDate alloc] initWithTimeIntervalSinceNow:self.meeting.dateUnformatted.timeIntervalSinceNow];
-    //myEvent.endDate = [[NSDate alloc] initWithTimeIntervalSince1970:myEvent.startDate.timeIntervalSince1970 + 3600];
+
+    // Starts at date, hour is pre-allocated
+    myEvent.startDate = self.meeting.dateUnformatted;
+    myEvent.endDate = [NSDate dateWithTimeInterval:3600 sinceDate:self.meeting.dateUnformatted];
+    
+    // Not all day
     myEvent.allDay = NO;
     
+    // Notes are meeting description
+    myEvent.notes = self.meeting.description;
+    
+    // Create the calendar
     [myEvent setCalendar:[eventDB defaultCalendarForNewEvents]];
     
     NSError *err;
@@ -156,18 +161,37 @@
 }
 
 - (IBAction)checkInPressed {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@":-(" message:@"Feature not yet supported." delegate:nil cancelButtonTitle:@"Drat!" otherButtonTitles:nil];
+    
+    [alert show];
 }
 
-- (IBAction)showOnMapPressed {
+- (IBAction)showOnMapPressed:(UIButton *)sender {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Load Maps?" message:@"Showing the map will exit VandyMobile and load Maps. Are you sure you want to proceed?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil ];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Load Maps?" message:@"Showing the map will exit VandyMobile and load Maps. Are you sure you want to proceed?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Show Maps", @"Show Directions", nil];
+    
     [alert show];
-    NSString *googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%1.6f,%1.6f",
-                                     self.meeting.loc.latitude, self.meeting.loc.longitude];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        return;
+    }
     
+    NSString *googleMapsURLString;
+    [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+    
+    if (buttonIndex == 2) {
+        googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?dq=Current Location,q=%1.6f,%1.6f", self.meeting.loc.latitude, self.meeting.loc.longitude];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not working. :(" message:@"Cry more." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+        googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%1.6f,%1.6f", self.meeting.loc.latitude, self.meeting.loc.longitude];
+    }
+
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
 }
-
 
 - (void)viewDidUnload
 {
