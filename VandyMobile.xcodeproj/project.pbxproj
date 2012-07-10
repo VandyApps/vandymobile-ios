@@ -73,6 +73,7 @@
 		F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */; };
 		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
 		F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105C715A8B00F00FD15B8 /* VMTableView.m */; };
+		F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105E415AA2E4100FD15B8 /* UserAPIClient.m */; };
 		F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77D76E7159F9C200009AD6B /* MyVMViewController.m */; };
 		F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76E8159F9C200009AD6B /* MyVMViewController.xib */; };
 		F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76FC159FAB410009AD6B /* LoginViewController.xib */; };
@@ -171,6 +172,8 @@
 		F76105BC15A8A27300FD15B8 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		F76105C615A8B00F00FD15B8 /* VMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTableView.h; sourceTree = "<group>"; };
 		F76105C715A8B00F00FD15B8 /* VMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTableView.m; sourceTree = "<group>"; };
+		F76105E315AA2E4000FD15B8 /* UserAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPIClient.h; sourceTree = "<group>"; };
+		F76105E415AA2E4100FD15B8 /* UserAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPIClient.m; sourceTree = "<group>"; };
 		F77D76E6159F9C200009AD6B /* MyVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVMViewController.h; sourceTree = "<group>"; };
 		F77D76E7159F9C200009AD6B /* MyVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVMViewController.m; sourceTree = "<group>"; };
 		F77D76E8159F9C200009AD6B /* MyVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVMViewController.xib; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
 				F76105B215A89F7600FD15B8 /* AppsAPIClient.h */,
 				F76105B315A89F7600FD15B8 /* AppsAPIClient.m */,
+				F76105E315AA2E4000FD15B8 /* UserAPIClient.h */,
+				F76105E415AA2E4100FD15B8 /* UserAPIClient.m */,
 			);
 			name = APICients;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
 				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
 				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
+				F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

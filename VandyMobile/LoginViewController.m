@@ -7,6 +7,13 @@
 //
 
 #import "LoginViewController.h"
+#import "UserAPIClient.h"
+
+/* TextField tags */
+enum LoginViewControllerTags {
+	LoginViewController_UsernameTag = 0,
+	LoginViewController_PasswordTag,
+};
 
 @interface LoginViewController ()
 
@@ -17,6 +24,7 @@
 @synthesize userInput = _userInput;
 @synthesize passwordInput = _passwordInput;
 @synthesize loginButton = _loginButton;
+@synthesize scrollView = _scrollView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,13 +35,24 @@
     return self;
 }
 
+- (void)setupTextfields {
+	self.userInput.delegate = self;
+	self.userInput.tag = LoginViewController_UsernameTag;
+	self.passwordInput.tag = LoginViewController_PasswordTag;
+	self.passwordInput.delegate = self;
+}
+
+- (void)setupButtons {
+	self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
+	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlEventTouchUpInside];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
-	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
-	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlStateNormal];
-
+	[self setupTextfields];
+	[self setupButtons];
 }
 
 - (void)closeLoginScreen {
@@ -41,7 +60,8 @@
 }
 
 - (void)loginTapped {
-	
+	NSLog(@"Username = %@", self.userInput.text);
+	NSLog(@"Password = %@", self.passwordInput.text);
 }
 
 
@@ -61,6 +81,27 @@
 	[self setUserInput:nil];
 	[self setPasswordInput:nil];
 	[self setLoginButton:nil];
+	[self setScrollView:nil];
 	[super viewDidUnload];
 }
+
+#pragma mark - TextField Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+//    int tag = textField.tag;
+    
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+	CGPoint contentOffset = CGPointMake(0, 35*textField.tag);
+ 	[self.scrollView setContentOffset:contentOffset animated:NO];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+	CGPoint contentOffset = CGPointMake(0, 0);
+	[self.scrollView setContentOffset:contentOffset animated:NO];
+}
+
 @end
