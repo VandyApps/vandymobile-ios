@@ -28,6 +28,7 @@
 {
     [super viewDidLoad];
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:loginViewController animated:YES];
 
 }

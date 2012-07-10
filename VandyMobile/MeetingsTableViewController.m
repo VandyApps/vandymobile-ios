@@ -89,19 +89,20 @@
 }
 
 - (void)addNextMeetingCell {
+    // Grab the next meeting
 	self.nextMeeting = [self.results objectAtIndex:0];
 	NSMutableArray *temp = [self.results mutableCopy];
+    
+    // Remove it from the meeting list
 	[temp removeObject:self.nextMeeting];
 	self.results = temp;
+    
+    // Create fake "cell"
 	self.nextMeetingTopic.text = self.nextMeeting.topic;
-	//NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
-	//NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
-	
-	//if ((double)interval < 86400) {
-	//    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
-	//}
 	self.nextMeetingTime.text = [self checkMeetingDateOfMeeting:self.nextMeeting];
     self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+    
+    // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;
     self.nextMeetingCheckInButton.hidden = NO;
@@ -247,6 +248,11 @@
     // If date is today
     if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
         return [NSString stringWithFormat:@"%@ %@", @"Today at", meeting.time];
+    }
+    
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        return [NSString stringWithFormat:@"%@ %@", @"Tomorrow at", meeting.time];
     }
     
     // If date is in the next week

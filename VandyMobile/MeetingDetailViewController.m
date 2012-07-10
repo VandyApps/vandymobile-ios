@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "VMAnnotation.h"
 #import <EventKit/EventKit.h>
+#import "Sizer.h"
 
 @interface MeetingDetailViewController ()
 
@@ -45,11 +46,12 @@
     
     // UI Customization
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
+    // Description Sizer
+    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel];
     
-
+    // Move buttons to match
     
     // Round corners of description label (QuartzCore)
     self.descriptionLabel.layer.cornerRadius = 11;
