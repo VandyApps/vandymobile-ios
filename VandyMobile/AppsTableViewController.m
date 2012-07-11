@@ -34,6 +34,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Create resizable UINavigationBar image
+    UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
+    [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+
 	[self pullAppsFromServer];
 }
 
@@ -42,6 +47,24 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Set the background image for *all* UINavigationBars
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    if ([[self.navigationController.navigationBar subviews] count] > 2) {
+        
+        NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+        
+        //        NSLog(@"%@", navSubviews);
+        
+        for (UIView * subview in navSubviews) {
+            if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+                [subview removeFromSuperview];
+            }
+        }
+    }
+    [self.navigationController.navigationBar addSubview:logo];
 }
 
 #pragma mark APIClient Methods

@@ -13,7 +13,7 @@
 
 #define METERS_PER_MILE 1609.344
 
-@interface MeetingDetailViewController : UIViewController <MKMapViewDelegate>
+@interface MeetingDetailViewController : UIViewController <MKMapViewDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) Meeting *meeting;
 

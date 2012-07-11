@@ -24,6 +24,9 @@
 @synthesize nextMeetingTopic = _nextMeetingTopic;
 @synthesize nextMeetingTime = _nextMeetingTime;
 @synthesize nextMeetingButton = _nextMeetingButton;
+@synthesize nextMeetingCheckInButton = _nextMeetingCheckInButton;
+@synthesize nextMeetingMapButton = _nextMeetingMapButton;
+@synthesize nextMeetingLabel = _nextMeetingLabel;
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
 
@@ -44,8 +47,15 @@
 																					  action:@selector(createMeeting)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
     
+    // Customize backgrounds
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
+    
+    // Hide meeting until data is loaded
+    self.nextMeetingImageView.hidden = YES;
+    self.nextMeetingCheckInButton.hidden = YES;
+    self.nextMeetingMapButton.hidden = YES;
+    self.nextMeetingLabel.hidden = YES;
     
     [self pullMeetingsFromServer];
 
@@ -79,19 +89,24 @@
 }
 
 - (void)addNextMeetingCell {
+    // Grab the next meeting
 	self.nextMeeting = [self.results objectAtIndex:0];
 	NSMutableArray *temp = [self.results mutableCopy];
+    
+    // Remove it from the meeting list
 	[temp removeObject:self.nextMeeting];
 	self.results = temp;
+    
+    // Create fake "cell"
 	self.nextMeetingTopic.text = self.nextMeeting.topic;
-	//NSDate *nextMeetingDate = self.nextMeeting.dateUnformatted;
-	//NSTimeInterval interval = [nextMeetingDate timeIntervalSince1970] - [[NSDate date] timeIntervalSince1970];
-	
-	//if ((double)interval < 86400) {
-	//    self.nextMeetingTime.text = [NSString stringWithFormat:@"Today at %@", self.nextMeeting.time];
-	//}
-	self.nextMeetingTime.text = [NSString stringWithFormat:@"%@ at %@", self.nextMeeting.date, self.nextMeeting.time];
+	self.nextMeetingTime.text = [self checkMeetingDateOfMeeting:self.nextMeeting];
     self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+    
+    // Unhide labels / "cell" components
+    self.nextMeetingImageView.hidden = NO;
+    self.nextMeetingMapButton.hidden = NO;
+    self.nextMeetingCheckInButton.hidden = NO;
+    self.nextMeetingLabel.hidden = NO;
 }
 
 - (void)viewDidUnload
@@ -102,6 +117,9 @@
     [self setNextMeetingTopic:nil];
     [self setNextMeetingTime:nil];
     [self setNextMeetingButton:nil];
+    [self setNextMeetingCheckInButton:nil];
+    [self setNextMeetingMapButton:nil];
+    [self setNextMeetingLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -160,9 +178,12 @@
         Meeting *meeting = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = meeting.topic;
         if([meeting.topic isEqualToString:@""]) {
-            cell.textLabel.text = @"Work day";
+            cell.textLabel.text = @"Working Meeting";
         }
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
+        
+        cell.detailTextLabel.text = [self checkMeetingDateOfMeeting:meeting];
+                
+        // Code to set cell image (broken)
         
 //        CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
 //        
@@ -184,10 +205,64 @@
 //        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
-
 	}
 	
 	return cell;
+}
+- (IBAction)nextMeetingButtonPressed:(UIButton *)sender {
+    
+    // Create new MeetingDVC
+    MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
+    
+    // Prepare meetingDVC with next meeting
+    meetingDVC.title = self.nextMeeting.topic;
+    meetingDVC.meeting = self.nextMeeting;
+    [self.navigationController pushViewController:meetingDVC animated:YES];
+}
+
+- (NSString *)checkMeetingDateOfMeeting:(Meeting *)meeting {
+    
+    NSDate *now = [NSDate date];
+    
+    // Get the date's weekday
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *weekdayComponents =
+    [gregorian components:(NSWeekdayCalendarUnit) fromDate:meeting.dateUnformatted];
+    NSInteger weekday = [weekdayComponents weekday];
+    NSString *dayOfWeek;
+    
+    // Discover what weekday it is
+    if (weekday == 1) dayOfWeek = @"Sunday";
+    else if (weekday == 2) dayOfWeek = @"Monday";
+    else if (weekday == 3) dayOfWeek = @"Tuesday";
+    else if (weekday == 4) dayOfWeek = @"Wednesday";
+    else if (weekday == 5) dayOfWeek = @"Thursday";
+    else if (weekday == 6) dayOfWeek = @"Friday";
+    else if (weekday == 7) dayOfWeek = @"Saturday";
+    else dayOfWeek = @"error";
+    
+    NSDateComponents *currentComponents = [gregorian components:(NSWeekdayCalendarUnit) fromDate:now];
+    NSInteger currentDay = [currentComponents weekday];
+    
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        return [NSString stringWithFormat:@"%@ %@", @"Today at", meeting.time];
+    }
+    
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        return [NSString stringWithFormat:@"%@ %@", @"Tomorrow at", meeting.time];
+    }
+    
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        return [NSString stringWithFormat:@"%@ at %@", dayOfWeek, meeting.time];
+    }
+    else {
+        return [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
+    }
+
 }
 
 #pragma mark - TableViewDelegate Methods

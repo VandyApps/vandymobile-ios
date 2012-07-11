@@ -43,14 +43,21 @@
 		self.hasSpeaker = [NSNumber numberWithInt:[[dictionary objectForKey:HAS_SPEAKER_KEY]boolValue]];
 		self.speakerName = [dictionary objectForKey:SPEAKER_KEY];
 		self.topic = [dictionary objectForKey:TOPIC_KEY];
-        self.dateUnformatted = [dictionary objectForKey:@"date"];
+        id messyDate = [dictionary objectForKey:DATE_KEY];
         
         // Protection on coordinate.
         if ([dictionary objectForKey:@"xcoordinate"] && [dictionary objectForKey:@"ycoordinate"]) {
             self.loc = CLLocationCoordinate2DMake([[dictionary objectForKey:@"xcoordinate"] doubleValue], [[dictionary objectForKey:@"ycoordinate"] doubleValue]);
         }
         
+        // Format date properly
         self.description = [dictionary objectForKey:DESCRIPTION_KEY];
+        NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
+        
+        NSDate *date = [dateFormatter dateFromString:messyDate];
+        self.dateUnformatted = date;
 
 	}
 	return self;

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
-		D20E5466158D0AE600E4164B /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D20E5465158D0AE600E4164B /* Sizer.m */; };
+		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
 		D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */; };
 		D2445A141579DBF300A7E297 /* NewNavBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A131579DBF200A7E297 /* NewNavBar@2x.png */; };
@@ -93,8 +93,8 @@
 /* Begin PBXFileReference section */
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D20E5464158D0AE600E4164B /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
-		D20E5465158D0AE600E4164B /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
+		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
+		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
 		D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV3@2x.png"; sourceTree = "<group>"; };
 		D2445A131579DBF200A7E297 /* NewNavBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar@2x.png"; sourceTree = "<group>"; };
@@ -306,8 +306,8 @@
 		F7874EE3156C7BCE00F81183 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D20E5464158D0AE600E4164B /* Sizer.h */,
-				D20E5465158D0AE600E4164B /* Sizer.m */,
+				D23DA37015ABA4FC00396B06 /* Sizer.h */,
+				D23DA37115ABA4FC00396B06 /* Sizer.m */,
 				D27291BA15744B56009AA12F /* VMAnnotation.h */,
 				D27291BB15744B56009AA12F /* VMAnnotation.m */,
 				F72CA09D1569A3AF001EFBC8 /* Meeting.h */,
@@ -562,7 +562,6 @@
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
 				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
 				D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */,
-				D20E5466158D0AE600E4164B /* Sizer.m in Sources */,
 				F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */,
 				F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */,
 				F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */,
@@ -573,6 +572,7 @@
 				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
 				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
 				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
+				D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */,
 				F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
