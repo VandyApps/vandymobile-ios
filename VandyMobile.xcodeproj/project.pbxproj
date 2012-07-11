@@ -33,8 +33,6 @@
 		D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */; };
 		D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */; };
 		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
-		D2445AB8157AF00700A7E297 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB7157AF00700A7E297 /* Icon.png */; };
-		D2445ABA157AF00F00A7E297 /* 114.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AB9157AF00F00A7E297 /* 114.png */; };
 		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
@@ -60,6 +58,8 @@
 		D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */; };
 		D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */; };
 		D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */; };
+		D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */; };
+		D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
 		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
@@ -118,8 +118,6 @@
 		D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
 		D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullhorn-food-combo@2x.png"; sourceTree = "<group>"; };
 		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
-		D2445AB7157AF00700A7E297 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		D2445AB9157AF00F00A7E297 /* 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 114.png; sourceTree = "<group>"; };
 		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
 		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
@@ -149,6 +147,8 @@
 		D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns.png"; sourceTree = "<group>"; };
 		D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel-uns.png"; sourceTree = "<group>"; };
 		D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-sel.png"; sourceTree = "<group>"; };
+		D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIcon.png; sourceTree = "<group>"; };
+		D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconRetina.png; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
 		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
@@ -342,8 +342,8 @@
 		F7ACC5741566903100CDE5A9 = {
 			isa = PBXGroup;
 			children = (
-				D2445AB9157AF00F00A7E297 /* 114.png */,
-				D2445AB7157AF00700A7E297 /* Icon.png */,
+				D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */,
+				D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */,
 				F7ACC5891566903100CDE5A9 /* VandyMobile */,
 				F7ACC5821566903100CDE5A9 /* Frameworks */,
 				F7ACC5801566903100CDE5A9 /* Products */,
@@ -496,8 +496,6 @@
 				D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */,
 				D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */,
 				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
-				D2445AB8157AF00700A7E297 /* Icon.png in Resources */,
-				D2445ABA157AF00F00A7E297 /* 114.png in Resources */,
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
 				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
 				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
@@ -519,6 +517,8 @@
 				F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */,
 				F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */,
 				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
+				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
+				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

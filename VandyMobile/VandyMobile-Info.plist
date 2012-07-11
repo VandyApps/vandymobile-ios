@@ -14,8 +14,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>Icon.png</string>
-				<string>114.png</string>
+				<string>VandyMobileIcon.png</string>
+				<string>VandyMobileIconRetina.png</string>
 			</array>
 			<key>UIPrerenderedIcon</key>
 			<true/>
