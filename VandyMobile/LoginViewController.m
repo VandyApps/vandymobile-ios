@@ -27,13 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
-	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+	
 
 }
 
-- (void)closeLoginScreen {
-	[self dismissModalViewControllerAnimated:YES];
+- (IBAction)closeLoginScreen:(id)sender {
+    
 }
 
 - (IBAction)loginPressed:(id)sender {
