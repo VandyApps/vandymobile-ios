@@ -128,13 +128,11 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Set the background image for *all* UINavigationBars
+    
+    // Set the logo on the navigation bar
     UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
     if ([[self.navigationController.navigationBar subviews] count] > 2) {
-        
         NSArray *navSubviews = [self.navigationController.navigationBar subviews];
-        
-        //        NSLog(@"%@", navSubviews);
         
         for (UIView * subview in navSubviews) {
             if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
@@ -156,7 +154,11 @@
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithCompletionBlock:^ {
 		[self pullMeetingsFromServer];
 	}];
+    
+    // Non-modal
     [self.navigationController pushViewController:addMeetingVC animated:YES];
+    
+    // Modal
 //	[self.navigationController presentModalViewController:addMeetingVC animated:YES];
 }
 
@@ -183,32 +185,38 @@
         
         cell.detailTextLabel.text = [self checkMeetingDateOfMeeting:meeting];
                 
-        // Code to set cell image (broken)
-        
-//        CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
-//        
-//        UIImage *image;
-//        if ([meeting.hasFood boolValue]) {
-//            if ([meeting.hasSpeaker boolValue]) {
-//                image = [UIImage imageNamed:@"bullhorn-food-combo"];
-//            }
-//            else {
-//                image = [UIImage imageNamed:@"125-food.png"];
-//            }
-//        } else if ([meeting.hasSpeaker boolValue]) {
-//            image = [UIImage imageNamed:@"124-bullhorn.png"];
-//        } else {
-//            image = [UIImage imageNamed:@"112-group.png"];
-//        }
-//        
-//        cell.imageView.image = image;
-//        cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
+       
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
 	
 	return cell;
 }
+
+- (UITableViewCell *)setImageOfCell:(UITableViewCell *)cell forAssociatedMeeting:(Meeting *)meeting {
+// Code to set cell image (broken)
+    
+    CGSize size = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"112-group.png"]].frame.size;
+    
+    UIImage *image;
+    if ([meeting.hasFood boolValue]) {
+        if ([meeting.hasSpeaker boolValue]) {
+            image = [UIImage imageNamed:@"bullhorn-food-combo"];
+        }
+        else {
+            image = [UIImage imageNamed:@"125-food.png"];
+        }
+    } else if ([meeting.hasSpeaker boolValue]) {
+        image = [UIImage imageNamed:@"124-bullhorn.png"];
+    } else {
+        image = [UIImage imageNamed:@"112-group.png"];
+    }
+    
+    cell.imageView.image = image;
+    cell.imageView.frame = CGRectMake(cell.imageView.frame.origin.x, cell.imageView.frame.origin.y, size.width, size.height);
+    return cell;
+}
+
 - (IBAction)nextMeetingButtonPressed:(UIButton *)sender {
     
     // Create new MeetingDVC
