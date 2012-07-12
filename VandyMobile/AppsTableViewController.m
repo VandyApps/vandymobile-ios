@@ -12,6 +12,7 @@
 #import "App.h"
 #import "VMFormCell.h"
 #import "AppsDetailViewController.h"
+#import "AppsTableViewCell.h"
 
 
 @interface AppsTableViewController ()
@@ -99,14 +100,16 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	VMFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	AppsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
 	if(!cell) {
-		cell = [[VMFormCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+		cell = [[AppsTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         App *app = [self.results objectAtIndex:indexPath.row];
-        cell.textLabel.text = app.name;
-        cell.detailTextLabel.text = app.tagline;
+        cell.mainLabel.text = app.name;
+        cell.subLabel.text = app.tagline;
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
