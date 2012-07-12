@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *OS;
 @property (nonatomic, copy) NSString *description;
+@property (nonatomic, copy) NSString *tagline;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

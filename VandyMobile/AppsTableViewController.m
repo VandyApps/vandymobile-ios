@@ -106,7 +106,8 @@
 		cell = [[VMFormCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         App *app = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = app.name;
-        cell.detailTextLabel.text = app.team;
+        cell.detailTextLabel.text = app.tagline;
+
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
 	

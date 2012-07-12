@@ -19,6 +19,7 @@
 @synthesize name = _name;
 @synthesize OS = _OS;
 @synthesize description = _description;
+@synthesize tagline = _tagline;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
@@ -27,6 +28,7 @@
 		self.name			= [dictionary objectForKey:NAME_KEY];
 		self.OS				= [dictionary objectForKey:OS_KEY];
 		self.description	= [dictionary objectForKey:DESCRIPTION_KEY];
+        self.tagline        = @"Default tagline. Lorem ipsum dolor.";
 	}
 	return self;
 }
