@@ -218,7 +218,6 @@
 }
 
 - (IBAction)nextMeetingButtonPressed:(UIButton *)sender {
-    
     // Create new MeetingDVC
     MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
     

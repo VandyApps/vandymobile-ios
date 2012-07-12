@@ -11,6 +11,7 @@
 #import "AppsAPIClient.h"
 #import "App.h"
 #import "VMFormCell.h"
+#import "AppsDetailViewController.h"
 
 
 @interface AppsTableViewController ()
@@ -111,5 +112,24 @@
 	
 	return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // Deselect the row
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    // Create new MeetingDVC
+    AppsDetailViewController *appsDVC = [[AppsDetailViewController alloc] init];
+    
+    // Grab the meeting at the index path
+    App *app = [self.results objectAtIndex:indexPath.row];
+    
+    // Prepare meetingDVC
+    appsDVC.title = app.name;
+    appsDVC.app = app;
+    [self.navigationController pushViewController:appsDVC animated:YES];
+    
+}
+
 
 @end

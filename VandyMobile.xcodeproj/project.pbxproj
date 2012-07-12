@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573C915AF24E70014C7FB /* AppsDetailViewController.m */; };
+		522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */; };
 		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
 		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
@@ -92,6 +94,9 @@
 /* Begin PBXFileReference section */
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		522573C815AF24E70014C7FB /* AppsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDetailViewController.h; sourceTree = "<group>"; };
+		522573C915AF24E70014C7FB /* AppsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDetailViewController.m; sourceTree = "<group>"; };
+		522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsDetailViewController.xib; sourceTree = "<group>"; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
@@ -283,6 +288,8 @@
 				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 				F76105B615A8A03900FD15B8 /* AppsTableViewController.h */,
 				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
+				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
+				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -326,6 +333,7 @@
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
+				522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -519,6 +527,7 @@
 				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
 				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
 				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
+				522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +577,7 @@
 				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
 				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
 				D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */,
+				522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
