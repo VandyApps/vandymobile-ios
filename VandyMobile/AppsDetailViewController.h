@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (strong, nonatomic) App *app;
+@property (weak, nonatomic) IBOutlet UIImageView *appIconImage;
 
 @end

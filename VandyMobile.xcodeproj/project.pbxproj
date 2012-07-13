@@ -100,7 +100,7 @@
 		522573C915AF24E70014C7FB /* AppsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDetailViewController.m; sourceTree = "<group>"; };
 		522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsDetailViewController.xib; sourceTree = "<group>"; };
 		522573CE15AF2B1B0014C7FB /* AppsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsCell.xib; sourceTree = "<group>"; };
-		522573D015AF2B820014C7FB /* AppsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AppsCell.h; sourceTree = "<group>"; };
+		522573D015AF2B820014C7FB /* AppsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsCell.h; sourceTree = "<group>"; };
 		522573D115AF2B820014C7FB /* AppsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCell.m; sourceTree = "<group>"; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
@@ -280,9 +280,9 @@
 				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
 				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
 				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
 				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,

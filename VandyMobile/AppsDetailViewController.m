@@ -7,6 +7,7 @@
 //
 
 #import "AppsDetailViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AppsDetailViewController ()
 
@@ -14,6 +15,7 @@
 
 @implementation AppsDetailViewController
 @synthesize app;
+@synthesize appIconImage;
 @synthesize backgroundView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -33,6 +35,11 @@
     // UI Customization
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
+    self.appIconImage.layer.cornerRadius = 11;
+    self.appIconImage.clipsToBounds = YES;
+    self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.appIconImage.layer.borderWidth = .5;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +55,7 @@
 - (void)viewDidUnload
 {
     [self setBackgroundView:nil];
+    [self setAppIconImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
