@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573C915AF24E70014C7FB /* AppsDetailViewController.m */; };
 		522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */; };
-		522573CF15AF2B1B0014C7FB /* AppsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CE15AF2B1B0014C7FB /* AppsTableViewCell.xib */; };
-		522573D215AF2B820014C7FB /* AppsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573D115AF2B820014C7FB /* AppsTableViewCell.m */; };
+		522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CE15AF2B1B0014C7FB /* AppsCell.xib */; };
+		522573D215AF2B820014C7FB /* AppsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573D115AF2B820014C7FB /* AppsCell.m */; };
 		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
 		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
@@ -99,9 +99,9 @@
 		522573C815AF24E70014C7FB /* AppsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDetailViewController.h; sourceTree = "<group>"; };
 		522573C915AF24E70014C7FB /* AppsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDetailViewController.m; sourceTree = "<group>"; };
 		522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsDetailViewController.xib; sourceTree = "<group>"; };
-		522573CE15AF2B1B0014C7FB /* AppsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewCell.xib; sourceTree = "<group>"; };
-		522573D015AF2B820014C7FB /* AppsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsTableViewCell.h; sourceTree = "<group>"; };
-		522573D115AF2B820014C7FB /* AppsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsTableViewCell.m; sourceTree = "<group>"; };
+		522573CE15AF2B1B0014C7FB /* AppsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsCell.xib; sourceTree = "<group>"; };
+		522573D015AF2B820014C7FB /* AppsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AppsCell.h; sourceTree = "<group>"; };
+		522573D115AF2B820014C7FB /* AppsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCell.m; sourceTree = "<group>"; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
@@ -330,7 +330,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				522573CE15AF2B1B0014C7FB /* AppsTableViewCell.xib */,
+				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F77D76FC159FAB410009AD6B /* LoginViewController.xib */,
@@ -418,8 +418,8 @@
 		F7D4F067159FF4AA00F80CC0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				522573D015AF2B820014C7FB /* AppsTableViewCell.h */,
-				522573D115AF2B820014C7FB /* AppsTableViewCell.m */,
+				522573D015AF2B820014C7FB /* AppsCell.h */,
+				522573D115AF2B820014C7FB /* AppsCell.m */,
 				F7D4F069159FF50500F80CC0 /* VMFormCell.h */,
 				F7D4F06A159FF50500F80CC0 /* VMFormCell.m */,
 				F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */,
@@ -536,7 +536,7 @@
 				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
 				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
 				522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */,
-				522573CF15AF2B1B0014C7FB /* AppsTableViewCell.xib in Resources */,
+				522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,7 +587,7 @@
 				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
 				D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */,
 				522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */,
-				522573D215AF2B820014C7FB /* AppsTableViewCell.m in Sources */,
+				522573D215AF2B820014C7FB /* AppsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
