@@ -35,6 +35,11 @@ enum LoginViewControllerTags {
     return self;
 }
 
+- (void)setupScrollView {
+	self.scrollView.contentSize = CGSizeMake(320, 525);
+
+}
+
 - (void)setupTextfields {
 	self.userInput.delegate = self;
 	self.userInput.tag = LoginViewController_UsernameTag;
@@ -53,6 +58,7 @@ enum LoginViewControllerTags {
     [super viewDidLoad];
 	[self setupTextfields];
 	[self setupButtons];
+	[self setupScrollView];
 }
 
 - (void)closeLoginScreen {
@@ -62,6 +68,11 @@ enum LoginViewControllerTags {
 - (void)loginTapped {
 	NSLog(@"Username = %@", self.userInput.text);
 	NSLog(@"Password = %@", self.passwordInput.text);
+	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
+									 withPassword:self.passwordInput.text 
+							  withCompletionBlock:^{
+								  // nothing to do
+							}];
 }
 
 

@@ -12,8 +12,8 @@
 #import "SVProgressHUD.h"
 
 
-#define AppsAPIBaseURLString @"http://70.138.50.84"
-#define AppsAPIToken @"1234abcd"
+#define UserAPIBaseURLString @"http://70.138.50.84"
+#define UserAPIToken @"1234abcd"
 
 @implementation UserAPIClient
 
@@ -21,7 +21,7 @@
 	static UserAPIClient *__sharedInstance;
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
-		__sharedInstance = [[UserAPIClient alloc] initWithBaseURL:[NSURL URLWithString:AppsAPIBaseURLString]];
+		__sharedInstance = [[UserAPIClient alloc] initWithBaseURL:[NSURL URLWithString:UserAPIBaseURLString]];
 	});
 	return __sharedInstance;
 }
@@ -31,12 +31,31 @@
 	self = [super initWithBaseURL:url];
 	if (self) {
 		//custom settings
-		[self setDefaultHeader:@"x-api-token" value:AppsAPIToken];
+		[self setDefaultHeader:@"x-api-token" value:UserAPIToken];
 		
 		[self registerHTTPOperationClass:[AFJSONRequestOperation class]]; // what is this doing?
 	}
 	
 	return self;
+}
+
+- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(void))completionBlock {
+	NSString *postPath = [UserAPIBaseURLString stringByAppendingString:@"/sessions.json"];
+	NSDictionary *loginDict = [NSDictionary dictionaryWithObjectsAndKeys:user,@"login", password, @"password", nil];
+	
+	
+	[self setParameterEncoding:AFJSONParameterEncoding];
+	
+	[self postPath:postPath parameters:loginDict
+		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
+			   NSLog(@"response = %@", responseObject);
+			   [SVProgressHUD dismissWithSuccess:@"Logged In"];
+			   completionBlock();
+		   } 
+		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+			   NSLog(@"error = %@", error);
+			   [SVProgressHUD dismissWithError:@"Couldn't Login"];
+		   }];
 }
 
 
