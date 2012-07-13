@@ -108,14 +108,25 @@
 	if(!cell) {
 		cell = [[AppsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         App *app = [self.results objectAtIndex:indexPath.row];
-        cell.textLabel.text = app.name;
-        cell.detailTextLabel.text = app.tagline;
-		cell.imageView.image = [UIImage imageNamed:@"VandyMobileIcon.png"];
+        
+        // Load the top-level objects from the custom cell XIB.
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AppsCell" owner:self options:nil];
+        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+        cell = [topLevelObjects objectAtIndex:0];
+
+        cell.mainLabel.text = app.name;
+        cell.subLabel.text = app.tagline;
+		cell.cellImage.image = [UIImage imageNamed:@"VandyMobileIcon.png"];
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
 	
 	return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 67;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
