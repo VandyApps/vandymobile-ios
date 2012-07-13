@@ -63,6 +63,7 @@
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
 		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
+		F72C011115AFB6100025269F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C011015AFB6100025269F /* Security.framework */; };
 		F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */; };
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
@@ -153,6 +154,7 @@
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
 		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
+		F72C011015AFB6100025269F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsTableViewController.h; sourceTree = "<group>"; };
 		F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsTableViewController.m; sourceTree = "<group>"; };
 		F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72C011115AFB6100025269F /* Security.framework in Frameworks */,
 				D2445A62157A801000A7E297 /* EventKit.framework in Frameworks */,
 				D2445A63157A801000A7E297 /* EventKitUI.framework in Frameworks */,
 				D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */,
@@ -368,6 +371,7 @@
 		F7ACC5821566903100CDE5A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F72C011015AFB6100025269F /* Security.framework */,
 				D2445A60157A800F00A7E297 /* EventKit.framework */,
 				D2445A61157A801000A7E297 /* EventKitUI.framework */,
 				D27291A41573E408009AA12F /* CoreLocation.framework */,
