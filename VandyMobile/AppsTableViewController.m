@@ -110,6 +110,7 @@
         App *app = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = app.name;
         cell.detailTextLabel.text = app.tagline;
+		cell.imageView.image = [UIImage imageNamed:@"VandyMobileIcon.png"];
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
