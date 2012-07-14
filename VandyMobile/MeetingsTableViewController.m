@@ -55,6 +55,7 @@
     self.nextMeetingCheckInButton.hidden = YES;
     self.nextMeetingMapButton.hidden = YES;
     self.nextMeetingLabel.hidden = YES;
+    self.tableView.hidden = YES;
     
     [self pullMeetingsFromServer];
 
@@ -76,6 +77,7 @@
 											
 											[self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
+                                            self.tableView.hidden = NO;
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											NSLog(@"Error fetching meetings!");
@@ -99,8 +101,6 @@
     // Create fake "cell"
 	self.nextMeetingTopic.text = self.nextMeeting.topic;
 	self.nextMeetingTime.text = [self checkMeetingDateOfMeeting:self.nextMeeting];
-    self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-    
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
