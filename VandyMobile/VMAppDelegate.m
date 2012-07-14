@@ -11,7 +11,7 @@
 #import "NewsViewController.h"
 #import "MyVMViewController.h"
 #import "AppsTableViewController.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 #import "SDURLCache.h"
 
 @implementation VMAppDelegate

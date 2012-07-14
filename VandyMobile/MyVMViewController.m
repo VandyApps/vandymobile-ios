@@ -7,7 +7,7 @@
 //
 
 #import "MyVMViewController.h"
-#import "LoginViewController.h"
+//#import "LoginViewController.h"
 
 @interface MyVMViewController ()
 
@@ -27,9 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:loginViewController animated:YES];
+//	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+//    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+//	[self presentModalViewController:loginViewController animated:YES];
 
 }
 
