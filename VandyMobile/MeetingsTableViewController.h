@@ -10,7 +10,7 @@
 #import "SVProgressHUD.h"
 #import "Meeting.h"
 
-@interface MeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *nextMeetingImageView;

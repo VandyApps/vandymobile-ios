@@ -105,7 +105,7 @@
     // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;
-    self.nextMeetingCheckInButton.hidden = NO;
+    //self.nextMeetingCheckInButton.hidden = NO;
     self.nextMeetingLabel.hidden = NO;
 }
 
@@ -270,6 +270,34 @@
         return [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
     }
 
+}
+
+- (IBAction)nextMeetingMapPressed {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Load Maps?" message:@"Showing the map will exit VandyMobile and load Maps. Are you sure you want to proceed?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Show Maps", @"Show Directions", nil];
+    
+    [alert show];
+}
+
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 0) {
+        return;
+    }
+    
+    NSString *googleMapsURLString;
+    [alertView dismissWithClickedButtonIndex:buttonIndex animated:YES];
+    
+    if (buttonIndex == 2) {
+        googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?dq=Current Location,q=%1.6f,%1.6f", self.nextMeeting.loc.latitude, self.nextMeeting.loc.longitude];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not working. :(" message:@"Cry more." delegate:nil cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+        googleMapsURLString = [NSString stringWithFormat:@"http://maps.google.com/maps?q=%1.6f,%1.6f", self.nextMeeting.loc.latitude, self.nextMeeting.loc.longitude];
+    }
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:googleMapsURLString]];
 }
 
 #pragma mark - TableViewDelegate Methods

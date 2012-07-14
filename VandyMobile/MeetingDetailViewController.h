@@ -26,5 +26,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 @property (weak, nonatomic) IBOutlet UIButton *addToCalendarButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIView *belowTextViewContainerView;
 
 @end

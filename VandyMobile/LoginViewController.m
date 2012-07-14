@@ -27,8 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
-
 }
 
 - (IBAction)closeLoginScreen:(id)sender {

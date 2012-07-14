@@ -29,6 +29,7 @@
 @synthesize checkInButton = _checkInButton;
 @synthesize addToCalendarButton = _addToCalendarButton;
 @synthesize backgroundView = _backgroundView;
+@synthesize belowTextViewContainerView = _belowTextViewContainerView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,8 +49,7 @@
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-    // Description Sizer
-    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel];
+
     
     // Move buttons to match
     
@@ -109,7 +109,14 @@
 																					  target:self 
 																					  action:@selector(sharePressed)];
 	[self.navigationItem setRightBarButtonItem:shareButton animated:NO];
-
+    
+    // Description Sizer
+    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel withMaxHeight:126];
+    CGFloat newYOrigin = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 8;
+    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
+                                                       newYOrigin,
+                                                       self.belowTextViewContainerView.frame.size.width,
+                                                       self.belowTextViewContainerView.frame.size.height) ;
     
 }
 
@@ -207,6 +214,7 @@
     [self setCheckInButton:nil];
     [self setAddToCalendarButton:nil];
     [self setBackgroundView:nil];
+    [self setBelowTextViewContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

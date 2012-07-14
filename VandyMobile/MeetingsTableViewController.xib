@@ -222,7 +222,7 @@
 					<object class="IBUIButton" id="1018359895">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{234, 51}, {77, 37}}</string>
+						<string key="NSFrame">{{234, 27}, {77, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="674879515"/>
@@ -434,6 +434,15 @@
 					</object>
 					<int key="connectionID">27</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">nextMeetingMapPressed</string>
+						<reference key="source" ref="1018359895"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">31</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -452,11 +461,11 @@
 							<reference ref="906323618"/>
 							<reference ref="35618088"/>
 							<reference ref="99733977"/>
-							<reference ref="1018359895"/>
 							<reference ref="73725622"/>
 							<reference ref="459952321"/>
 							<reference ref="466826426"/>
 							<reference ref="626979671"/>
+							<reference ref="1018359895"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -546,7 +555,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">30</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

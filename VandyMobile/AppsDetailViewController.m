@@ -61,7 +61,7 @@
     self.descriptionTextView.text = app.description;
     
     // Size textview
-    self.descriptionTextView.frame = [Sizer sizeTextView:self.descriptionTextView];
+    self.descriptionTextView.frame = [Sizer sizeTextView:self.descriptionTextView withMaxHeight:117];
     CGFloat newYOrigin = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.size.height + 6;
     self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
                                                        newYOrigin,
