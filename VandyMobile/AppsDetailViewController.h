@@ -11,8 +11,22 @@
 
 @interface AppsDetailViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (strong, nonatomic) App *app;
+
+// Outlets
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *appIconImage;
+@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UIView *belowTextViewContainerView;
+
+// Labels
+@property (weak, nonatomic) IBOutlet UILabel *teamLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *taglineLabel;
+
+
+// Buttons
+@property (weak, nonatomic) IBOutlet UIButton *appStoreButton;
+@property (weak, nonatomic) IBOutlet UIButton *teamButton;
 
 @end

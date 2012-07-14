@@ -19,8 +19,10 @@
     
     if (labelSize.height > 121) {
         height = 121;
+        [textView setUserInteractionEnabled:YES];
     } else {
-        height = labelSize.height + 10;
+        height = labelSize.height + 6;
+        [textView setUserInteractionEnabled:NO];
     }
     textView.frame = CGRectMake(textView.frame.origin.x, textView.frame.origin.y, textView.frame.size.width, height);
     return textView.frame;
