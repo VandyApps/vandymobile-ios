@@ -10,6 +10,6 @@
 
 @interface Sizer : NSObject
 
-+ (CGRect)sizeTextView:(UITextView *)textView withMaxHeight:(CGFloat)maxHeight;
++ (CGRect)sizeTextView:(UITextView *)textView withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font;
 
 @end

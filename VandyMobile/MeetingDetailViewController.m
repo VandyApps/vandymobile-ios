@@ -49,9 +49,6 @@
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-
-    
-    // Move buttons to match
     
     // Round corners of description label (QuartzCore)
     self.descriptionLabel.layer.cornerRadius = 11;
@@ -111,7 +108,7 @@
 	[self.navigationItem setRightBarButtonItem:shareButton animated:NO];
     
     // Description Sizer
-    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel withMaxHeight:126];
+    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel withMaxHeight:126 andFont:self.descriptionLabel.font];
     CGFloat newYOrigin = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 8;
     self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
                                                        newYOrigin,

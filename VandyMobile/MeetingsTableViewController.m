@@ -49,7 +49,6 @@
     
     // Customize backgrounds
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
-    self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     
     // Hide meeting until data is loaded
     self.nextMeetingImageView.hidden = YES;
@@ -102,6 +101,7 @@
 	self.nextMeetingTime.text = [self checkMeetingDateOfMeeting:self.nextMeeting];
     self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
     
+    self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;

@@ -10,14 +10,18 @@
 
 @implementation Sizer
 
-+ (CGRect)sizeTextView:(UITextView *)textView withMaxHeight:(CGFloat)maxHeight {
++ (CGRect)sizeTextView:(UITextView *)textView withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font {
+    
     // Resize stuff
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:14];
+    if (!font) {
+        font = [UIFont fontWithName:@"Helvetica" size:14];
+    }
     CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-    CGSize labelSize = [textView.text sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+    CGSize labelSize = [textView.text sizeWithFont:font constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
+
     float height;
     
-    if (labelSize.height > maxHeight) {
+    if (labelSize.height > maxHeight - 40) {
         height = maxHeight;
         [textView setUserInteractionEnabled:YES];
     } else if (labelSize.height < 50) {
