@@ -73,6 +73,7 @@
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
 		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
+		F72C011115AFB6100025269F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C011015AFB6100025269F /* Security.framework */; };
 		F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */; };
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
@@ -83,8 +84,10 @@
 		F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */; };
 		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
 		F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105C715A8B00F00FD15B8 /* VMTableView.m */; };
+		F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105E415AA2E4100FD15B8 /* UserAPIClient.m */; };
 		F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77D76E7159F9C200009AD6B /* MyVMViewController.m */; };
 		F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76E8159F9C200009AD6B /* MyVMViewController.xib */; };
+		F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76FC159FAB410009AD6B /* LoginViewController.xib */; };
 		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
 		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
 		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
@@ -95,6 +98,7 @@
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
 		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
 		F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */; };
+		F7E434C915A410FA0025CA3D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E434C815A410FA0025CA3D /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +176,7 @@
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
 		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
+		F72C011015AFB6100025269F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsTableViewController.h; sourceTree = "<group>"; };
 		F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsTableViewController.m; sourceTree = "<group>"; };
 		F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
@@ -191,9 +196,13 @@
 		F76105BC15A8A27300FD15B8 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
 		F76105C615A8B00F00FD15B8 /* VMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTableView.h; sourceTree = "<group>"; };
 		F76105C715A8B00F00FD15B8 /* VMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTableView.m; sourceTree = "<group>"; };
+		F76105E315AA2E4000FD15B8 /* UserAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPIClient.h; sourceTree = "<group>"; };
+		F76105E415AA2E4100FD15B8 /* UserAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPIClient.m; sourceTree = "<group>"; };
 		F77D76E6159F9C200009AD6B /* MyVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVMViewController.h; sourceTree = "<group>"; };
 		F77D76E7159F9C200009AD6B /* MyVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVMViewController.m; sourceTree = "<group>"; };
 		F77D76E8159F9C200009AD6B /* MyVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVMViewController.xib; sourceTree = "<group>"; };
+		F77D76FA159FAB410009AD6B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F77D76FC159FAB410009AD6B /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -212,6 +221,7 @@
 		F7E4347415A263D70025CA3D /* VMCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCheckboxCell.m; sourceTree = "<group>"; };
 		F7E4347A15A27F9D0025CA3D /* VMDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMDatePickerCell.h; sourceTree = "<group>"; };
 		F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMDatePickerCell.m; sourceTree = "<group>"; };
+		F7E434C815A410FA0025CA3D /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72C011115AFB6100025269F /* Security.framework in Frameworks */,
 				D2445A62157A801000A7E297 /* EventKit.framework in Frameworks */,
 				D2445A63157A801000A7E297 /* EventKitUI.framework in Frameworks */,
 				D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */,
@@ -293,6 +304,8 @@
 				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
 				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
+				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
 				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
 				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
@@ -317,6 +330,8 @@
 				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
 				F76105B215A89F7600FD15B8 /* AppsAPIClient.h */,
 				F76105B315A89F7600FD15B8 /* AppsAPIClient.m */,
+				F76105E315AA2E4000FD15B8 /* UserAPIClient.h */,
+				F76105E415AA2E4100FD15B8 /* UserAPIClient.m */,
 			);
 			name = APICients;
 			sourceTree = "<group>";
@@ -344,6 +359,7 @@
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
+				F77D76FC159FAB410009AD6B /* LoginViewController.xib */,
 				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
@@ -387,6 +403,7 @@
 		F7ACC5821566903100CDE5A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F72C011015AFB6100025269F /* Security.framework */,
 				D2445A60157A800F00A7E297 /* EventKit.framework */,
 				D2445A61157A801000A7E297 /* EventKitUI.framework */,
 				D27291A41573E408009AA12F /* CoreLocation.framework */,
@@ -541,6 +558,7 @@
 				D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */,
 				D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */,
 				F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */,
+				F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */,
 				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
 				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
 				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
@@ -595,6 +613,7 @@
 				F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */,
 				F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */,
 				F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */,
+				F7E434C915A410FA0025CA3D /* LoginViewController.m in Sources */,
 				F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */,
 				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
 				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
@@ -602,6 +621,7 @@
 				D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */,
 				522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */,
 				522573D215AF2B820014C7FB /* AppsCell.m in Sources */,
+				F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
