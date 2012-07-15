@@ -39,7 +39,7 @@
 	return self;
 }
 
-- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(void))completionBlock {
+- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(id))completionBlock {
 	NSString *postPath = [UserAPIBaseURLString stringByAppendingString:@"/sessions.json"];
 	NSDictionary *loginDict = [NSDictionary dictionaryWithObjectsAndKeys:user,@"login", password, @"password", nil];
 	
@@ -48,9 +48,9 @@
 	
 	[self postPath:postPath parameters:loginDict
 		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-			   NSLog(@"response = %@", responseObject);
+//			   NSLog(@"response = %@", responseObject);
 			   [SVProgressHUD dismissWithSuccess:@"Logged In"];
-			   completionBlock();
+			   completionBlock(responseObject);
 		   } 
 		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 			   NSLog(@"error = %@", error);

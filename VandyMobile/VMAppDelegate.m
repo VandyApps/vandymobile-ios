@@ -13,6 +13,8 @@
 #import "AppsTableViewController.h"
 #import "SDURLCache.h"
 
+#define USER_KEY @"user"
+
 @implementation VMAppDelegate
 
 @synthesize window = _window;
@@ -25,6 +27,10 @@
     cache.minCacheInterval = 0;
     [NSURLCache setSharedURLCache:cache];
     NSLog(@"Cache is being logged to: %@", [SDURLCache defaultCachePath]);
+}
+
+- (void)setupUserDefaults {
+	[[NSUserDefaults standardUserDefaults] setObject:nil forKey:USER_KEY];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -64,7 +70,7 @@
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"08-chat"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
     
-    UIViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
+    MyVMViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
     UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
     myVMViewController.tabBarItem = myVMItem;
     

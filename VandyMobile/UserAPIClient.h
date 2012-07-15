@@ -12,6 +12,6 @@
 
 + (id)sharedInstance;
 
-- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(void))completionBlock;
+- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(id))completionBlock;
 
 @end

@@ -8,6 +8,10 @@
 
 #import "LoginViewController.h"
 #import "UserAPIClient.h"
+#import "MyVMViewController.h"
+#import "User.h"
+
+#define USER_KEY @"user"
 
 /* TextField tags */
 enum LoginViewControllerTags {
@@ -70,8 +74,11 @@ enum LoginViewControllerTags {
 	NSLog(@"Password = %@", self.passwordInput.text);
 	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
 									 withPassword:self.passwordInput.text 
-							  withCompletionBlock:^{
-								  // nothing to do
+							  withCompletionBlock:^(id response){
+								  User *user = [[User alloc] initWithResponse:response];
+//								  [[MyVMViewController sharedInstance] setUser:user];
+								  [[NSUserDefaults standardUserDefaults] setObject:[user userDictionary] forKey:USER_KEY];
+								  [self closeLoginScreen];
 							}];
 }
 
