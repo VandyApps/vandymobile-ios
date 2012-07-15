@@ -19,6 +19,7 @@
 
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
+@synthesize logoutButton = _logoutButton;
 @synthesize loggedInLabel = _loggedInLabel;
 @synthesize tileController = _tileController;
 
@@ -53,6 +54,7 @@
 
 - (void)setupUserInterface {
 	[self.loginButton addTarget:self action:@selector(presentLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+	[self.logoutButton addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
 }
 
 
@@ -72,13 +74,20 @@
 	if ([User loggedIn]) {
 		self.user = [[User alloc] initWithDictionaryFromUser:[[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY]];
 		[self.loginButton setHidden:YES];
+		[self.logoutButton setHidden:NO];
 		NSLog(@"User is logged in");
 		self.loggedInLabel.text = [NSString stringWithFormat:@"Logged in as %@", self.user.email];
 	} else {
 		[self presentLoginScreen];
 		[self.loggedInLabel setText:@"Not Logged In"];
-		
+		[self.loginButton setHidden:NO];
+		[self.logoutButton setHidden:YES];
 	}
+}
+
+- (void)logout {
+	[[NSUserDefaults standardUserDefaults] setObject:nil forKey:USER_KEY];
+	[self updateCredentials];
 }
 
 - (void)updateCredentials {
@@ -97,6 +106,7 @@
 - (void)viewDidUnload {
 	[self setLoginButton:nil];
 	[self setLoggedInLabel:nil];
+	[self setLogoutButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

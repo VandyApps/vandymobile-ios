@@ -17,6 +17,7 @@
 
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UIButton *logoutButton;
 @property (strong, nonatomic) IBOutlet UILabel *loggedInLabel;
 
 @property (strong, nonatomic) MGTileMenuController *tileController;
