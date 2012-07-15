@@ -12,12 +12,16 @@
 
 @interface MyVMViewController : UIViewController  <MGTileMenuDelegate, UIGestureRecognizerDelegate>
 
-//+ (id)sharedInstance;
++ (id)sharedInstance;
+- (void)updateCredentials;
 
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) IBOutlet UILabel *loggedInLabel;
 
 @property (strong, nonatomic) MGTileMenuController *tileController;
+
+
 
 
 @end

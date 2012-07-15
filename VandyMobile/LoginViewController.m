@@ -76,9 +76,9 @@ enum LoginViewControllerTags {
 									 withPassword:self.passwordInput.text 
 							  withCompletionBlock:^(id response){
 								  User *user = [[User alloc] initWithResponse:response];
-//								  [[MyVMViewController sharedInstance] setUser:user];
 								  [[NSUserDefaults standardUserDefaults] setObject:[user userDictionary] forKey:USER_KEY];
 								  [self closeLoginScreen];
+								  [[MyVMViewController sharedInstance] updateCredentials];
 							}];
 }
 

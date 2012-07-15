@@ -70,7 +70,8 @@
 	UITabBarItem* meetingItem = [[UITabBarItem alloc] initWithTitle:@"Meetings" image:[UIImage imageNamed:@"08-chat"] tag:0];
 	VMMeetingsTVC.tabBarItem = meetingItem;
     
-    MyVMViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
+//    MyVMViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
+	MyVMViewController *myVMViewController = [MyVMViewController sharedInstance];
     UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
     myVMViewController.tabBarItem = myVMItem;
     
