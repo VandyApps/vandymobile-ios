@@ -35,13 +35,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-		
     }
     return self;
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)setupLogin {
 	[self.loginButton addTarget:self action:@selector(presentLoginScreen) forControlEvents:UIControlEventTouchUpInside];
 	if ([User loggedIn]) {
 		self.user = [[User alloc] initWithDictionaryFromUser:[[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY]];
@@ -50,6 +48,11 @@
 	} else {
 		[self presentLoginScreen];
 	}
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+	[self setupLogin];
 }
 
 - (void)viewDidUnload {

@@ -57,7 +57,7 @@
 
 + (BOOL)loggedIn {
 	NSLog(@"output = %@", [[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY]);
-	return [[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY];
+	return (BOOL)[[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY];
 }
 
 
