@@ -113,7 +113,7 @@
     self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
                                                        newYOrigin,
                                                        self.belowTextViewContainerView.frame.size.width,
-                                                       self.belowTextViewContainerView.frame.size.height) ;
+                                                       self.belowTextViewContainerView.frame.size.height);
     
 }
 
