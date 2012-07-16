@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SVProgressHUD.h"
 #import "Meeting.h"
+#import "Notifications.h"
 
 @interface MeetingsTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

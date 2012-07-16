@@ -12,6 +12,7 @@
 #import "Meeting.h"
 #import "MeetingDetailViewController.h"
 #import "AddMeetingViewController.h"
+#import "User.h"
 
 @interface MeetingsTableViewController ()
 
@@ -32,10 +33,24 @@
 
 #pragma mark - View Life Cycle
 
+- (void)setupNotifications {
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(updateButtons) 
+                                                 name:@"LoggedIn"
+                                               object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(updateButtons) 
+                                                 name:@"LoggedOut"
+                                               object:nil];
+}
+
 - (void)viewDidLoad
 {
     //self.title = [self.tabBarItem title];
     [super viewDidLoad];
+	
+	[self setupNotifications];
     
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
@@ -103,10 +118,19 @@
 	self.nextMeetingTime.text = [self checkMeetingDateOfMeeting:self.nextMeeting];
     self.nextMeetingImageView.image = [UIImage imageNamed:@"NextMeetingCanvasV2"];
     // Unhide labels / "cell" components
-    self.nextMeetingImageView.hidden = NO;
+	[self updateButtons];
+}
+
+- (void)updateButtons {
+	self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;
-    //self.nextMeetingCheckInButton.hidden = NO;
-    self.nextMeetingLabel.hidden = NO;
+	self.nextMeetingLabel.hidden = NO;
+
+	if ([User loggedIn]) {
+		self.nextMeetingCheckInButton.hidden = NO;
+	} else {
+		self.nextMeetingCheckInButton.hidden = YES;
+	}
 }
 
 - (void)viewDidUnload
