@@ -51,6 +51,7 @@
 			   NSLog(@"response = %@", responseObject);
 			   [SVProgressHUD dismissWithSuccess:@"Meeting added!"];
 			   completionBlock();
+			   [[NSNotificationCenter defaultCenter] postNotificationName:@"MeetingAdded" object:self];
 		   } 
 		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 			   NSLog(@"error = %@", error);

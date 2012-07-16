@@ -43,6 +43,11 @@
                                              selector:@selector(updateButtons) 
                                                  name:@"LoggedOut"
                                                object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(pullMeetingsFromServer) 
+                                                 name:@"MeetingAdded"
+                                               object:nil];
 }
 
 - (void)viewDidLoad
@@ -176,7 +181,7 @@
 
 - (void)createMeeting {
 	AddMeetingViewController *addMeetingVC = [[AddMeetingViewController alloc] initWithCompletionBlock:^ {
-		[self pullMeetingsFromServer];
+//		[self pullMeetingsFromServer];
 	}];
     
     // Non-modal
