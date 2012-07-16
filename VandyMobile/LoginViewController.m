@@ -78,7 +78,7 @@ enum LoginViewControllerTags {
 								  User *user = [[User alloc] initWithResponse:response];
 								  [[NSUserDefaults standardUserDefaults] setObject:[user userDictionary] forKey:USER_KEY];
 								  [self closeLoginScreen];
-								  [[MyVMViewController sharedInstance] updateCredentials];
+								  [[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedIn" object:self];
 							}];
 }
 

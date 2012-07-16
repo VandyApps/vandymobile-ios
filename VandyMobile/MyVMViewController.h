@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "User.h"
 #import "MGTileMenuController.h"
+#import "Notifications.h"
 
 @interface MyVMViewController : UIViewController  <MGTileMenuDelegate, UIGestureRecognizerDelegate>
 

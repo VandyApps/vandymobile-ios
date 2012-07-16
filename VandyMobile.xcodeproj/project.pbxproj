@@ -91,6 +91,7 @@
 		F71CD6E915B3600E00C701F9 /* Text@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F71CD6DA15B3600E00C701F9 /* Text@2x.png */; };
 		F71CD6EA15B3600E00C701F9 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F71CD6DB15B3600E00C701F9 /* twitter@2x.png */; };
 		F71CD6EB15B3600E00C701F9 /* yellow_gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F71CD6DC15B3600E00C701F9 /* yellow_gradient@2x.png */; };
+		F71CD70415B38F8000C701F9 /* Notifications.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CD70315B38F8000C701F9 /* Notifications.m */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
 		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
@@ -219,6 +220,8 @@
 		F71CD6DA15B3600E00C701F9 /* Text@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Text@2x.png"; path = "MGTileMenu/MGTileMenu/Text@2x.png"; sourceTree = SOURCE_ROOT; };
 		F71CD6DB15B3600E00C701F9 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "twitter@2x.png"; path = "MGTileMenu/MGTileMenu/twitter@2x.png"; sourceTree = SOURCE_ROOT; };
 		F71CD6DC15B3600E00C701F9 /* yellow_gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "yellow_gradient@2x.png"; path = "MGTileMenu/MGTileMenu/yellow_gradient@2x.png"; sourceTree = SOURCE_ROOT; };
+		F71CD70215B38F8000C701F9 /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notifications.h; sourceTree = "<group>"; };
+		F71CD70315B38F8000C701F9 /* Notifications.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notifications.m; sourceTree = "<group>"; };
 		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
 		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
 		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
@@ -526,6 +529,8 @@
 				F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */,
 				F7ACC58F1566903100CDE5A9 /* main.m */,
 				F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */,
+				F71CD70215B38F8000C701F9 /* Notifications.h */,
+				F71CD70315B38F8000C701F9 /* Notifications.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -731,6 +736,7 @@
 				F71CD61815B2509900C701F9 /* User.m in Sources */,
 				F71CD6CB15B35E9600C701F9 /* MGTileMenuController.m in Sources */,
 				F71CD6CC15B35E9600C701F9 /* MGTileMenuView.m in Sources */,
+				F71CD70415B38F8000C701F9 /* Notifications.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

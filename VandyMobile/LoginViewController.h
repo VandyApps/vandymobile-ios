@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Notifications.h"
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
 @property (strong, nonatomic) IBOutlet UITextField *userInput;
 @property (strong, nonatomic) IBOutlet UITextField *passwordInput;

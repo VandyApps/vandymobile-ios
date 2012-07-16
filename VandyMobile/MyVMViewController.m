@@ -46,6 +46,18 @@
 
 #pragma mark - View Life Cycle
 
+- (void)setupNotifications {
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(updateCredentials) 
+                                                 name:@"LoggedIn"
+                                               object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self 
+                                             selector:@selector(updateCredentials) 
+                                                 name:@"LoggedOut"
+                                               object:nil];
+}
+
 - (void)presentLoginScreen {
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
 	loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -87,7 +99,8 @@
 
 - (void)logout {
 	[[NSUserDefaults standardUserDefaults] setObject:nil forKey:USER_KEY];
-	[self updateCredentials];
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"LoggedOut" object:self];
+
 }
 
 - (void)updateCredentials {
@@ -97,6 +110,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self setupNotifications];
 	[self setupLogin];
 	[self setupTapGestures];
 	[self setupUserInterface];
