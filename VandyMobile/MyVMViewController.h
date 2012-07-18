@@ -19,7 +19,6 @@
 
 @property (strong, nonatomic) MGTileMenuController *tileController;
 
-
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 

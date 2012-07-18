@@ -16,7 +16,6 @@
 			<string>IBUIImageView</string>
 			<string>IBUILabel</string>
 			<string>IBUIView</string>
-			<string>IBUIButton</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -38,14 +37,6 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-<<<<<<< HEAD
-					<object class="IBUIButton" id="352136845">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{54, 211}, {205, 37}}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-=======
 					<object class="IBUIImageView" id="567928726">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
@@ -335,19 +326,12 @@
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="931826467"/>
->>>>>>> Created interface for MyVMViewController
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-<<<<<<< HEAD
-						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Login to VandyMobile</string>
-						<object class="NSColor" key="IBUIHighlightedTitleColor">
-=======
 						<object class="NSColor" key="IBUIHighlightedTitleColor" id="67732506">
->>>>>>> Created interface for MyVMViewController
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
 						</object>
@@ -355,27 +339,6 @@
 							<int key="NSColorSpace">1</int>
 							<bytes key="NSRGB">MC4xOTYwNzg0MzQ2IDAuMzA5ODAzOTMyOSAwLjUyMTU2ODY1NgA</bytes>
 						</object>
-<<<<<<< HEAD
-						<object class="NSColor" key="IBUINormalTitleShadowColor">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MC41AA</bytes>
-						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription">
-							<int key="type">2</int>
-							<double key="pointSize">15</double>
-						</object>
-						<object class="NSFont" key="IBUIFont">
-							<string key="NSName">Helvetica-Bold</string>
-							<double key="NSSize">15</double>
-							<int key="NSfFlags">16</int>
-						</object>
-					</object>
-				</array>
-				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="352136845"/>
-=======
 						<object class="NSColor" key="IBUINormalTitleShadowColor" id="309601165">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MC41AA</bytes>
@@ -451,7 +414,6 @@
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="567928726"/>
->>>>>>> Created interface for MyVMViewController
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -481,13 +443,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-<<<<<<< HEAD
-						<string key="label">loginButton</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="352136845"/>
-					</object>
-					<int key="connectionID">8</int>
-=======
 						<string key="label">backgroundImageView</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="567928726"/>
@@ -501,7 +456,6 @@
 						<reference key="destination" ref="913953477"/>
 					</object>
 					<int key="connectionID">28</int>
->>>>>>> Created interface for MyVMViewController
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -516,9 +470,6 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-<<<<<<< HEAD
-							<reference ref="352136845"/>
-=======
 							<reference ref="567928726"/>
 							<reference ref="1069856795"/>
 							<reference ref="77522763"/>
@@ -536,7 +487,6 @@
 							<reference ref="913953477"/>
 							<reference ref="363668177"/>
 							<reference ref="643461006"/>
->>>>>>> Created interface for MyVMViewController
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -553,9 +503,6 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">7</int>
-<<<<<<< HEAD
-						<reference key="object" ref="352136845"/>
-=======
 						<reference key="object" ref="567928726"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
@@ -637,7 +584,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">26</int>
 						<reference key="object" ref="961159962"/>
->>>>>>> Created interface for MyVMViewController
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -648,9 +594,6 @@
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-<<<<<<< HEAD
-				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-=======
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="11.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="12.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -668,38 +611,21 @@
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
->>>>>>> Created interface for MyVMViewController
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-<<<<<<< HEAD
-			<int key="maxID">8</int>
-=======
 			<int key="maxID">28</int>
->>>>>>> Created interface for MyVMViewController
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">MyVMViewController</string>
 					<string key="superclassName">UIViewController</string>
-<<<<<<< HEAD
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">loginButton</string>
-						<string key="NS.object.0">UIButton</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">loginButton</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">loginButton</string>
-							<string key="candidateClassName">UIButton</string>
-						</object>
-					</object>
-=======
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundImageView">UIImageView</string>
+						<string key="loginButton">UIButton</string>
 						<string key="profileImageView">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -707,12 +633,15 @@
 							<string key="name">backgroundImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
+						<object class="IBToOneOutletInfo" key="loginButton">
+							<string key="name">loginButton</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="profileImageView">
 							<string key="name">profileImageView</string>
 							<string key="candidateClassName">UIImageView</string>
 						</object>
 					</dictionary>
->>>>>>> Created interface for MyVMViewController
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/MyVMViewController.h</string>

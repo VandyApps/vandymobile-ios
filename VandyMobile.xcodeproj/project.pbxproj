@@ -56,7 +56,7 @@
 		D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */; };
 		D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */; };
 		D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */; };
-		D2B8173315B64EFA002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B8173215B64EFA002F7971 /* 534322_10150823513557391_1367024220_n.jpg */; };
+		D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */; };
 		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
 		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
 		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
@@ -180,7 +180,7 @@
 		D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundCanvas@2x.png"; sourceTree = "<group>"; };
 		D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBar@2x.png"; sourceTree = "<group>"; };
 		D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV2@2x.png"; sourceTree = "<group>"; };
-		D2B8173215B64EFA002F7971 /* 534322_10150823513557391_1367024220_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 534322_10150823513557391_1367024220_n.jpg; sourceTree = "<group>"; };
+		D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 534322_10150823513557391_1367024220_n.jpg; sourceTree = "<group>"; };
 		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
 		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
 		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D2B8173215B64EFA002F7971 /* 534322_10150823513557391_1367024220_n.jpg */,
+				D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */,
 				D26AAFA415B2096600BF8D54 /* 157-wrench.png */,
 				D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */,
 				D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */,
@@ -661,7 +661,6 @@
 				D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */,
 				D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */,
 				D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */,
-<<<<<<< HEAD
 				F71CD6C815B35E9600C701F9 /* CloseButton.png in Resources */,
 				F71CD6C915B35E9600C701F9 /* CloseButton@2x.png in Resources */,
 				F71CD6CA15B35E9600C701F9 /* ellipsis@2x.png in Resources */,
@@ -680,9 +679,7 @@
 				F71CD6E915B3600E00C701F9 /* Text@2x.png in Resources */,
 				F71CD6EA15B3600E00C701F9 /* twitter@2x.png in Resources */,
 				F71CD6EB15B3600E00C701F9 /* yellow_gradient@2x.png in Resources */,
-=======
-				D2B8173315B64EFA002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */,
->>>>>>> Created interface for MyVMViewController
+				D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

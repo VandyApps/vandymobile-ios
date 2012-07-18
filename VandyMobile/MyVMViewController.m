@@ -51,12 +51,21 @@
 
 - (NSInteger)numberOfTilesInMenu:(MGTileMenuController *)tileMenu
 {
-<<<<<<< HEAD
 	return 9;
 }
 
-=======
+- (void) viewDidLoad {
     [super viewDidLoad];
+	
+	// Set up recognizers.
+	UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+	doubleTapRecognizer.numberOfTapsRequired = 2;
+	doubleTapRecognizer.delegate = self;
+	[self.view addGestureRecognizer:doubleTapRecognizer];
+	
+	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
+	tapRecognizer.delegate = self;
+	[self.view addGestureRecognizer:tapRecognizer];
     
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
@@ -90,7 +99,7 @@
         }
     }
     [self.navigationController.navigationBar addSubview:logo];
->>>>>>> Created interface for MyVMViewController
+}
 
 - (UIImage *)imageForTile:(NSInteger)tileNumber inMenu:(MGTileMenuController *)tileMenu
 {
@@ -133,7 +142,6 @@
 	return @"Tile";
 }
 
-<<<<<<< HEAD
 
 - (NSString *)descriptionForTile:(NSInteger)tileNumber inMenu:(MGTileMenuController *)tileMenu
 {
@@ -210,40 +218,21 @@
 	}
 }
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-	[self setupLogin];
-	
-	// Set up recognizers.
-	UITapGestureRecognizer *doubleTapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-	doubleTapRecognizer.numberOfTapsRequired = 2;
-	doubleTapRecognizer.delegate = self;
-	[self.view addGestureRecognizer:doubleTapRecognizer];
-	
-	UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleGesture:)];
-	tapRecognizer.delegate = self;
-	[self.view addGestureRecognizer:tapRecognizer];
-}
-
-- (void)viewDidUnload {
-	[self setLoginButton:nil];
-=======
 - (void)viewDidAppear:(BOOL)animated {
     
     // If the user isn't logged in yet, log them in
     if (!self.flag) {
-        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-        loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        [self presentModalViewController:loginViewController animated:YES];
+        [self setupLogin];
         self.flag = YES;
     }
+    
 }
 
 - (void)viewDidUnload
 {
     [self setBackgroundImageView:nil];
     [self setProfileImageView:nil];
->>>>>>> Created interface for MyVMViewController
+    [self setLoginButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
