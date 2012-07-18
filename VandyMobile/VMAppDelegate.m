@@ -87,10 +87,11 @@
     UINavigationController *meetingsNavigationController = [[UINavigationController alloc] initWithRootViewController:VMMeetingsTVC];
     UINavigationController *newsNavigationController = [[UINavigationController alloc] initWithRootViewController:newsViewController];
 	UINavigationController *appsNavigationController = [[UINavigationController alloc] initWithRootViewController:appsTVC];
+    UINavigationController *myVMNavigationController = [[UINavigationController alloc] initWithRootViewController:myVMViewController];
     
     
     // Add view controllers to an array
-	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, appsNavigationController, myVMViewController, nil];
+	NSArray *viewControllers = [NSArray arrayWithObjects:meetingsNavigationController, newsNavigationController, appsNavigationController, myVMNavigationController, nil];
 	
 	// Add view controllers array to tabBar
 	self.root.viewControllers = viewControllers;

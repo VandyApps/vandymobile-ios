@@ -8,6 +8,7 @@
 
 #import "MyVMViewController.h"
 #import "LoginViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define USER_KEY @"user"
 
@@ -16,6 +17,8 @@
 @end
 
 @implementation MyVMViewController
+@synthesize backgroundImageView = _backgroundImageView;
+@synthesize profileImageView = _profileImageView;
 
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
@@ -48,9 +51,46 @@
 
 - (NSInteger)numberOfTilesInMenu:(MGTileMenuController *)tileMenu
 {
+<<<<<<< HEAD
 	return 9;
 }
 
+=======
+    [super viewDidLoad];
+    
+    // Create resizable UINavigationBar image
+    UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
+    [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+    
+    // Customize backgrounds
+    self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
+    
+    // Set profile picture aspects.
+    self.profileImageView.layer.borderWidth = 2.5;
+    self.profileImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
+    //self.profileImageView.layer.cornerRadius = 2;
+    //self.profileImageView.layer.masksToBounds = YES;
+    self.profileImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.profileImageView.layer.shadowOpacity = 0.95;
+    self.profileImageView.layer.shadowRadius = 2.0;
+    self.profileImageView.layer.shadowOffset = CGSizeMake(0, 1.0);
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // Set the logo on the navigation bar
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    if ([[self.navigationController.navigationBar subviews] count] > 2) {
+        NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+        
+        for (UIView * subview in navSubviews) {
+            if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+                [subview removeFromSuperview];
+            }
+        }
+    }
+    [self.navigationController.navigationBar addSubview:logo];
+>>>>>>> Created interface for MyVMViewController
 
 - (UIImage *)imageForTile:(NSInteger)tileNumber inMenu:(MGTileMenuController *)tileMenu
 {
@@ -93,6 +133,7 @@
 	return @"Tile";
 }
 
+<<<<<<< HEAD
 
 - (NSString *)descriptionForTile:(NSInteger)tileNumber inMenu:(MGTileMenuController *)tileMenu
 {
@@ -186,6 +227,23 @@
 
 - (void)viewDidUnload {
 	[self setLoginButton:nil];
+=======
+- (void)viewDidAppear:(BOOL)animated {
+    
+    // If the user isn't logged in yet, log them in
+    if (!self.flag) {
+        LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+        loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentModalViewController:loginViewController animated:YES];
+        self.flag = YES;
+    }
+}
+
+- (void)viewDidUnload
+{
+    [self setBackgroundImageView:nil];
+    [self setProfileImageView:nil];
+>>>>>>> Created interface for MyVMViewController
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

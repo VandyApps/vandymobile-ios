@@ -70,6 +70,7 @@
 						<string key="NSFrame">{{0, 92}, {320, 275}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="287481048">
 							<int key="NSColorSpace">3</int>
@@ -213,10 +214,7 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
-						<object class="NSColor" key="IBUITintColor">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MSAxIDAuNDAwMDAwMDA2AA</bytes>
-						</object>
+						<bool key="IBUIReversesTitleShadowWhenHighlighted">YES</bool>
 						<reference key="IBUIHighlightedTitleColor" ref="287481048"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
