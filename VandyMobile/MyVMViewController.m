@@ -89,9 +89,25 @@
 }
 
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
 	[self setupProfileColors];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    // Set the logo on the navigation bar
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    if ([[self.navigationController.navigationBar subviews] count] > 2) {
+        NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+        
+        for (UIView * subview in navSubviews) {
+            if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+                [subview removeFromSuperview];
+            }
+        }
+    }
+    [self.navigationController.navigationBar addSubview:logo];
 }
 
 
