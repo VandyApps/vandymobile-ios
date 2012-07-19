@@ -13,6 +13,7 @@
 #import "VMFormCell.h"
 #import "AppsDetailViewController.h"
 #import "AppsCell.h"
+#import "JSONKit.h"
 
 
 @interface AppsTableViewController ()
@@ -40,8 +41,10 @@
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
-
+	
+	[self pullAppsFromCache];
 	[self pullAppsFromServer];
+	
 }
 
 - (void)viewDidUnload {
@@ -91,6 +94,22 @@
 											[SVProgressHUD dismissWithError:@"Error loading apps!"];
 										}];
 
+}
+
+- (void)pullAppsFromCache {
+	NSString *path = @"http://70.138.50.84/apps.json";
+	NSURLRequest *request = [[AppsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
+	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
+	NSData *responseData = response.data;
+	id appsObject = [[JSONDecoder decoder] objectWithData:responseData];
+	
+	NSMutableArray *results = [NSMutableArray array];
+	for (id appDictionary in appsObject) {
+		App *app = [[App alloc] initWithDictionary:appDictionary];
+		[results addObject:app];
+	}
+	self.results = results;
+	[self.tableView reloadData];
 }
 
 #pragma mark - TableView Datasource Methods

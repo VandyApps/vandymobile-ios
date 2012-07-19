@@ -12,6 +12,7 @@
 #import "Meeting.h"
 #import "MeetingDetailViewController.h"
 #import "AddMeetingViewController.h"
+#import "JSONKit.h"
 
 @interface MeetingsTableViewController ()
 
@@ -57,6 +58,7 @@
     self.nextMeetingLabel.hidden = YES;
     self.tableView.hidden = YES;
     
+	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
 
 }
@@ -80,14 +82,29 @@
                                             self.tableView.hidden = NO;
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-											NSLog(@"Error fetching meetings!");
+											[SVProgressHUD dismissWithError:@"Error updating meetings" afterDelay:3];
 											NSLog(@"%@",error);
-											[SVProgressHUD dismissWithError:@"Error loading meetings!"];
-											NSLog(@"Loading meetings from User Defaults...");
-											self.results = [[NSUserDefaults standardUserDefaults] objectForKey:@"meetings"];
-											NSLog(@"...Done!");
 										}];
 }
+
+- (void)pullMeetingsFromCache {
+	NSString *path = @"http://70.138.50.84/meetings.json";
+	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
+	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
+	NSData *responseData = response.data;
+	id meetingObject = [[JSONDecoder decoder] objectWithData:responseData];
+
+	NSMutableArray *results = [NSMutableArray array];
+	for (id meetingDictionary in meetingObject) {
+		Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
+		[results addObject:meeting];
+	}
+	self.results = results;
+	[self addNextMeetingCell];
+	[self.tableView setHidden:NO];
+	[self.tableView reloadData];
+}
+
 
 - (void)addNextMeetingCell {
     // Grab the next meeting
