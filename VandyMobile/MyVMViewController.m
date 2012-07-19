@@ -23,6 +23,7 @@
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
 @synthesize tileController = _tileController;
+@synthesize flag = _flag;
 
 
 #pragma mark - View Life Cycle
