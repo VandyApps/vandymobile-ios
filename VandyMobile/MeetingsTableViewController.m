@@ -13,6 +13,7 @@
 #import "MeetingDetailViewController.h"
 #import "AddMeetingViewController.h"
 #import "JSONKit.h"
+#import "VMCell.h"
 
 @interface MeetingsTableViewController ()
 
@@ -191,9 +192,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	VMFormCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	VMCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
-		cell = [[VMFormCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         Meeting *meeting = [self.results objectAtIndex:indexPath.row];
         cell.textLabel.text = meeting.topic;
         if([meeting.topic isEqualToString:@""]) {

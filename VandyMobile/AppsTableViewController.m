@@ -10,7 +10,7 @@
 #import "SVProgressHUD.h"
 #import "AppsAPIClient.h"
 #import "App.h"
-#import "VMFormCell.h"
+#import "VMCell.h"
 #import "AppsDetailViewController.h"
 #import "AppsCell.h"
 #import "JSONKit.h"
