@@ -14,6 +14,7 @@
 #import "AddMeetingViewController.h"
 #import "JSONKit.h"
 #import "VMCell.h"
+#import "User.h"
 
 @interface MeetingsTableViewController ()
 
@@ -123,7 +124,9 @@
     // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;
-    //self.nextMeetingCheckInButton.hidden = NO;
+	if ([User loggedIn]) {
+		self.nextMeetingCheckInButton.hidden = NO;
+	}
     self.nextMeetingLabel.hidden = NO;
 }
 
