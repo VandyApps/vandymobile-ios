@@ -10,6 +10,7 @@
 #import "UserAPIClient.h"
 #import "MyVMViewController.h"
 #import "User.h"
+#import "SVProgressHUD.h"
 
 #define USER_KEY @"user"
 
@@ -70,6 +71,7 @@ enum LoginViewControllerTags {
 }
 
 - (void)loginTapped {
+	[SVProgressHUD showWithStatus:@"Logging In"];
 	NSLog(@"Username = %@", self.userInput.text);
 	NSLog(@"Password = %@", self.passwordInput.text);
 	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
@@ -78,6 +80,7 @@ enum LoginViewControllerTags {
 								  User *user = [[User alloc] initWithResponse:response];
 //								  [[MyVMViewController sharedInstance] setUser:user];
 								  [[NSUserDefaults standardUserDefaults] setObject:[user userDictionary] forKey:USER_KEY];
+								  [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:self];
 								  [self closeLoginScreen];
 							}];
 }

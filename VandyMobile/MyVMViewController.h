@@ -13,11 +13,14 @@
 //+ (id)sharedInstance;
 
 @property (strong, nonatomic) User *user;
+
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
+@property (strong, nonatomic) UIBarButtonItem *logoutButton;
+@property (strong, nonatomic) IBOutlet UIView *loggedInView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
-@property BOOL flag;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 
 @end

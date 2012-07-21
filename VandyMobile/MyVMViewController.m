@@ -19,10 +19,12 @@
 @implementation MyVMViewController
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize profileImageView = _profileImageView;
+@synthesize emailLabel = _emailLabel;
 
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
-@synthesize flag = _flag;
+@synthesize logoutButton = _logoutButton;
+@synthesize loggedInView = _loggedInView;
 
 
 #pragma mark - View Life Cycle
@@ -45,17 +47,61 @@
     return self;
 }
 
+#pragma mark - Notifications
+
+- (void)setupNotifications {
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleUserLoggedIn)
+												 name:@"loggedIn" 
+											   object:nil];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleUserLoggedOut)
+												 name:@"loggedOut" 
+											   object:nil];
+}
+
+- (void)handleUserLoggedIn {
+	self.user = [[User alloc] initWithDictionaryFromUser:[[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY]];
+	[self setupUserInterface];
+	[self.loggedInView setHidden:NO];
+	[self.loginButton setHidden:YES];
+	[self setupLogoutButton];
+}
+
+- (void)handleUserLoggedOut {
+	[self.loggedInView setHidden:YES];
+	[self.loginButton setHidden:NO];
+	[self.navigationItem setRightBarButtonItem:nil];
+}
+
 #pragma mark - View Life Cycle
 
-- (void)setupLogin {
+- (void)setupLoginViews {
 	[self.loginButton addTarget:self action:@selector(presentLoginScreen) forControlEvents:UIControlEventTouchUpInside];
 	if ([User loggedIn]) {
 		self.user = [[User alloc] initWithDictionaryFromUser:[[NSUserDefaults standardUserDefaults] objectForKey:USER_KEY]];
 		[self.loginButton setHidden:YES];
-		NSLog(@"User is logged in");
+		[self setupUserInterface];
+		[self setupLogoutButton];
+
 	} else {
 		[self presentLoginScreen];
+		[self.loggedInView setHidden:YES];
 	}
+}
+
+- (void)setupLogoutButton {
+	// Create add meeting button
+	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
+	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
+}
+
+- (void)logoutTapped {
+	[[NSUserDefaults standardUserDefaults] setObject:nil forKey:USER_KEY];
+	self.user = nil;
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"loggedOut" object:nil];
+	[self presentLoginScreen];
 }
 
 - (void)setupProfileColors {
@@ -79,19 +125,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
-    // If the user isn't logged in yet, log them in
-    if (!self.flag) {
-        [self setupLogin];
-        self.flag = YES;
-    }
+
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+	[self setupNotifications];
 	[self setupProfileColors];
+	[self setupLoginViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -115,7 +158,8 @@
 {
     [self setBackgroundImageView:nil];
     [self setProfileImageView:nil];
-    [self setLoginButton:nil];
+	[self setLoginButton:nil];
+	[self setEmailLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -128,8 +172,7 @@
 }
 
 - (void)setupUserInterface {
-	
+	self.emailLabel.text = self.user.email;
 }
-
 
 @end

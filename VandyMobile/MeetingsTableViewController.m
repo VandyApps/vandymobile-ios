@@ -33,12 +33,37 @@
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
 
+
+#pragma mark - Notifications
+
+- (void)setupNotifications {
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleUserLoggedIn)
+												 name:@"loggedIn" 
+											   object:self];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self
+											 selector:@selector(handleUserLoggedOut)
+												 name:@"loggedOut" 
+											   object:self];
+}
+
+- (void)handleUserLoggedIn {
+	[self addNextMeetingCell];
+}
+
+- (void)handleUserLoggedOut {
+	[self addNextMeetingCell];
+}
+
 #pragma mark - View Life Cycle
 
 - (void)viewDidLoad
 {
     //self.title = [self.tabBarItem title];
     [super viewDidLoad];
+	
+	[self setupNotifications];
     
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
@@ -141,6 +166,8 @@
     self.nextMeetingMapButton.hidden = NO;
 	if ([User loggedIn]) {
 		self.nextMeetingCheckInButton.hidden = NO;
+	} else {
+		self.nextMeetingCheckInButton.hidden = YES;
 	}
     self.nextMeetingLabel.hidden = NO;
 }
