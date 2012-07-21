@@ -20,7 +20,7 @@
 @property (copy,nonatomic) NSString *speakerName;
 @property (copy,nonatomic) NSString *topic;
 @property (nonatomic) CLLocationCoordinate2D loc;
-@property (copy, nonatomic) NSString *description;
+@property (copy, nonatomic) NSString *meetingDescription;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 - (NSDictionary *)meetingDictionary;

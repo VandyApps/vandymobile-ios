@@ -30,7 +30,7 @@
 @synthesize speakerName = _speakerName;
 @synthesize topic = _topic;
 @synthesize loc = _loc;
-@synthesize description = _description;
+@synthesize meetingDescription = _meetingDescription;
 @synthesize dateUnformatted = _dateUnformatted;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
@@ -51,7 +51,7 @@
         }
         
         // Format date properly
-        self.description = [dictionary objectForKey:DESCRIPTION_KEY];
+        self.meetingDescription = [dictionary objectForKey:DESCRIPTION_KEY];
         NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
@@ -61,6 +61,10 @@
 
 	}
 	return self;
+}
+
+- (NSString *)description {
+	return [[self meetingDictionary] description];
 }
 
 - (NSDictionary *)meetingDictionary {
@@ -73,7 +77,7 @@
 	[meetingDict setObject:self.hasSpeaker forKey:HAS_SPEAKER_KEY];
 	[meetingDict setObject:self.speakerName forKey:SPEAKER_KEY];
 	[meetingDict setObject:self.topic forKey:TOPIC_KEY];
-	[meetingDict setObject:self.description forKey:DESCRIPTION_KEY];
+	[meetingDict setObject:self.meetingDescription forKey:DESCRIPTION_KEY];
 	
 	return [meetingDict copy];
 }

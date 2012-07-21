@@ -130,7 +130,7 @@ enum VMAddMeetingTags {
 	[meeting setHasSpeaker:[NSNumber numberWithBool:![self.speakerCell.textField.text isEqualToString:@""]]];
 	[meeting setSpeakerName:self.speakerCell.textField.text];
 	[meeting setTopic:self.topicCell.textField.text];
-	[meeting setDescription:self.descriptionCell.textField.text];
+	[meeting setMeetingDescription:self.descriptionCell.textField.text];
 		
 	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting withCompletionBlock:self.completionBlock];
 	[self.navigationController popViewControllerAnimated:YES];
