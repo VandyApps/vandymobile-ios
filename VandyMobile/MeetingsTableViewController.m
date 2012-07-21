@@ -44,12 +44,9 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
 	
-	// Create add meeting button
-	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
-																					  target:self 
-																					  action:@selector(createMeeting)];
-	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
-    
+	// Creates refresh meetings button in navbar
+    [self setupRefreshMeetingsButton];
+	
     // Customize backgrounds
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
@@ -65,6 +62,23 @@
 
 }
 
+- (void)setupCreateMeetingButton {
+	// Create add meeting button
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
+																						  target:self 
+																						  action:@selector(createMeeting)];
+	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
+- (void)setupRefreshMeetingsButton {
+	// Create add meeting button
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
+																					  target:self 
+																					  action:@selector(pullMeetingsFromServer)];
+	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
+
 - (void)pullMeetingsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
 	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
@@ -75,6 +89,7 @@
 											for (id meetingDictionary in response) {
 												Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
 												[results addObject:meeting];
+//												NSLog(@"meeting = %@", meeting);
 											}
 											self.results = results;
 											[self addNextMeetingCell];
@@ -198,18 +213,16 @@
 	VMCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
 		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        Meeting *meeting = [self.results objectAtIndex:indexPath.row];
-        cell.textLabel.text = meeting.topic;
-        if([meeting.topic isEqualToString:@""]) {
-            cell.textLabel.text = @"Working Meeting";
-        }
-        
-        cell.detailTextLabel.text = [self checkMeetingDateOfMeeting:meeting];
-                
-       
-
-		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
+	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+	cell.textLabel.text = meeting.topic;
+	if([meeting.topic isEqualToString:@""]) {
+		cell.textLabel.text = @"Working Meeting";
+	}
+	
+	cell.detailTextLabel.text = [self checkMeetingDateOfMeeting:meeting];
+	
+	[cell configureCellForTableView:self.tableView atIndexPath:indexPath];   
 	
 	return cell;
 }

@@ -48,7 +48,7 @@
 	
 	[self postPath:postPath parameters:meetingDict
 		   success:^(AFHTTPRequestOperation *operation, id responseObject) {
-			   NSLog(@"response = %@", responseObject);
+//			   NSLog(@"response = %@", responseObject);
 			   [SVProgressHUD dismissWithSuccess:@"Meeting added!"];
 			   completionBlock();
 		   } 
