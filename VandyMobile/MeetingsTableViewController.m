@@ -40,12 +40,12 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleUserLoggedIn)
 												 name:@"loggedIn" 
-											   object:self];
+											   object:nil];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 											 selector:@selector(handleUserLoggedOut)
 												 name:@"loggedOut" 
-											   object:self];
+											   object:nil];
 }
 
 - (void)handleUserLoggedIn {
