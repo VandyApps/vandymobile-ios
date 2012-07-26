@@ -43,10 +43,9 @@
 							<object class="IBUILabel" id="841025807">
 								<reference key="NSNextResponder" ref="187867367"/>
 								<int key="NSvFlags">256</int>
-								<string key="NSFrame">{{9, 65}, {183, 18}}</string>
+								<string key="NSFrame">{{9, 65}, {280, 18}}</string>
 								<reference key="NSSuperview" ref="187867367"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -149,6 +148,10 @@
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="187867367"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
+				<object class="NSColor" key="IBUIBackgroundColor">
+					<int key="NSColorSpace">1</int>
+					<bytes key="NSRGB">MC45MzY0MDM4NTg0IDAuOTM2NDAzODU4NCAwLjkzNjQwMzg1ODQgMC44NQA</bytes>
+				</object>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 				<float key="IBUIIndentationWidth">0.0</float>
 				<reference key="IBUIContentView" ref="187867367"/>

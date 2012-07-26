@@ -144,7 +144,11 @@
 	return 1;
 }
 
-
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section != 0) {
+        return 5;
+    } else return 10;
+}
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
@@ -162,9 +166,14 @@
         // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
         cell = [topLevelObjects objectAtIndex:0];
         
+        // Set text
         cell.bodyTextLabel.text = [tweet objectForKey:@"text"];
         cell.timestampLabel.text = [tweet objectForKey:@"created_at"];
+        
+        // Clips to bounds
         cell.clipsToBounds = YES;
+        
+        // Size it!
         
         CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
         CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) andFont:cell.bodyTextLabel.font];
@@ -173,17 +182,36 @@
         
         cell.timestampLabel.frame = CGRectMake(cell.timestampLabel.frame.origin.x, cell.timestampLabel.frame.origin.y + newHeight - oldHeight, cell.timestampLabel.frame.size.width, cell.timestampLabel.frame.size.height);
         
+        //cell.bodyTextLabel.layer.borderWidth = 2;
         
-        cell.bodyTextLabel.layer.borderWidth = 2;
+        // Set selection color
+//        UIView *goldenColor = [[UIView alloc] init];
+//        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+//        cell.selectedBackgroundView = goldenColor;
         
-        UIView *goldenColor = [[UIView alloc] init];
-        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-        cell.selectedBackgroundView = goldenColor;
+        // Background color
+        cell.backgroundColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:1] /*#f0f0f0*/;
+        
+        // Round imageview
+        cell.profilePictureLabel.layer.cornerRadius = 5;
+        cell.profilePictureLabel.layer.borderWidth = .5;
+        cell.profilePictureLabel.layer.borderColor = [[UIColor grayColor] CGColor];
+        cell.profilePictureLabel.clipsToBounds = YES;
+        
+        cell = [self addShadowToView:cell];
+        cell.layer.cornerRadius = .2;
+        cell.clipsToBounds = YES;
+        
     }
-    
-
-
     return cell;
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .7;
+    view.layer.shadowRadius = 1.0;
+    view.layer.shadowOffset = CGSizeMake(0, 1.0);
+    return view;
 }
 
 #pragma mark - TableViewDelegate Methods
