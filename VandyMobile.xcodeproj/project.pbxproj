@@ -56,6 +56,8 @@
 		D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */; };
 		D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */; };
 		D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */; };
+		D2A723D915BF91A00071BBA0 /* NewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A723D815BF91A00071BBA0 /* NewsCell.m */; };
+		D2A723DB15BF92140071BBA0 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A723DA15BF92140071BBA0 /* NewsCell.xib */; };
 		D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */; };
 		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
 		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
@@ -161,6 +163,9 @@
 		D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundCanvas@2x.png"; sourceTree = "<group>"; };
 		D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBar@2x.png"; sourceTree = "<group>"; };
 		D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV2@2x.png"; sourceTree = "<group>"; };
+		D2A723D715BF91A00071BBA0 /* NewsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsCell.h; sourceTree = "<group>"; };
+		D2A723D815BF91A00071BBA0 /* NewsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsCell.m; sourceTree = "<group>"; };
+		D2A723DA15BF92140071BBA0 /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 534322_10150823513557391_1367024220_n.jpg; sourceTree = "<group>"; };
 		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
 		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
@@ -321,9 +326,9 @@
 				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
 				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
 				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
 				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
 				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
@@ -375,6 +380,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
@@ -465,6 +471,8 @@
 		F7D4F067159FF4AA00F80CC0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D2A723D715BF91A00071BBA0 /* NewsCell.h */,
+				D2A723D815BF91A00071BBA0 /* NewsCell.m */,
 				522573D015AF2B820014C7FB /* AppsCell.h */,
 				522573D115AF2B820014C7FB /* AppsCell.m */,
 				F7D4F069159FF50500F80CC0 /* VMFormCell.h */,
@@ -593,6 +601,7 @@
 				D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */,
 				D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */,
 				D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */,
+				D2A723DB15BF92140071BBA0 /* NewsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -647,6 +656,7 @@
 				F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */,
 				F71CD61815B2509900C701F9 /* User.m in Sources */,
 				F7118EDB15B7B80D002C9DFA /* VMCell.m in Sources */,
+				D2A723D915BF91A00071BBA0 /* NewsCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

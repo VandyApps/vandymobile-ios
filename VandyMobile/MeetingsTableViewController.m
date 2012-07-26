@@ -164,11 +164,13 @@
     // Unhide labels / "cell" components
     self.nextMeetingImageView.hidden = NO;
     self.nextMeetingMapButton.hidden = NO;
-	if ([User loggedIn]) {
-		self.nextMeetingCheckInButton.hidden = NO;
-	} else {
-		self.nextMeetingCheckInButton.hidden = YES;
-	}
+    
+//	if ([User loggedIn]) {
+//		self.nextMeetingCheckInButton.hidden = NO;
+//	} else {
+//		self.nextMeetingCheckInButton.hidden = YES;
+//	}
+    
     self.nextMeetingLabel.hidden = NO;
 }
 
@@ -313,6 +315,10 @@
     NSDateComponents *currentComponents = [gregorian components:(NSWeekdayCalendarUnit) fromDate:now];
     NSInteger currentDay = [currentComponents weekday];
     
+    // If date is now
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 2)) {
+        self.nextMeetingCheckInButton.hidden = NO;
+    }
     // If date is today
     if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
         return [NSString stringWithFormat:@"%@ %@", @"Today at", meeting.time];

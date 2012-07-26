@@ -10,6 +10,8 @@
 #import "AFNetworking.h"
 #import "SVProgressHUD.h"
 #import "NewsDetailViewController.h"
+#import "Sizer.h"
+#import "NewsCell.h"
 
 @interface NewsViewController ()
 
@@ -40,7 +42,7 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
     self.tableView.backgroundColor = [UIColor clearColor];
-    self.tableView.backgroundView.hidden = YES;
+    //self.tableView.backgroundView.hidden = YES;
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
 //    // Customize Segmented Control
@@ -134,9 +136,15 @@
 
 #pragma mark - TableViewDatasource Methods
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.tweets count];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.tweets.count;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return 1;
+}
+
+
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
@@ -144,27 +152,35 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
 	if(!cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-	}
-        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+		cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.section];
+            
+        // Load the top-level objects from the custom cell XIB.
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"NewsCell" owner:self options:nil];
+        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+        cell = [topLevelObjects objectAtIndex:0];
         
-        cell.textLabel.text = [tweet objectForKey:@"text"];
+        cell.bodyTextLabel.text = [tweet objectForKey:@"text"];
+        cell.timestampLabel.text = [tweet objectForKey:@"created_at"];
+        cell.clipsToBounds = YES;
         
-//        NSString *url = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-//        [cell.imageView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"08-chat.png"]];
-    [cell.imageView setImage:[UIImage imageNamed:@"08-chat"]];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    cell.textLabel.numberOfLines = 0;
-    cell.detailTextLabel.text = [tweet objectForKey:@"created_at"];
+        CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
+        CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withMaxHeight:MAXFLOAT andFont:cell.bodyTextLabel.font andWidth:cell.bodyTextLabel.frame.size.width] - 25;
+        
+        cell.bodyTextLabel.frame = CGRectMake(cell.bodyTextLabel.frame.origin.x, cell.bodyTextLabel.frame.origin.y, cell.bodyTextLabel.frame.size.width, newHeight);
+        
+        cell.timestampLabel.frame = CGRectMake(cell.timestampLabel.frame.origin.x, cell.timestampLabel.frame.origin.y + newHeight - oldHeight, cell.timestampLabel.frame.size.width, cell.timestampLabel.frame.size.height);
+        
+        //[cell.bodyTextLabel sizeToFit];
+        
+        
+        UIView *goldenColor = [[UIView alloc] init];
+        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+        cell.selectedBackgroundView = goldenColor;
+    }
     
-    UIView *goldenColor = [[UIView alloc] init];
-    goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
-    cell.selectedBackgroundView = goldenColor;
 
 
     return cell;
@@ -182,7 +198,7 @@
     NewsDetailViewController *newsDVC = [[NewsDetailViewController alloc] init];
     
     // Grab the meeting at the index path
-    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.section];
     
     // Prepare meetingDVC
     newsDVC.title = @"Tweet";
@@ -192,15 +208,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *cellText = [[self.tweets objectAtIndex:indexPath.row] objectForKey:@"text"];
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:14];
-    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-    CGSize labelSize = [cellText sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    if (labelSize.height < 15) {
-        return 50;
-    } else {
-        return labelSize.height + 35;
-    }
+    NSString *cellText = [[self.tweets objectAtIndex:indexPath.section] objectForKey:@"text"];
+    return [Sizer sizeText:cellText withMaxHeight:MAXFLOAT andFont:[UIFont fontWithName:@"Helvetica" size:13] andWidth:220];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
