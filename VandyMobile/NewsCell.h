@@ -12,7 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
-@property (weak, nonatomic) IBOutlet UITextView *bodyTextLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bodyTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePictureLabel;
 
 @end

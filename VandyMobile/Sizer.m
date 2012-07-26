@@ -40,7 +40,50 @@
     return textView.frame;
 }
 
-+ (CGFloat)sizeText:(NSString *)text withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font andWidth:(CGFloat)width {
+//+ (CGFloat)sizeText:(NSString *)text withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font andWidth:(CGFloat)width {
+//    
+//    // Resize stuff
+//    if (!font) {
+//        // If no font, default to Helvetica 14
+//        font = [UIFont fontWithName:@"Helvetica" size:14];
+//    }
+//    
+//    // Constraint is the max float
+//    //CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
+//    
+//    // Grab label size
+//    CGSize labelSize = [text sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByWordWrapping];
+//
+//    float height;
+//    
+//    
+//    NSScanner *theScanner = [NSScanner scannerWithString:text];
+//    while (![theScanner isAtEnd]) {
+//        [theScanner scanUpToString:@"\n" intoString:nil];
+//        height += 10;
+//    }
+//    
+//    if (labelSize.height > maxHeight - 40) {
+//        height = maxHeight;
+//    } else if (labelSize.height < 45) {
+//        height = 110;
+//    } else {
+//        height = labelSize.height + 65;
+//    }
+//    
+////    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 678, 0)];
+////    textView.font = font;
+////    textView.text = text;
+////    [textView sizeToFit];
+//
+//    
+////    CGFloat newHeight = textView.contentSize.height;
+//    
+//    
+//    return height;
+//}
+
++ (CGFloat)sizeText:(NSString *)text withConstraint:(CGSize)constraintSize andFont:(UIFont *)font {
     
     // Resize stuff
     if (!font) {
@@ -52,32 +95,30 @@
     //CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
     
     // Grab label size
-    CGSize labelSize = [text sizeWithFont:font forWidth:width lineBreakMode:NSLineBreakByWordWrapping];
-
-    float height;
+    CGSize labelSize = [text sizeWithFont:font constrainedToSize:constraintSize];
     
+    float height = labelSize.height;
     
     NSScanner *theScanner = [NSScanner scannerWithString:text];
     while (![theScanner isAtEnd]) {
-        [theScanner scanUpToString:@"\n" intoString:nil];
-        height += 10;
+        [theScanner scanUpToString:@"\n\n" intoString:nil];
+        //height += 10;
     }
     
-    if (labelSize.height > maxHeight - 40) {
-        height = maxHeight;
-    } else if (labelSize.height < 45) {
-        height = 110;
-    } else {
-        height = labelSize.height + 65;
+    if (labelSize.height > constraintSize.height) {
+        height = constraintSize.height;
+    } else if (labelSize.height < 50) {
+        height = 50;
     }
     
-//    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 678, 0)];
-//    textView.font = font;
-//    textView.text = text;
-//    [textView sizeToFit];
-
+    //    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 678, 0)];
+    //    textView.font = font;
+    //    textView.text = text;
+    //    [textView sizeToFit];
     
-//    CGFloat newHeight = textView.contentSize.height;
+    
+    
+    //    CGFloat newHeight = textView.contentSize.height;
     
     
     return height;

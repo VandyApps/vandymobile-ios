@@ -167,14 +167,14 @@
         cell.clipsToBounds = YES;
         
         CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
-        CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withMaxHeight:MAXFLOAT andFont:cell.bodyTextLabel.font andWidth:cell.bodyTextLabel.frame.size.width] - 25;
+        CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) andFont:cell.bodyTextLabel.font];
         
         cell.bodyTextLabel.frame = CGRectMake(cell.bodyTextLabel.frame.origin.x, cell.bodyTextLabel.frame.origin.y, cell.bodyTextLabel.frame.size.width, newHeight);
         
         cell.timestampLabel.frame = CGRectMake(cell.timestampLabel.frame.origin.x, cell.timestampLabel.frame.origin.y + newHeight - oldHeight, cell.timestampLabel.frame.size.width, cell.timestampLabel.frame.size.height);
         
-        //[cell.bodyTextLabel sizeToFit];
         
+        cell.bodyTextLabel.layer.borderWidth = 2;
         
         UIView *goldenColor = [[UIView alloc] init];
         goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
@@ -209,7 +209,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellText = [[self.tweets objectAtIndex:indexPath.section] objectForKey:@"text"];
-    return [Sizer sizeText:cellText withMaxHeight:MAXFLOAT andFont:[UIFont fontWithName:@"Helvetica" size:13] andWidth:220];
+    return 90 + [Sizer sizeText:cellText withConstraint:CGSizeMake(220, MAXFLOAT) andFont:[UIFont fontWithName:@"Helvetica" size:13]] - 49;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
