@@ -10,6 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "Sizer.h"
 #import "UIView+Frame.h"
+#import "UIImage+Color.h"
 
 @interface AppsDetailViewController ()
 
@@ -21,6 +22,7 @@
 @synthesize appIconImageContainerView;
 @synthesize descriptionTextView;
 @synthesize belowTextViewContainerView;
+@synthesize envelopeImageView;
 @synthesize teamLabel;
 @synthesize nameLabel;
 @synthesize taglineLabel;
@@ -56,9 +58,12 @@
     self.descriptionTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionTextView.layer.borderWidth = .5;
     
+    self.appStoreButton.opaque = YES;
+    self.appStoreButton.alpha = .8;
     self.appStoreButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.appStoreButton.layer.borderWidth = 2;
     self.appStoreButton.layer.cornerRadius = 5;
+    
     
     // Set labels
     self.teamLabel.text = app.team;
@@ -67,9 +72,18 @@
     self.descriptionTextView.text = app.description;
     
     // Sizing code
-    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 151) font:self.descriptionTextView.font andMinimumHeight:50];
-    self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 8;
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 160) font:self.descriptionTextView.font andMinimumHeight:50];
+    self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 1;
     
+    
+    self.teamButton.opaque = YES;
+	self.teamButton.backgroundColor = [UIColor colorWithRed:0.01 green:0.01 blue:0.01 alpha:.8] /*#333333*/;
+    self.teamButton.layer.borderWidth = 2;
+    self.teamButton.layer.cornerRadius = 5;
+    self.teamButton.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
+
+    self.envelopeImageView.image = [UIImage imageNamed:@"18-envelope" withColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]];
+
     [self downloadPhoto];
     
     [self addShadowToView:self.appIconImageContainerView];
@@ -135,6 +149,7 @@
     [self setTaglineLabel:nil];
     [self setBelowTextViewContainerView:nil];
     [self setAppIconImageContainerView:nil];
+    [self setEnvelopeImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -48,6 +48,13 @@
 	UIView *goldenColor = [[UIView alloc] init];
 	goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
 	self.selectedBackgroundView = goldenColor;
+    
+    UIView *heatherGray = [[UIView alloc] init];
+	heatherGray.backgroundColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:.6] /*#f0f0f0*/;
+    heatherGray.opaque = YES;
+    heatherGray.alpha = .6;
+	self.backgroundView = heatherGray;
+    
 }
 
 

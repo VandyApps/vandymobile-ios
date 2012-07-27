@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIView *appIconImageContainerView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UIView *belowTextViewContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *envelopeImageView;
 
 // Labels
 @property (weak, nonatomic) IBOutlet UILabel *teamLabel;
