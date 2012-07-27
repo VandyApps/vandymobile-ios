@@ -216,6 +216,8 @@
     //bgView.borderColor = [UIColor lightGrayColor];
     //cell.backgroundView = bgView;
     
+    [cell configureCellForTableView:self.tableView atIndexPath:indexPath];
+    
     return cell;
 }
 

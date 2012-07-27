@@ -169,7 +169,7 @@
 		[self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
         
         //CGFloat oldHeight = cell.subLabel.height;
-        cell.subLabel.height = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(cell.subLabel.width, MAXFLOAT) font:cell.subLabel.font andMinimumHeight:21];
+        cell.subLabel.height = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:cell.subLabel.font andMinimumHeight:21];
         //[self.heightOffset setObject:[NSNumber numberWithFloat:(cell.subLabel.height-oldHeight)] atIndexedSubscript:indexPath.row];
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
@@ -181,7 +181,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     App *app = [self.results objectAtIndex:indexPath.row];
-    CGFloat newHeight = [Sizer sizeText:app.tagline withConstraint:CGSizeMake(234, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    CGFloat newHeight = [Sizer sizeText:app.tagline withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
     return 67 + newHeight - 21;
 }
 
