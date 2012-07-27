@@ -12,6 +12,9 @@
 #define NAME_KEY @"name"
 #define OS_KEY @"OS"
 #define DESCRIPTION_KEY @"description"
+#define TAGLINE_KEY @"tagline"
+#define IMAGEPATH_KEY @"image_url"
+#define ITUNESPATH_KEY @"app_url"
 
 @implementation App
 
@@ -20,6 +23,8 @@
 @synthesize OS = _OS;
 @synthesize description = _description;
 @synthesize tagline = _tagline;
+@synthesize imagePath = _imagePath;
+@synthesize itunesPath = _itunesPath;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary {
 	self = [super init];
@@ -28,7 +33,9 @@
 		self.name			= [dictionary objectForKey:NAME_KEY];
 		self.OS				= [dictionary objectForKey:OS_KEY];
 		self.description	= [dictionary objectForKey:DESCRIPTION_KEY];
-        self.tagline        = @"Default tagline. Lorem ipsum dolor.";
+        self.tagline        = [dictionary objectForKey:TAGLINE_KEY];
+        self.imagePath      = [dictionary objectForKey:IMAGEPATH_KEY];
+        self.itunesPath     = [dictionary objectForKey:ITUNESPATH_KEY];
 	}
 	return self;
 }

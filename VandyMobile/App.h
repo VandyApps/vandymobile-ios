@@ -15,6 +15,8 @@
 @property (nonatomic, copy) NSString *OS;
 @property (nonatomic, copy) NSString *description;
 @property (nonatomic, copy) NSString *tagline;
+@property (nonatomic, copy) NSString *imagePath;
+@property (nonatomic, copy) NSString *itunesPath;
 
 - (id)initWithDictionary:(NSDictionary *)dictionary;
 

@@ -44,7 +44,7 @@
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-    self.appIconImage.layer.cornerRadius = 11;
+    self.appIconImage.layer.cornerRadius = 6;
     self.appIconImage.clipsToBounds = YES;
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = .5;
@@ -61,12 +61,13 @@
     self.descriptionTextView.text = app.description;
     
     // Size textview
-    self.descriptionTextView.frame = [Sizer sizeTextView:self.descriptionTextView withMaxHeight:117 andFont:self.descriptionTextView.font];
-    CGFloat newYOrigin = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.size.height + 6;
-    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
-                                                       newYOrigin,
-                                                       self.belowTextViewContainerView.frame.size.width,
-                                                       self.belowTextViewContainerView.frame.size.height) ;
+//    self.descriptionTextView.frame = [Sizer sizeTextView:self.descriptionTextView withMaxHeight:117 andFont:self.descriptionTextView.font];
+//    CGFloat newYOrigin = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.size.height + 6;
+//    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
+//                                                       newYOrigin,
+//                                                       self.belowTextViewContainerView.frame.size.width,
+//                                                       self.belowTextViewContainerView.frame.size.height) ;
+    [self downloadPhoto];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -80,6 +81,32 @@
             [subview removeFromSuperview];
         }
     }
+}
+
+- (void)downloadPhoto {
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:self.app.imagePath]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.appIconImage setImage:[UIImage imageWithData:imgUrl]];
+            [loading stopAnimating];
+            self.navigationItem.rightBarButtonItem = temp;
+        });
+    });
+    dispatch_release(downloadQueue);
+    
+}
+
+- (IBAction)appStoreButtonPressed {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:self.app.itunesPath]];
 }
 
 - (void)viewDidUnload

@@ -24,7 +24,7 @@
 }
 
 - (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
-	self.backgroundColor = [UIColor clearColor];
+	//self.backgroundColor = [UIColor clearColor];
 	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 	self.mainLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
 	self.subLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13.0];
@@ -33,10 +33,21 @@
 	goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
 	self.selectedBackgroundView = goldenColor;
     
-    self.cellImage.layer.cornerRadius = 11;
+    self.cellImage.layer.cornerRadius = 6;
     self.cellImage.clipsToBounds = YES;
     self.cellImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.cellImage.layer.borderWidth = .5;
+    self.cellImage = [self addShadowToView:self.cellImage];
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = 1;
+    view.layer.shadowRadius = 3.0;
+    view.layer.shadowOffset = CGSizeMake(2, 2);
+    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+    
+    return view;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

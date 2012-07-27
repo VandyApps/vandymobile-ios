@@ -14,6 +14,7 @@
 #import "AppsDetailViewController.h"
 #import "AppsCell.h"
 #import "JSONKit.h"
+#import <QuartzCore/QuartzCore.h>
 
 
 @interface AppsTableViewController ()
@@ -93,6 +94,7 @@
 											NSLog(@"%@",error);
 											[SVProgressHUD dismissWithError:@"Error loading apps!"];
 										}];
+    
 
 }
 
@@ -105,12 +107,36 @@
 	
 	NSMutableArray *results = [NSMutableArray array];
 	for (id appDictionary in appsObject) {
+        NSLog(@"%@", appDictionary);
 		App *app = [[App alloc] initWithDictionary:appDictionary];
 		[results addObject:app];
 	}
 	self.results = results;
 	[self.tableView reloadData];
 }
+
+- (void)downloadPhotoForApp:(App *)app andPhoto:(UIImageView *)imageView {
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:app.imagePath]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [imageView setImage:[UIImage imageWithData:imgUrl]];
+            [loading stopAnimating];
+            self.navigationItem.rightBarButtonItem = temp;
+        });
+    });
+    dispatch_release(downloadQueue);
+    
+}
+
 
 #pragma mark - TableView Datasource Methods
 
@@ -135,7 +161,7 @@
 
         cell.mainLabel.text = app.name;
         cell.subLabel.text = app.tagline;
-		cell.cellImage.image = [UIImage imageNamed:@"VandyMobileIcon.png"];
+		[self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
