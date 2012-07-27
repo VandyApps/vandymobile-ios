@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "App.h"
+#import <MessageUI/MessageUI.h>
 
-@interface AppsDetailViewController : UIViewController
+@interface AppsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) App *app;
 

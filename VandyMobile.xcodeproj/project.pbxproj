@@ -18,6 +18,7 @@
 		D23267B915C18F86007FFAB9 /* app_store_badge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D23267B715C18F86007FFAB9 /* app_store_badge@2x.png */; };
 		D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D232684015C2217F007FFAB9 /* UIView+Frame.m */; };
 		D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D232684515C23C5D007FFAB9 /* UIImage+Color.m */; };
+		D232684815C25335007FFAB9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232684715C25335007FFAB9 /* MessageUI.framework */; };
 		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
 		D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */; };
@@ -131,6 +132,7 @@
 		D232684015C2217F007FFAB9 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		D232684415C23C5D007FFAB9 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		D232684515C23C5D007FFAB9 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
+		D232684715C25335007FFAB9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D232684815C25335007FFAB9 /* MessageUI.framework in Frameworks */,
 				F72C011115AFB6100025269F /* Security.framework in Frameworks */,
 				D2445A62157A801000A7E297 /* EventKit.framework in Frameworks */,
 				D2445A63157A801000A7E297 /* EventKitUI.framework in Frameworks */,
@@ -470,6 +473,7 @@
 		F7ACC5821566903100CDE5A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D232684715C25335007FFAB9 /* MessageUI.framework */,
 				F72C011015AFB6100025269F /* Security.framework */,
 				D2445A60157A800F00A7E297 /* EventKit.framework */,
 				D2445A61157A801000A7E297 /* EventKitUI.framework */,

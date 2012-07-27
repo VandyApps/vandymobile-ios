@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *bodyTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePictureLabel;
 
+@property BOOL boundsSet;
+
 - (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
 
 @end

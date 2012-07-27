@@ -84,6 +84,8 @@
     
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
+    
+    
 
 }
 
@@ -284,6 +286,11 @@
 }
 
 - (IBAction)nextMeetingButtonPressed:(UIButton *)sender {
+//    UIImageView *goldenColor = [[UIImageView alloc] init];
+//	goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
+//    goldenColor.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+//	self.nextMeetingImageView = goldenColor;
+    
     // Create new MeetingDVC
     MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
     
