@@ -68,6 +68,12 @@
 //                                                       self.belowTextViewContainerView.frame.size.width,
 //                                                       self.belowTextViewContainerView.frame.size.height) ;
     [self downloadPhoto];
+    
+    //self.appIconImage = [self addShadowToView:self.appIconImage];
+    self.appIconImage.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.appIconImage.layer.shadowOpacity = .8;
+    self.appIconImage.layer.shadowRadius = 2.0;
+    self.appIconImage.layer.shadowOffset = CGSizeMake(0, 4);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,6 +109,16 @@
     });
     dispatch_release(downloadQueue);
     
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .8;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(0, 4);
+    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+    
+    return view;
 }
 
 - (IBAction)appStoreButtonPressed {
