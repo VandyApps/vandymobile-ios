@@ -59,6 +59,10 @@
     
     // Zoom MapView to coordinates
     if (CLLocationCoordinate2DIsValid(self.meeting.loc)) {
+        if (self.meeting.loc.latitude == 0 && self.meeting.loc.longitude == 0) {
+            CLLocationCoordinate2D defaultCoordinate = CLLocationCoordinate2DMake(36.14357, -86.80591);
+            self.meeting.loc = defaultCoordinate;
+        }
         // Round corners of map view (QuartzCore)
         self.mapView.layer.cornerRadius = 11;
         self.mapView.clipsToBounds = YES;
@@ -79,7 +83,7 @@
     
     // Set annotation in MapView
     VMAnnotation *anno = [[VMAnnotation alloc] init];
-    [anno setCoordinate:self.meeting.loc]; 
+    [anno setCoordinate:self.meeting.loc];
 //    [anno setTitle:@"Test Title"];
 //    [anno setSubtitle:@"Test Subtitle"];
     [self.mapView addAnnotation:anno];
