@@ -9,6 +9,7 @@
 #import "MyVMViewController.h"
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GithubRepoTableViewController.h"
 
 #define USER_KEY @"user"
 
@@ -21,6 +22,7 @@
 @synthesize profileImageView = _profileImageView;
 @synthesize emailLabel = _emailLabel;
 
+@synthesize appsButton = _appsButton;
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
 @synthesize logoutButton = _logoutButton;
@@ -91,6 +93,15 @@
 	}
 }
 
+- (void)setupDetailButtons {
+	[self.appsButton addTarget:self action:@selector(appsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)appsButtonTapped {
+	GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
+	[self.navigationController pushViewController:repoTVC animated:YES];
+}
+
 - (void)setupLogoutButton {
 	// Create add meeting button
 	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
@@ -135,6 +146,7 @@
 	[self setupNotifications];
 	[self setupProfileColors];
 	[self setupLoginViews];
+	[self setupDetailButtons];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -160,6 +172,7 @@
     [self setProfileImageView:nil];
 	[self setLoginButton:nil];
 	[self setEmailLabel:nil];
+    [self setAppsButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

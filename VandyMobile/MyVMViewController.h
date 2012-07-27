@@ -12,6 +12,8 @@
 @interface MyVMViewController : UIViewController  
 //+ (id)sharedInstance;
 
+@property (strong, nonatomic) IBOutlet UIButton *appsButton;
+
 @property (strong, nonatomic) User *user;
 
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
