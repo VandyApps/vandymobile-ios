@@ -102,17 +102,19 @@
 	NSString *path = @"http://70.138.50.84/apps.json";
 	NSURLRequest *request = [[AppsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
-	NSData *responseData = response.data;
-	id appsObject = [[JSONDecoder decoder] objectWithData:responseData];
-	
-	NSMutableArray *results = [NSMutableArray array];
-	for (id appDictionary in appsObject) {
-        NSLog(@"%@", appDictionary);
-		App *app = [[App alloc] initWithDictionary:appDictionary];
-		[results addObject:app];
+	if (response) {
+		NSData *responseData = response.data;
+		id appsObject = [[JSONDecoder decoder] objectWithData:responseData];
+		
+		NSMutableArray *results = [NSMutableArray array];
+		for (id appDictionary in appsObject) {
+			NSLog(@"%@", appDictionary);
+			App *app = [[App alloc] initWithDictionary:appDictionary];
+			[results addObject:app];
+		}
+		self.results = results;
+		[self.tableView reloadData];
 	}
-	self.results = results;
-	[self.tableView reloadData];
 }
 
 - (void)downloadPhotoForApp:(App *)app andPhoto:(UIImageView *)imageView {

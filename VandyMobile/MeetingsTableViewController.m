@@ -133,19 +133,22 @@
 	NSString *path = @"http://70.138.50.84/meetings.json";
 	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
-	NSData *responseData = response.data;
-	id meetingObject = [[JSONDecoder decoder] objectWithData:responseData];
-
-	NSMutableArray *results = [NSMutableArray array];
-	for (id meetingDictionary in meetingObject) {
-		Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
-		[results addObject:meeting];
+	if (response) {
+		NSData *responseData = response.data;
+		id meetingObject = [[JSONDecoder decoder] objectWithData:responseData];
+		
+		NSMutableArray *results = [NSMutableArray array];
+		for (id meetingDictionary in meetingObject) {
+			Meeting *meeting = [[Meeting alloc] initWithDictionary:meetingDictionary];
+			[results addObject:meeting];
+		}
+		self.results = results;
+		[self addNextMeetingCell];
+		[self.tableView setHidden:NO];
+		[self.tableView reloadData];
 	}
-	self.results = results;
-	[self addNextMeetingCell];
-	[self.tableView setHidden:NO];
-	[self.tableView reloadData];
 }
+
 
 
 - (void)addNextMeetingCell {
