@@ -12,6 +12,9 @@
 #import "NewsDetailViewController.h"
 #import "Sizer.h"
 #import "NewsCell.h"
+#import <QuartzCore/QuartzCore.h>
+#import "ImageManipulator.h"
+#import "CustomCellBackgroundView.h"
 
 @interface NewsViewController ()
 
@@ -150,6 +153,12 @@
     } else return 10;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    if (section != self.tweets.count) {
+        return 5;
+    } else return 10;
+}
+
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
 // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
 
@@ -157,60 +166,66 @@
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
 	NewsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
 	if(!cell) {
 		cell = [[NewsCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
-        NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.section];
-            
-        // Load the top-level objects from the custom cell XIB.
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"NewsCell" owner:self options:nil];
-        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-        cell = [topLevelObjects objectAtIndex:0];
+    }
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.section];
         
-        // Set text
-        cell.bodyTextLabel.text = [tweet objectForKey:@"text"];
-        cell.timestampLabel.text = [tweet objectForKey:@"created_at"];
-        
-        // Clips to bounds
-        cell.clipsToBounds = YES;
-        
-        // Size it!
-        
-        CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
-        CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) andFont:cell.bodyTextLabel.font];
-        
-        cell.bodyTextLabel.frame = CGRectMake(cell.bodyTextLabel.frame.origin.x, cell.bodyTextLabel.frame.origin.y, cell.bodyTextLabel.frame.size.width, newHeight);
-        
-        cell.timestampLabel.frame = CGRectMake(cell.timestampLabel.frame.origin.x, cell.timestampLabel.frame.origin.y + newHeight - oldHeight, cell.timestampLabel.frame.size.width, cell.timestampLabel.frame.size.height);
-        
-        //cell.bodyTextLabel.layer.borderWidth = 2;
-        
-        // Set selection color
+    // Load the top-level objects from the custom cell XIB.
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"NewsCell" owner:self options:nil];
+    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+    cell = [topLevelObjects objectAtIndex:0];
+    
+    // Set text
+    cell.bodyTextLabel.text = [tweet objectForKey:@"text"];
+    cell.timestampLabel.text = [tweet objectForKey:@"created_at"];
+    
+    // Clips to bounds
+    cell.clipsToBounds = YES;
+    
+    // Size it!
+    
+    CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
+    CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) andFont:cell.bodyTextLabel.font];
+    
+    cell.bodyTextLabel.frame = CGRectMake(cell.bodyTextLabel.frame.origin.x, cell.bodyTextLabel.frame.origin.y, cell.bodyTextLabel.frame.size.width, newHeight);
+    
+    cell.timestampLabel.frame = CGRectMake(cell.timestampLabel.frame.origin.x, cell.timestampLabel.frame.origin.y + newHeight - oldHeight, cell.timestampLabel.frame.size.width, cell.timestampLabel.frame.size.height);
+    
+    //cell.bodyTextLabel.layer.borderWidth = 2;
+    
+    // Set selection color
 //        UIView *goldenColor = [[UIView alloc] init];
 //        goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
 //        cell.selectedBackgroundView = goldenColor;
-        
-        // Background color
-        cell.backgroundColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:1] /*#f0f0f0*/;
-        
-        // Round imageview
-        cell.profilePictureLabel.layer.cornerRadius = 5;
-        cell.profilePictureLabel.layer.borderWidth = .5;
-        cell.profilePictureLabel.layer.borderColor = [[UIColor grayColor] CGColor];
-        cell.profilePictureLabel.clipsToBounds = YES;
-        
-        cell = [self addShadowToView:cell];
-        cell.layer.cornerRadius = .2;
-        cell.clipsToBounds = YES;
-        
-    }
+    
+    
+    
+    // Round imageview
+    cell.profilePictureLabel.layer.cornerRadius = 5;
+    cell.profilePictureLabel.layer.borderWidth = .5;
+    cell.profilePictureLabel.layer.borderColor = [[UIColor grayColor] CGColor];
+    cell.profilePictureLabel.clipsToBounds = YES;
+    
+    //cell = [self addShadowToView:cell];
+    //cell.layer.cornerRadius = .2;
+    //cell.clipsToBounds = YES;
+    //CustomCellBackgroundView *bgView = [[CustomCellBackgroundView alloc] initWithFrame:cell.backgroundView.frame];
+    //bgView.fillColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:1] /*#f0f0f0*/;
+    //bgView.borderColor = [UIColor lightGrayColor];
+    //cell.backgroundView = bgView;
+    
     return cell;
 }
 
 - (id)addShadowToView:(UIView *)view {
     view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = .7;
-    view.layer.shadowRadius = 1.0;
-    view.layer.shadowOffset = CGSizeMake(0, 1.0);
+    view.layer.shadowOpacity = .8;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(0, 4);
+    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+
     return view;
 }
 
