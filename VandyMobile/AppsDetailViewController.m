@@ -23,6 +23,7 @@
 @synthesize descriptionTextView;
 @synthesize belowTextViewContainerView;
 @synthesize envelopeImageView;
+@synthesize labelsContainerView;
 @synthesize teamLabel;
 @synthesize nameLabel;
 @synthesize taglineLabel;
@@ -48,12 +49,12 @@
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-    self.appIconImage.layer.cornerRadius = 8;
+    self.appIconImage.layer.cornerRadius = 10;
     self.appIconImage.clipsToBounds = YES;
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionTextView.layer.cornerRadius = 8;
+    self.descriptionTextView.layer.cornerRadius = 10;
     self.descriptionTextView.clipsToBounds = YES;
     self.descriptionTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionTextView.layer.borderWidth = .5;
@@ -70,9 +71,10 @@
     self.nameLabel.text = app.name;
     self.taglineLabel.text = app.tagline;
     self.descriptionTextView.text = app.description;
+    //self.labelsContainerView.centerY = self.appIconImage.centerY;
     
     // Sizing code
-    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 160) font:self.descriptionTextView.font andMinimumHeight:50];
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 143) font:self.descriptionTextView.font andMinimumHeight:50];
     self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 1;
     
     
@@ -216,6 +218,7 @@
     [self setBelowTextViewContainerView:nil];
     [self setAppIconImageContainerView:nil];
     [self setEnvelopeImageView:nil];
+    [self setLabelsContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -180,8 +180,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    App *app = [self.results objectAtIndex:indexPath.row];
-    CGFloat newHeight = [Sizer sizeText:app.tagline withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
     return 67 + newHeight - 21;
 }
 

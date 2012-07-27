@@ -51,6 +51,24 @@
     
 }
 
+//+ (CGFloat)cellHeightForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+//    int numberOfRowsInSection = [tableView.dataSource tableView:tableView numberOfRowsInSection:indexPath.section];
+//    if (numberOfRowsInSection == 1) {
+//        return 58;
+//    } else {
+//        BOOL first  = indexPath.row == 0;
+//        BOOL last   = indexPath.row == numberOfRowsInSection - 1;
+//
+//        if (first) {
+//            return 54;
+//        } else if (last) {
+//            return 53;
+//        } else { //middle
+//            return 48;
+//        }
+//    }
+//}
+
 - (id)addShadowToView:(UIView *)view {
     view.layer.shadowColor = [[UIColor blackColor] CGColor];
     view.layer.shadowOpacity = .6;
