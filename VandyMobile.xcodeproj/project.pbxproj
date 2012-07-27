@@ -96,6 +96,8 @@
 		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
 		F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105C715A8B00F00FD15B8 /* VMTableView.m */; };
 		F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105E415AA2E4100FD15B8 /* UserAPIClient.m */; };
+		F766DAC615C22AD700A12A5E /* GithubRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F766DAC415C22AD700A12A5E /* GithubRepoTableViewController.m */; };
+		F766DAC715C22AD700A12A5E /* GithubRepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F766DAC515C22AD700A12A5E /* GithubRepoTableViewController.xib */; };
 		F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77D76E7159F9C200009AD6B /* MyVMViewController.m */; };
 		F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76E8159F9C200009AD6B /* MyVMViewController.xib */; };
 		F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76FC159FAB410009AD6B /* LoginViewController.xib */; };
@@ -225,6 +227,9 @@
 		F76105C715A8B00F00FD15B8 /* VMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTableView.m; sourceTree = "<group>"; };
 		F76105E315AA2E4000FD15B8 /* UserAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPIClient.h; sourceTree = "<group>"; };
 		F76105E415AA2E4100FD15B8 /* UserAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPIClient.m; sourceTree = "<group>"; };
+		F766DAC315C22AD700A12A5E /* GithubRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepoTableViewController.h; sourceTree = "<group>"; };
+		F766DAC415C22AD700A12A5E /* GithubRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepoTableViewController.m; sourceTree = "<group>"; };
+		F766DAC515C22AD700A12A5E /* GithubRepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GithubRepoTableViewController.xib; sourceTree = "<group>"; };
 		F77D76E6159F9C200009AD6B /* MyVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVMViewController.h; sourceTree = "<group>"; };
 		F77D76E7159F9C200009AD6B /* MyVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVMViewController.m; sourceTree = "<group>"; };
 		F77D76E8159F9C200009AD6B /* MyVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVMViewController.xib; sourceTree = "<group>"; };
@@ -361,6 +366,8 @@
 				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
 				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
+				F766DAC315C22AD700A12A5E /* GithubRepoTableViewController.h */,
+				F766DAC415C22AD700A12A5E /* GithubRepoTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -402,6 +409,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				F766DAC515C22AD700A12A5E /* GithubRepoTableViewController.xib */,
 				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
@@ -628,6 +636,7 @@
 				D23267B115C18F2A007FFAB9 /* 18-envelope@2x.png in Resources */,
 				D23267B815C18F86007FFAB9 /* app_store_badge.png in Resources */,
 				D23267B915C18F86007FFAB9 /* app_store_badge@2x.png in Resources */,
+				F766DAC715C22AD700A12A5E /* GithubRepoTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -685,6 +694,7 @@
 				D2A723D915BF91A00071BBA0 /* NewsCell.m in Sources */,
 				D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */,
 				D29796D615C0F42600025D01 /* CustomCellBackgroundView.mm in Sources */,
+				F766DAC615C22AD700A12A5E /* GithubRepoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
