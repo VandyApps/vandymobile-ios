@@ -9,6 +9,7 @@
 #import "AppsDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "Sizer.h"
+#import "UIView+Frame.h"
 
 @interface AppsDetailViewController ()
 
@@ -17,6 +18,7 @@
 @implementation AppsDetailViewController
 @synthesize app;
 @synthesize appIconImage;
+@synthesize appIconImageContainerView;
 @synthesize descriptionTextView;
 @synthesize belowTextViewContainerView;
 @synthesize teamLabel;
@@ -44,10 +46,11 @@
     self.backgroundView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewNavBar4"] forBarMetrics:UIBarMetricsDefault];
     
-    self.appIconImage.layer.cornerRadius = 6;
+    self.appIconImage.layer.cornerRadius = 8;
     self.appIconImage.clipsToBounds = YES;
+    //self.appIconImage.layer.masksToBounds = YES;
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.appIconImage.layer.borderWidth = .5;
+    self.appIconImage.layer.borderWidth = 1;
     
     self.descriptionTextView.layer.cornerRadius = 11;
     self.descriptionTextView.clipsToBounds = YES;
@@ -67,13 +70,13 @@
 //                                                       newYOrigin,
 //                                                       self.belowTextViewContainerView.frame.size.width,
 //                                                       self.belowTextViewContainerView.frame.size.height) ;
+    
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 151) andFont:self.descriptionTextView.font];
+    self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 8;
+    
     [self downloadPhoto];
     
-    //self.appIconImage = [self addShadowToView:self.appIconImage];
-    self.appIconImage.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.appIconImage.layer.shadowOpacity = .8;
-    self.appIconImage.layer.shadowRadius = 2.0;
-    self.appIconImage.layer.shadowOffset = CGSizeMake(0, 4);
+    [self addShadowToView:self.appIconImageContainerView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -113,10 +116,9 @@
 
 - (id)addShadowToView:(UIView *)view {
     view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = .8;
+    view.layer.shadowOpacity = .6;
     view.layer.shadowRadius = 2.0;
-    view.layer.shadowOffset = CGSizeMake(0, 4);
-    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
     
     return view;
 }
@@ -136,6 +138,7 @@
     [self setNameLabel:nil];
     [self setTaglineLabel:nil];
     [self setBelowTextViewContainerView:nil];
+    [self setAppIconImageContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

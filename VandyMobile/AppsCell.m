@@ -11,6 +11,7 @@
 
 @implementation AppsCell
 @synthesize cellImage = _cellImage;
+@synthesize cellImageContainerView = _cellImageContainerView;
 @synthesize mainLabel = _mainLabel;
 @synthesize subLabel = _subLabel;
 
@@ -33,19 +34,18 @@
 	goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
 	self.selectedBackgroundView = goldenColor;
     
-    self.cellImage.layer.cornerRadius = 6;
+    self.cellImage.layer.cornerRadius = 7;
     self.cellImage.clipsToBounds = YES;
     self.cellImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.cellImage.layer.borderWidth = .5;
-    self.cellImage = [self addShadowToView:self.cellImage];
+    [self addShadowToView:self.cellImageContainerView];
 }
 
 - (id)addShadowToView:(UIView *)view {
     view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = 1;
-    view.layer.shadowRadius = 3.0;
-    view.layer.shadowOffset = CGSizeMake(2, 2);
-    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+    view.layer.shadowOpacity = .6;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
     
     return view;
 }

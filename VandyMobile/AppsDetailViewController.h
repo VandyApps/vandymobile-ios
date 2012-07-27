@@ -16,6 +16,7 @@
 // Outlets
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *appIconImage;
+@property (weak, nonatomic) IBOutlet UIView *appIconImageContainerView;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UIView *belowTextViewContainerView;
 

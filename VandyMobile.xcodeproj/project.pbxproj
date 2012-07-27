@@ -16,6 +16,7 @@
 		D23267B115C18F2A007FFAB9 /* 18-envelope@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D23267AF15C18F2A007FFAB9 /* 18-envelope@2x.png */; };
 		D23267B815C18F86007FFAB9 /* app_store_badge.png in Resources */ = {isa = PBXBuildFile; fileRef = D23267B615C18F86007FFAB9 /* app_store_badge.png */; };
 		D23267B915C18F86007FFAB9 /* app_store_badge@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D23267B715C18F86007FFAB9 /* app_store_badge@2x.png */; };
+		D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D232684015C2217F007FFAB9 /* UIView+Frame.m */; };
 		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
 		D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */; };
@@ -125,6 +126,8 @@
 		D23267AF15C18F2A007FFAB9 /* 18-envelope@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18-envelope@2x.png"; sourceTree = "<group>"; };
 		D23267B615C18F86007FFAB9 /* app_store_badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_store_badge.png; sourceTree = "<group>"; };
 		D23267B715C18F86007FFAB9 /* app_store_badge@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_store_badge@2x.png"; sourceTree = "<group>"; };
+		D232683F15C2217E007FFAB9 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		D232684015C2217F007FFAB9 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
@@ -271,6 +274,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D232684315C22189007FFAB9 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				D232683F15C2217E007FFAB9 /* UIView+Frame.h */,
+				D232684015C2217F007FFAB9 /* UIView+Frame.m */,
+			);
+			name = Categories;
+			path = VandyMobile;
+			sourceTree = "<group>";
+		};
 		F71CD67715B35D7E00C701F9 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +444,7 @@
 			children = (
 				D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */,
 				D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */,
+				D232684315C22189007FFAB9 /* Categories */,
 				F7ACC5891566903100CDE5A9 /* VandyMobile */,
 				F71CD67715B35D7E00C701F9 /* Externals */,
 				F7ACC5821566903100CDE5A9 /* Frameworks */,
@@ -685,6 +699,7 @@
 				D2A723D915BF91A00071BBA0 /* NewsCell.m in Sources */,
 				D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */,
 				D29796D615C0F42600025D01 /* CustomCellBackgroundView.mm in Sources */,
+				D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,7 @@
 @interface AppsCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+@property (weak, nonatomic) IBOutlet UIView *cellImageContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subLabel;
 
