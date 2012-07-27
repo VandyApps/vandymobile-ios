@@ -3,7 +3,7 @@
 //  FireflyPad
 //
 //  Created by Scott Andrus on 7/26/12.
-//  Copyright (c) 2012 Firefly Logic. All rights reserved.
+//  Copyright (c) 2012 VandyMobile. All rights reserved.
 //
 
 #import "UIView+Frame.h"

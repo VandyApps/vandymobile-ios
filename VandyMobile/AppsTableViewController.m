@@ -15,6 +15,8 @@
 #import "AppsCell.h"
 #import "JSONKit.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIView+Frame.h"
+#import "Sizer.h"
 
 
 @interface AppsTableViewController ()
@@ -24,6 +26,7 @@
 @implementation AppsTableViewController
 @synthesize tableView = _tableView;
 @synthesize results = _results;
+//@synthesize heightOffset = _heightOffset;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -164,6 +167,10 @@
         cell.mainLabel.text = app.name;
         cell.subLabel.text = app.tagline;
 		[self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
+        
+        //CGFloat oldHeight = cell.subLabel.height;
+        cell.subLabel.height = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(cell.subLabel.width, MAXFLOAT) font:cell.subLabel.font andMinimumHeight:21];
+        //[self.heightOffset setObject:[NSNumber numberWithFloat:(cell.subLabel.height-oldHeight)] atIndexedSubscript:indexPath.row];
 
 		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
 	}
@@ -173,7 +180,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 67;
+    App *app = [self.results objectAtIndex:indexPath.row];
+    CGFloat newHeight = [Sizer sizeText:app.tagline withConstraint:CGSizeMake(234, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    return 67 + newHeight - 21;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

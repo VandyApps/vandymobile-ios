@@ -187,7 +187,7 @@
     // Size it!
     
     CGFloat oldHeight = cell.bodyTextLabel.frame.size.height;
-    CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) andFont:cell.bodyTextLabel.font];
+    CGFloat newHeight = [Sizer sizeText:cell.bodyTextLabel.text withConstraint:CGSizeMake(cell.bodyTextLabel.frame.size.width, MAXFLOAT) font:cell.bodyTextLabel.font andMinimumHeight:50];
     
     cell.bodyTextLabel.frame = CGRectMake(cell.bodyTextLabel.frame.origin.x, cell.bodyTextLabel.frame.origin.y, cell.bodyTextLabel.frame.size.width, newHeight);
     
@@ -252,7 +252,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *cellText = [[self.tweets objectAtIndex:indexPath.section] objectForKey:@"text"];
-    return 90 + [Sizer sizeText:cellText withConstraint:CGSizeMake(220, MAXFLOAT) andFont:[UIFont fontWithName:@"Helvetica" size:13]] - 49;
+    return 90 + [Sizer sizeText:cellText withConstraint:CGSizeMake(220, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:13] andMinimumHeight:50] - 50;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -12,4 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *results;
 
+//@property (strong, nonatomic) NSMutableArray *heightOffset;
+
 @end

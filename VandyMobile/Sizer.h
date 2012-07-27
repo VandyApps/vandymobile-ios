@@ -11,7 +11,6 @@
 @interface Sizer : NSObject
 
 + (CGRect)sizeTextView:(UITextView *)textView withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font;
-//+ (CGFloat)sizeText:(NSString *)text withMaxHeight:(CGFloat)maxHeight andFont:(UIFont *)font andWidth:(CGFloat)width;
-+ (CGFloat)sizeText:(NSString *)text withConstraint:(CGSize)constraintSize andFont:(UIFont *)font;
++ (CGFloat)sizeText:(NSString *)text withConstraint:(CGSize)constraintSize font:(UIFont *)font andMinimumHeight:(CGFloat)minHeight;
 
 @end

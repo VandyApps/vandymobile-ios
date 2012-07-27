@@ -48,14 +48,17 @@
     
     self.appIconImage.layer.cornerRadius = 8;
     self.appIconImage.clipsToBounds = YES;
-    //self.appIconImage.layer.masksToBounds = YES;
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionTextView.layer.cornerRadius = 11;
+    self.descriptionTextView.layer.cornerRadius = 8;
     self.descriptionTextView.clipsToBounds = YES;
     self.descriptionTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionTextView.layer.borderWidth = .5;
+    
+    self.appStoreButton.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.appStoreButton.layer.borderWidth = 2;
+    self.appStoreButton.layer.cornerRadius = 5;
     
     // Set labels
     self.teamLabel.text = app.team;
@@ -63,15 +66,8 @@
     self.taglineLabel.text = app.tagline;
     self.descriptionTextView.text = app.description;
     
-    // Size textview
-//    self.descriptionTextView.frame = [Sizer sizeTextView:self.descriptionTextView withMaxHeight:117 andFont:self.descriptionTextView.font];
-//    CGFloat newYOrigin = self.descriptionTextView.frame.origin.y + self.descriptionTextView.frame.size.height + 6;
-//    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
-//                                                       newYOrigin,
-//                                                       self.belowTextViewContainerView.frame.size.width,
-//                                                       self.belowTextViewContainerView.frame.size.height) ;
-    
-    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 151) andFont:self.descriptionTextView.font];
+    // Sizing code
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 151) font:self.descriptionTextView.font andMinimumHeight:50];
     self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 8;
     
     [self downloadPhoto];
