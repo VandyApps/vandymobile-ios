@@ -81,26 +81,36 @@
 //     forLeftSegmentState:UIControlStateNormal 
 //     rightSegmentState:UIControlStateSelected 
 //     barMetrics:UIBarMetricsDefault];
-	
-	// Get twitter URL
+	[self setupRefreshTweetsButton];
+	[self pullTweetsFromServer];
+}
+
+- (void)pullTweetsFromServer {
+    // Get twitter URL
 	NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/user_timeline.json?screen_name=VandyMobile"];
     [SVProgressHUD showWithStatus:@"Loading news..."];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation;
-	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request 
+	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
 																success:^(NSURLRequest *request, NSHTTPURLResponse *response, id jsonObject) {
 																	//NSLog(@"Response: %@", jsonObject);
 																	self.tweets = jsonObject;
 																	[self.tableView reloadData];
                                                                     [SVProgressHUD dismissWithSuccess:@"Done!"];
-																} 
+																}
 																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonObject) {
 																	NSLog(@"Error fetching meetings!");
 																	NSLog(@"%@",error);
                                                                     [SVProgressHUD dismissWithError:@"Download failed!"];
 																}];
-
+    
 	[operation start];
+}
+
+- (void)setupRefreshTweetsButton {
+	// Create add meeting button
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pullTweetsFromServer)];
+	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -213,8 +223,6 @@
         [self downloadPhotoForTweet:tweet andImageView:self.twitterProfilePicture];
     }
     cell.profilePictureLabel.image = self.twitterProfilePicture.image;
-//    [self downloadPhotoForTweet:tweet andImageView:cell.profilePictureLabel];
-    NSLog(@"%@", tweet);
     
     //cell = [self addShadowToView:cell];
     //cell.layer.cornerRadius = .2;
@@ -244,7 +252,7 @@
     UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [loading startAnimating];
     UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSString *urlstring = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
@@ -253,7 +261,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             imageView.image = [UIImage imageWithData:imgUrl];
             [loading stopAnimating];
-            self.navigationItem.rightBarButtonItem = temp;
+            self.navigationItem.leftBarButtonItem = temp;
             [self.tableView reloadData];
             
         });

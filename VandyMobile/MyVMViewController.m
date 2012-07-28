@@ -14,6 +14,8 @@
 
 @interface MyVMViewController ()
 
+@property BOOL loaded;
+
 @end
 
 @implementation MyVMViewController
@@ -125,16 +127,18 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-
-    
+    if (!self.loaded) {
+        self.loaded = YES;
+        [self setupLoginViews];
+    }
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.loggedInView.hidden = YES;
 	[self setupNotifications];
 	[self setupProfileColors];
-	[self setupLoginViews];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -152,7 +156,6 @@
     }
     [self.navigationController.navigationBar addSubview:logo];
 }
-
 
 - (void)viewDidUnload
 {
