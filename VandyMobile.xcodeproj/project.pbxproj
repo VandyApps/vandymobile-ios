@@ -117,6 +117,7 @@
 		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
 		F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DA15C3A51A00912184 /* GitCommit.m */; };
+		F7B103DF15C3A5D100912184 /* GithubRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */; };
 		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
 		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
@@ -268,6 +269,8 @@
 		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
 		F7B103D915C3A51A00912184 /* GitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitCommit.h; sourceTree = "<group>"; };
 		F7B103DA15C3A51A00912184 /* GitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitCommit.m; sourceTree = "<group>"; };
+		F7B103DD15C3A5D100912184 /* GithubRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepoTableViewController.h; sourceTree = "<group>"; };
+		F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepoTableViewController.m; sourceTree = "<group>"; };
 		F7D4F069159FF50500F80CC0 /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
 		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
 		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
@@ -410,6 +413,8 @@
 				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
 				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
+				F7B103DD15C3A5D100912184 /* GithubRepoTableViewController.h */,
+				F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -750,6 +755,7 @@
 				D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */,
 				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
 				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
+				F7B103DF15C3A5D100912184 /* GithubRepoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
