@@ -167,8 +167,12 @@
 
 - (void)presentLoginScreen {
 	LoginViewController *loginViewController = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-	loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-	[self presentModalViewController:loginViewController animated:YES];
+    
+    loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    loginViewController.delegate = self;
+    
+    UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+	[self presentModalViewController:loginNavigationController animated:YES];
 }
 
 - (void)setupUserInterface {

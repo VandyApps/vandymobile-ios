@@ -7,29 +7,17 @@
 //
 
 #import "LoginViewController.h"
-#import "UserAPIClient.h"
-#import "MyVMViewController.h"
-#import "User.h"
-#import "SVProgressHUD.h"
-
-#define USER_KEY @"user"
-
-/* TextField tags */
-enum LoginViewControllerTags {
-	LoginViewController_UsernameTag = 0,
-	LoginViewController_PasswordTag,
-};
+#import "LoginStageTwoViewController.h"
 
 @interface LoginViewController ()
 
 @end
 
 @implementation LoginViewController
+
 @synthesize closeButton = _closeButton;
-@synthesize userInput = _userInput;
-@synthesize passwordInput = _passwordInput;
-@synthesize loginButton = _loginButton;
 @synthesize scrollView = _scrollView;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,44 +33,26 @@ enum LoginViewControllerTags {
 
 }
 
-- (void)setupTextfields {
-	self.userInput.delegate = self;
-	self.userInput.tag = LoginViewController_UsernameTag;
-	self.passwordInput.tag = LoginViewController_PasswordTag;
-	self.passwordInput.delegate = self;
+- (IBAction)loginWithVUnetIDPressed {
+    LoginStageTwoViewController *stageTwo = [[LoginStageTwoViewController alloc] init];
+    [self.navigationController pushViewController:stageTwo animated:YES];
 }
+
 
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
-	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self setupTextfields];
-	[self setupButtons];
+    [self setupButtons];
 	[self setupScrollView];
 }
 
 - (void)closeLoginScreen {
-	[self dismissModalViewControllerAnimated:YES];
-}
-
-- (void)loginTapped {
-	[SVProgressHUD showWithStatus:@"Logging In"];
-	NSLog(@"Username = %@", self.userInput.text);
-	NSLog(@"Password = %@", self.passwordInput.text);
-	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
-									 withPassword:self.passwordInput.text 
-							  withCompletionBlock:^(id response){
-								  User *user = [[User alloc] initWithResponse:response];
-//								  [[MyVMViewController sharedInstance] setUser:user];
-								  [[NSUserDefaults standardUserDefaults] setObject:[user userDictionary] forKey:USER_KEY];
-								  [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:self];
-								  [self closeLoginScreen];
-							}];
+	[self.delegate dismissModalViewControllerAnimated:YES];
 }
 
 
@@ -99,30 +69,8 @@ enum LoginViewControllerTags {
 
 - (void)viewDidUnload {
 	[self setCloseButton:nil];
-	[self setUserInput:nil];
-	[self setPasswordInput:nil];
-	[self setLoginButton:nil];
 	[self setScrollView:nil];
 	[super viewDidUnload];
-}
-
-#pragma mark - TextField Methods
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-//    int tag = textField.tag;
-    
-    return YES;
-}
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-	CGPoint contentOffset = CGPointMake(0, 35*textField.tag);
- 	[self.scrollView setContentOffset:contentOffset animated:NO];
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField {
-	CGPoint contentOffset = CGPointMake(0, 0);
-	[self.scrollView setContentOffset:contentOffset animated:NO];
 }
 
 @end

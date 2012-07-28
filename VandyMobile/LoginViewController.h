@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController <UITextFieldDelegate, UIScrollViewDelegate>
+@interface LoginViewController : UIViewController <UIScrollViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UIButton *closeButton;
-@property (strong, nonatomic) IBOutlet UITextField *userInput;
-@property (strong, nonatomic) IBOutlet UITextField *passwordInput;
-@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) id delegate;
 
 @end

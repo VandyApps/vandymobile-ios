@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginStageTwoViewController : UIViewController
+@interface LoginStageTwoViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
+@property (strong, nonatomic) IBOutlet UITextField *userInput;
+@property (strong, nonatomic) IBOutlet UITextField *passwordInput;
+@property (strong, nonatomic) IBOutlet UIButton *loginButton;
 
 @end
