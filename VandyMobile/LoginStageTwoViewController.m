@@ -29,6 +29,8 @@ enum LoginViewControllerTags {
 @synthesize userInput = _userInput;
 @synthesize passwordInput = _passwordInput;
 @synthesize loginButton = _loginButton;
+@synthesize loginTableView = _loginTableView;
+@synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +47,7 @@ enum LoginViewControllerTags {
     
 	[self setupTextfields];
 	[self setupButtons];
+    self.loginTableView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,6 +60,7 @@ enum LoginViewControllerTags {
     [self setUserInput:nil];
 	[self setPasswordInput:nil];
 	[self setLoginButton:nil];
+    [self setLoginTableView:nil];
     [super viewDidUnload];
 }
 
@@ -69,7 +73,7 @@ enum LoginViewControllerTags {
 
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
-//	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
     
 	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -90,7 +94,7 @@ enum LoginViewControllerTags {
 }
 
 - (void)closeLoginScreen {
-	[self dismissModalViewControllerAnimated:YES];
+	[self.delegate dismissModalViewControllerAnimated:YES];
 }
 
 #pragma mark - TextField Methods
@@ -112,6 +116,14 @@ enum LoginViewControllerTags {
 //	[self.scrollView setContentOffset:contentOffset animated:NO];
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 2;
+}
 
 
 @end

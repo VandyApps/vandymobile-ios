@@ -35,6 +35,9 @@
 
 - (IBAction)loginWithVUnetIDPressed {
     LoginStageTwoViewController *stageTwo = [[LoginStageTwoViewController alloc] init];
+    stageTwo.delegate = self.delegate;
+    stageTwo.title = @"Login with VUnetID";
+    stageTwo.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.navigationController pushViewController:stageTwo animated:YES];
 }
 
@@ -42,6 +45,7 @@
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+//    self.navigationController.navigationItem.rightBarButtonItem = self.closeButton;
 }
 
 - (void)viewDidLoad

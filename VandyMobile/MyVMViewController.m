@@ -170,8 +170,12 @@
     
     loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     loginViewController.delegate = self;
+    loginViewController.title = @"Login";
     
     UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
+    // Create resizable UINavigationBar image
+    UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
+    [loginNavigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
 	[self presentModalViewController:loginNavigationController animated:YES];
 }
 
