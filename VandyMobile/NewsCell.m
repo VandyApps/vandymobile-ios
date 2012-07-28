@@ -8,6 +8,7 @@
 
 #import "NewsCell.h"
 #import "UIView+Frame.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation NewsCell
 @synthesize backgroundImageView;
