@@ -96,6 +96,12 @@ enum LoginViewControllerTags {
                               }];
 }
 
+- (IBAction)registerPressed {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration closed." message:@"Check back soon!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    
+    [alert show];
+}
+
 - (void)closeLoginScreen {
 	[self.delegate dismissModalViewControllerAnimated:YES];
 }

@@ -252,7 +252,7 @@
     UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [loading startAnimating];
     UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSString *urlstring = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
@@ -261,7 +261,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             imageView.image = [UIImage imageWithData:imgUrl];
             [loading stopAnimating];
-            self.navigationItem.rightBarButtonItem = temp;
+            self.navigationItem.leftBarButtonItem = temp;
             [self.tableView reloadData];
             
         });
