@@ -54,7 +54,7 @@
 		   } 
 		   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 			   NSLog(@"error = %@", error);
-			   [SVProgressHUD dismissWithError:@"Couldn't Login"];
+			   [SVProgressHUD dismissWithError:@"Couldn't Log In"];
 		   }];
 }
 

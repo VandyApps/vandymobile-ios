@@ -251,7 +251,7 @@
     // Download photo
     UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [loading startAnimating];
-    UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
+    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{

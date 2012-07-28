@@ -95,7 +95,7 @@
 
 - (void)setupLogoutButton {
 	// Create add meeting button
-	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
+	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log out" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
 	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
 }
 
@@ -173,7 +173,7 @@
     
     loginViewController.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     loginViewController.delegate = self;
-    loginViewController.title = @"Login";
+    loginViewController.title = @"Log In";
     
     UINavigationController *loginNavigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     // Create resizable UINavigationBar image
