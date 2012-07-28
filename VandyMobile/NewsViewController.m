@@ -107,9 +107,14 @@
 	[operation start];
 }
 
+- (void)reloadTweets {
+    [self pullTweetsFromServer];
+    [self.tableView reloadData];
+}
+
 - (void)setupRefreshTweetsButton {
 	// Create add meeting button
-	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pullTweetsFromServer)];
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(reloadTweets)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
 }
 

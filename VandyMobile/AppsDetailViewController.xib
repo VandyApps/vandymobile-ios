@@ -98,6 +98,7 @@
 										<string key="NSFrame">{{149, 16}, {131, 46}}</string>
 										<reference key="NSSuperview" ref="766951522"/>
 										<reference key="NSWindow"/>
+										<reference key="NSNextKeyView"/>
 										<string key="NSReuseIdentifierKey">_NS:9</string>
 										<bool key="IBUIOpaque">NO</bool>
 										<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -260,8 +261,9 @@
 										<reference key="IBUIShadowColor" ref="524969143"/>
 										<string key="IBUIShadowOffset">{0, 1}</string>
 										<int key="IBUIBaselineAdjustment">0</int>
-										<float key="IBUIMinimumFontSize">10</float>
-										<int key="IBUINumberOfLines">2</int>
+										<float key="IBUIMinimumFontSize">7</float>
+										<bool key="IBUIAdjustsLetterSpacingToFitWidth">YES</bool>
+										<int key="IBUINumberOfLines">0</int>
 										<int key="IBUILineBreakMode">0</int>
 										<string key="IBUIText">The best app ever made! Vunderful!</string>
 										<object class="NSColor" key="IBUITextColor">
