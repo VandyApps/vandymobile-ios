@@ -116,6 +116,7 @@
 		F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */; };
 		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
+		F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DA15C3A51A00912184 /* GitCommit.m */; };
 		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
 		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
@@ -265,6 +266,8 @@
 		F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VandyMobile-Prefix.pch"; sourceTree = "<group>"; };
 		F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
 		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+		F7B103D915C3A51A00912184 /* GitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitCommit.h; sourceTree = "<group>"; };
+		F7B103DA15C3A51A00912184 /* GitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitCommit.m; sourceTree = "<group>"; };
 		F7D4F069159FF50500F80CC0 /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
 		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
 		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
@@ -441,6 +444,8 @@
 				F76105C715A8B00F00FD15B8 /* VMTableView.m */,
 				F71CD61615B2509900C701F9 /* User.h */,
 				F71CD61715B2509900C701F9 /* User.m */,
+				F7B103D915C3A51A00912184 /* GitCommit.h */,
+				F7B103DA15C3A51A00912184 /* GitCommit.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -744,6 +749,7 @@
 				D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */,
 				D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */,
 				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
+				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
