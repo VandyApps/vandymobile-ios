@@ -36,7 +36,7 @@
 - (IBAction)loginWithVUnetIDPressed {
     LoginStageTwoViewController *stageTwo = [[LoginStageTwoViewController alloc] init];
     stageTwo.delegate = self.delegate;
-    stageTwo.title = @"Login with VUnetID";
+    stageTwo.title = @"Login w/ Email";
     stageTwo.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.navigationController pushViewController:stageTwo animated:YES];
 }

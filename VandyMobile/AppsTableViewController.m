@@ -48,10 +48,10 @@
 	
 	[self pullAppsFromCache];
 	[self pullAppsFromServer];
-	
+	[self setupRefreshAppsButton];
 }
 
-- (void)setupRefreshMeetingsButton {
+- (void)setupRefreshAppsButton {
 	// Create add meeting button
 	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pullAppsFromServer)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
