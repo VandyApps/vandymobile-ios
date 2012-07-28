@@ -22,6 +22,7 @@
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize profileImageView = _profileImageView;
 @synthesize emailLabel = _emailLabel;
+@synthesize appNameLabel = _appNameLabel;
 
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
@@ -96,7 +97,9 @@
 - (void)setupLogoutButton {
 	// Create add meeting button
 	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log out" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
+    
 	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
+
 }
 
 - (void)logoutTapped {
@@ -116,7 +119,7 @@
     
     // Set profile picture aspects.
     self.profileImageView.layer.borderWidth = 2.5;
-    self.profileImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.profileImageView.layer.borderColor = [[UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1] /*#ecd28b*/ CGColor];
     //self.profileImageView.layer.cornerRadius = 2;
     //self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
@@ -163,6 +166,7 @@
     [self setProfileImageView:nil];
 	[self setLoginButton:nil];
 	[self setEmailLabel:nil];
+    [self setAppNameLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -183,7 +187,9 @@
 }
 
 - (void)setupUserInterface {
+    self.loggedInView.hidden = NO;
 	self.emailLabel.text = self.user.email;
+    self.appNameLabel.text = self.user.app;
 }
 
 @end

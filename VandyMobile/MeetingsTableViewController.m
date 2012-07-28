@@ -49,11 +49,11 @@
 }
 
 - (void)handleUserLoggedIn {
-	[self addNextMeetingCell];
+//	[self addNextMeetingCell];
 }
 
 - (void)handleUserLoggedOut {
-	[self addNextMeetingCell];
+//	[self addNextMeetingCell];
 }
 
 #pragma mark - View Life Cycle

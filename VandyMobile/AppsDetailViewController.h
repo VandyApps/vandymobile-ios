@@ -10,7 +10,7 @@
 #import "App.h"
 #import <MessageUI/MessageUI.h>
 
-@interface AppsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface AppsDetailViewController : UIViewController <MFMailComposeViewControllerDelegate, UIScrollViewDelegate>
 
 @property (strong, nonatomic) App *app;
 
@@ -18,9 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIImageView *appIconImage;
 @property (weak, nonatomic) IBOutlet UIView *appIconImageContainerView;
-@property (weak, nonatomic) IBOutlet UITextView *descriptionTextView;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionTextView;
 @property (weak, nonatomic) IBOutlet UIView *belowTextViewContainerView;
 @property (weak, nonatomic) IBOutlet UIImageView *envelopeImageView;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *descriptionContainerView;
 
 // Labels
 @property (weak, nonatomic) IBOutlet UIView *labelsContainerView;

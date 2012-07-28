@@ -23,6 +23,8 @@
 @synthesize descriptionTextView;
 @synthesize belowTextViewContainerView;
 @synthesize envelopeImageView;
+@synthesize scrollView;
+@synthesize descriptionContainerView;
 @synthesize labelsContainerView;
 @synthesize teamLabel;
 @synthesize nameLabel;
@@ -54,17 +56,19 @@
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionTextView.layer.cornerRadius = 14;
-    self.descriptionTextView.clipsToBounds = YES;
-    self.descriptionTextView.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.descriptionTextView.layer.borderWidth = .5;
+    self.descriptionContainerView.layer.cornerRadius = 12;
+    self.descriptionContainerView.clipsToBounds = YES;
+    self.descriptionContainerView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.descriptionContainerView.layer.borderWidth = .5;
+	self.descriptionContainerView.backgroundColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:.6] /*#f0f0f0*/;
+    self.descriptionContainerView.opaque = YES;
+//    self.descriptionContainerView.alpha = .6;
     
     self.appStoreButton.opaque = YES;
     self.appStoreButton.alpha = .8;
     self.appStoreButton.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.appStoreButton.layer.borderWidth = 2;
     self.appStoreButton.layer.cornerRadius = 5;
-    
     
     // Set labels
     self.teamLabel.text = app.team;
@@ -74,15 +78,17 @@
     //self.labelsContainerView.centerY = self.appIconImage.centerY;
     
     // Sizing code
-    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 140) font:self.descriptionTextView.font andMinimumHeight:50];
-    self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 1;
-    
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, MAXFLOAT) font:self.descriptionTextView.font andMinimumHeight:50];
+    self.descriptionContainerView.height = self.descriptionTextView.height + (self.descriptionTextView.top) * 2;
+    self.belowTextViewContainerView.top = self.descriptionContainerView.bottom + 1;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.belowTextViewContainerView.bottom);
     
     self.teamButton.opaque = YES;
 	self.teamButton.backgroundColor = [UIColor colorWithRed:0.01 green:0.01 blue:0.01 alpha:.8] /*#333333*/;
     self.teamButton.layer.borderWidth = 2;
     self.teamButton.layer.cornerRadius = 5;
     self.teamButton.layer.borderColor = [[UIColor colorWithRed:1 green:1 blue:1 alpha:1] CGColor];
+    self.teamButton.layer.shouldRasterize = YES;
 
     self.envelopeImageView.image = [UIImage imageNamed:@"18-envelope" withColor:[UIColor colorWithRed:1 green:1 blue:1 alpha:1]];
 
@@ -150,7 +156,7 @@
         
         [mailer setSubject:[NSString stringWithFormat:@"%@ App", app.name]];
         
-        NSArray *toRecipients = [NSArray arrayWithObjects:@"contact@vandymobile.com", @"president@vandymobile.com", nil];
+        NSArray *toRecipients = [NSArray arrayWithObjects:@"contact@vandymobile.org", nil];
         [mailer setToRecipients:toRecipients];
         
         //UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
@@ -219,6 +225,8 @@
     [self setAppIconImageContainerView:nil];
     [self setEnvelopeImageView:nil];
     [self setLabelsContainerView:nil];
+    [self setScrollView:nil];
+    [self setDescriptionContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

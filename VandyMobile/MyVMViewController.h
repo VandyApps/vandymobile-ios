@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 
 @end
