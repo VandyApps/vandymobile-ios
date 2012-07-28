@@ -26,6 +26,7 @@
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize tweets = _tweets;
 @synthesize segControl = _segControl;
+@synthesize twitterProfilePicture = _twitterProfilePicture;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -207,6 +208,13 @@
     cell.profilePictureLabel.layer.borderWidth = .5;
     cell.profilePictureLabel.layer.borderColor = [[UIColor grayColor] CGColor];
     cell.profilePictureLabel.clipsToBounds = YES;
+    if (!self.twitterProfilePicture) {
+        self.twitterProfilePicture = [[UIImageView alloc] init];
+        [self downloadPhotoForTweet:tweet andImageView:self.twitterProfilePicture];
+    }
+    cell.profilePictureLabel.image = self.twitterProfilePicture.image;
+//    [self downloadPhotoForTweet:tweet andImageView:cell.profilePictureLabel];
+    NSLog(@"%@", tweet);
     
     //cell = [self addShadowToView:cell];
     //cell.layer.cornerRadius = .2;
@@ -229,6 +237,29 @@
     //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
 
     return view;
+}
+
+- (void)downloadPhotoForTweet:(NSDictionary *)tweet andImageView:(UIImageView *)imageView {
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSString *urlstring = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            imageView.image = [UIImage imageWithData:imgUrl];
+            [loading stopAnimating];
+            self.navigationItem.rightBarButtonItem = temp;
+            [self.tableView reloadData];
+            
+        });
+    });
+    dispatch_release(downloadQueue);
+    //return imageView.image;
 }
 
 #pragma mark - TableViewDelegate Methods

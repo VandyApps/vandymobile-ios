@@ -12,7 +12,10 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (strong, nonatomic) NSArray *tweets;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segControl;
+
+
+@property (strong, nonatomic) NSArray *tweets;
+@property (strong, nonatomic) UIImageView *twitterProfilePicture;
 
 @end

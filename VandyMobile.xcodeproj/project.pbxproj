@@ -19,6 +19,10 @@
 		D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = D232684015C2217F007FFAB9 /* UIView+Frame.m */; };
 		D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = D232684515C23C5D007FFAB9 /* UIImage+Color.m */; };
 		D232684815C25335007FFAB9 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D232684715C25335007FFAB9 /* MessageUI.framework */; };
+		D2326A5115C362E5007FFAB9 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = D2326A4F15C362E5007FFAB9 /* close.png */; };
+		D2326A5215C362E5007FFAB9 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2326A5015C362E5007FFAB9 /* close@2x.png */; };
+		D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */; };
+		D2326A5815C364F0007FFAB9 /* LoginStageTwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2326A5615C364F0007FFAB9 /* LoginStageTwoViewController.xib */; };
 		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
 		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
 		D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */; };
@@ -133,6 +137,11 @@
 		D232684415C23C5D007FFAB9 /* UIImage+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Color.h"; sourceTree = "<group>"; };
 		D232684515C23C5D007FFAB9 /* UIImage+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Color.m"; sourceTree = "<group>"; };
 		D232684715C25335007FFAB9 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		D2326A4F15C362E5007FFAB9 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		D2326A5015C362E5007FFAB9 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginStageTwoViewController.h; sourceTree = "<group>"; };
+		D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginStageTwoViewController.m; sourceTree = "<group>"; };
+		D2326A5615C364F0007FFAB9 /* LoginStageTwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginStageTwoViewController.xib; sourceTree = "<group>"; };
 		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
 		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
 		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
@@ -303,6 +312,8 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2326A4F15C362E5007FFAB9 /* close.png */,
+				D2326A5015C362E5007FFAB9 /* close@2x.png */,
 				D23267B615C18F86007FFAB9 /* app_store_badge.png */,
 				D23267B715C18F86007FFAB9 /* app_store_badge@2x.png */,
 				D23267AE15C18F2A007FFAB9 /* 18-envelope.png */,
@@ -362,6 +373,8 @@
 		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */,
+				D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */,
 				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
 				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
@@ -428,6 +441,7 @@
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
 				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
 				F77D76FC159FAB410009AD6B /* LoginViewController.xib */,
+				D2326A5615C364F0007FFAB9 /* LoginStageTwoViewController.xib */,
 				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
 				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
@@ -651,6 +665,9 @@
 				D23267B115C18F2A007FFAB9 /* 18-envelope@2x.png in Resources */,
 				D23267B815C18F86007FFAB9 /* app_store_badge.png in Resources */,
 				D23267B915C18F86007FFAB9 /* app_store_badge@2x.png in Resources */,
+				D2326A5115C362E5007FFAB9 /* close.png in Resources */,
+				D2326A5215C362E5007FFAB9 /* close@2x.png in Resources */,
+				D2326A5815C364F0007FFAB9 /* LoginStageTwoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +727,7 @@
 				D29796D615C0F42600025D01 /* CustomCellBackgroundView.mm in Sources */,
 				D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */,
 				D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */,
+				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
