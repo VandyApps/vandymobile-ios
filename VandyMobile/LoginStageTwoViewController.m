@@ -75,6 +75,8 @@ enum LoginViewControllerTags {
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
+    [self.navigationItem setRightBarButtonItem:barButtonItem];
     
 	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlEventTouchUpInside];
 }

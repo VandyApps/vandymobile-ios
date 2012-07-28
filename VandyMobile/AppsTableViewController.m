@@ -51,6 +51,12 @@
 	
 }
 
+- (void)setupRefreshMeetingsButton {
+	// Create add meeting button
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pullAppsFromServer)];
+	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
 - (void)viewDidUnload {
 	[self setTableView:nil];
     [super viewDidUnload];
@@ -124,8 +130,8 @@
     // Download photo
     UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [loading startAnimating];
-    UIBarButtonItem * temp = self.navigationItem.rightBarButtonItem;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
@@ -135,7 +141,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [imageView setImage:[UIImage imageWithData:imgUrl]];
             [loading stopAnimating];
-            self.navigationItem.rightBarButtonItem = temp;
+            self.navigationItem.leftBarButtonItem = temp;
         });
     });
     dispatch_release(downloadQueue);
