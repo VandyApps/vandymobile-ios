@@ -1,0 +1,792 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573C915AF24E70014C7FB /* AppsDetailViewController.m */; };
+		522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */; };
+		522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CE15AF2B1B0014C7FB /* AppsCell.xib */; };
+		522573D215AF2B820014C7FB /* AppsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573D115AF2B820014C7FB /* AppsCell.m */; };
+		BD284E52410047ECB69E3183 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5034C6D906544302BF10E347 /* libPods.a */; };
+		D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D23DA37115ABA4FC00396B06 /* Sizer.m */; };
+		D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */; };
+		D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */; };
+		D2445A141579DBF300A7E297 /* NewNavBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A131579DBF200A7E297 /* NewNavBar@2x.png */; };
+		D2445A161579DF8500A7E297 /* NewNavBar2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */; };
+		D2445A1C1579E40300A7E297 /* NewNavBar3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */; };
+		D2445A201579E52500A7E297 /* NewNavBarText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */; };
+		D2445A241579F1EF00A7E297 /* NewBarButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */; };
+		D2445A4D157A6B7B00A7E297 /* NewNavBar4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A4C157A6B7B00A7E297 /* NewNavBar4@2x.png */; };
+		D2445A59157A722700A7E297 /* NewBackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A58157A722700A7E297 /* NewBackButton@2x.png */; };
+		D2445A5D157A7C8D00A7E297 /* 112-group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A5A157A7C8D00A7E297 /* 112-group@2x.png */; };
+		D2445A5E157A7C8D00A7E297 /* 125-food@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A5B157A7C8D00A7E297 /* 125-food@2x.png */; };
+		D2445A5F157A7C8D00A7E297 /* 124-bullhorn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A5C157A7C8D00A7E297 /* 124-bullhorn@2x.png */; };
+		D2445A62157A801000A7E297 /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2445A60157A800F00A7E297 /* EventKit.framework */; };
+		D2445A63157A801000A7E297 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2445A61157A801000A7E297 /* EventKitUI.framework */; };
+		D2445A94157AE0D000A7E297 /* 08-chat.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8A157AE0D000A7E297 /* 08-chat.png */; };
+		D2445A95157AE0D000A7E297 /* 08-chat@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */; };
+		D2445A96157AE0D000A7E297 /* 09-chat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8C157AE0D000A7E297 /* 09-chat-2.png */; };
+		D2445A97157AE0D000A7E297 /* 09-chat-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8D157AE0D000A7E297 /* 09-chat-2@2x.png */; };
+		D2445A98157AE0D000A7E297 /* 17-bar-chart.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8E157AE0D000A7E297 /* 17-bar-chart.png */; };
+		D2445A99157AE0D000A7E297 /* 17-bar-chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A8F157AE0D000A7E297 /* 17-bar-chart@2x.png */; };
+		D2445A9A157AE0D000A7E297 /* 66-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A90157AE0D000A7E297 /* 66-microphone.png */; };
+		D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */; };
+		D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */; };
+		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
+		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
+		D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9C15B2089A00BF8D54 /* 57-download.png */; };
+		D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */; };
+		D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */; };
+		D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */; };
+		D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA415B2096600BF8D54 /* 157-wrench.png */; };
+		D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */; };
+		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
+		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
+		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
+		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
+		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
+		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
+		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
+		D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */; };
+		D29E6C9715856BAE0065E1CC /* NextMeetingCanvasV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */; };
+		D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */; };
+		D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */; };
+		D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */; };
+		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
+		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
+		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
+		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
+		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
+		D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0B9A9159649DE00702102 /* IL_Share2.png */; };
+		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
+		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
+		D2E6215D15891F6200CBC47F /* NewSegControl2-uns-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */; };
+		D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */; };
+		D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */; };
+		D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */; };
+		D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */; };
+		D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */; };
+		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
+		F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFE15715DC900F6E24D /* 124-bullhorn.png */; };
+		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
+		F72C011115AFB6100025269F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C011015AFB6100025269F /* Security.framework */; };
+		F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */; };
+		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
+		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
+		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
+		F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B315A89F7600FD15B8 /* AppsAPIClient.m */; };
+		F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B715A8A03900FD15B8 /* AppsTableViewController.m */; };
+		F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */; };
+		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
+		F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105C715A8B00F00FD15B8 /* VMTableView.m */; };
+		F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105E415AA2E4100FD15B8 /* UserAPIClient.m */; };
+		F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F77D76E7159F9C200009AD6B /* MyVMViewController.m */; };
+		F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F77D76E8159F9C200009AD6B /* MyVMViewController.xib */; };
+		F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5831566903100CDE5A9 /* UIKit.framework */; };
+		F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5851566903100CDE5A9 /* Foundation.framework */; };
+		F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */; };
+		F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */; };
+		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
+		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
+		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
+		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
+		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
+		F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		522573C815AF24E70014C7FB /* AppsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDetailViewController.h; sourceTree = "<group>"; };
+		522573C915AF24E70014C7FB /* AppsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsDetailViewController.m; sourceTree = "<group>"; };
+		522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsDetailViewController.xib; sourceTree = "<group>"; };
+		522573CE15AF2B1B0014C7FB /* AppsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsCell.xib; sourceTree = "<group>"; };
+		522573D015AF2B820014C7FB /* AppsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsCell.h; sourceTree = "<group>"; };
+		522573D115AF2B820014C7FB /* AppsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsCell.m; sourceTree = "<group>"; };
+		D23DA37015ABA4FC00396B06 /* Sizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sizer.h; sourceTree = "<group>"; };
+		D23DA37115ABA4FC00396B06 /* Sizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sizer.m; sourceTree = "<group>"; };
+		D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelected@2x.png"; sourceTree = "<group>"; };
+		D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV3@2x.png"; sourceTree = "<group>"; };
+		D2445A131579DBF200A7E297 /* NewNavBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar@2x.png"; sourceTree = "<group>"; };
+		D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar2@2x.png"; sourceTree = "<group>"; };
+		D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar3@2x.png"; sourceTree = "<group>"; };
+		D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBarText@2x.png"; sourceTree = "<group>"; };
+		D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewBarButton@2x.png"; sourceTree = "<group>"; };
+		D2445A4C157A6B7B00A7E297 /* NewNavBar4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewNavBar4@2x.png"; sourceTree = "<group>"; };
+		D2445A58157A722700A7E297 /* NewBackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewBackButton@2x.png"; sourceTree = "<group>"; };
+		D2445A5A157A7C8D00A7E297 /* 112-group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group@2x.png"; sourceTree = "<group>"; };
+		D2445A5B157A7C8D00A7E297 /* 125-food@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food@2x.png"; sourceTree = "<group>"; };
+		D2445A5C157A7C8D00A7E297 /* 124-bullhorn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn@2x.png"; sourceTree = "<group>"; };
+		D2445A60157A800F00A7E297 /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		D2445A61157A801000A7E297 /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = System/Library/Frameworks/EventKitUI.framework; sourceTree = SDKROOT; };
+		D2445A8A157AE0D000A7E297 /* 08-chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat.png"; sourceTree = "<group>"; };
+		D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "08-chat@2x.png"; sourceTree = "<group>"; };
+		D2445A8C157AE0D000A7E297 /* 09-chat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2.png"; sourceTree = "<group>"; };
+		D2445A8D157AE0D000A7E297 /* 09-chat-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2@2x.png"; sourceTree = "<group>"; };
+		D2445A8E157AE0D000A7E297 /* 17-bar-chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17-bar-chart.png"; sourceTree = "<group>"; };
+		D2445A8F157AE0D000A7E297 /* 17-bar-chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "17-bar-chart@2x.png"; sourceTree = "<group>"; };
+		D2445A90157AE0D000A7E297 /* 66-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone.png"; sourceTree = "<group>"; };
+		D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
+		D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullhorn-food-combo@2x.png"; sourceTree = "<group>"; };
+		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
+		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
+		D26AAF9C15B2089A00BF8D54 /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download.png"; path = "../57-download.png"; sourceTree = "<group>"; };
+		D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download@2x.png"; path = "../57-download@2x.png"; sourceTree = "<group>"; };
+		D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "157-wrench@2x.png"; path = "../157-wrench@2x.png"; sourceTree = "<group>"; };
+		D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "158-wrench-2@2x.png"; path = "../158-wrench-2@2x.png"; sourceTree = "<group>"; };
+		D26AAFA415B2096600BF8D54 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
+		D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2.png"; sourceTree = "<group>"; };
+		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
+		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
+		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
+		D27291A21573E401009AA12F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
+		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
+		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
+		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
+		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
+		D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeetingCanvas@2x.png"; sourceTree = "<group>"; };
+		D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeetingCanvasV2@2x.png"; sourceTree = "<group>"; };
+		D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundCanvas@2x.png"; sourceTree = "<group>"; };
+		D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBar@2x.png"; sourceTree = "<group>"; };
+		D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarV2@2x.png"; sourceTree = "<group>"; };
+		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
+		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
+		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
+		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
+		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
+		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		D2D0B9A9159649DE00702102 /* IL_Share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IL_Share2.png; sourceTree = "<group>"; };
+		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
+		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
+		D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-uns.png"; sourceTree = "<group>"; };
+		D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns.png"; sourceTree = "<group>"; };
+		D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel-uns.png"; sourceTree = "<group>"; };
+		D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-sel.png"; sourceTree = "<group>"; };
+		D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIcon.png; sourceTree = "<group>"; };
+		D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconRetina.png; sourceTree = "<group>"; };
+		F7283DFD15715DC900F6E24D /* 112-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "112-group.png"; sourceTree = "<group>"; };
+		F7283DFE15715DC900F6E24D /* 124-bullhorn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "124-bullhorn.png"; sourceTree = "<group>"; };
+		F7283DFF15715DC900F6E24D /* 125-food.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "125-food.png"; sourceTree = "<group>"; };
+		F72C011015AFB6100025269F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsTableViewController.h; sourceTree = "<group>"; };
+		F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsTableViewController.m; sourceTree = "<group>"; };
+		F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
+		F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsAPIClient.h; sourceTree = "<group>"; };
+		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
+		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
+		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
+		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
+		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
+		F76105B215A89F7600FD15B8 /* AppsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsAPIClient.h; sourceTree = "<group>"; };
+		F76105B315A89F7600FD15B8 /* AppsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsAPIClient.m; sourceTree = "<group>"; };
+		F76105B615A8A03900FD15B8 /* AppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsTableViewController.h; sourceTree = "<group>"; };
+		F76105B715A8A03900FD15B8 /* AppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsTableViewController.m; sourceTree = "<group>"; };
+		F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewController.xib; sourceTree = "<group>"; };
+		F76105BB15A8A27300FD15B8 /* App.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = App.h; sourceTree = "<group>"; };
+		F76105BC15A8A27300FD15B8 /* App.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = App.m; sourceTree = "<group>"; };
+		F76105C615A8B00F00FD15B8 /* VMTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTableView.h; sourceTree = "<group>"; };
+		F76105C715A8B00F00FD15B8 /* VMTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTableView.m; sourceTree = "<group>"; };
+		F76105E315AA2E4000FD15B8 /* UserAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPIClient.h; sourceTree = "<group>"; };
+		F76105E415AA2E4100FD15B8 /* UserAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPIClient.m; sourceTree = "<group>"; };
+		F77D76E6159F9C200009AD6B /* MyVMViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyVMViewController.h; sourceTree = "<group>"; };
+		F77D76E7159F9C200009AD6B /* MyVMViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyVMViewController.m; sourceTree = "<group>"; };
+		F77D76E8159F9C200009AD6B /* MyVMViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyVMViewController.xib; sourceTree = "<group>"; };
+		F7ACC57F1566903100CDE5A9 /* VandyMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VandyMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7ACC5831566903100CDE5A9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F7ACC5851566903100CDE5A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F7ACC58B1566903100CDE5A9 /* VandyMobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VandyMobile-Info.plist"; sourceTree = "<group>"; };
+		F7ACC58D1566903100CDE5A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F7ACC58F1566903100CDE5A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VandyMobile-Prefix.pch"; sourceTree = "<group>"; };
+		F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
+		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+		F7D4F069159FF50500F80CC0 /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
+		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
+		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
+		F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMTextInputCell.m; sourceTree = "<group>"; };
+		F7E4347315A263D70025CA3D /* VMCheckboxCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMCheckboxCell.h; sourceTree = "<group>"; };
+		F7E4347415A263D70025CA3D /* VMCheckboxCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCheckboxCell.m; sourceTree = "<group>"; };
+		F7E4347A15A27F9D0025CA3D /* VMDatePickerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMDatePickerCell.h; sourceTree = "<group>"; };
+		F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMDatePickerCell.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7ACC57C1566903100CDE5A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F72C011115AFB6100025269F /* Security.framework in Frameworks */,
+				D2445A62157A801000A7E297 /* EventKit.framework in Frameworks */,
+				D2445A63157A801000A7E297 /* EventKitUI.framework in Frameworks */,
+				D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */,
+				D27291A31573E401009AA12F /* MapKit.framework in Frameworks */,
+				F7ACC5841566903100CDE5A9 /* UIKit.framework in Frameworks */,
+				F7ACC5861566903100CDE5A9 /* Foundation.framework in Frameworks */,
+				F7ACC5881566903100CDE5A9 /* CoreGraphics.framework in Frameworks */,
+				BD284E52410047ECB69E3183 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7283DFC15715DC900F6E24D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				D26AAFA415B2096600BF8D54 /* 157-wrench.png */,
+				D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */,
+				D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */,
+				D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */,
+				D26AAF9C15B2089A00BF8D54 /* 57-download.png */,
+				D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */,
+				D2D0B9A9159649DE00702102 /* IL_Share2.png */,
+				D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */,
+				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
+				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
+				D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */,
+				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
+				D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */,
+				D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */,
+				D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */,
+				D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */,
+				D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */,
+				D2445A8A157AE0D000A7E297 /* 08-chat.png */,
+				D2445A8B157AE0D000A7E297 /* 08-chat@2x.png */,
+				D2445A8C157AE0D000A7E297 /* 09-chat-2.png */,
+				D2445A8D157AE0D000A7E297 /* 09-chat-2@2x.png */,
+				D2445A8E157AE0D000A7E297 /* 17-bar-chart.png */,
+				D2445A8F157AE0D000A7E297 /* 17-bar-chart@2x.png */,
+				D2445A90157AE0D000A7E297 /* 66-microphone.png */,
+				D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */,
+				D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */,
+				F7283DFD15715DC900F6E24D /* 112-group.png */,
+				F7283DFE15715DC900F6E24D /* 124-bullhorn.png */,
+				F7283DFF15715DC900F6E24D /* 125-food.png */,
+				D2445A5A157A7C8D00A7E297 /* 112-group@2x.png */,
+				D2445A5B157A7C8D00A7E297 /* 125-food@2x.png */,
+				D2445A5C157A7C8D00A7E297 /* 124-bullhorn@2x.png */,
+				D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */,
+				D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */,
+				D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */,
+				D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */,
+				D29E6C9415856BAE0065E1CC /* NextMeetingCanvasV2@2x.png */,
+				D29E6C9515856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png */,
+				D2445A131579DBF200A7E297 /* NewNavBar@2x.png */,
+				D2445A151579DF8500A7E297 /* NewNavBar2@2x.png */,
+				D2445A1B1579E40300A7E297 /* NewNavBar3@2x.png */,
+				D2445A4C157A6B7B00A7E297 /* NewNavBar4@2x.png */,
+				D2445A1F1579E52500A7E297 /* NewNavBarText@2x.png */,
+				D256B834159509D700348AB3 /* NewLoginScreen.png */,
+				D2445A58157A722700A7E297 /* NewBackButton@2x.png */,
+				D2445A231579F1EF00A7E297 /* NewBarButton@2x.png */,
+				D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
+				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
+				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
+				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
+				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
+				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
+				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
+				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
+				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
+				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
+				F76105B615A8A03900FD15B8 /* AppsTableViewController.h */,
+				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
+				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
+				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F7874EE2156C7BBB00F81183 /* APICients */ = {
+			isa = PBXGroup;
+			children = (
+				F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */,
+				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
+				F76105B215A89F7600FD15B8 /* AppsAPIClient.h */,
+				F76105B315A89F7600FD15B8 /* AppsAPIClient.m */,
+				F76105E315AA2E4000FD15B8 /* UserAPIClient.h */,
+				F76105E415AA2E4100FD15B8 /* UserAPIClient.m */,
+			);
+			name = APICients;
+			sourceTree = "<group>";
+		};
+		F7874EE3156C7BCE00F81183 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D23DA37015ABA4FC00396B06 /* Sizer.h */,
+				D23DA37115ABA4FC00396B06 /* Sizer.m */,
+				D27291BA15744B56009AA12F /* VMAnnotation.h */,
+				D27291BB15744B56009AA12F /* VMAnnotation.m */,
+				F72CA09D1569A3AF001EFBC8 /* Meeting.h */,
+				F72CA09E1569A3AF001EFBC8 /* Meeting.m */,
+				F76105BB15A8A27300FD15B8 /* App.h */,
+				F76105BC15A8A27300FD15B8 /* App.m */,
+				F76105C615A8B00F00FD15B8 /* VMTableView.h */,
+				F76105C715A8B00F00FD15B8 /* VMTableView.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F7874EE4156C7BF300F81183 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
+				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
+				D27DC599157AFF12004A9D30 /* NewsViewController.xib */,
+				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
+				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
+				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
+				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
+				F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */,
+				522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		F7A1B1D3156B2E2600A7F940 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F7283DFC15715DC900F6E24D /* Images */,
+			);
+			name = Resources;
+			path = VandyMobile;
+			sourceTree = "<group>";
+		};
+		F7ACC5741566903100CDE5A9 = {
+			isa = PBXGroup;
+			children = (
+				D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */,
+				D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */,
+				F7ACC5891566903100CDE5A9 /* VandyMobile */,
+				F7ACC5821566903100CDE5A9 /* Frameworks */,
+				F7ACC5801566903100CDE5A9 /* Products */,
+				F7A1B1D3156B2E2600A7F940 /* Resources */,
+				30627BEF8DB04C51B7EE752A /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		F7ACC5801566903100CDE5A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC57F1566903100CDE5A9 /* VandyMobile.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7ACC5821566903100CDE5A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F72C011015AFB6100025269F /* Security.framework */,
+				D2445A60157A800F00A7E297 /* EventKit.framework */,
+				D2445A61157A801000A7E297 /* EventKitUI.framework */,
+				D27291A41573E408009AA12F /* CoreLocation.framework */,
+				D27291A21573E401009AA12F /* MapKit.framework */,
+				F7ACC5831566903100CDE5A9 /* UIKit.framework */,
+				F7ACC5851566903100CDE5A9 /* Foundation.framework */,
+				F7ACC5871566903100CDE5A9 /* CoreGraphics.framework */,
+				5034C6D906544302BF10E347 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F7ACC5891566903100CDE5A9 /* VandyMobile */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
+				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
+				F7D4F067159FF4AA00F80CC0 /* Cells */,
+				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
+				F7874EE1156C7BAC00F81183 /* ViewControllers */,
+				F7874EE4156C7BF300F81183 /* GUI */,
+				F7874EE2156C7BBB00F81183 /* APICients */,
+				F7874EE3156C7BCE00F81183 /* Models */,
+			);
+			path = VandyMobile;
+			sourceTree = "<group>";
+		};
+		F7ACC58A1566903100CDE5A9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F7ACC58B1566903100CDE5A9 /* VandyMobile-Info.plist */,
+				F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */,
+				F7ACC58F1566903100CDE5A9 /* main.m */,
+				F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7D4F067159FF4AA00F80CC0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				522573D015AF2B820014C7FB /* AppsCell.h */,
+				522573D115AF2B820014C7FB /* AppsCell.m */,
+				F7D4F069159FF50500F80CC0 /* VMFormCell.h */,
+				F7D4F06A159FF50500F80CC0 /* VMFormCell.m */,
+				F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */,
+				F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */,
+				F7E4347315A263D70025CA3D /* VMCheckboxCell.h */,
+				F7E4347415A263D70025CA3D /* VMCheckboxCell.m */,
+				F7E4347A15A27F9D0025CA3D /* VMDatePickerCell.h */,
+				F7E4347B15A27F9D0025CA3D /* VMDatePickerCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7ACC57E1566903100CDE5A9 /* VandyMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7ACC5971566903100CDE5A9 /* Build configuration list for PBXNativeTarget "VandyMobile" */;
+			buildPhases = (
+				F7ACC57B1566903100CDE5A9 /* Sources */,
+				F7ACC57C1566903100CDE5A9 /* Frameworks */,
+				F7ACC57D1566903100CDE5A9 /* Resources */,
+				1D3595C8D5F1418FA223F071 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VandyMobile;
+			productName = VandyMobile;
+			productReference = F7ACC57F1566903100CDE5A9 /* VandyMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7ACC5761566903100CDE5A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VM;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = F7ACC5791566903100CDE5A9 /* Build configuration list for PBXProject "VandyMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F7ACC5741566903100CDE5A9;
+			productRefGroup = F7ACC5801566903100CDE5A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7ACC57E1566903100CDE5A9 /* VandyMobile */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7ACC57D1566903100CDE5A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */,
+				F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */,
+				F7283E0115715DC900F6E24D /* 112-group.png in Resources */,
+				F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */,
+				F7283E0315715DC900F6E24D /* 125-food.png in Resources */,
+				D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */,
+				D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */,
+				D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */,
+				D2445A141579DBF300A7E297 /* NewNavBar@2x.png in Resources */,
+				D2445A161579DF8500A7E297 /* NewNavBar2@2x.png in Resources */,
+				D2445A1C1579E40300A7E297 /* NewNavBar3@2x.png in Resources */,
+				D2445A201579E52500A7E297 /* NewNavBarText@2x.png in Resources */,
+				D2445A241579F1EF00A7E297 /* NewBarButton@2x.png in Resources */,
+				D2445A4D157A6B7B00A7E297 /* NewNavBar4@2x.png in Resources */,
+				D2445A59157A722700A7E297 /* NewBackButton@2x.png in Resources */,
+				D2445A5D157A7C8D00A7E297 /* 112-group@2x.png in Resources */,
+				D2445A5E157A7C8D00A7E297 /* 125-food@2x.png in Resources */,
+				D2445A5F157A7C8D00A7E297 /* 124-bullhorn@2x.png in Resources */,
+				D2445A94157AE0D000A7E297 /* 08-chat.png in Resources */,
+				D2445A95157AE0D000A7E297 /* 08-chat@2x.png in Resources */,
+				D2445A96157AE0D000A7E297 /* 09-chat-2.png in Resources */,
+				D2445A97157AE0D000A7E297 /* 09-chat-2@2x.png in Resources */,
+				D2445A98157AE0D000A7E297 /* 17-bar-chart.png in Resources */,
+				D2445A99157AE0D000A7E297 /* 17-bar-chart@2x.png in Resources */,
+				D2445A9A157AE0D000A7E297 /* 66-microphone.png in Resources */,
+				D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */,
+				D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */,
+				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
+				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
+				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
+				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
+				D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */,
+				D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */,
+				D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */,
+				D29E6C9715856BAE0065E1CC /* NextMeetingCanvasV2@2x.png in Resources */,
+				D29E6C9815856BAE0065E1CC /* VandyMobileBackgroundCanvas@2x.png in Resources */,
+				D2A6649A15869FDF00AD5951 /* NewTabBar@2x.png in Resources */,
+				D2A6649C1586A1D400AD5951 /* NewTabBarV2@2x.png in Resources */,
+				D2E6215D15891F6200CBC47F /* NewSegControl2-uns-uns.png in Resources */,
+				D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */,
+				D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */,
+				D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */,
+				D2429A9F158A564B00C19D3F /* NewTabBarSelected@2x.png in Resources */,
+				D2429AA1158A58B700C19D3F /* NewTabBarV3@2x.png in Resources */,
+				D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */,
+				D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */,
+				F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */,
+				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
+				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
+				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
+				522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */,
+				522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */,
+				D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */,
+				D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */,
+				D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */,
+				D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */,
+				D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */,
+				D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D3595C8D5F1418FA223F071 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7ACC57B1566903100CDE5A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7ACC5901566903100CDE5A9 /* main.m in Sources */,
+				F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */,
+				F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */,
+				F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */,
+				F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */,
+				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
+				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
+				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
+				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
+				D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */,
+				F77D76E9159F9C200009AD6B /* MyVMViewController.m in Sources */,
+				F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */,
+				F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */,
+				F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */,
+				F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */,
+				F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */,
+				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
+				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
+				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
+				D23DA37215ABA4FC00396B06 /* Sizer.m in Sources */,
+<<<<<<< HEAD
+				522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */,
+				522573D215AF2B820014C7FB /* AppsCell.m in Sources */,
+=======
+				F76105E515AA2E4100FD15B8 /* UserAPIClient.m in Sources */,
+>>>>>>> user_validation
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7ACC58D1566903100CDE5A9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7151FDD157AD16B00F58CE4 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Adhoc;
+		};
+		F7151FDE157AD16B00F58CE4 /* Adhoc */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Adhoc;
+		};
+		F7ACC5951566903100CDE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F7ACC5961566903100CDE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7ACC5981566903100CDE5A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F7ACC5991566903100CDE5A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30627BEF8DB04C51B7EE752A /* Pods.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VandyMobile/VandyMobile-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "VandyMobile/VandyMobile-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7ACC5791566903100CDE5A9 /* Build configuration list for PBXProject "VandyMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7ACC5951566903100CDE5A9 /* Debug */,
+				F7ACC5961566903100CDE5A9 /* Release */,
+				F7151FDD157AD16B00F58CE4 /* Adhoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7ACC5971566903100CDE5A9 /* Build configuration list for PBXNativeTarget "VandyMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7ACC5981566903100CDE5A9 /* Debug */,
+				F7ACC5991566903100CDE5A9 /* Release */,
+				F7151FDE157AD16B00F58CE4 /* Adhoc */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7ACC5761566903100CDE5A9 /* Project object */;
+}

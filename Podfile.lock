@@ -1,0 +1,11 @@
+PODS:
+  - AFNetworking (1.0RC1)
+  - JSONKit (1.5pre)
+  - SDURLCache (1.2)
+  - SVProgressHUD (0.7)
+
+DEPENDENCIES:
+  - AFNetworking
+  - JSONKit
+  - SDURLCache
+  - SVProgressHUD
