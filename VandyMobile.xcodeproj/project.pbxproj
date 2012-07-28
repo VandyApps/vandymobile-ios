@@ -64,6 +64,7 @@
 		D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */; };
 		D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16A15C381F6003E5CDE /* 73-radar.png */; };
 		D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16B15C381F6003E5CDE /* 73-radar@2x.png */; };
+		D278A17515C4442C003E5CDE /* GithubRepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
 		D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D29796D115C0F26700025D01 /* ImageManipulator.m */; };
@@ -192,6 +193,7 @@
 		D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard@2x.png"; path = "../81-dashboard@2x.png"; sourceTree = "<group>"; };
 		D278A16A15C381F6003E5CDE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../73-radar.png"; sourceTree = "<group>"; };
 		D278A16B15C381F6003E5CDE /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar@2x.png"; path = "../73-radar@2x.png"; sourceTree = "<group>"; };
+		D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GithubRepoTableViewController.xib; sourceTree = "<group>"; };
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -458,6 +460,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */,
 				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
@@ -694,6 +697,7 @@
 				D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */,
 				D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */,
 				D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */,
+				D278A17515C4442C003E5CDE /* GithubRepoTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

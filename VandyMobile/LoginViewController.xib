@@ -59,6 +59,7 @@
 						<array class="NSMutableArray" key="NSSubviews"/>
 						<string key="NSFrame">{{138, 332}, {48, 51}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -69,7 +70,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{281, 10}, {29, 29}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSNextKeyView" ref="628736646"/>
+						<reference key="NSNextKeyView" ref="981571514"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -104,7 +105,7 @@
 					<object class="IBUIButton" id="325147001">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{50, 250}, {221, 44}}</string>
+						<string key="NSFrame">{{48, 250}, {225, 44}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSNextKeyView" ref="505996243"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -113,7 +114,7 @@
 						<int key="IBUIContentHorizontalAlignment">0</int>
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Login with Vanderbilt Email</string>
+						<string key="IBUINormalTitle">Log in with Vanderbilt Email</string>
 						<reference key="IBUIHighlightedTitleColor" ref="823958916"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -167,6 +168,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{1, 51}, {319, 63}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
+						<reference key="NSNextKeyView" ref="628736646"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<int key="IBUIContentMode">2</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
