@@ -69,6 +69,7 @@ enum LoginViewControllerTags {
 	self.userInput.tag = LoginViewController_UsernameTag;
 	self.passwordInput.tag = LoginViewController_PasswordTag;
 	self.passwordInput.delegate = self;
+    self.passwordInput.secureTextEntry = YES;
 }
 
 - (void)setupButtons {

@@ -60,6 +60,10 @@
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
+		D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16815C381F6003E5CDE /* 81-dashboard.png */; };
+		D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */; };
+		D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16A15C381F6003E5CDE /* 73-radar.png */; };
+		D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16B15C381F6003E5CDE /* 73-radar@2x.png */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
 		D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D29796D115C0F26700025D01 /* ImageManipulator.m */; };
@@ -182,6 +186,10 @@
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
 		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
+		D278A16815C381F6003E5CDE /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard.png"; path = "../81-dashboard.png"; sourceTree = "<group>"; };
+		D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard@2x.png"; path = "../81-dashboard@2x.png"; sourceTree = "<group>"; };
+		D278A16A15C381F6003E5CDE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../73-radar.png"; sourceTree = "<group>"; };
+		D278A16B15C381F6003E5CDE /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar@2x.png"; path = "../73-radar@2x.png"; sourceTree = "<group>"; };
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -312,6 +320,10 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D278A16815C381F6003E5CDE /* 81-dashboard.png */,
+				D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */,
+				D278A16A15C381F6003E5CDE /* 73-radar.png */,
+				D278A16B15C381F6003E5CDE /* 73-radar@2x.png */,
 				D2326A4F15C362E5007FFAB9 /* close.png */,
 				D2326A5015C362E5007FFAB9 /* close@2x.png */,
 				D23267B615C18F86007FFAB9 /* app_store_badge.png */,
@@ -373,8 +385,6 @@
 		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */,
-				D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */,
 				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
 				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
 				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
@@ -383,6 +393,8 @@
 				D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */,
 				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
 				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
+				D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */,
+				D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */,
 				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
 				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
@@ -668,6 +680,10 @@
 				D2326A5115C362E5007FFAB9 /* close.png in Resources */,
 				D2326A5215C362E5007FFAB9 /* close@2x.png in Resources */,
 				D2326A5815C364F0007FFAB9 /* LoginStageTwoViewController.xib in Resources */,
+				D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */,
+				D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */,
+				D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */,
+				D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

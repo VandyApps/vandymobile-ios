@@ -71,7 +71,7 @@
 	VMMeetingsTVC.tabBarItem = meetingItem;
     
     MyVMViewController *myVMViewController = [[MyVMViewController alloc] initWithNibName:@"MyVMViewController" bundle:nil];
-    UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"17-bar-chart"] tag:0];
+    UITabBarItem* myVMItem = [[UITabBarItem alloc] initWithTitle:@"myVM" image:[UIImage imageNamed:@"81-dashboard"] tag:0];
     myVMViewController.tabBarItem = myVMItem;
     
     AppsTableViewController	*appsTVC = [[AppsTableViewController alloc] initWithNibName:@"AppsTableViewController" bundle:nil];

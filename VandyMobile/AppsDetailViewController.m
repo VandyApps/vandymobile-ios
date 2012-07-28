@@ -54,7 +54,7 @@
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionTextView.layer.cornerRadius = 10;
+    self.descriptionTextView.layer.cornerRadius = 14;
     self.descriptionTextView.clipsToBounds = YES;
     self.descriptionTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionTextView.layer.borderWidth = .5;
@@ -74,7 +74,7 @@
     //self.labelsContainerView.centerY = self.appIconImage.centerY;
     
     // Sizing code
-    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 143) font:self.descriptionTextView.font andMinimumHeight:50];
+    self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, 140) font:self.descriptionTextView.font andMinimumHeight:50];
     self.belowTextViewContainerView.top = self.descriptionTextView.bottom + 1;
     
     

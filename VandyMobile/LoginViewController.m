@@ -45,7 +45,9 @@
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
-//    self.navigationController.navigationItem.rightBarButtonItem = self.closeButton;
+//    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];//[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close.png"] style:UIBarButtonItemStylePlain target:self action:@selector(closeLoginScreen)];
+    
+//    [self.navigationController.navigationItem setRightBarButtonItem:barButtonItem];
 }
 
 - (void)viewDidLoad
