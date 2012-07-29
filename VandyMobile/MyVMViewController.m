@@ -130,7 +130,7 @@
     
     // Set profile picture aspects.
     self.profileImageView.layer.borderWidth = 2.5;
-    self.profileImageView.layer.borderColor = [[UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1] /*#ecd28b*/ CGColor];
+    self.profileImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
     //self.profileImageView.layer.cornerRadius = 2;
     //self.profileImageView.layer.masksToBounds = YES;
     self.profileImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
