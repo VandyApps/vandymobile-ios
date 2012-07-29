@@ -8,6 +8,8 @@
 
 #import "NewsDetailViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "Sizer.h"
+#import "UIView+Frame.h"
 
 @interface NewsDetailViewController ()
 
@@ -18,8 +20,8 @@
 @synthesize commentFrame;
 @synthesize newsText;
 @synthesize timestampLabel;
+@synthesize profileImageView;
 @synthesize tweet;
-
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,25 +40,67 @@
     self.newsText.text = [self.tweet objectForKey:@"text"];
     self.timestampLabel.textColor = [UIColor colorWithRed:0.639 green:0.639 blue:0.639 alpha:1] /*#a3a3a3*/;
     self.timestampLabel.text = [self.tweet objectForKey:@"created_at"];
-    self.commentFrame.layer.cornerRadius = 11;
-    self.commentFrame.clipsToBounds = YES;
+    
+    self.commentFrame.layer.cornerRadius = 8;
     self.commentFrame.layer.borderColor = [[UIColor grayColor] CGColor];
     self.commentFrame.layer.borderWidth = .5;
-    self.commentFrame.backgroundColor = [UIColor whiteColor];
     
     // Resize stuff
-    UIFont *cellFont = [UIFont fontWithName:@"Helvetica" size:15];
-    CGSize constraintSize = CGSizeMake(280.0f, MAXFLOAT);
-    CGSize labelSize = [self.newsText.text sizeWithFont:cellFont constrainedToSize:constraintSize lineBreakMode:UILineBreakModeWordWrap];
-    float height;
-    if (labelSize.height < 15) {
-        height = 30;
-    } else {
-        height = labelSize.height + 10;
-    }
-    self.newsText.frame = CGRectMake(self.newsText.frame.origin.x, self.newsText.frame.origin.y, self.newsText.frame.size.width, height);
-    self.commentFrame.frame = CGRectMake(self.commentFrame.frame.origin.x, self.commentFrame.frame.origin.y, self.commentFrame.frame.size.width, height+30);
-    self.timestampLabel.frame = CGRectMake(self.timestampLabel.frame.origin.x, self.newsText.frame.origin.y + height, self.timestampLabel.frame.size.width, self.timestampLabel.frame.size.height);
+    // Size it!
+    
+    CGFloat oldHeight = self.newsText.height;
+    CGFloat newHeight = [Sizer sizeText:self.newsText.text withConstraint:CGSizeMake(self.newsText.width, MAXFLOAT) font:self.newsText.font andMinimumHeight:50];
+    
+    self.newsText.height = newHeight;
+    
+    self.timestampLabel.top += newHeight - oldHeight;
+    self.commentFrame.height += newHeight - oldHeight;
+    
+    self.commentFrame.backgroundColor = [UIColor colorWithRed:0.941 green:0.941 blue:0.941 alpha:1] /*#f0f0f0*/;
+    self.commentFrame.opaque = YES;
+    
+    [self downloadPhotoForTweet:tweet andImageView:self.profileImageView];
+    
+    // Round imageview
+    self.profileImageView.layer.cornerRadius = 5;
+    self.profileImageView.layer.borderWidth = .5;
+    self.profileImageView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.profileImageView.clipsToBounds = YES;
+    
+    [self addShadowToView:self.commentFrame];
+    
+    
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .8;
+    view.layer.shadowRadius = 3.0;
+    view.layer.shadowOffset = CGSizeMake(0.0, 3.5);
+    //view.layer.shadowPath = [UIBezierPath bezierPathWithRect:view.layer.frame].CGPath;
+    
+    return view;
+}
+
+- (void)downloadPhotoForTweet:(NSDictionary *)tweet andImageView:(UIImageView *)imageView {
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSString *urlstring = @"http://i.imgur.com/0dumt.png";//[[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            imageView.image = [UIImage imageWithData:imgUrl];
+            [loading stopAnimating];
+            self.navigationItem.leftBarButtonItem = temp;
+        });
+    });
+    dispatch_release(downloadQueue);
+    //return imageView.image;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -75,6 +119,7 @@
     [self setCommentFrame:nil];
     [self setNewsText:nil];
     [self setTimestampLabel:nil];
+    [self setProfileImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -11,6 +11,7 @@
 #import "VMAnnotation.h"
 #import <EventKit/EventKit.h>
 #import "Sizer.h"
+#import "UIView+Frame.h"
 
 @interface MeetingDetailViewController ()
 
@@ -119,7 +120,12 @@
                                                        self.belowTextViewContainerView.frame.size.width,
                                                        self.belowTextViewContainerView.frame.size.height);
     
+    if ([self.meeting.meetingDescription isEqualToString:@""]) {
+        [self.descriptionLabel removeFromSuperview];
+        self.belowTextViewContainerView.top = self.mapView.bottom + 15;
+    }
 }
+
 
 - (void)viewWillAppear:(BOOL)animated {
     NSArray *navSubviews = [self.navigationController.navigationBar subviews];

@@ -44,11 +44,11 @@
 						<string key="NSFrameSize">{320, 367}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="869771927"/>
+						<reference key="NSNextKeyView" ref="1061032410"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<object class="NSCustomResource" key="IBUIImage" id="694412073">
+						<object class="NSCustomResource" key="IBUIImage" id="316599169">
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">VandyMobileBackgroundCanvas@2x.png</string>
 						</object>
@@ -234,8 +234,9 @@
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<bool key="IBUIShowsHorizontalScrollIndicator">NO</bool>
+						<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
 					</object>
-					<object class="IBUIImageView" id="869771927">
+					<object class="IBUIImageView" id="1061032410">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrameSize">{320, 112}</string>
@@ -245,7 +246,7 @@
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-						<reference key="IBUIImage" ref="694412073"/>
+						<reference key="IBUIImage" ref="316599169"/>
 					</object>
 					<object class="IBUIView" id="933682644">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -543,7 +544,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">headerImage</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="869771927"/>
+						<reference key="destination" ref="1061032410"/>
 					</object>
 					<int key="connectionID">60</int>
 				</object>
@@ -590,7 +591,7 @@
 							<reference ref="238490055"/>
 							<reference ref="933682644"/>
 							<reference ref="635240342"/>
-							<reference ref="869771927"/>
+							<reference ref="1061032410"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -652,7 +653,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">59</int>
-						<reference key="object" ref="869771927"/>
+						<reference key="object" ref="1061032410"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
