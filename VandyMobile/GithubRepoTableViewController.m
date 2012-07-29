@@ -2,7 +2,7 @@
 //  GithubRepoTableViewController.m
 //  VandyMobile
 //
-//  Created by Graham Gaylor on 7/26/12.
+//  Created by Graham Gaylor on 7/28/12.
 //
 //
 
@@ -16,18 +16,27 @@
 @end
 
 @implementation GithubRepoTableViewController
-@synthesize tableView = _tableView;
-@synthesize results = _results;
 
-- (void)viewDidLoad {
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    self = [super initWithStyle:style];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
     [self pullCommits];
 }
 
-- (void)viewDidUnload {
-    [self setTableView:nil];
+- (void)viewDidUnload
+{
     [super viewDidUnload];
+    // Release any retained subviews of the main view.
+    // e.g. self.myOutlet = nil;
 }
 
 #pragma mark - APICalls
@@ -62,7 +71,7 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.results count];
+	return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

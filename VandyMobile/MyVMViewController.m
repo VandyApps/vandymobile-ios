@@ -9,6 +9,7 @@
 #import "MyVMViewController.h"
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "GithubRepoTableViewController.h"
 
 #define USER_KEY @"user"
 
@@ -23,6 +24,7 @@
 @synthesize profileImageView = _profileImageView;
 @synthesize emailLabel = _emailLabel;
 @synthesize appNameLabel = _appNameLabel;
+@synthesize commitsButton = _commitsButton;
 
 @synthesize user = _user;
 @synthesize loginButton = _loginButton;
@@ -99,7 +101,15 @@
 	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log out" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
     
 	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
+}
 
+- (void)setupMyVMButtons {
+    [self.commitsButton addTarget:self action:@selector(commitsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)commitsButtonTapped {
+    GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
+    [self.navigationController pushViewController:repoTVC animated:YES];
 }
 
 - (void)logoutTapped {
@@ -129,6 +139,12 @@
     
 }
 
+- (void)setupUserInterface {
+    self.loggedInView.hidden = NO;
+	self.emailLabel.text = self.user.email;
+    self.appNameLabel.text = self.user.app;
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     if (!self.loaded) {
         self.loaded = YES;
@@ -142,6 +158,7 @@
     self.loggedInView.hidden = YES;
 	[self setupNotifications];
 	[self setupProfileColors];
+    [self setupMyVMButtons];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -167,6 +184,7 @@
 	[self setLoginButton:nil];
 	[self setEmailLabel:nil];
     [self setAppNameLabel:nil];
+    [self setCommitsButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -186,10 +204,6 @@
 	[self presentModalViewController:loginNavigationController animated:YES];
 }
 
-- (void)setupUserInterface {
-    self.loggedInView.hidden = NO;
-	self.emailLabel.text = self.user.email;
-    self.appNameLabel.text = self.user.app;
-}
+
 
 @end

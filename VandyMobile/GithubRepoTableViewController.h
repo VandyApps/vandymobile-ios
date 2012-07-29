@@ -2,16 +2,14 @@
 //  GithubRepoTableViewController.h
 //  VandyMobile
 //
-//  Created by Graham Gaylor on 7/26/12.
+//  Created by Graham Gaylor on 7/28/12.
 //
 //
 
 #import <UIKit/UIKit.h>
-#import "VMTableView.h"
 
-@interface GithubRepoTableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface GithubRepoTableViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *results;
 
 

@@ -24,4 +24,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;
 
+@property (strong, nonatomic) IBOutlet UIButton *commitsButton;
 @end

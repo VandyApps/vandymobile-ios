@@ -64,7 +64,6 @@
 		D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */; };
 		D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16A15C381F6003E5CDE /* 73-radar.png */; };
 		D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16B15C381F6003E5CDE /* 73-radar@2x.png */; };
-		D278A17515C4442C003E5CDE /* GithubRepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
 		D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D29796D115C0F26700025D01 /* ImageManipulator.m */; };
@@ -118,7 +117,8 @@
 		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
 		F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DA15C3A51A00912184 /* GitCommit.m */; };
-		F7B103DF15C3A5D100912184 /* GithubRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */; };
+		F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */; };
+		F7B103EB15C4B5B700912184 /* GithubRepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */; };
 		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
 		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
@@ -193,7 +193,6 @@
 		D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard@2x.png"; path = "../81-dashboard@2x.png"; sourceTree = "<group>"; };
 		D278A16A15C381F6003E5CDE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../73-radar.png"; sourceTree = "<group>"; };
 		D278A16B15C381F6003E5CDE /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar@2x.png"; path = "../73-radar@2x.png"; sourceTree = "<group>"; };
-		D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GithubRepoTableViewController.xib; sourceTree = "<group>"; };
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
@@ -271,8 +270,9 @@
 		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
 		F7B103D915C3A51A00912184 /* GitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitCommit.h; sourceTree = "<group>"; };
 		F7B103DA15C3A51A00912184 /* GitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitCommit.m; sourceTree = "<group>"; };
-		F7B103DD15C3A5D100912184 /* GithubRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepoTableViewController.h; sourceTree = "<group>"; };
-		F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepoTableViewController.m; sourceTree = "<group>"; };
+		F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepoTableViewController.h; sourceTree = "<group>"; };
+		F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepoTableViewController.m; sourceTree = "<group>"; };
+		F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GithubRepoTableViewController.xib; sourceTree = "<group>"; };
 		F7D4F069159FF50500F80CC0 /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
 		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
 		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
@@ -415,8 +415,9 @@
 				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
 				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
-				F7B103DD15C3A5D100912184 /* GithubRepoTableViewController.h */,
-				F7B103DE15C3A5D100912184 /* GithubRepoTableViewController.m */,
+				F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */,
+				F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */,
+				F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -460,7 +461,6 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				D278A17415C4442C003E5CDE /* GithubRepoTableViewController.xib */,
 				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
@@ -697,7 +697,7 @@
 				D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */,
 				D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */,
 				D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */,
-				D278A17515C4442C003E5CDE /* GithubRepoTableViewController.xib in Resources */,
+				F7B103EB15C4B5B700912184 /* GithubRepoTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,7 +759,7 @@
 				D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */,
 				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
 				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
-				F7B103DF15C3A5D100912184 /* GithubRepoTableViewController.m in Sources */,
+				F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
