@@ -16,7 +16,6 @@
 @implementation LoginViewController
 
 @synthesize closeButton = _closeButton;
-@synthesize scrollView = _scrollView;
 @synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -26,11 +25,6 @@
 		
     }
     return self;
-}
-
-- (void)setupScrollView {
-	self.scrollView.contentSize = CGSizeMake(320, 525);
-
 }
 
 - (IBAction)loginWithVUnetIDPressed {
@@ -54,7 +48,6 @@
 {
     [super viewDidLoad];
     [self setupButtons];
-	[self setupScrollView];
 }
 
 - (void)closeLoginScreen {
@@ -75,7 +68,6 @@
 
 - (void)viewDidUnload {
 	[self setCloseButton:nil];
-	[self setScrollView:nil];
 	[super viewDidUnload];
 }
 

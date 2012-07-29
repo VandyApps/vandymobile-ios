@@ -25,6 +25,7 @@
 @synthesize envelopeImageView;
 @synthesize scrollView;
 @synthesize descriptionContainerView;
+@synthesize headerImage;
 @synthesize labelsContainerView;
 @synthesize teamLabel;
 @synthesize nameLabel;
@@ -82,6 +83,20 @@
     self.descriptionContainerView.height = self.descriptionTextView.height + (self.descriptionTextView.top) * 2;
     self.belowTextViewContainerView.top = self.descriptionContainerView.bottom + 1;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.contentSize.width, self.belowTextViewContainerView.bottom);
+    
+    // If it will scroll, let it scroll. Else, no.
+    if (self.scrollView.contentSize.height > self.scrollView.height) {
+        self.headerImage.layer.shadowColor = [[UIColor blackColor] CGColor];
+        self.headerImage.layer.shadowOpacity = 1;
+        self.headerImage.layer.shadowRadius = 3;
+        self.headerImage.layer.shadowOffset = CGSizeMake(0, 3);
+        self.headerImage.layer.shouldRasterize = YES;
+    } else {
+        self.labelsContainerView.top = 20;
+        self.appIconImageContainerView.top = self.labelsContainerView.top;
+        self.scrollView.top = self.appIconImageContainerView.bottom + 10;
+        [self.headerImage removeFromSuperview];
+    }
     
     self.teamButton.opaque = YES;
 	self.teamButton.backgroundColor = [UIColor colorWithRed:0.01 green:0.01 blue:0.01 alpha:.8] /*#333333*/;
@@ -227,6 +242,7 @@
     [self setLabelsContainerView:nil];
     [self setScrollView:nil];
     [self setDescriptionContainerView:nil];
+    [self setHeaderImage:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;

@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *envelopeImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *descriptionContainerView;
+@property (weak, nonatomic) IBOutlet UIImageView *headerImage;
 
 // Labels
 @property (weak, nonatomic) IBOutlet UIView *labelsContainerView;
