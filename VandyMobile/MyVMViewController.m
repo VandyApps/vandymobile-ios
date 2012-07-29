@@ -98,7 +98,7 @@
 
 - (void)setupLogoutButton {
 	// Create add meeting button
-	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log out" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
+	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
     
 	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
 }
@@ -109,6 +109,7 @@
 
 - (void)commitsButtonTapped {
     GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
+    repoTVC.title = @"Commits";
     [self.navigationController pushViewController:repoTVC animated:YES];
 }
 

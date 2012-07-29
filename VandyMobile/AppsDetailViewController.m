@@ -57,7 +57,7 @@
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionContainerView.layer.cornerRadius = 12;
+    self.descriptionContainerView.layer.cornerRadius = 5;
     self.descriptionContainerView.clipsToBounds = YES;
     self.descriptionContainerView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionContainerView.layer.borderWidth = .5;
@@ -87,7 +87,7 @@
     // If it will scroll, let it scroll. Else, no.
     if (self.scrollView.contentSize.height > self.scrollView.height) {
         self.headerImage.layer.shadowColor = [[UIColor blackColor] CGColor];
-        self.headerImage.layer.shadowOpacity = 1;
+        self.headerImage.layer.shadowOpacity = .7;
         self.headerImage.layer.shadowRadius = 3;
         self.headerImage.layer.shadowOffset = CGSizeMake(0, 3);
         self.headerImage.layer.shouldRasterize = YES;

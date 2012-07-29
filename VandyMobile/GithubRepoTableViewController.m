@@ -32,6 +32,16 @@
     [self pullCommits];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+    //    NSLog(@"%@", navSubviews);
+    for (UIView * subview in navSubviews) {
+        if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+            [subview removeFromSuperview];
+        }
+    }
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];

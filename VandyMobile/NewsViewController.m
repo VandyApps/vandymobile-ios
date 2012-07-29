@@ -223,6 +223,7 @@
     cell.profilePictureLabel.layer.borderWidth = .5;
     cell.profilePictureLabel.layer.borderColor = [[UIColor grayColor] CGColor];
     cell.profilePictureLabel.clipsToBounds = YES;
+    
     if (!self.twitterProfilePicture) {
         self.twitterProfilePicture = [[UIImageView alloc] init];
         [self downloadPhotoForTweet:tweet andImageView:self.twitterProfilePicture];
@@ -260,7 +261,7 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
-        NSString *urlstring = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+        NSString *urlstring = @"http://i.imgur.com/0dumt.png";//[[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
         NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]];
         
         dispatch_async(dispatch_get_main_queue(), ^{

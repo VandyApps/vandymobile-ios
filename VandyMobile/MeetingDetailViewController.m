@@ -103,7 +103,7 @@
     }
     
     // Set description text
-    self.descriptionLabel.text = self.meeting.description;
+    self.descriptionLabel.text = self.meeting.meetingDescription;
     
     // Share button
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
