@@ -107,9 +107,9 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Register</string>
 						<reference key="IBUIHighlightedTitleColor" ref="481551463"/>
-						<object class="NSColor" key="IBUINormalTitleColor" id="244934847">
-							<int key="NSColorSpace">1</int>
-							<bytes key="NSRGB">MCAwIDAAA</bytes>
+						<object class="NSColor" key="IBUINormalTitleColor" id="144299444">
+							<int key="NSColorSpace">3</int>
+							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
 						</object>
 						<reference key="IBUINormalTitleShadowColor" ref="485335814"/>
 						<reference key="IBUIFontDescription" ref="537202527"/>
@@ -205,7 +205,7 @@
 					<object class="IBUITextField" id="562430596">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{113, 90}, {187, 22}}</string>
+						<string key="NSFrame">{{113, 86}, {187, 32}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="586313909"/>
@@ -220,15 +220,13 @@
 						<float key="IBUIMinimumFontSize">10</float>
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<int key="IBUIAutocorrectionType">1</int>
+							<int key="IBUIKeyboardType">7</int>
 							<int key="IBUIReturnKeyType">9</int>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<int key="IBUIClearButtonMode">1</int>
 						<string key="IBUIText"/>
-						<object class="NSColor" key="IBUITextColor" id="144299444">
-							<int key="NSColorSpace">3</int>
-							<bytes key="NSWhite">MC4zMzMzMzMzMzMzAA</bytes>
-						</object>
+						<reference key="IBUITextColor" ref="144299444"/>
 						<object class="IBUIFontDescription" key="IBUIFontDescription" id="293832990">
 							<int key="type">1</int>
 							<double key="pointSize">16</double>
@@ -282,7 +280,7 @@
 						<int key="IBUIButtonType">1</int>
 						<string key="IBUINormalTitle">Log In</string>
 						<reference key="IBUIHighlightedTitleColor" ref="481551463"/>
-						<reference key="IBUINormalTitleColor" ref="244934847"/>
+						<reference key="IBUINormalTitleColor" ref="144299444"/>
 						<reference key="IBUINormalTitleShadowColor" ref="485335814"/>
 						<reference key="IBUIFontDescription" ref="537202527"/>
 						<reference key="IBUIFont" ref="339240218"/>
@@ -476,8 +474,8 @@
 							<reference ref="586313909"/>
 							<reference ref="856547779"/>
 							<reference ref="573613127"/>
-							<reference ref="562430596"/>
 							<reference ref="568695653"/>
+							<reference ref="562430596"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>

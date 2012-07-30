@@ -51,7 +51,8 @@
 		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
 		D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA415B2096600BF8D54 /* 157-wrench.png */; };
 		D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */; };
-		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
+		D27197EA15C6423D00F10465 /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27197E915C6423D00F10465 /* MeetingDetailViewController.m */; };
+		D27197ED15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
@@ -185,8 +186,9 @@
 		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
 		D26AAFA415B2096600BF8D54 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
 		D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2.png"; sourceTree = "<group>"; };
+		D27197E915C6423D00F10465 /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
+		D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-07-29 at 11.19.13 PM.png"; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
-		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
 		D27291A21573E401009AA12F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -342,6 +344,7 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */,
 				D2C9246215C62C580059248D /* NewTabBarV3.png */,
 				D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */,
 				D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */,
@@ -428,8 +431,8 @@
 				D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
 				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
+				D27197E915C6423D00F10465 /* MeetingDetailViewController.m */,
 				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
-				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
 				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
 				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 				F76105B615A8A03900FD15B8 /* AppsTableViewController.h */,
@@ -726,6 +729,7 @@
 				D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */,
 				D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */,
 				D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */,
+				D27197ED15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,7 +763,6 @@
 				F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */,
 				F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */,
 				F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */,
-				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
 				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
@@ -788,6 +791,7 @@
 				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
 				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
 				F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */,
+				D27197EA15C6423D00F10465 /* MeetingDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,6 +82,11 @@
     self.nextMeetingLabel.hidden = YES;
     self.tableView.hidden = YES;
     
+    self.nextMeetingMapButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.nextMeetingMapButton.layer.borderWidth = .8;
+    self.nextMeetingMapButton.layer.cornerRadius = 3;
+    self.nextMeetingMapButton.clipsToBounds = YES;
+    
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
     

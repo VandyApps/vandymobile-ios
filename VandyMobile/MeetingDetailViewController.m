@@ -58,6 +58,64 @@
     self.descriptionLabel.layer.borderWidth = .75;
 
     
+    // Set description text
+    self.descriptionLabel.text = self.meeting.meetingDescription;
+    
+    // Share button
+    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
+																					  target:self 
+																					  action:@selector(sharePressed)];
+	[self.navigationItem setRightBarButtonItem:shareButton animated:NO];
+    
+    // Description Sizer
+//    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel withMaxHeight:126 andFont:self.descriptionLabel.font];
+//    CGFloat newYOrigin = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 8;
+//    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
+//                                                       newYOrigin,
+//                                                       self.belowTextViewContainerView.frame.size.width,
+//                                                       self.belowTextViewContainerView.frame.size.height);
+    
+    self.descriptionLabel.height = [Sizer sizeText:self.descriptionLabel.text withConstraint:CGSizeMake(self.descriptionLabel.width, 200) font:self.descriptionLabel.font andMinimumHeight:0];
+    
+    self.belowTextViewContainerView.top = self.descriptionLabel.height + self.descriptionLabel.top + 8;
+    
+    if ([self.meeting.meetingDescription isEqualToString:@""]) {
+        [self.descriptionLabel removeFromSuperview];
+        self.belowTextViewContainerView.top = self.mapView.bottom + 15;
+    }
+    
+    // Set speaker name, or "General Meeting" if no speaker
+    if (self.meeting.hasSpeaker) {
+        self.speakerLabel.text = self.meeting.speakerName;
+    } else {
+        self.speakerLabel.text = @"General Meeting";
+    }
+    
+    // Set date, time, and food served
+    
+    NSScanner *theScanner = [NSScanner scannerWithString:self.meeting.date];
+    NSString *scan = [NSString string];
+    [theScanner scanUpToString:@"," intoString:&scan];
+    
+    self.dateLabel.text = scan;
+    self.timeLabel.text = self.meeting.time;
+    if ([self.meeting.hasFood doubleValue] == 0) {
+        self.foodLabel.hidden = YES;
+    }
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+//    NSLog(@"%@", navSubviews);
+    for (UIView * subview in navSubviews) {
+        if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+            [subview removeFromSuperview];
+        }
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated {
     // Zoom MapView to coordinates
     if (CLLocationCoordinate2DIsValid(self.meeting.loc)) {
         if (self.meeting.loc.latitude == 0 && self.meeting.loc.longitude == 0) {
@@ -73,11 +131,11 @@
         CLLocationCoordinate2D zoomLocation;
         zoomLocation.latitude = self.meeting.loc.latitude;
         zoomLocation.longitude= self.meeting.loc.longitude;
-        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.75*METERS_PER_MILE, 0.75*METERS_PER_MILE);
+        MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
         MKCoordinateRegion adjustedRegion = [self.mapView regionThatFits:viewRegion];
         [self.mapView setRegion:adjustedRegion animated:YES];
         self.mapView.userInteractionEnabled = NO;
-
+        
     } else {
         self.mapView.hidden = YES;
     }
@@ -85,56 +143,22 @@
     // Set annotation in MapView
     VMAnnotation *anno = [[VMAnnotation alloc] init];
     [anno setCoordinate:self.meeting.loc];
-//    [anno setTitle:@"Test Title"];
-//    [anno setSubtitle:@"Test Subtitle"];
+    //    [anno setTitle:@"Test Title"];
+    //    [anno setSubtitle:@"Test Subtitle"];
     [self.mapView addAnnotation:anno];
-    
-    // Set speaker name, or "General Meeting" if no speaker
-    if (self.meeting.hasSpeaker) {
-        self.speakerLabel.text = self.meeting.speakerName;
-    } else {
-        self.speakerLabel.text = @"General Meeting";
-    }
-    
-    // Set date, time, and food served
-    self.dateLabel.text = self.meeting.date;
-    self.timeLabel.text = self.meeting.time;
-    if ([self.meeting.hasFood doubleValue] == 0) {
-        self.foodLabel.hidden = YES;
-    }
-    
-    // Set description text
-    self.descriptionLabel.text = self.meeting.meetingDescription;
-    
-    // Share button
-    UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
-																					  target:self 
-																					  action:@selector(sharePressed)];
-	[self.navigationItem setRightBarButtonItem:shareButton animated:NO];
-    
-    // Description Sizer
-    self.descriptionLabel.frame = [Sizer sizeTextView:self.descriptionLabel withMaxHeight:126 andFont:self.descriptionLabel.font];
-    CGFloat newYOrigin = self.descriptionLabel.frame.origin.y + self.descriptionLabel.frame.size.height + 8;
-    self.belowTextViewContainerView.frame = CGRectMake(self.belowTextViewContainerView.frame.origin.x,
-                                                       newYOrigin,
-                                                       self.belowTextViewContainerView.frame.size.width,
-                                                       self.belowTextViewContainerView.frame.size.height);
-    
-    if ([self.meeting.meetingDescription isEqualToString:@""]) {
-        [self.descriptionLabel removeFromSuperview];
-        self.belowTextViewContainerView.top = self.mapView.bottom + 15;
-    }
+
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    NSArray *navSubviews = [self.navigationController.navigationBar subviews];
-//    NSLog(@"%@", navSubviews);
-    for (UIView * subview in navSubviews) {
-        if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
-            [subview removeFromSuperview];
-        }
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *pin = (MKPinAnnotationView *) [mapView dequeueReusableAnnotationViewWithIdentifier: @"annotation_ID"];
+    if (pin == nil) {
+        pin = [[MKPinAnnotationView alloc] initWithAnnotation: annotation reuseIdentifier: @"annotation_ID"];
+    } else {
+        pin.annotation = annotation;
     }
+    pin.pinColor = MKPinAnnotationColorRed;
+    pin.animatesDrop = YES;
+    return pin;
 }
 
 - (IBAction)sharePressed {
