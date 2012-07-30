@@ -76,6 +76,17 @@
     self.nameLabel.text = app.name;
     self.taglineLabel.text = app.tagline;
     self.descriptionTextView.text = app.description;
+    
+    CGFloat oldHeight = self.taglineLabel.height;
+    self.taglineLabel.height = [Sizer sizeText:self.taglineLabel.text withConstraint:CGSizeMake(self.taglineLabel.width, 50) font:self.taglineLabel.font andMinimumHeight:0];
+    
+    self.labelsContainerView.height += self.taglineLabel.height - oldHeight;
+    self.headerImage.height += self.taglineLabel.height - oldHeight;
+    
+    oldHeight = self.scrollView.height;
+    self.scrollView.top = self.headerImage.height + 1;
+    self.scrollView.height -= self.scrollView.height - oldHeight;
+    
     //self.labelsContainerView.centerY = self.appIconImage.centerY;
     
     // Sizing code

@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UIView *profilePictureContainerView;
+@property (weak, nonatomic) IBOutlet UIView *profilePictureBorderContainerView;
 
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appNameLabel;

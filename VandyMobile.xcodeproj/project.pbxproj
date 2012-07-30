@@ -429,7 +429,6 @@
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
 				F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */,
 				F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */,
-				F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -485,6 +484,7 @@
 				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
 				F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */,
 				522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */,
+				F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";

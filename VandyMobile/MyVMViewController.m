@@ -22,6 +22,8 @@
 @implementation MyVMViewController
 @synthesize backgroundImageView = _backgroundImageView;
 @synthesize profileImageView = _profileImageView;
+@synthesize profilePictureContainerView = _profilePictureContainerView;
+@synthesize profilePictureBorderContainerView = _profilePictureBorderContainerView;
 @synthesize emailLabel = _emailLabel;
 @synthesize appNameLabel = _appNameLabel;
 @synthesize commitsButton = _commitsButton;
@@ -129,14 +131,17 @@
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
     // Set profile picture aspects.
-    self.profileImageView.layer.borderWidth = 2.5;
+    self.profileImageView.layer.borderWidth = 1;
     self.profileImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
-    //self.profileImageView.layer.cornerRadius = 2;
-    //self.profileImageView.layer.masksToBounds = YES;
-    self.profileImageView.layer.shadowColor = [[UIColor blackColor] CGColor];
-    self.profileImageView.layer.shadowOpacity = 0.95;
-    self.profileImageView.layer.shadowRadius = 2.0;
-    self.profileImageView.layer.shadowOffset = CGSizeMake(0, 1.0);
+    self.profilePictureContainerView.layer.borderWidth = 2.5;
+    self.profilePictureContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
+    self.profilePictureContainerView.layer.cornerRadius = 5;
+    self.profilePictureContainerView.clipsToBounds = YES;
+    
+    self.profilePictureBorderContainerView.layer.shadowColor = [[UIColor blackColor] CGColor];
+    self.profilePictureBorderContainerView.layer.shadowOpacity = 0.95;
+    self.profilePictureBorderContainerView.layer.shadowRadius = 2.0;
+    self.profilePictureBorderContainerView.layer.shadowOffset = CGSizeMake(0, 1.0);
     
 }
 
@@ -186,6 +191,8 @@
 	[self setEmailLabel:nil];
     [self setAppNameLabel:nil];
     [self setCommitsButton:nil];
+    [self setProfilePictureContainerView:nil];
+    [self setProfilePictureBorderContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
