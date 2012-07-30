@@ -49,10 +49,6 @@
 		D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */; };
 		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
 		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
-		D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9C15B2089A00BF8D54 /* 57-download.png */; };
-		D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */; };
-		D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */; };
-		D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */; };
 		D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA415B2096600BF8D54 /* 157-wrench.png */; };
 		D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */; };
 		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
@@ -60,10 +56,6 @@
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
-		D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16815C381F6003E5CDE /* 81-dashboard.png */; };
-		D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */; };
-		D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16A15C381F6003E5CDE /* 73-radar.png */; };
-		D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16B15C381F6003E5CDE /* 73-radar@2x.png */; };
 		D278A18115C4CA95003E5CDE /* VandyMobileIconNeue57.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A18015C4CA94003E5CDE /* VandyMobileIconNeue57.png */; };
 		D278A18315C4CAA6003E5CDE /* VandyMobileIconNeue114.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
@@ -79,7 +71,6 @@
 		D2A723DB15BF92140071BBA0 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A723DA15BF92140071BBA0 /* NewsCell.xib */; };
 		D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */; };
 		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
-		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
 		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
 		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
 		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
@@ -87,6 +78,18 @@
 		D2C9244715C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */; };
 		D2C9244A15C4DF3E0059248D /* VandyMobileTextNeue.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */; };
 		D2C9244B15C4DF3E0059248D /* VandyMobileTextNeue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */; };
+		D2C9245815C629D50059248D /* NewTabBarSelectedNeue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */; };
+		D2C9245915C629D50059248D /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244F15C629D40059248D /* 57-download.png */; };
+		D2C9245A15C629D50059248D /* 57-download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245015C629D40059248D /* 57-download@2x.png */; };
+		D2C9245B15C629D50059248D /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245115C629D40059248D /* 157-wrench@2x.png */; };
+		D2C9245C15C629D50059248D /* 158-wrench-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245215C629D40059248D /* 158-wrench-2@2x.png */; };
+		D2C9245D15C629D50059248D /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245315C629D50059248D /* NewSegControl3-sel.png */; };
+		D2C9245E15C629D50059248D /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245415C629D50059248D /* 81-dashboard.png */; };
+		D2C9245F15C629D50059248D /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245515C629D50059248D /* 81-dashboard@2x.png */; };
+		D2C9246015C629D50059248D /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245615C629D50059248D /* 73-radar.png */; };
+		D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245715C629D50059248D /* 73-radar@2x.png */; };
+		D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246215C62C580059248D /* NewTabBarV3.png */; };
+		D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */; };
 		D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0B9A9159649DE00702102 /* IL_Share2.png */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
@@ -180,10 +183,6 @@
 		D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullhorn-food-combo@2x.png"; sourceTree = "<group>"; };
 		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
 		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
-		D26AAF9C15B2089A00BF8D54 /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download.png"; path = "../57-download.png"; sourceTree = "<group>"; };
-		D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download@2x.png"; path = "../57-download@2x.png"; sourceTree = "<group>"; };
-		D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "157-wrench@2x.png"; path = "../157-wrench@2x.png"; sourceTree = "<group>"; };
-		D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "158-wrench-2@2x.png"; path = "../158-wrench-2@2x.png"; sourceTree = "<group>"; };
 		D26AAFA415B2096600BF8D54 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
 		D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2.png"; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
@@ -193,10 +192,6 @@
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
 		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
-		D278A16815C381F6003E5CDE /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard.png"; path = "../81-dashboard.png"; sourceTree = "<group>"; };
-		D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard@2x.png"; path = "../81-dashboard@2x.png"; sourceTree = "<group>"; };
-		D278A16A15C381F6003E5CDE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../73-radar.png"; sourceTree = "<group>"; };
-		D278A16B15C381F6003E5CDE /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar@2x.png"; path = "../73-radar@2x.png"; sourceTree = "<group>"; };
 		D278A18015C4CA94003E5CDE /* VandyMobileIconNeue57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconNeue57.png; sourceTree = "<group>"; };
 		D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconNeue114.png; sourceTree = "<group>"; };
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
@@ -216,7 +211,6 @@
 		D2A723DA15BF92140071BBA0 /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 534322_10150823513557391_1367024220_n.jpg; sourceTree = "<group>"; };
 		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
-		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
 		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
 		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
@@ -225,6 +219,18 @@
 		D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileIconNeueInset@2x.png"; sourceTree = "<group>"; };
 		D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileTextNeue.png; sourceTree = "<group>"; };
 		D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileTextNeue@2x.png"; sourceTree = "<group>"; };
+		D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelectedNeue@2x.png"; sourceTree = "<group>"; };
+		D2C9244F15C629D40059248D /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download.png"; sourceTree = "<group>"; };
+		D2C9245015C629D40059248D /* 57-download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download@2x.png"; sourceTree = "<group>"; };
+		D2C9245115C629D40059248D /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
+		D2C9245215C629D40059248D /* 158-wrench-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2@2x.png"; sourceTree = "<group>"; };
+		D2C9245315C629D50059248D /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl3-sel.png"; sourceTree = "<group>"; };
+		D2C9245415C629D50059248D /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "81-dashboard.png"; sourceTree = "<group>"; };
+		D2C9245515C629D50059248D /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "81-dashboard@2x.png"; sourceTree = "<group>"; };
+		D2C9245615C629D50059248D /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		D2C9245715C629D50059248D /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar@2x.png"; sourceTree = "<group>"; };
+		D2C9246215C62C580059248D /* NewTabBarV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarV3.png; sourceTree = "<group>"; };
+		D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarSelectedNeue.png; sourceTree = "<group>"; };
 		D2D0B9A9159649DE00702102 /* IL_Share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IL_Share2.png; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
@@ -336,14 +342,23 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D2C9246215C62C580059248D /* NewTabBarV3.png */,
+				D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */,
+				D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */,
+				D2C9244F15C629D40059248D /* 57-download.png */,
+				D2C9245015C629D40059248D /* 57-download@2x.png */,
+				D2C9245115C629D40059248D /* 157-wrench@2x.png */,
+				D2C9245215C629D40059248D /* 158-wrench-2@2x.png */,
+				D2C9245315C629D50059248D /* NewSegControl3-sel.png */,
+				D2C9245415C629D50059248D /* 81-dashboard.png */,
+				D2C9245515C629D50059248D /* 81-dashboard@2x.png */,
+				D2C9245615C629D50059248D /* 73-radar.png */,
+				D2C9245715C629D50059248D /* 73-radar@2x.png */,
+				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
 				D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */,
 				D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */,
 				D2C9244415C4D0FA0059248D /* VandyMobileIconNeueInset.png */,
 				D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */,
-				D278A16815C381F6003E5CDE /* 81-dashboard.png */,
-				D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */,
-				D278A16A15C381F6003E5CDE /* 73-radar.png */,
-				D278A16B15C381F6003E5CDE /* 73-radar@2x.png */,
 				D2326A4F15C362E5007FFAB9 /* close.png */,
 				D2326A5015C362E5007FFAB9 /* close@2x.png */,
 				D23267B615C18F86007FFAB9 /* app_store_badge.png */,
@@ -353,16 +368,10 @@
 				D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */,
 				D26AAFA415B2096600BF8D54 /* 157-wrench.png */,
 				D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */,
-				D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */,
-				D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */,
-				D26AAF9C15B2089A00BF8D54 /* 57-download.png */,
-				D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */,
 				D2D0B9A9159649DE00702102 /* IL_Share2.png */,
 				D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */,
-				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
 				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
 				D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */,
-				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
 				D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */,
 				D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */,
 				D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */,
@@ -667,7 +676,6 @@
 				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
 				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
-				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
 				D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */,
 				D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */,
 				D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */,
@@ -688,10 +696,6 @@
 				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
 				522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */,
 				522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */,
-				D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */,
-				D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */,
-				D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */,
-				D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */,
 				D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */,
 				D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */,
 				D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */,
@@ -703,10 +707,6 @@
 				D2326A5115C362E5007FFAB9 /* close.png in Resources */,
 				D2326A5215C362E5007FFAB9 /* close@2x.png in Resources */,
 				D2326A5815C364F0007FFAB9 /* LoginStageTwoViewController.xib in Resources */,
-				D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */,
-				D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */,
-				D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */,
-				D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */,
 				F7B103EB15C4B5B700912184 /* GithubRepoTableViewController.xib in Resources */,
 				D278A18115C4CA95003E5CDE /* VandyMobileIconNeue57.png in Resources */,
 				D278A18315C4CAA6003E5CDE /* VandyMobileIconNeue114.png in Resources */,
@@ -714,6 +714,18 @@
 				D2C9244715C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png in Resources */,
 				D2C9244A15C4DF3E0059248D /* VandyMobileTextNeue.png in Resources */,
 				D2C9244B15C4DF3E0059248D /* VandyMobileTextNeue@2x.png in Resources */,
+				D2C9245815C629D50059248D /* NewTabBarSelectedNeue@2x.png in Resources */,
+				D2C9245915C629D50059248D /* 57-download.png in Resources */,
+				D2C9245A15C629D50059248D /* 57-download@2x.png in Resources */,
+				D2C9245B15C629D50059248D /* 157-wrench@2x.png in Resources */,
+				D2C9245C15C629D50059248D /* 158-wrench-2@2x.png in Resources */,
+				D2C9245D15C629D50059248D /* NewSegControl3-sel.png in Resources */,
+				D2C9245E15C629D50059248D /* 81-dashboard.png in Resources */,
+				D2C9245F15C629D50059248D /* 81-dashboard@2x.png in Resources */,
+				D2C9246015C629D50059248D /* 73-radar.png in Resources */,
+				D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */,
+				D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */,
+				D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

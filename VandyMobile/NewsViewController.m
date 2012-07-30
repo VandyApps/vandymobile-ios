@@ -120,7 +120,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     // Set the background image for *all* UINavigationBars
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileTextNeue"]];
     if ([[self.navigationController.navigationBar subviews] count] > 2) {
         
         NSArray *navSubviews = [self.navigationController.navigationBar subviews];

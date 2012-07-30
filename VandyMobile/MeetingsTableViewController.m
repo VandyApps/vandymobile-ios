@@ -200,7 +200,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     // Set the logo on the navigation bar
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileTextNeue"]];
     if ([[self.navigationController.navigationBar subviews] count] > 2) {
         NSArray *navSubviews = [self.navigationController.navigationBar subviews];
         
