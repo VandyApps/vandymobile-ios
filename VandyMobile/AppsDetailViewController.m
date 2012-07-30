@@ -57,7 +57,7 @@
     self.appIconImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.appIconImage.layer.borderWidth = 1;
     
-    self.descriptionContainerView.layer.cornerRadius = 5;
+    self.descriptionContainerView.layer.cornerRadius = 8;
     self.descriptionContainerView.clipsToBounds = YES;
     self.descriptionContainerView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionContainerView.layer.borderWidth = .5;
@@ -83,11 +83,11 @@
     self.labelsContainerView.height += self.taglineLabel.height - oldHeight;
     self.headerImage.height += self.taglineLabel.height - oldHeight;
     
-    oldHeight = self.scrollView.height;
+    oldHeight = self.scrollView.top;
     self.scrollView.top = self.headerImage.height + 1;
-    self.scrollView.height -= self.scrollView.height - oldHeight;
+    self.scrollView.height -= self.scrollView.top - oldHeight;
     
-    //self.labelsContainerView.centerY = self.appIconImage.centerY;
+    self.appIconImageContainerView.centerY = self.labelsContainerView.centerY;
     
     // Sizing code
     self.descriptionTextView.height = [Sizer sizeText:self.descriptionTextView.text withConstraint:CGSizeMake(self.descriptionTextView.width, MAXFLOAT) font:self.descriptionTextView.font andMinimumHeight:50];

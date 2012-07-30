@@ -188,6 +188,9 @@
 {
     AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
     CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    
+    cell.cellImageContainerView.centerY = (67 + newHeight - 21) / 2;
+    
     return 67 + newHeight - 21;
 }
 
