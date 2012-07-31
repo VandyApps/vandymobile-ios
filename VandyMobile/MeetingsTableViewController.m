@@ -30,6 +30,7 @@
 @synthesize nextMeetingButton = _nextMeetingButton;
 @synthesize nextMeetingCheckInButton = _nextMeetingCheckInButton;
 @synthesize nextMeetingMapButton = _nextMeetingMapButton;
+@synthesize nextMeetingMapButtonContainerView = _nextMeetingMapButtonContainerView;
 @synthesize nextMeetingLabel = _nextMeetingLabel;
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
@@ -183,6 +184,17 @@
 //	}
     
     self.nextMeetingLabel.hidden = NO;
+    
+    [self addShadowToView:self.nextMeetingMapButtonContainerView];
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .6;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
+    
+    return view;
 }
 
 - (void)viewDidUnload
@@ -196,6 +208,7 @@
     [self setNextMeetingCheckInButton:nil];
     [self setNextMeetingMapButton:nil];
     [self setNextMeetingLabel:nil];
+    [self setNextMeetingMapButtonContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
