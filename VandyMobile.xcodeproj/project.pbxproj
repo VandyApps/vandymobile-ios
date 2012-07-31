@@ -108,6 +108,8 @@
 		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
 		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F736A5C415C7729600A47646 /* TeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F736A5C215C7729600A47646 /* TeamTableViewController.m */; };
+		F736A5C515C7729600A47646 /* TeamTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F736A5C315C7729600A47646 /* TeamTableViewController.xib */; };
 		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
 		F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B315A89F7600FD15B8 /* AppsAPIClient.m */; };
 		F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B715A8A03900FD15B8 /* AppsTableViewController.m */; };
@@ -255,6 +257,9 @@
 		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F736A5C115C7729600A47646 /* TeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamTableViewController.h; sourceTree = "<group>"; };
+		F736A5C215C7729600A47646 /* TeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamTableViewController.m; sourceTree = "<group>"; };
+		F736A5C315C7729600A47646 /* TeamTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewController.xib; sourceTree = "<group>"; };
 		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
 		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
 		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
@@ -441,6 +446,8 @@
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
 				F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */,
 				F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */,
+				F736A5C115C7729600A47646 /* TeamTableViewController.h */,
+				F736A5C215C7729600A47646 /* TeamTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -484,6 +491,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				F736A5C315C7729600A47646 /* TeamTableViewController.xib */,
 				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
@@ -730,6 +738,7 @@
 				D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */,
 				D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */,
 				D27197ED15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png in Resources */,
+				F736A5C515C7729600A47646 /* TeamTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -792,6 +801,7 @@
 				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
 				F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */,
 				D27197EA15C6423D00F10465 /* MeetingDetailViewController.m in Sources */,
+				F736A5C415C7729600A47646 /* TeamTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
