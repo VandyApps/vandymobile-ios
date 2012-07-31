@@ -10,6 +10,7 @@
 #import "LoginViewController.h"
 #import <QuartzCore/QuartzCore.h>
 #import "GithubRepoTableViewController.h"
+#import "TeamTableViewController.h"
 
 #define USER_KEY @"user"
 
@@ -26,6 +27,7 @@
 @synthesize profilePictureBorderContainerView = _profilePictureBorderContainerView;
 @synthesize emailLabel = _emailLabel;
 @synthesize appNameLabel = _appNameLabel;
+@synthesize teamButton = _teamButton;
 @synthesize commitsButton = _commitsButton;
 
 @synthesize user = _user;
@@ -107,12 +109,19 @@
 
 - (void)setupMyVMButtons {
     [self.commitsButton addTarget:self action:@selector(commitsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.teamButton addTarget:self action:@selector(teamButtonTapped) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)commitsButtonTapped {
     GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
     repoTVC.title = @"Commits";
     [self.navigationController pushViewController:repoTVC animated:YES];
+}
+
+- (void)teamButtonTapped {
+    TeamTableViewController * teamTVC = [[TeamTableViewController alloc] initWithNibName:@"TeamTableViewController" bundle:nil];
+    teamTVC.title = @"Team";
+    [self.navigationController pushViewController:teamTVC animated:YES];
 }
 
 - (void)logoutTapped {
@@ -193,6 +202,7 @@
     [self setCommitsButton:nil];
     [self setProfilePictureContainerView:nil];
     [self setProfilePictureBorderContainerView:nil];
+    [self setTeamButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
