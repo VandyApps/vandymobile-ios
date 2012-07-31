@@ -15,6 +15,7 @@
 #import "JSONKit.h"
 #import "VMCell.h"
 #import "User.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface MeetingsTableViewController ()
 

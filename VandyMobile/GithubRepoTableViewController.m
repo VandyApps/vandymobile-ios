@@ -106,7 +106,7 @@
     cell.textLabel.text = commit.commitMessage;
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
     cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     
     cell.detailTextLabel.text = commit.author;
 	
