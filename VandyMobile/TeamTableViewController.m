@@ -9,6 +9,8 @@
 #import "TeamTableViewController.h"
 #import "MeetingsAPIClient.h"
 #import "VMCell.h"
+#import "JSONKit.h"
+
 
 #define USERS_KEY   @"users"
 #define EMAIL_KEY   @"email"
@@ -40,8 +42,8 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
 	
-//    self.teamIds = [NSArray arrayWithObject:[NSNumber numberWithInt:1]];
-//	[self pullTeamsFromServer];
+    self.teamIds = [NSArray arrayWithObject:[NSNumber numberWithInt:1]];
+    [self pullTeamsFromServer];
 }
 
 - (void)setupRefreshAppsButton {
@@ -85,8 +87,10 @@
                                             success:^(AFHTTPRequestOperation *operation, id response) {
 //                                                NSLog(@"Response: %@", response);
                                                 NSArray *usersArray = [response objectForKey:USERS_KEY];
-                                                [self.teams addObject:usersArray];
+                                                NSLog(@"usersArray = %@", usersArray);
+                                                [results addObject:usersArray];
                                                 if (i == [self.teamIds count] -1) {
+                                                    self.teams = results;
                                                     [self.tableView reloadData];
                                                 }
                                             }
@@ -95,29 +99,32 @@
                                             }];
 
     }
-
        
     
 }
-//
-//- (void)pullAppsFromCache {
-//	NSString *path = @"http://70.138.50.84/apps.json";
-//	NSURLRequest *request = [[AppsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
-//	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
-//	if (response) {
-//		NSData *responseData = response.data;
-//		id appsObject = [[JSONDecoder decoder] objectWithData:responseData];
-//		
-//		NSMutableArray *results = [NSMutableArray array];
-//		for (id appDictionary in appsObject) {
-//			NSLog(@"%@", appDictionary);
-//			App *app = [[App alloc] initWithDictionary:appDictionary];
-//			[results addObject:app];
-//		}
-//		self.results = results;
-//		[self.tableView reloadData];
-//	}
-//}
+
+- (void)pullTeamsFromCache {
+    NSMutableArray *results = [NSMutableArray array];
+    for (int i = 0; i < [self.teamIds count]; i++) {
+        NSString *path = [NSString stringWithFormat:@"http://70.138.50.84/teams/%d.json", (int)[(NSNumber *)[self.teamIds objectAtIndex:i] intValue]];
+        NSString *staticPath = path;
+        NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"GET" path:staticPath parameters:nil];
+        NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
+        if (response) {
+            NSData *responseData = response.data;
+            id teamsObject = [[JSONDecoder decoder] objectWithData:responseData];
+            
+            NSArray *usersArray = [teamsObject objectForKey:USERS_KEY];
+            NSLog(@"usersArray = %@", usersArray);
+            [results addObject:usersArray];
+            if (i == [self.teamIds count] -1) {
+                self.teams = results;
+                [self.tableView reloadData];
+            }
+        }
+
+    }
+}
 
 #pragma mark - TableView Datasource Methods
 
@@ -142,7 +149,6 @@
     NSDictionary *userDict = [[self.teams objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     cell.textLabel.text = [userDict objectForKey:EMAIL_KEY];
     
-    cell.textLabel.text = @"test cell";
 	return cell;
 }
 
