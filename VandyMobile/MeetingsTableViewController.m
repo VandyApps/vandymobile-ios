@@ -140,7 +140,7 @@
 
 - (void)pullMeetingsFromCache {
 	NSString *path = @"http://70.138.50.84/meetings.json";
-	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
+	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
 		NSData *responseData = response.data;
