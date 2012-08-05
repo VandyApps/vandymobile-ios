@@ -175,7 +175,7 @@
     cell.subLabel.text = app.tagline;
     [self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
     
-    [cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
+    [cell configureCellForTableView:self.tableView atIndexPath:indexPath withMainFont:[UIFont fontWithName:@"Helvetica-Bold" size:16]];
 	
 	return cell;
 }
@@ -183,7 +183,8 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+//    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(cell.subLabel.width, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    CGFloat newHeight = cell.subLabel.height;
     newHeight += 67;
     newHeight -= 21;
     

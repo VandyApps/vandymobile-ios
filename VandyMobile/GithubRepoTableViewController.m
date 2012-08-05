@@ -12,6 +12,7 @@
 #import "GitCommit.h"
 #import "UIView+Frame.h"
 #import "AppsCell.h"
+#import "Sizer.h"
 
 @interface GithubRepoTableViewController ()
 
@@ -52,16 +53,16 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileBackgroundCanvas"]];
     self.tableView.backgroundView = backgroundView;
     
-    NSMutableSet *names;
-    for (GitCommit *commit in self.results) {
-        if (![self.images objectForKey:commit.avatarURL]) {
-            [self downloadPhotoForUrl:commit.avatarURL andImageView:nil];
-        }
-        [names addObject:commit.author];
-    }
-    if (self.images.count == names.count) {
-        [self.tableView reloadData];
-    }
+//    NSMutableSet *names;
+//    for (GitCommit *commit in self.results) {
+//        if (![self.images objectForKey:commit.avatarURL]) {
+//            [self downloadPhotoForUrl:commit.avatarURL andImageView:nil];
+//        }
+//        [names addObject:commit.author];
+//    }
+//    if (self.images.count == names.count) {
+//        [self.tableView reloadData];
+//    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,10 +91,10 @@
     }
     
     // Download photo
-    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-    [loading startAnimating];
-    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+//    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+//    [loading startAnimating];
+//    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
     dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
     dispatch_async(downloadQueue, ^{
         NSString *urlstring = url;
@@ -101,13 +102,14 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             imageView.image = [UIImage imageWithData:imgUrl];
-            [loading stopAnimating];
-            self.navigationItem.leftBarButtonItem = temp;
+            [self.images setObject:[UIImage imageWithData:imgUrl] forKey:url];
+//            [loading stopAnimating];
+//            self.navigationItem.leftBarButtonItem = temp;
         });
     });
     dispatch_release(downloadQueue);
     
-    [self.images setObject:imageView forKey:url];
+    
 }
 
 #pragma mark - APICalls
@@ -165,15 +167,14 @@
     if (commit) {
         if (![self.images objectForKey:commit.avatarURL]) {
             [self downloadPhotoForUrl:commit.avatarURL andImageView:cell.cellImage];
-        } else cell.cellImage.image = [[self.images objectForKey:commit.avatarURL] image];
+        } else cell.cellImage.image = [self.images objectForKey:commit.avatarURL];
         
         cell.mainLabel.text = commit.commitMessage;
         
         cell.subLabel.text = commit.author;
         
-        [cell configureCellForTableView:self.tableView atIndexPath:indexPath];
-        cell.mainLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
-        cell.mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+        [cell configureCellForTableView:self.tableView atIndexPath:indexPath withMainFont:[UIFont fontWithName:@"Helvetica-Bold" size:13]];
+        cell.labelsContainerView.centerY = cell.centerY;
     }
 	
 	return cell;
@@ -181,10 +182,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-//    return cell.textLabel.height + cell.detailTextLabel.height + 16;
-    cell.labelsContainerView.centerY = 85/2;
-    cell.cellImageContainerView.centerY = 85/2;
-    return 85;
+    //    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(cell.subLabel.width, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    CGFloat newHeight = cell.subLabel.height - 21;
+    newHeight += cell.mainLabel.height - 21;
+    newHeight += 67;
+    
+    cell.cellImageContainerView.centerY = newHeight / 2;
+    cell.labelsContainerView.centerY = newHeight / 2;
+    
+    return newHeight;
 }
 
 #pragma mark - Table view delegate
