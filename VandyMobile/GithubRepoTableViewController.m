@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "GitCommit.h"
 #import "UIView+Frame.h"
+#import "AppsCell.h"
 
 @interface GithubRepoTableViewController ()
 
@@ -20,6 +21,7 @@
 
 @synthesize app = _app;
 @synthesize results = _results;
+@synthesize images = _images;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -30,6 +32,19 @@
     return self;
 }
 
+- (NSMutableDictionary *)images {
+    if (!_images) {
+        _images = [NSMutableDictionary dictionary];
+    }
+    return _images;
+}
+
+- (void)setImages:(NSMutableDictionary *)images {
+    if (_images != images) {
+        _images = images;
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,7 +52,16 @@
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileBackgroundCanvas"]];
     self.tableView.backgroundView = backgroundView;
     
-//    self.tableView.
+    NSMutableSet *names;
+    for (GitCommit *commit in self.results) {
+        if (![self.images objectForKey:commit.avatarURL]) {
+            [self downloadPhotoForUrl:commit.avatarURL andImageView:nil];
+        }
+        [names addObject:commit.author];
+    }
+    if (self.images.count == names.count) {
+        [self.tableView reloadData];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -57,6 +81,35 @@
     // e.g. self.myOutlet = nil;
 }
 
+#pragma mark Image Downloading Methods
+
+- (void)downloadPhotoForUrl:(NSString *)url andImageView:(UIImageView *)imageView {
+    
+    if (!imageView) {
+        imageView = [[UIImageView alloc] init];
+    }
+    
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        NSString *urlstring = url;
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlstring]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            imageView.image = [UIImage imageWithData:imgUrl];
+            [loading stopAnimating];
+            self.navigationItem.leftBarButtonItem = temp;
+        });
+    });
+    dispatch_release(downloadQueue);
+    
+    [self.images setObject:imageView forKey:url];
+}
+
 #pragma mark - APICalls
 
 - (void)pullCommits {
@@ -73,6 +126,7 @@
                                                                         [results addObject:commit];
                                                                     }
                                                                     self.results = results;
+                                                                    
                                                                     [self.tableView reloadData];
 																}
 																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonObject) {
@@ -96,26 +150,40 @@
 	
 	static NSString *cellIdentifier = @"cellIdentifier";
 	
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+	AppsCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
 	if(!cell) {
-		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+		cell = [[AppsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 	}
+    
+    // Load the top-level objects from the custom cell XIB.
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AppsCell" owner:self options:nil];
+    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+    cell = [topLevelObjects objectAtIndex:0];
+    
     GitCommit *commit = [self.results objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = commit.commitMessage;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-    
-    cell.detailTextLabel.text = commit.author;
+    if (commit) {
+        if (![self.images objectForKey:commit.avatarURL]) {
+            [self downloadPhotoForUrl:commit.avatarURL andImageView:cell.cellImage];
+        } else cell.cellImage.image = [[self.images objectForKey:commit.avatarURL] image];
+        
+        cell.mainLabel.text = commit.commitMessage;
+        
+        cell.subLabel.text = commit.author;
+        
+        [cell configureCellForTableView:self.tableView atIndexPath:indexPath];
+        cell.mainLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:15];
+        cell.mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+    }
 	
 	return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
 //    return cell.textLabel.height + cell.detailTextLabel.height + 16;
+    cell.labelsContainerView.centerY = 85/2;
+    cell.cellImageContainerView.centerY = 85/2;
     return 85;
 }
 

@@ -16,6 +16,7 @@
 @synthesize cellImageContainerView = _cellImageContainerView;
 @synthesize mainLabel = _mainLabel;
 @synthesize subLabel = _subLabel;
+@synthesize labelsContainerView = _labelsContainerView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -47,8 +48,15 @@
     self.cellImage.layer.borderWidth = .5;
     [self addShadowToView:self.cellImageContainerView];
     
-    self.cellImage.centerY = self.centerY;
+    CGFloat oldHeight = self.subLabel.height;
+    self.subLabel.height = [Sizer sizeText:self.subLabel.text withConstraint:CGSizeMake(self.subLabel.width, MAXFLOAT) font:self.subLabel.font andMinimumHeight:21];
     
+    self.labelsContainerView.height += self.subLabel.height - oldHeight;
+    
+    self.labelsContainerView.layer.borderWidth = 2;
+    self.labelsContainerView.layer.borderColor = [[UIColor redColor] CGColor];
+    
+    self.labelsContainerView.centerY = self.cellImageContainerView.centerY;
 }
 
 //+ (CGFloat)cellHeightForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {

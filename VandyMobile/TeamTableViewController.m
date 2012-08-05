@@ -41,6 +41,9 @@
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileBackgroundCanvas"]];
+    self.tableView.backgroundView = backgroundView;
+    
 	
     self.teamIds = [NSArray arrayWithObject:[NSNumber numberWithInt:1]];
     [self pullTeamsFromServer];
@@ -60,21 +63,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    // Set the background image for *all* UINavigationBars
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileTextNeue"]];
-    if ([[self.navigationController.navigationBar subviews] count] > 2) {
-        
-        NSArray *navSubviews = [self.navigationController.navigationBar subviews];
-        
-        //        NSLog(@"%@", navSubviews);
-        
-        for (UIView * subview in navSubviews) {
-            if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
-                [subview removeFromSuperview];
-            }
+    NSArray *navSubviews = [self.navigationController.navigationBar subviews];
+    //    NSLog(@"%@", navSubviews);
+    for (UIView * subview in navSubviews) {
+        if ([subview isKindOfClass:[UIImageView class]] && subview != [navSubviews objectAtIndex:0]) {
+            [subview removeFromSuperview];
         }
     }
-    [self.navigationController.navigationBar addSubview:logo];
 }
 
 #pragma mark APIClient Methods

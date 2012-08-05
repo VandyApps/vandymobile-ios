@@ -223,11 +223,6 @@
 }
 
 - (IBAction)devTeamButtonPressed {
-    //    NSString *to = @"contact@vandymobile.org";
-    //    NSString *subject = app.name;
-    //
-    //    NSString *mail = [NSString stringWithFormat:@"mailto:%@?&subject=%@", to, subject];
-    //    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[mail stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     if ([MFMailComposeViewController canSendMail])
     {
@@ -244,7 +239,7 @@
         //NSData *imageData = UIImagePNGRepresentation(myImage);
         //[mailer addAttachmentData:imageData mimeType:@"image/png" fileName:@"mobiletutsImage"];
         
-        NSString *emailBody = @"Hi there!\n\nSent from the VandyMobile app.";
+        NSString *emailBody = @"\n\n\nSent from the VandyMobile App";
         [mailer setMessageBody:emailBody isHTML:NO];
         
         mailer.modalPresentationStyle = UIModalPresentationPageSheet;
