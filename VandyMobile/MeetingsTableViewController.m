@@ -60,6 +60,12 @@
 //	[self addNextMeetingCell];
 }
 
+- (void)setupNextMeetingHeaderView {
+    [self.nextMeetingButton setBackgroundImage:[UIImage imageNamed:@"NextMeetingCanvasV2@2x.png"] forState:UIControlStateNormal];
+    [self.nextMeetingButton setBackgroundImage:[UIImage imageNamed:@"NewNavBar@2x.png"] forState:UIControlStateSelected];
+
+}
+
 #pragma mark - View Life Cycle
 
 - (void)viewDidLoad
@@ -75,6 +81,8 @@
 	
 	// Creates refresh meetings button in navbar
     [self setupRefreshMeetingsButton];
+    
+    [self setupNextMeetingHeaderView];
 	
     // Customize backgrounds
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
@@ -85,12 +93,12 @@
     self.nextMeetingMapButton.hidden = YES;
     self.nextMeetingLabel.hidden = YES;
     self.tableView.hidden = YES;
-    
-    self.nextMeetingMapButton.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.nextMeetingMapButton.layer.borderWidth = .8;
-    self.nextMeetingMapButton.layer.cornerRadius = 3;
-    self.nextMeetingMapButton.clipsToBounds = YES;
-    
+//
+//    self.nextMeetingMapButton.layer.borderColor = [[UIColor grayColor] CGColor];
+//    self.nextMeetingMapButton.layer.borderWidth = .8;
+//    self.nextMeetingMapButton.layer.cornerRadius = 3;
+//    self.nextMeetingMapButton.clipsToBounds = YES;
+//    
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
 }

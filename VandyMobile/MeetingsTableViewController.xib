@@ -44,7 +44,7 @@
 						<string key="NSFrameSize">{320, 367}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="73725622"/>
+						<reference key="NSNextKeyView" ref="906323618"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -52,17 +52,6 @@
 							<string key="NSClassName">NSImage</string>
 							<string key="NSResourceName">VandyMobileBackgroundCanvas@2x.png</string>
 						</object>
-					</object>
-					<object class="IBUIImageView" id="73725622">
-						<reference key="NSNextResponder" ref="191373211"/>
-						<int key="NSvFlags">292</int>
-						<string key="NSFrameSize">{320, 100}</string>
-						<reference key="NSSuperview" ref="191373211"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="906323618"/>
-						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<bool key="IBUIUserInteractionEnabled">NO</bool>
-						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 					<object class="IBUITableView" id="674879515">
 						<reference key="NSNextResponder" ref="191373211"/>
@@ -338,14 +327,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">nextMeetingImageView</string>
-						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="73725622"/>
-					</object>
-					<int key="connectionID">22</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">nextMeetingTopic</string>
 						<reference key="source" ref="372490531"/>
 						<reference key="destination" ref="466826426"/>
@@ -449,7 +430,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="674879515"/>
 							<reference ref="254079907"/>
-							<reference ref="73725622"/>
 							<reference ref="459952321"/>
 							<reference ref="466826426"/>
 							<reference ref="906323618"/>
@@ -482,36 +462,6 @@
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">13</int>
-						<reference key="object" ref="466826426"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">15</int>
-						<reference key="object" ref="99733977"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">16</int>
-						<reference key="object" ref="906323618"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">21</int>
-						<reference key="object" ref="73725622"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">12</int>
-						<reference key="object" ref="459952321"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">17</int>
-						<reference key="object" ref="626979671"/>
-						<reference key="parent" ref="191373211"/>
-					</object>
-					<object class="IBObjectRecord">
 						<int key="objectID">33</int>
 						<reference key="object" ref="410363037"/>
 						<array class="NSMutableArray" key="children">
@@ -524,6 +474,31 @@
 						<int key="objectID">18</int>
 						<reference key="object" ref="1018359895"/>
 						<reference key="parent" ref="410363037"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">16</int>
+						<reference key="object" ref="906323618"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">15</int>
+						<reference key="object" ref="99733977"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">17</int>
+						<reference key="object" ref="626979671"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">12</int>
+						<reference key="object" ref="459952321"/>
+						<reference key="parent" ref="191373211"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">13</int>
+						<reference key="object" ref="466826426"/>
+						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
 			</object>
@@ -540,7 +515,6 @@
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="18.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-				<string key="21.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="4.CustomClassName">VMTableView</string>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -574,6 +548,7 @@
 						<string key="nextMeetingImageView">UIImageView</string>
 						<string key="nextMeetingLabel">UILabel</string>
 						<string key="nextMeetingMapButton">UIButton</string>
+						<string key="nextMeetingMapButtonContainerView">UIView</string>
 						<string key="nextMeetingTime">UILabel</string>
 						<string key="nextMeetingTopic">UILabel</string>
 						<string key="tableView">UITableView</string>
@@ -602,6 +577,10 @@
 						<object class="IBToOneOutletInfo" key="nextMeetingMapButton">
 							<string key="name">nextMeetingMapButton</string>
 							<string key="candidateClassName">UIButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="nextMeetingMapButtonContainerView">
+							<string key="name">nextMeetingMapButtonContainerView</string>
+							<string key="candidateClassName">UIView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="nextMeetingTime">
 							<string key="name">nextMeetingTime</string>
