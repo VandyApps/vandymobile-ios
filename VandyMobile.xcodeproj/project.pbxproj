@@ -61,6 +61,7 @@
 		D278A18315C4CAA6003E5CDE /* VandyMobileIconNeue114.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
+		D291166D15CF310A009BC4B7 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D291166C15CF310A009BC4B7 /* MapIcon.png */; };
 		D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D29796D115C0F26700025D01 /* ImageManipulator.m */; };
 		D29796D615C0F42600025D01 /* CustomCellBackgroundView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */; };
 		D29BF1FD15CDE48400D87DB7 /* FirstTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D29BF1F015CDE48400D87DB7 /* FirstTimeViewController.m */; };
@@ -209,6 +210,7 @@
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
+		D291166C15CF310A009BC4B7 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		D29796D015C0F26700025D01 /* ImageManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulator.h; sourceTree = "<group>"; };
 		D29796D115C0F26700025D01 /* ImageManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManipulator.m; sourceTree = "<group>"; };
 		D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackgroundView.h; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D291166C15CF310A009BC4B7 /* MapIcon.png */,
 				D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */,
 				D2C9246215C62C580059248D /* NewTabBarV3.png */,
 				D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */,
@@ -782,6 +785,7 @@
 				D29BF20115CDE48400D87DB7 /* IntroSlide2.png in Resources */,
 				D29BF20215CDE48400D87DB7 /* IntroSlide3.png in Resources */,
 				D29BF20315CDE48400D87DB7 /* Separator.png in Resources */,
+				D291166D15CF310A009BC4B7 /* MapIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
