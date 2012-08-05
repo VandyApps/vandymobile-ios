@@ -10,10 +10,12 @@
 #import "MeetingsAPIClient.h"
 #import "VMCell.h"
 #import "JSONKit.h"
+#import "User.h"
 
 
 #define USERS_KEY   @"users"
 #define EMAIL_KEY   @"email"
+#define NAME_KEY    @"name"
 
 @interface TeamTableViewController ()
 
@@ -23,6 +25,7 @@
 
 @synthesize teams = _teams;
 @synthesize teamIds = _teamIds;
+@synthesize teamNames = _teamNames;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,8 +44,7 @@
     // Create resizable UINavigationBar image
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
-	
-    self.teamIds = [NSArray arrayWithObject:[NSNumber numberWithInt:1]];
+    
     [self pullTeamsFromServer];
 }
 
@@ -81,6 +83,7 @@
 
 - (void)pullTeamsFromServer {
     NSMutableArray *results = [NSMutableArray array];
+    NSMutableArray *names = [NSMutableArray array];
     for (int i=0; i < [self.teamIds count]; i++) {
         NSString *path = [NSString stringWithFormat:@"teams/%d.json", (int)[(NSNumber *)[self.teamIds objectAtIndex:i] intValue]];
         [[MeetingsAPIClient sharedInstance] getPath:path parameters:nil
@@ -89,9 +92,12 @@
                                                 NSArray *usersArray = [response objectForKey:USERS_KEY];
                                                 NSLog(@"usersArray = %@", usersArray);
                                                 [results addObject:usersArray];
+                                                [names addObject:[response objectForKey:NAME_KEY]];
                                                 if (i == [self.teamIds count] -1) {
                                                     self.teams = results;
+                                                    self.teamNames = names;
                                                     [self.tableView reloadData];
+                                                    NSLog(@"Team Names %@", self.teamNames);
                                                 }
                                             }
                                             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -129,11 +135,22 @@
 #pragma mark - TableView Datasource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [[self.teams objectAtIndex:section] count];
+    if ([self.teams count] == [self.teamIds count]) {
+        return [[self.teams objectAtIndex:section] count];
+    }
+    return 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-   return [self.teams count];
+   return [self.teamIds count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if ([self.teamNames count] == [self.teamIds count]) {
+        return [self.teamNames objectAtIndex:section];
+    }
+    
+    return @"Section";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,8 +163,11 @@
 		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 	}
     
-    NSDictionary *userDict = [[self.teams objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
-    cell.textLabel.text = [userDict objectForKey:EMAIL_KEY];
+    if ([self.teams count] == [self.teamIds count]) {
+        NSDictionary *userDict = [[self.teams objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        cell.textLabel.text = [userDict objectForKey:EMAIL_KEY];
+    }
+
     
 	return cell;
 }

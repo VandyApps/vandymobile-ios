@@ -12,5 +12,6 @@
 
 @property (nonatomic, strong) NSMutableArray *teams;
 @property (nonatomic, strong) NSArray *teamIds;
+@property (nonatomic, strong) NSArray *teamNames;
 
 @end
