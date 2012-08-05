@@ -16,6 +16,8 @@
 #import "VMCell.h"
 #import "User.h"
 #import <QuartzCore/QuartzCore.h>
+#import "FirstTimeViewController.h"
+#import "UIViewController+Overview.h"
 
 @interface MeetingsTableViewController ()
 
@@ -91,9 +93,15 @@
     
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
-    
-    
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)showIntro {
+    FirstTimeViewController *ftvc = [[FirstTimeViewController alloc] initWithNibName:@"FirstTimeViewController" bundle:nil andNumberOfSlides:6];
+    [self.tabBarController presentOverviewController:ftvc withOpacity:.8 animated:YES];
 }
 
 - (void)setupCreateMeetingButton {
@@ -131,6 +139,11 @@
 											[self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
                                             self.tableView.hidden = NO;
+                                            
+                                            if (!self.hasShownIntro) {
+                                                [self showIntro];
+                                                self.hasShownIntro = YES;
+                                            }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											[SVProgressHUD dismissWithError:@"Error updating meetings" afterDelay:3];
