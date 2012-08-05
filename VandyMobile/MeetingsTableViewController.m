@@ -101,7 +101,7 @@
 
 - (void)showIntro {
     FirstTimeViewController *ftvc = [[FirstTimeViewController alloc] initWithNibName:@"FirstTimeViewController" bundle:nil andNumberOfSlides:6];
-    [self.tabBarController presentOverviewController:ftvc withOpacity:.8 animated:YES];
+    [self.tabBarController presentOverviewController:ftvc withOpacity:.7 animated:YES];
 }
 
 - (void)setupCreateMeetingButton {
@@ -143,6 +143,7 @@
                                             if (!self.hasShownIntro) {
                                                 [self showIntro];
                                                 self.hasShownIntro = YES;
+                                                [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showIntro)]];
                                             }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
