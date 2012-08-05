@@ -121,6 +121,7 @@
 - (void)teamButtonTapped {
     TeamTableViewController * teamTVC = [[TeamTableViewController alloc] initWithNibName:@"TeamTableViewController" bundle:nil];
     teamTVC.title = @"Team";
+    teamTVC.teamIds = self.user.teamIds;
     [self.navigationController pushViewController:teamTVC animated:YES];
 }
 
@@ -157,7 +158,7 @@
 - (void)setupUserInterface {
     self.loggedInView.hidden = NO;
 	self.emailLabel.text = self.user.email;
-    self.appNameLabel.text = self.user.app;
+//    self.appNameLabel.text = self.user.app;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
