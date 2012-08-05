@@ -53,7 +53,6 @@
     self.cellImage.clipsToBounds = YES;
     self.cellImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.cellImage.layer.borderWidth = .5;
-    [self addShadowToView:self.cellImageContainerView];
     
     CGFloat oldHeight = self.mainLabel.height;
     self.mainLabel.height = [Sizer sizeText:self.mainLabel.text withConstraint:CGSizeMake(self.mainLabel.width, MAXFLOAT) font:self.mainLabel.font andMinimumHeight:21];
@@ -90,15 +89,6 @@
 //        }
 //    }
 //}
-
-- (id)addShadowToView:(UIView *)view {
-    view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = .6;
-    view.layer.shadowRadius = 2.0;
-    view.layer.shadowOffset = CGSizeMake(-1, 1);
-    
-    return view;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {

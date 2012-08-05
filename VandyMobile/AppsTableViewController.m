@@ -177,7 +177,18 @@
     
     [cell configureCellForTableView:self.tableView atIndexPath:indexPath withMainFont:[UIFont fontWithName:@"Helvetica-Bold" size:16]];
 	
+    [self addShadowToView:cell.cellImageContainerView];
+    
 	return cell;
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .6;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
+    
+    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

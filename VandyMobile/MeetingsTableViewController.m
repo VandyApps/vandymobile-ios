@@ -62,6 +62,7 @@
 
 - (void)setupNextMeetingHeaderView {
     [self addShadowToView:self.nextMeetingButton withOpacity:.9];
+    self.nextMeetingButton.layer.shouldRasterize = YES;
 //    self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1];
 }
 
