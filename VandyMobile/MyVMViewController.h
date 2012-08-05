@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import <MessageUI/MessageUI.h>
 
-@interface MyVMViewController : UIViewController  
+@interface MyVMViewController : UIViewController <MFMailComposeViewControllerDelegate>
 //+ (id)sharedInstance;
 
 @property (strong, nonatomic) User *user;
