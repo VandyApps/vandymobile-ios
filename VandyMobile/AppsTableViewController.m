@@ -163,35 +163,49 @@
     
 	if(!cell) {
 		cell = [[AppsCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        App *app = [self.results objectAtIndex:indexPath.row];
-        
-        // Load the top-level objects from the custom cell XIB.
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AppsCell" owner:self options:nil];
-        // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
-        cell = [topLevelObjects objectAtIndex:0];
+    }
+    App *app = [self.results objectAtIndex:indexPath.row];
+    
+    // Load the top-level objects from the custom cell XIB.
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"AppsCell" owner:self options:nil];
+    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+    cell = [topLevelObjects objectAtIndex:0];
 
-        cell.mainLabel.text = app.name;
-        cell.subLabel.text = app.tagline;
-		[self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
-        
-        //CGFloat oldHeight = cell.subLabel.height;
-        cell.subLabel.height = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:cell.subLabel.font andMinimumHeight:21];
-        //[self.heightOffset setObject:[NSNumber numberWithFloat:(cell.subLabel.height-oldHeight)] atIndexedSubscript:indexPath.row];
-
-		[cell configureCellForTableView:self.tableView atIndexPath:indexPath];    
-	}
+    cell.mainLabel.text = app.name;
+    cell.subLabel.text = app.tagline;
+    [self downloadPhotoForApp:app andPhoto:cell.cellImage];//[UIImage imageNamed:@"VandyMobileIcon.png"];
+    
+    [cell configureCellForTableView:self.tableView atIndexPath:indexPath withMainFont:[UIFont fontWithName:@"Helvetica-Bold" size:16]];
 	
+    [self addShadowToView:cell.cellImageContainerView];
+    
 	return cell;
+}
+
+- (id)addShadowToView:(UIView *)view {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    view.layer.shadowOpacity = .6;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
+    
+    return view;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AppsCell *cell = (AppsCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(227, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+//    CGFloat newHeight = [Sizer sizeText:cell.subLabel.text withConstraint:CGSizeMake(cell.subLabel.width, MAXFLOAT) font:[UIFont fontWithName:@"Helvetica" size:14] andMinimumHeight:21];
+    CGFloat newHeight = cell.subLabel.height;
+    newHeight += 67;
+    newHeight -= 21;
     
-    cell.cellImageContainerView.centerY = (67 + newHeight - 21) / 2;
+    cell.cellImageContainerView.centerY = newHeight / 2;
+    cell.labelsContainerView.centerY = newHeight / 2;
     
-    return 67 + newHeight - 21;
+    CGFloat celltop = cell.labelsContainerView.top;
+    cell.labelsContainerView.top = celltop;
+    
+    return newHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

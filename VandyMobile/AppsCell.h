@@ -14,8 +14,9 @@
 @property (weak, nonatomic) IBOutlet UIView *cellImageContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *mainLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subLabel;
+@property (weak, nonatomic) IBOutlet UIView *labelsContainerView;
 
-- (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath;
+- (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath withMainFont:(UIFont *)font;
 
 
 @end

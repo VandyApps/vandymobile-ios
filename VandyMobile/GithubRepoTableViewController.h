@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) App *app;
 @property (strong, nonatomic) NSArray *results;
+@property (strong, nonatomic) NSMutableDictionary *images;
 
 
 @end

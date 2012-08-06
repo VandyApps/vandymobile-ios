@@ -61,10 +61,11 @@
 }
 
 - (void)setupNextMeetingHeaderView {
-    [self.nextMeetingButton setBackgroundImage:[UIImage imageNamed:@"NextMeetingCanvasV2@2x.png"] forState:UIControlStateNormal];
-    [self.nextMeetingButton setBackgroundImage:[UIImage imageNamed:@"NewNavBar@2x.png"] forState:UIControlStateSelected];
-
+    [self addShadowToView:self.nextMeetingButton withOpacity:.9];
+    self.nextMeetingButton.layer.shouldRasterize = YES;
+//    self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1];
 }
+
 
 #pragma mark - View Life Cycle
 
@@ -207,16 +208,16 @@
     
     self.nextMeetingLabel.hidden = NO;
     
-    [self addShadowToView:self.nextMeetingMapButtonContainerView];
+    [self addShadowToView:self.nextMeetingMapButtonContainerView withOpacity:.95];
 }
 
-- (id)addShadowToView:(UIView *)view {
+- (void)addShadowToView:(UIView *)view withOpacity:(CGFloat)opacity {
     view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = .6;
+    if (opacity > 1) opacity = 1;
+    else if (opacity < 0) opacity = 0;
+    view.layer.shadowOpacity = opacity;
     view.layer.shadowRadius = 2.0;
     view.layer.shadowOffset = CGSizeMake(-1, 1);
-    
-    return view;
 }
 
 - (void)viewDidUnload
