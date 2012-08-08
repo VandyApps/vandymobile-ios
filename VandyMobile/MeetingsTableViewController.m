@@ -608,7 +608,7 @@
     MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
     
     // Grab the meeting at the index path
-    Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    Meeting *meeting = [[self.sectionedResults objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     // Prepare meetingDVC
     meetingDVC.title = meeting.topic;
