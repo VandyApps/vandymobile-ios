@@ -105,9 +105,6 @@
         
         backgroundImageView.layer.transform = CATransform3DMakeRotation(angle, 0, 0.0, 1.0);
     }
-    else {
-        NSLog(@"Rotated Portrait");
-    }
 }
 
 @end

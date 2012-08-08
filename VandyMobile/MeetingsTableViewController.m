@@ -19,6 +19,7 @@
 #import "FirstTimeViewController.h"
 #import "UIViewController+Overview.h"
 #import "SectionHeaderView.h"
+#import "UIView+Frame.h"
 
 @interface MeetingsTableViewController ()
 
@@ -156,7 +157,13 @@
                                             if (!self.hasShownIntro) {
                                                 [self showIntro];
                                                 self.hasShownIntro = YES;
-                                                [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(showIntro)]];
+                                                UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+                                                button.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
+                                                button.showsTouchWhenHighlighted = NO;
+                                                [button addTarget:self action:@selector(showIntro) forControlEvents:UIControlEventTouchUpInside];
+                                                [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+                                                
+                                                 
                                             }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -237,6 +244,7 @@
     view.layer.shadowOpacity = opacity;
     view.layer.shadowRadius = 2.0;
     view.layer.shadowOffset = CGSizeMake(-1, 1);
+    view.layer.shouldRasterize = YES;
 }
 
 - (void)viewDidUnload
