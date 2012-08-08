@@ -304,23 +304,24 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    switch (section) {
-        case 0:
-            return @"Today";
-            break;
-        case 1:
-            return @"Tomorrow";
-            break;
-        case 2:
-            return @"This week";
-            break;
-        case 3:
-            return @"Later";
-            break;
-        default:
-            break;
-    }
-    return @"ERROR";
+//    switch (section) {
+//        case 0:
+//            return @"Today";
+//            break;
+//        case 1:
+//            return @"Tomorrow";
+//            break;
+//        case 2:
+//            return @"This week";
+//            break;
+//        case 3:
+//            return @"Later";
+//            break;
+//        default:
+//            break;
+//    }
+//    return @"ERROR";
+    return [self timeframeOfMeeting:[[self.sectionedResults objectAtIndex:section] firstObject]];
 }
 
 
@@ -448,9 +449,52 @@
         return [NSString stringWithFormat:@"%@ at %@", dayOfWeek, meeting.time];
     }
     else {
-        return [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
+        return [NSString stringWithFormat:@"%@ at %@", meeting.date, meeting.time];
     }
 
+}
+
+- (NSString *)timeframeOfMeeting:(Meeting *)meeting {
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
+    
+    NSInteger index;
+    
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        index = 0;
+    }
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        index = 1;
+    }
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        index = 2;
+    }
+    else {
+        index = 3;
+    }
+    
+    switch (index) {
+        case 0:
+            return @"Today";
+            break;
+        case 1:
+            return @"Tomorrow";
+            break;
+        case 2:
+            return @"This week";
+            break;
+        case 3:
+            return @"Later";
+            break;
+        default:
+            break;
+    }
+    return @"ERROR";
 }
 
 - (void)sortMeeting:(Meeting *)meeting inResults:(NSArray *)sectionedResults {
