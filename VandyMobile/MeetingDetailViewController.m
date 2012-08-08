@@ -75,7 +75,7 @@
 //                                                       self.belowTextViewContainerView.frame.size.width,
 //                                                       self.belowTextViewContainerView.frame.size.height);
     
-    self.descriptionLabel.height = [Sizer sizeText:self.descriptionLabel.text withConstraint:CGSizeMake(self.descriptionLabel.width - 30, 200) font:self.descriptionLabel.font andMinimumHeight:0] + 14;
+    self.descriptionLabel.height = [Sizer sizeText:self.descriptionLabel.text withConstraint:CGSizeMake(self.descriptionLabel.width - 30, 200) font:self.descriptionLabel.font andMinimumHeight:0] + 10;
     if (self.descriptionLabel.height < 160) {
         self.descriptionLabel.userInteractionEnabled = NO;
     }

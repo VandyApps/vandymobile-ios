@@ -106,6 +106,15 @@
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
     
+    for (UIView *view in self.view.subviews) {
+        for (UIView *subview in view.subviews) {
+            for (UIView *subsubview in view.subviews) {
+                subsubview.layer.shouldRasterize = YES;
+            }
+            subview.layer.shouldRasterize = YES;
+        }
+        view.layer.shouldRasterize = YES;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -162,8 +171,7 @@
                                                 button.showsTouchWhenHighlighted = NO;
                                                 [button addTarget:self action:@selector(showIntro) forControlEvents:UIControlEventTouchUpInside];
                                                 [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
-                                                
-                                                 
+                    
                                             }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
