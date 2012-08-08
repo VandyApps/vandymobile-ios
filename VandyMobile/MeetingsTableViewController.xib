@@ -56,9 +56,10 @@
 					<object class="IBUITableView" id="674879515">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 95}, {320, 275}}</string>
+						<string key="NSFrame">{{0, 92}, {320, 275}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="287481048">
 							<int key="NSColorSpace">3</int>
@@ -253,7 +254,7 @@
 								<string key="NSFrameSize">{40, 71}</string>
 								<reference key="NSSuperview" ref="410363037"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
+								<reference key="NSNextKeyView" ref="674879515"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -529,6 +530,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">MeetingsTableViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">nextMeetingButtonPressed:</string>
+						<string key="NS.object.0">UIButton</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">nextMeetingButtonPressed:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">nextMeetingButtonPressed:</string>
+							<string key="candidateClassName">UIButton</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="backgroundImageView">UIImageView</string>
 						<string key="nextMeetingButton">UIButton</string>

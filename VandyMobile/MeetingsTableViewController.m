@@ -18,6 +18,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "FirstTimeViewController.h"
 #import "UIViewController+Overview.h"
+#import "SectionHeaderView.h"
 
 @interface MeetingsTableViewController ()
 
@@ -36,7 +37,7 @@
 @synthesize nextMeetingLabel = _nextMeetingLabel;
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
-
+@synthesize sectionedResults = _sectionedResults;
 
 #pragma mark - Notifications
 
@@ -99,9 +100,11 @@
 //    self.nextMeetingMapButton.layer.borderWidth = .8;
 //    self.nextMeetingMapButton.layer.cornerRadius = 3;
 //    self.nextMeetingMapButton.clipsToBounds = YES;
-//    
+//
+    
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -146,6 +149,7 @@
 											[self addNextMeetingCell];
 											
 											[self.tableView reloadData];
+                                            [self sortMeetings];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
                                             self.tableView.hidden = NO;
                                             
@@ -159,6 +163,7 @@
 											[SVProgressHUD dismissWithError:@"Error updating meetings" afterDelay:3];
 											NSLog(@"%@",error);
 										}];
+    
 }
 
 - (void)pullMeetingsFromCache {
@@ -178,10 +183,24 @@
 		[self addNextMeetingCell];
 		[self.tableView setHidden:NO];
 		[self.tableView reloadData];
+        [self sortMeetings];
 	}
 }
 
-
+- (void)sortMeetings {
+    self.sectionedResults = [NSArray arrayWithObjects:[NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], nil];
+    
+    for (Meeting *meeting in self.results) {
+        [self sortMeeting:meeting inResults:self.sectionedResults];
+    }
+    NSMutableArray *remover = [self.sectionedResults mutableCopy];
+    for (NSMutableOrderedSet *section in self.sectionedResults) {
+        if (section.count == 0) {
+            [remover removeObject:section];
+        }
+    }
+    self.sectionedResults = [remover copy];
+}
 
 - (void)addNextMeetingCell {
     // Grab the next meeting
@@ -275,9 +294,66 @@
 }
 
 #pragma mark - TableViewDatasource Methods
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.sectionedResults.count;
+}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.results count];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return [[self.sectionedResults objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return @"Today";
+            break;
+        case 1:
+            return @"Tomorrow";
+            break;
+        case 2:
+            return @"This week";
+            break;
+        case 3:
+            return @"Later";
+            break;
+        default:
+            break;
+    }
+    return @"ERROR";
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+	return 25;
+}
+
+- (UIView *)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
+    
+//    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 360, 25)] ;
+    SectionHeaderView *container = [[SectionHeaderView alloc] init];
+    
+    // Load the top-level objects from the custom cell XIB.
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"SectionHeaderView" owner:self options:nil];
+    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+    container = [topLevelObjects objectAtIndex:0];
+    
+    container.layer.borderColor = [UIColor grayColor].CGColor;
+    container.layer.borderWidth = 0.5f;
+    
+    
+//    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,360, 25)] ;
+//    headerLabel.backgroundColor = [UIColor clearColor];
+//    headerLabel.font = [UIFont boldSystemFontOfSize:19.0f];
+//    headerLabel.shadowOffset = CGSizeMake(1, 1);
+//    headerLabel.textColor = [UIColor whiteColor];
+//    headerLabel.shadowColor = [UIColor darkGrayColor];
+    NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
+    container.label.text = title;
+//    [container addSubview:headerLabel];
+    [self addShadowToView:container withOpacity:.8];
+    return container;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -290,7 +366,10 @@
 	if(!cell) {
 		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 	}
-	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    
+//	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    Meeting *meeting = [[self.sectionedResults objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
 	cell.textLabel.text = meeting.topic;
 	if([meeting.topic isEqualToString:@""]) {
 		cell.textLabel.text = @"Working Meeting";
@@ -343,29 +422,11 @@
 }
 
 - (NSString *)checkMeetingDateOfMeeting:(Meeting *)meeting {
-    
-    NSDate *now = [NSDate date];
-    
-    // Get the date's weekday
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *weekdayComponents =
-    [gregorian components:(NSWeekdayCalendarUnit) fromDate:meeting.dateUnformatted];
-    NSInteger weekday = [weekdayComponents weekday];
-    NSString *dayOfWeek;
-    
-    // Discover what weekday it is
-    if (weekday == 1) dayOfWeek = @"Sunday";
-    else if (weekday == 2) dayOfWeek = @"Monday";
-    else if (weekday == 3) dayOfWeek = @"Tuesday";
-    else if (weekday == 4) dayOfWeek = @"Wednesday";
-    else if (weekday == 5) dayOfWeek = @"Thursday";
-    else if (weekday == 6) dayOfWeek = @"Friday";
-    else if (weekday == 7) dayOfWeek = @"Saturday";
-    else dayOfWeek = @"error";
-    
-    NSDateComponents *currentComponents = [gregorian components:(NSWeekdayCalendarUnit) fromDate:now];
-    NSInteger currentDay = [currentComponents weekday];
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSString *dayOfWeek = [dict objectForKey:@"englishWeekday"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
     
     // If date is now
     if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 2)) {
@@ -390,6 +451,77 @@
         return [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
     }
 
+}
+
+- (void)sortMeeting:(Meeting *)meeting inResults:(NSArray *)sectionedResults {
+    
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
+    
+    NSInteger index;
+    
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        index = 0;
+    }
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        index = 1;
+    }
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        index = 2;
+    }
+    else {
+        index = 3;
+    }
+    
+    BOOL shouldAdd = YES;
+    for (NSMutableOrderedSet *section in sectionedResults) {
+        if (([sectionedResults indexOfObjectIdenticalTo:section] == index)) {
+            for (Meeting *otherMeeting in section) {
+                if ([otherMeeting.dateUnformatted isEqualToDate:meeting.dateUnformatted]) {
+                    shouldAdd = NO;
+                }
+            }
+            if (shouldAdd) {
+                [[sectionedResults objectAtIndex:index] addObject:meeting];
+            }
+        }
+        else if ([section containsObject:meeting]) {
+            [section removeObject:meeting];
+        }
+    }
+}
+
+- (NSDictionary *)dateInfoFromMeeting:(Meeting *)meeting {
+    
+    NSDate *now = [NSDate date];
+    
+    // Get the date's weekday
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *weekdayComponents =
+    [gregorian components:(NSWeekdayCalendarUnit) fromDate:meeting.dateUnformatted];
+    NSInteger weekday = [weekdayComponents weekday];
+    NSString *dayOfWeek;
+    
+    // Discover what weekday it is
+    if (weekday == 1) dayOfWeek = @"Sunday";
+    else if (weekday == 2) dayOfWeek = @"Monday";
+    else if (weekday == 3) dayOfWeek = @"Tuesday";
+    else if (weekday == 4) dayOfWeek = @"Wednesday";
+    else if (weekday == 5) dayOfWeek = @"Thursday";
+    else if (weekday == 6) dayOfWeek = @"Friday";
+    else if (weekday == 7) dayOfWeek = @"Saturday";
+    else dayOfWeek = @"error";
+    
+    NSDateComponents *currentComponents = [gregorian components:(NSWeekdayCalendarUnit) fromDate:now];
+    NSInteger currentDay = [currentComponents weekday];
+    
+    return [NSDictionary dictionaryWithObjectsAndKeys:dayOfWeek, @"englishWeekday", [NSNumber numberWithInt:weekday], @"meetingWeekday", [NSNumber numberWithInt:currentDay], @"currentWeekday", now, @"now", nil];
 }
 
 - (IBAction)nextMeetingMapPressed {

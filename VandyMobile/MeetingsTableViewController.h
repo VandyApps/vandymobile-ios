@@ -24,6 +24,7 @@
 
 @property (strong, nonatomic) Meeting *nextMeeting;
 @property (strong, nonatomic) NSArray *results;
+@property (strong, nonatomic) NSArray *sectionedResults;
 @property BOOL hasShownIntro;
 
 @end
