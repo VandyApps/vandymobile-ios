@@ -105,16 +105,6 @@
     
 	[self pullMeetingsFromCache];
     [self pullMeetingsFromServer];
-    
-    for (UIView *view in self.view.subviews) {
-        for (UIView *subview in view.subviews) {
-            for (UIView *subsubview in view.subviews) {
-                subsubview.layer.shouldRasterize = YES;
-            }
-            subview.layer.shouldRasterize = YES;
-        }
-        view.layer.shouldRasterize = YES;
-    }
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -158,8 +148,8 @@
 											self.results = results;
 											[self addNextMeetingCell];
 											
-											[self.tableView reloadData];
                                             [self sortMeetings];
+                                            [self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
                                             self.tableView.hidden = NO;
                                             
@@ -171,7 +161,7 @@
                                                 button.showsTouchWhenHighlighted = NO;
                                                 [button addTarget:self action:@selector(showIntro) forControlEvents:UIControlEventTouchUpInside];
                                                 [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
-                    
+                                                
                                             }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -179,6 +169,7 @@
 											NSLog(@"%@",error);
 										}];
     
+
 }
 
 - (void)pullMeetingsFromCache {
@@ -197,8 +188,8 @@
 		self.results = results;
 		[self addNextMeetingCell];
 		[self.tableView setHidden:NO];
-		[self.tableView reloadData];
         [self sortMeetings];
+        [self.tableView reloadData];
 	}
 }
 
@@ -252,7 +243,6 @@
     view.layer.shadowOpacity = opacity;
     view.layer.shadowRadius = 2.0;
     view.layer.shadowOffset = CGSizeMake(-1, 1);
-    view.layer.shouldRasterize = YES;
 }
 
 - (void)viewDidUnload
