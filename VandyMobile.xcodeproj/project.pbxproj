@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B30ADB15DDA9BE006B5D9A /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */; };
 		522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573C915AF24E70014C7FB /* AppsDetailViewController.m */; };
 		522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */; };
 		522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CE15AF2B1B0014C7FB /* AppsCell.xib */; };
@@ -149,6 +150,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		522573C815AF24E70014C7FB /* AppsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDetailViewController.h; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				D254DD7415D1F2F7008F6B41 /* SectionHeaderView.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
+				22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */,
 				F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */,
 				522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */,
 				F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */,
@@ -822,6 +825,7 @@
 				D254DDCF15D2ADBF008F6B41 /* IntroSlide2.png in Resources */,
 				D254DDD015D2ADBF008F6B41 /* IntroSlide3.png in Resources */,
 				D254DDD115D2ADBF008F6B41 /* Separator.png in Resources */,
+				22B30ADB15DDA9BE006B5D9A /* MeetingsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
