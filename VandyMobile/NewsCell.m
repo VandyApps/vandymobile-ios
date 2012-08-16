@@ -15,6 +15,7 @@
 @synthesize timestampLabel;
 @synthesize bodyTextLabel;
 @synthesize profilePictureLabel;
+@synthesize boundsSet = _boundsSet;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

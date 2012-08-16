@@ -25,6 +25,8 @@
 @synthesize delegate = _delegate;
 @synthesize numberOfSlides = _numberOfSlides;
 
+@synthesize viewLoaded = _viewLoaded;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

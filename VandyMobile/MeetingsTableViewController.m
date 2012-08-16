@@ -39,6 +39,7 @@
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
 @synthesize sectionedResults = _sectionedResults;
+@synthesize hasShownIntro = _hasShownIntro;
 
 #pragma mark - Notifications
 

@@ -31,6 +31,7 @@ enum LoginViewControllerTags {
 @synthesize loginButton = _loginButton;
 @synthesize loginTableView = _loginTableView;
 @synthesize delegate = _delegate;
+@synthesize closeButton = _closeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

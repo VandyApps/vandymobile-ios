@@ -35,6 +35,8 @@
 @synthesize logoutButton = _logoutButton;
 @synthesize loggedInView = _loggedInView;
 
+@synthesize loaded = _loaded;
+
 
 #pragma mark - View Life Cycle
 
