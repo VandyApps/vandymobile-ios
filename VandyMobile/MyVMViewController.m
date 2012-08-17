@@ -11,8 +11,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GithubRepoTableViewController.h"
 #import "TeamTableViewController.h"
+#import "MeetingsAPIClient.h"
 
-#define USER_KEY @"user"
+#define USER_KEY    @"user"
+#define USERS_KEY   @"users"
+#define EMAIL_KEY   @"email"
+#define NAME_KEY    @"name"
+#define ID_KEY      @"id"
 
 @interface MyVMViewController ()
 
@@ -36,6 +41,8 @@
 @synthesize loggedInView = _loggedInView;
 
 @synthesize loaded = _loaded;
+@synthesize teammates = _teammates;
+@synthesize teamNames = _teamNames;
 
 
 #pragma mark - View Life Cycle
@@ -123,7 +130,8 @@
 - (void)teamButtonTapped {
     TeamTableViewController * teamTVC = [[TeamTableViewController alloc] initWithNibName:@"TeamTableViewController" bundle:nil];
     teamTVC.title = @"Team";
-    teamTVC.teamIds = self.user.teamIds;
+    teamTVC.teamNames = self.teamNames;
+    teamTVC.teammates = self.teammates;
     [self.navigationController pushViewController:teamTVC animated:YES];
 }
 
@@ -177,6 +185,7 @@
 	[self setupNotifications];
 	[self setupProfileColors];
     [self setupMyVMButtons];
+    [self pullTeamsFromServer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -285,5 +294,32 @@
     // Remove the mail view
     [self dismissModalViewControllerAnimated:YES];
 }
+
+#pragma mark - APIClient Methods
+
+- (void)pullTeamsFromServer {
+        NSString *path = @"teams.json";
+        [[MeetingsAPIClient sharedInstance] getPath:path parameters:nil
+                                            success:^(AFHTTPRequestOperation *operation, id response) {
+                                                NSLog(@"Response: %@", response);
+                                                NSMutableArray *resultsTeamNames = [NSMutableArray array];
+                                                NSMutableArray *resultsTeammates = [NSMutableArray array];
+                                                for (int i=0; i < [response count]; i++) {
+                                                    NSNumber *teamId = [[response objectAtIndex:i] objectForKey:ID_KEY];
+                                                    if ([self.user.teamIds containsObject:teamId]) {
+                                                        NSString *teamName = [[response objectAtIndex:i] objectForKey:NAME_KEY];
+                                                        [resultsTeamNames addObject:teamName];
+                                                        [resultsTeammates addObject:USERS_KEY];
+                                                    }
+                                                }
+                                                self.teamNames = resultsTeamNames;
+                                                self.teammates = resultsTeammates;
+
+                                            }
+                                            failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                                NSLog(@"%@",error);
+                                            }];
+        
+    }
 
 @end

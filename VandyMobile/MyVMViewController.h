@@ -31,4 +31,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *teamButton;
 @property (strong, nonatomic) IBOutlet UIButton *commitsButton;
 
+@property (strong, nonatomic) NSArray *teammates;
+@property (strong, nonatomic) NSArray *teamNames;
+
 @end
