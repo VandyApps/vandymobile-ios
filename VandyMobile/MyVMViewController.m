@@ -169,6 +169,8 @@
     self.loggedInView.hidden = NO;
 	self.emailLabel.text = self.user.email;
 //    self.appNameLabel.text = self.user.app;
+    [self pullTeamsFromServer];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -185,7 +187,9 @@
 	[self setupNotifications];
 	[self setupProfileColors];
     [self setupMyVMButtons];
-    [self pullTeamsFromServer];
+    if (self.user) {
+        [self pullTeamsFromServer];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -308,8 +312,9 @@
                                                     NSNumber *teamId = [[response objectAtIndex:i] objectForKey:ID_KEY];
                                                     if ([self.user.teamIds containsObject:teamId]) {
                                                         NSString *teamName = [[response objectAtIndex:i] objectForKey:NAME_KEY];
+                                                        NSArray *teammates = [[response objectAtIndex:i] objectForKey:USERS_KEY];
                                                         [resultsTeamNames addObject:teamName];
-                                                        [resultsTeammates addObject:USERS_KEY];
+                                                        [resultsTeammates addObject:teammates];
                                                     }
                                                 }
                                                 self.teamNames = resultsTeamNames;
