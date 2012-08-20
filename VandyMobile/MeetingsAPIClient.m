@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 
 
-#define MeetingsAPIBaseURLString @"http://70.138.50.84"
+#define MeetingsAPIBaseURLString @"http://foo:bar@70.138.50.84"
 #define MeetingsAPIToken @"1234abcd"
 
 @implementation MeetingsAPIClient
