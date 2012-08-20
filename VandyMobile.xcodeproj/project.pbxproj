@@ -105,6 +105,9 @@
 		D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245715C629D50059248D /* 73-radar@2x.png */; };
 		D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246215C62C580059248D /* NewTabBarV3.png */; };
 		D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */; };
+		D2CA4E6F15E2D1C600DD52B8 /* SAImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */; };
+		D2CA4E7015E2D1C600DD52B8 /* OBGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */; };
+		D2CA4E7415E2D1FA00DD52B8 /* SAViewManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */; };
 		D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0B9A9159649DE00702102 /* IL_Share2.png */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
@@ -265,6 +268,12 @@
 		D2C9245715C629D50059248D /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar@2x.png"; sourceTree = "<group>"; };
 		D2C9246215C62C580059248D /* NewTabBarV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarV3.png; sourceTree = "<group>"; };
 		D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarSelectedNeue.png; sourceTree = "<group>"; };
+		D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageManipulator.m; sourceTree = "<group>"; };
+		D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageManipulator.h; sourceTree = "<group>"; };
+		D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBGradientView.h; sourceTree = "<group>"; };
+		D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBGradientView.m; sourceTree = "<group>"; };
+		D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAViewManipulator.h; sourceTree = "<group>"; };
+		D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAViewManipulator.m; sourceTree = "<group>"; };
 		D2D0B9A9159649DE00702102 /* IL_Share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IL_Share2.png; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
@@ -496,8 +505,6 @@
 				D254DD7715D1F305008F6B41 /* MyVM */,
 				D254DD7815D1F30E008F6B41 /* NewsTVC */,
 				D254DD7915D1F31E008F6B41 /* NewsDetail */,
-				D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */,
-				D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */,
 				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
 				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
 				D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */,
@@ -638,6 +645,12 @@
 				D254DDC215D2ADBE008F6B41 /* Introduction */,
 				D254DDC915D2ADBF008F6B41 /* UIViewController+Overview.h */,
 				D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */,
+				D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */,
+				D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */,
+				D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */,
+				D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */,
+				D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */,
+				D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */,
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
 				F7D4F067159FF4AA00F80CC0 /* Cells */,
@@ -664,6 +677,8 @@
 		F7D4F067159FF4AA00F80CC0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */,
+				D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */,
 				D2A723D715BF91A00071BBA0 /* NewsCell.h */,
 				D2A723D815BF91A00071BBA0 /* NewsCell.m */,
 				522573D015AF2B820014C7FB /* AppsCell.h */,
@@ -892,6 +907,9 @@
 				D254DD8815D1FCB7008F6B41 /* SectionHeaderView.m in Sources */,
 				D254DDCB15D2ADBF008F6B41 /* FirstTimeViewController.m in Sources */,
 				D254DDD315D2ADBF008F6B41 /* UIViewController+Overview.m in Sources */,
+				D2CA4E6F15E2D1C600DD52B8 /* SAImageManipulator.m in Sources */,
+				D2CA4E7015E2D1C600DD52B8 /* OBGradientView.m in Sources */,
+				D2CA4E7415E2D1FA00DD52B8 /* SAViewManipulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
