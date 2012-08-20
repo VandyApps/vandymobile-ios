@@ -207,9 +207,9 @@
 		D254DD8715D1FCB7008F6B41 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
 		D254DD8F15D21229008F6B41 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
 		D254DD9015D21229008F6B41 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
-		D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstTimeViewController.h; sourceTree = "<group>"; };
-		D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstTimeViewController.m; sourceTree = "<group>"; };
-		D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstTimeViewController.xib; sourceTree = "<group>"; };
+		D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstTimeViewController.h; path = ../FirstTimeViewController.h; sourceTree = "<group>"; };
+		D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTimeViewController.m; path = ../FirstTimeViewController.m; sourceTree = "<group>"; };
+		D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstTimeViewController.xib; path = ../FirstTimeViewController.xib; sourceTree = "<group>"; };
 		D254DDC315D2ADBE008F6B41 /* GetStarted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GetStarted.png; sourceTree = "<group>"; };
 		D254DDC415D2ADBE008F6B41 /* IntroSlide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntroSlide1.png; sourceTree = "<group>"; };
 		D254DDC515D2ADBE008F6B41 /* IntroSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntroSlide2.png; sourceTree = "<group>"; };
@@ -371,6 +371,8 @@
 				D232684515C23C5D007FFAB9 /* UIImage+Color.m */,
 				D232683F15C2217E007FFAB9 /* UIView+Frame.h */,
 				D232684015C2217F007FFAB9 /* UIView+Frame.m */,
+				D254DDC915D2ADBF008F6B41 /* UIViewController+Overview.h */,
+				D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */,
 			);
 			name = Categories;
 			path = VandyMobile;
@@ -406,6 +408,9 @@
 		D254DDC215D2ADBE008F6B41 /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */,
+				D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */,
+				D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */,
 				D254DDC315D2ADBE008F6B41 /* GetStarted.png */,
 				D254DDC415D2ADBE008F6B41 /* IntroSlide1.png */,
 				D254DDC515D2ADBE008F6B41 /* IntroSlide2.png */,
@@ -413,6 +418,19 @@
 				D254DDC715D2ADBE008F6B41 /* Separator.png */,
 			);
 			path = Introduction;
+			sourceTree = "<group>";
+		};
+		D2CA4E7515E2D31500DD52B8 /* Utility Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */,
+				D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */,
+				D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */,
+				D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */,
+				D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */,
+				D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */,
+			);
+			name = "Utility Classes";
 			sourceTree = "<group>";
 		};
 		F71CD67715B35D7E00C701F9 /* Externals */ = {
@@ -639,22 +657,12 @@
 		F7ACC5891566903100CDE5A9 /* VandyMobile */ = {
 			isa = PBXGroup;
 			children = (
-				D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */,
-				D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */,
-				D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */,
-				D254DDC215D2ADBE008F6B41 /* Introduction */,
-				D254DDC915D2ADBF008F6B41 /* UIViewController+Overview.h */,
-				D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */,
-				D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */,
-				D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */,
-				D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */,
-				D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */,
-				D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */,
-				D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */,
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
-				F7D4F067159FF4AA00F80CC0 /* Cells */,
 				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
+				D254DDC215D2ADBE008F6B41 /* Introduction */,
+				D2CA4E7515E2D31500DD52B8 /* Utility Classes */,
+				F7D4F067159FF4AA00F80CC0 /* Cells */,
 				F7874EE1156C7BAC00F81183 /* ViewControllers */,
 				F7874EE4156C7BF300F81183 /* GUI */,
 				F7874EE2156C7BBB00F81183 /* APICients */,
