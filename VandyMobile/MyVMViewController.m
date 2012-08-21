@@ -18,6 +18,8 @@
 #define EMAIL_KEY   @"email"
 #define NAME_KEY    @"name"
 #define ID_KEY      @"id"
+#define REPO_KEY    @"repo_url"
+#define APP_KEY     @"app"
 
 @interface MyVMViewController ()
 
@@ -34,14 +36,19 @@
 @synthesize appNameLabel = _appNameLabel;
 @synthesize teamButton = _teamButton;
 @synthesize commitsButton = _commitsButton;
+@synthesize settingsButton = _settingsButton;
 
 @synthesize user = _user;
+@synthesize selectedTeamIndex = _selectedTeamIndex;
+@synthesize selectedTeammates = _selectedTeammates;
+@synthesize repoURLs = _repoURLs;
+
 @synthesize loginButton = _loginButton;
 @synthesize logoutButton = _logoutButton;
 @synthesize loggedInView = _loggedInView;
 
 @synthesize loaded = _loaded;
-@synthesize teammates = _teammates;
+@synthesize allTeammates = _allTeammates;
 @synthesize teamNames = _teamNames;
 
 
@@ -114,25 +121,6 @@
 	self.logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Log" style:UIBarButtonItemStyleDone target:self action:@selector(logoutTapped)];
     
 	[self.navigationItem setRightBarButtonItem:self.logoutButton animated:NO];
-}
-
-- (void)setupMyVMButtons {
-    [self.commitsButton addTarget:self action:@selector(commitsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-    [self.teamButton addTarget:self action:@selector(teamButtonTapped) forControlEvents:UIControlEventTouchUpInside];
-}
-
-- (void)commitsButtonTapped {
-    GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
-    repoTVC.title = @"Commits";
-    [self.navigationController pushViewController:repoTVC animated:YES];
-}
-
-- (void)teamButtonTapped {
-    TeamTableViewController * teamTVC = [[TeamTableViewController alloc] initWithNibName:@"TeamTableViewController" bundle:nil];
-    teamTVC.title = @"Team";
-    teamTVC.teamNames = self.teamNames;
-    teamTVC.teammates = self.teammates;
-    [self.navigationController pushViewController:teamTVC animated:YES];
 }
 
 - (void)logoutTapped {
@@ -219,6 +207,7 @@
     [self setProfilePictureContainerView:nil];
     [self setProfilePictureBorderContainerView:nil];
     [self setTeamButton:nil];
+    [self setSettingsButton:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -238,7 +227,23 @@
 	[self presentModalViewController:loginNavigationController animated:YES];
 }
 
-- (IBAction)devTeamButtonPressed {
+/* By default, use the team at index 0 */
+- (void)setupDefaultTeam {
+    int buttonIndex = 0;
+    self.selectedTeamIndex = buttonIndex;
+    self.appNameLabel.text = [self.teamNames objectAtIndex:buttonIndex];
+    self.selectedTeammates = [self.allTeammates objectAtIndex:buttonIndex];
+}
+
+#pragma mark - myVMButton Methods
+
+- (void)setupMyVMButtons {
+    [self.commitsButton addTarget:self action:@selector(commitsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.teamButton addTarget:self action:@selector(teamButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+    [self.settingsButton addTarget:self action:@selector(settingsButtonTapped) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)settingsButtonTapped {
     if (self.teamNames.count > 0) {
         UIActionSheet *as = [[UIActionSheet alloc] init];
         for (NSString *teamName in self.teamNames) {
@@ -251,16 +256,36 @@
     }
 }
 
+- (void)commitsButtonTapped {
+    GithubRepoTableViewController *repoTVC = [[GithubRepoTableViewController alloc] initWithNibName:@"GithubRepoTableViewController" bundle:nil];
+    repoTVC.title = @"Commits";
+    repoTVC.repoURL = [self.repoURLs objectAtIndex:self.selectedTeamIndex];
+    [self.navigationController pushViewController:repoTVC animated:YES];
+}
+
+- (void)teamButtonTapped {
+    TeamTableViewController * teamTVC = [[TeamTableViewController alloc] initWithNibName:@"TeamTableViewController" bundle:nil];
+    teamTVC.title = @"Team";
+    teamTVC.teamNames = self.teamNames;
+    teamTVC.teammates = self.allTeammates;
+    [self.navigationController pushViewController:teamTVC animated:YES];
+}
+
+- (IBAction)devTeamButtonPressed {
+    [self createMailComposer];
+}
+
 #pragma mark - ActionSheet Delegate Methods
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex < self.teamNames.count) {
-        NSArray *selectedTeamMembers = [self.teammates objectAtIndex:buttonIndex];
-        [self createMailComposerWithRecipients:selectedTeamMembers];
+        self.selectedTeamIndex = buttonIndex;
+        self.appNameLabel.text = [self.teamNames objectAtIndex:buttonIndex];
+        self.selectedTeammates = [self.allTeammates objectAtIndex:buttonIndex];
     }
 }
 
 #pragma mark - Email Team Methods
-- (void)createMailComposerWithRecipients:(NSArray *)recipients {
+- (void)createMailComposer {
     if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
@@ -269,8 +294,8 @@
         
         //        [mailer setSubject:[NSString stringWithFormat:@"[VandyMobile] [%@]", self.user.app]];
         
-        NSMutableArray *recipientStrings = [NSMutableArray arrayWithCapacity:[recipients count]];
-        for (NSDictionary *dict in recipients) {
+        NSMutableArray *recipientStrings = [NSMutableArray arrayWithCapacity:[self.selectedTeammates count]];
+        for (NSDictionary *dict in self.selectedTeammates) {
             [recipientStrings addObject:[dict objectForKey:@"email"]];
         }
         [mailer setToRecipients:recipientStrings];
@@ -333,17 +358,23 @@
                                                 NSLog(@"Response: %@", response);
                                                 NSMutableArray *resultsTeamNames = [NSMutableArray array];
                                                 NSMutableArray *resultsTeammates = [NSMutableArray array];
+                                                NSMutableArray *resultsRepoURLs = [NSMutableArray array];
                                                 for (int i=0; i < [response count]; i++) {
                                                     NSNumber *teamId = [[response objectAtIndex:i] objectForKey:ID_KEY];
                                                     if ([self.user.teamIds containsObject:teamId]) {
                                                         NSString *teamName = [[response objectAtIndex:i] objectForKey:NAME_KEY];
                                                         NSArray *teammates = [[response objectAtIndex:i] objectForKey:USERS_KEY];
+                                                        NSArray *repoURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:REPO_KEY];
                                                         [resultsTeamNames addObject:teamName];
                                                         [resultsTeammates addObject:teammates];
+                                                        [resultsRepoURLs addObject:repoURL];
                                                     }
                                                 }
                                                 self.teamNames = resultsTeamNames;
-                                                self.teammates = resultsTeammates;
+                                                self.allTeammates = resultsTeammates;
+                                                self.repoURLs = resultsRepoURLs;
+                                                [self setupDefaultTeam];
+
 
                                             }
                                             failure:^(AFHTTPRequestOperation *operation, NSError *error) {
