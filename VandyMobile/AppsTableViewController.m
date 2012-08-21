@@ -46,7 +46,9 @@
     UIImage *navImage = [UIImage imageNamed:@"NewNavBar4"];
     [self.navigationController.navigationBar setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
 	
-	[self pullAppsFromCache];
+	[self pullAppsFromCacheWithFailureCallBack:^{
+        [SVProgressHUD showWithStatus:@"Loading apps..." maskType:SVProgressHUDMaskTypeNone];
+    }];
 	[self pullAppsFromServer];
 	[self setupRefreshAppsButton];
 }
@@ -86,7 +88,6 @@
 
 - (void)pullAppsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[SVProgressHUD showWithStatus:@"Loading apps..." maskType:SVProgressHUDMaskTypeNone];
 	[[AppsAPIClient sharedInstance] getPath:@"apps.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
 											//											NSLog(@"Response: %@", response);
@@ -107,8 +108,8 @@
 
 }
 
-- (void)pullAppsFromCache {
-	NSString *path = @"http://70.138.50.84/apps.json";
+- (void)pullAppsFromCacheWithFailureCallBack:(void(^)(void))callBack {
+	NSString *path = @"http://foo:bar@70.138.50.84/apps.json";
 	NSURLRequest *request = [[AppsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
@@ -123,7 +124,9 @@
 		}
 		self.results = results;
 		[self.tableView reloadData];
-	}
+	} else {
+        callBack();
+    }
 }
 
 - (void)downloadPhotoForApp:(App *)app andPhoto:(UIImageView *)imageView {

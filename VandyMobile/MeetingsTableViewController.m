@@ -104,8 +104,10 @@
 //    self.nextMeetingMapButton.clipsToBounds = YES;
 //
     
-	[self pullMeetingsFromCache];
-    [self pullMeetingsFromServer];
+	[self pullMeetingsFromCacheWithFailureCallBack:^{
+        [SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
+    }];
+    [self pullMeetingsFromServer]; 
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -136,7 +138,6 @@
 
 - (void)pullMeetingsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
 	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
 											//											NSLog(@"Response: %@", response);
@@ -173,8 +174,8 @@
 
 }
 
-- (void)pullMeetingsFromCache {
-	NSString *path = @"http://70.138.50.84/meetings.json";
+- (void)pullMeetingsFromCacheWithFailureCallBack:(void(^)(void))callBack {
+	NSString *path = @"http://foo:bar@70.138.50.84/meetings.json";
 	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
@@ -191,7 +192,11 @@
 		[self.tableView setHidden:NO];
         [self sortMeetings];
         [self.tableView reloadData];
-	}
+	} else {
+        /* If nothing is cached */
+        callBack();
+    }
+    
 }
 
 - (void)sortMeetings {
