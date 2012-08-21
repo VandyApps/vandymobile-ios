@@ -438,7 +438,7 @@
     
     // If date is now
     if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 2)) {
-        self.nextMeetingCheckInButton.hidden = NO;
+        self.nextMeetingCheckInButton.hidden = YES;
         self.nextMeetingMapButton.hidden = YES;
     }
     // If date is today
