@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 
 
-#define AppsAPIBaseURLString @"http://70.138.50.84"
+#define AppsAPIBaseURLString @"http://foo:bar@70.138.50.84"
 #define AppsAPIToken @"1234abcd"
 
 @implementation AppsAPIClient
