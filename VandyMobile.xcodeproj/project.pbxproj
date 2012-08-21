@@ -517,7 +517,7 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
+		F7874EE1156C7BAC00F81183 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D254DD7715D1F305008F6B41 /* MyVM */,
@@ -544,7 +544,7 @@
 				F736A5C115C7729600A47646 /* TeamTableViewController.h */,
 				F736A5C215C7729600A47646 /* TeamTableViewController.m */,
 			);
-			name = ViewControllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		F7874EE2156C7BBB00F81183 /* APICients */ = {
@@ -663,7 +663,7 @@
 				D254DDC215D2ADBE008F6B41 /* Introduction */,
 				D2CA4E7515E2D31500DD52B8 /* Utility Classes */,
 				F7D4F067159FF4AA00F80CC0 /* Cells */,
-				F7874EE1156C7BAC00F81183 /* ViewControllers */,
+				F7874EE1156C7BAC00F81183 /* View Controllers */,
 				F7874EE4156C7BF300F81183 /* GUI */,
 				F7874EE2156C7BBB00F81183 /* APICients */,
 				F7874EE3156C7BCE00F81183 /* Models */,
