@@ -23,6 +23,7 @@
 @synthesize app = _app;
 @synthesize results = _results;
 @synthesize images = _images;
+@synthesize repoURL = _repoURL;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -116,7 +117,7 @@
 
 - (void)pullCommits {
 	// Get the Github url.
-	NSURL *url = [NSURL URLWithString:@"https://api.github.com/repos/VandyMobile/vandymobile-ios/commits"];
+    NSURL *url = [NSURL URLWithString:self.repoURL];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation;
 	operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
