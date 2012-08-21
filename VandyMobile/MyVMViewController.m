@@ -239,17 +239,41 @@
 }
 
 - (IBAction)devTeamButtonPressed {
-    
+    if (self.teamNames.count > 0) {
+        UIActionSheet *as = [[UIActionSheet alloc] init];
+        for (NSString *teamName in self.teamNames) {
+            [as addButtonWithTitle:teamName];
+        }
+        [as addButtonWithTitle:@"Cancel"];
+        [as setDelegate:self];
+        [as setCancelButtonIndex:self.teamNames.count];
+        [as showFromTabBar:self.tabBarController.tabBar];
+    }
+}
+
+#pragma mark - ActionSheet Delegate Methods
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex < self.teamNames.count) {
+        NSArray *selectedTeamMembers = [self.teammates objectAtIndex:buttonIndex];
+        [self createMailComposerWithRecipients:selectedTeamMembers];
+    }
+}
+
+#pragma mark - Email Team Methods
+- (void)createMailComposerWithRecipients:(NSArray *)recipients {
     if ([MFMailComposeViewController canSendMail])
     {
         MFMailComposeViewController *mailer = [[MFMailComposeViewController alloc] init];
         
         mailer.mailComposeDelegate = self;
         
-//        [mailer setSubject:[NSString stringWithFormat:@"[VandyMobile] [%@]", self.user.app]];
+        //        [mailer setSubject:[NSString stringWithFormat:@"[VandyMobile] [%@]", self.user.app]];
         
-        NSArray *toRecipients = [NSArray arrayWithObjects:@"contact@vandymobile.org", nil];
-        [mailer setToRecipients:toRecipients];
+        NSMutableArray *recipientStrings = [NSMutableArray arrayWithCapacity:[recipients count]];
+        for (NSDictionary *dict in recipients) {
+            [recipientStrings addObject:[dict objectForKey:@"email"]];
+        }
+        [mailer setToRecipients:recipientStrings];
         
         //UIImage *myImage = [UIImage imageNamed:@"mobiletuts-logo.png"];
         //NSData *imageData = UIImagePNGRepresentation(myImage);
@@ -272,6 +296,7 @@
                                               otherButtonTitles: nil];
         [alert show];
     }
+
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
