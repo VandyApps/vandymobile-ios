@@ -8,7 +8,7 @@
 
 #import "AppsTableViewController.h"
 #import "SVProgressHUD.h"
-#import "AppsAPIClient.h"
+#import "VMAPIClient.h"
 #import "App.h"
 #import "VMCell.h"
 #import "AppsDetailViewController.h"
@@ -55,8 +55,13 @@
 
 - (void)setupRefreshAppsButton {
 	// Create add meeting button
-	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(pullAppsFromServer)];
+	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(refreshAppsTapped)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
+- (void)refreshAppsTapped {
+    [SVProgressHUD show];
+    [self pullAppsFromServer];
 }
 
 - (void)viewDidUnload {
@@ -88,7 +93,7 @@
 
 - (void)pullAppsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[[AppsAPIClient sharedInstance] getPath:@"apps.json" parameters:nil
+	[[VMAPIClient sharedInstance] getPath:@"apps.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
 											//											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
@@ -110,7 +115,7 @@
 
 - (void)pullAppsFromCacheWithFailureCallBack:(void(^)(void))callBack {
 	NSString *path = @"http://foo:bar@70.138.50.84/apps.json";
-	NSURLRequest *request = [[AppsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
+	NSURLRequest *request = [[VMAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
 		NSData *responseData = response.data;

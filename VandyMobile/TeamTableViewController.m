@@ -7,7 +7,7 @@
 //
 
 #import "TeamTableViewController.h"
-#import "MeetingsAPIClient.h"
+#import "VMAPIClient.h"
 #import "VMCell.h"
 #import "JSONKit.h"
 #import "User.h"

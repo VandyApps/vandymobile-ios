@@ -7,7 +7,7 @@
 //
 
 #import "LoginStageTwoViewController.h"
-#import "UserAPIClient.h"
+#import "VMAPIClient.h"
 #import "MyVMViewController.h"
 #import "User.h"
 #import "SVProgressHUD.h"
@@ -86,7 +86,7 @@ enum LoginViewControllerTags {
 	[SVProgressHUD showWithStatus:@"Logging In"];
 	NSLog(@"Username = %@", self.userInput.text);
 	NSLog(@"Password = %@", self.passwordInput.text);
-	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
+	[[VMAPIClient sharedInstance] authorizeUser:self.userInput.text
 									 withPassword:self.passwordInput.text
 							  withCompletionBlock:^(id response){
 								  User *user = [[User alloc] initWithResponse:response];

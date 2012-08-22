@@ -8,7 +8,7 @@
 
 #import "MeetingsTableViewController.h"
 #import "AFNetworking.h"
-#import "MeetingsAPIClient.h"
+#import "VMAPIClient.h"
 #import "Meeting.h"
 #import "MeetingDetailViewController.h"
 #import "AddMeetingViewController.h"
@@ -131,14 +131,19 @@
 	// Create add meeting button
 	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
 																					  target:self 
-																					  action:@selector(pullMeetingsFromServer)];
+																					  action:@selector(refreshMeetingsTapped)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
+- (void)refreshMeetingsTapped {
+    [SVProgressHUD show];
+    [self pullMeetingsFromServer];
 }
 
 
 - (void)pullMeetingsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
+	[[VMAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
 											//											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
@@ -176,7 +181,7 @@
 
 - (void)pullMeetingsFromCacheWithFailureCallBack:(void(^)(void))callBack {
 	NSString *path = @"http://foo:bar@70.138.50.84/meetings.json";
-	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
+	NSURLRequest *request = [[VMAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
 		NSData *responseData = response.data;

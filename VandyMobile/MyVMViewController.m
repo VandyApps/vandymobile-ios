@@ -11,7 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "GithubRepoTableViewController.h"
 #import "TeamTableViewController.h"
-#import "MeetingsAPIClient.h"
+#import "VMAPIClient.h"
 
 #define USER_KEY    @"user"
 #define USERS_KEY   @"users"
@@ -379,7 +379,7 @@
 
 - (void)pullTeamsFromServer {
         NSString *path = @"teams.json";
-        [[MeetingsAPIClient sharedInstance] getPath:path parameters:nil
+        [[VMAPIClient sharedInstance] getPath:path parameters:nil
                                             success:^(AFHTTPRequestOperation *operation, id response) {
                                                 NSLog(@"Response: %@", response);
                                                 NSMutableArray *resultsTeamNames = [NSMutableArray array];
