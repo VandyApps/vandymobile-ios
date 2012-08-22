@@ -20,9 +20,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *loginButton;
 @property (strong, nonatomic) UIBarButtonItem *logoutButton;
 @property (strong, nonatomic) IBOutlet UIView *loggedInView;
+@property (strong, nonatomic) IBOutlet UIImageView *appImageView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIView *profilePictureContainerView;
 @property (weak, nonatomic) IBOutlet UIView *profilePictureBorderContainerView;
 
@@ -36,5 +36,6 @@
 @property (strong, nonatomic) NSArray *allTeammates;
 @property (strong, nonatomic) NSArray *teamNames;
 @property (strong, nonatomic) NSArray *repoURLs;
+@property (strong, nonatomic) NSArray *appImageURLs;
 
 @end

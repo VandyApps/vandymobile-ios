@@ -20,6 +20,7 @@
 #define ID_KEY      @"id"
 #define REPO_KEY    @"repo_url"
 #define APP_KEY     @"app"
+#define IMAGE_KEY   @"image_url"
 
 @interface MyVMViewController ()
 
@@ -29,7 +30,6 @@
 
 @implementation MyVMViewController
 @synthesize backgroundImageView = _backgroundImageView;
-@synthesize profileImageView = _profileImageView;
 @synthesize profilePictureContainerView = _profilePictureContainerView;
 @synthesize profilePictureBorderContainerView = _profilePictureBorderContainerView;
 @synthesize emailLabel = _emailLabel;
@@ -46,10 +46,12 @@
 @synthesize loginButton = _loginButton;
 @synthesize logoutButton = _logoutButton;
 @synthesize loggedInView = _loggedInView;
+@synthesize appImageView = _appImageView;
 
 @synthesize loaded = _loaded;
 @synthesize allTeammates = _allTeammates;
 @synthesize teamNames = _teamNames;
+@synthesize appImageURLs = _appImageURLs;
 
 
 #pragma mark - View Life Cycle
@@ -139,8 +141,6 @@
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
     
     // Set profile picture aspects.
-    self.profileImageView.layer.borderWidth = 1;
-    self.profileImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.profilePictureContainerView.layer.borderWidth = 2.5;
     self.profilePictureContainerView.layer.borderColor = [[UIColor whiteColor] CGColor];
     self.profilePictureContainerView.layer.cornerRadius = 5;
@@ -199,7 +199,6 @@
 - (void)viewDidUnload
 {
     [self setBackgroundImageView:nil];
-    [self setProfileImageView:nil];
 	[self setLoginButton:nil];
 	[self setEmailLabel:nil];
     [self setAppNameLabel:nil];
@@ -208,6 +207,7 @@
     [self setProfilePictureBorderContainerView:nil];
     [self setTeamButton:nil];
     [self setSettingsButton:nil];
+    [self setAppImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -227,12 +227,36 @@
 	[self presentModalViewController:loginNavigationController animated:YES];
 }
 
+- (void)downloadPhotoForURL:(NSString *)urlString andImageView:(UIImageView *)imageView {
+    // Download photo
+    UIActivityIndicatorView *loading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [loading startAnimating];
+    UIBarButtonItem * temp = self.navigationItem.leftBarButtonItem;
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:loading];
+    
+    dispatch_queue_t downloadQueue = dispatch_queue_create("image downloader", NULL);
+    dispatch_async(downloadQueue, ^{
+        
+        NSData *imgUrl = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlString]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [imageView setImage:[UIImage imageWithData:imgUrl]];
+            [loading stopAnimating];
+            self.navigationItem.leftBarButtonItem = temp;
+        });
+    });
+    dispatch_release(downloadQueue);
+    
+}
+
 /* By default, use the team at index 0 */
 - (void)setupDefaultTeam {
     int buttonIndex = 0;
     self.selectedTeamIndex = buttonIndex;
     self.appNameLabel.text = [self.teamNames objectAtIndex:buttonIndex];
     self.selectedTeammates = [self.allTeammates objectAtIndex:buttonIndex];
+    NSString *currentAppImageURL = [self.appImageURLs objectAtIndex:buttonIndex];
+    [self downloadPhotoForURL:currentAppImageURL andImageView:self.appImageView];
 }
 
 #pragma mark - myVMButton Methods
@@ -281,6 +305,8 @@
         self.selectedTeamIndex = buttonIndex;
         self.appNameLabel.text = [self.teamNames objectAtIndex:buttonIndex];
         self.selectedTeammates = [self.allTeammates objectAtIndex:buttonIndex];
+        NSString *currentAppImageURL = [self.appImageURLs objectAtIndex:buttonIndex];
+        [self downloadPhotoForURL:currentAppImageURL andImageView:self.appImageView];
     }
 }
 
@@ -359,20 +385,26 @@
                                                 NSMutableArray *resultsTeamNames = [NSMutableArray array];
                                                 NSMutableArray *resultsTeammates = [NSMutableArray array];
                                                 NSMutableArray *resultsRepoURLs = [NSMutableArray array];
+                                                NSMutableArray *resultsImageURLs = [NSMutableArray array];
+
                                                 for (int i=0; i < [response count]; i++) {
                                                     NSNumber *teamId = [[response objectAtIndex:i] objectForKey:ID_KEY];
                                                     if ([self.user.teamIds containsObject:teamId]) {
                                                         NSString *teamName = [[response objectAtIndex:i] objectForKey:NAME_KEY];
                                                         NSArray *teammates = [[response objectAtIndex:i] objectForKey:USERS_KEY];
                                                         NSArray *repoURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:REPO_KEY];
+                                                        NSArray *imageURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:IMAGE_KEY];
+
                                                         [resultsTeamNames addObject:teamName];
                                                         [resultsTeammates addObject:teammates];
                                                         [resultsRepoURLs addObject:repoURL];
+                                                        [resultsImageURLs addObject:imageURL];
                                                     }
                                                 }
                                                 self.teamNames = resultsTeamNames;
                                                 self.allTeammates = resultsTeammates;
                                                 self.repoURLs = resultsRepoURLs;
+                                                self.appImageURLs = resultsImageURLs;
                                                 [self setupDefaultTeam];
 
 
