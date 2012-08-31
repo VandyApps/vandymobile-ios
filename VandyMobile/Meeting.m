@@ -46,9 +46,13 @@
         id messyDate = [dictionary objectForKey:DATE_KEY];
         
         // Protection on coordinate.
-        if ([dictionary objectForKey:@"xcoordinate"] && [dictionary objectForKey:@"ycoordinate"]) {
-            self.loc = CLLocationCoordinate2DMake([[dictionary objectForKey:@"xcoordinate"] doubleValue], [[dictionary objectForKey:@"ycoordinate"] doubleValue]);
-        }
+        if ([[dictionary objectForKey:@"xcoordinate"] isKindOfClass:[NSNumber class]] && [[dictionary objectForKey:@"ycoordinate"] isKindOfClass:[NSNumber class]]) {
+            NSNumber *latWrapper = [dictionary objectForKey:@"xcoordinate"];
+            NSNumber *longWrapper = [dictionary objectForKey:@"ycoordinate"];
+            CLLocationDegrees latitude = [latWrapper doubleValue];
+            CLLocationDegrees longitude = [longWrapper doubleValue];
+            self.loc = CLLocationCoordinate2DMake(latitude, longitude);
+        } else self.loc = CLLocationCoordinate2DMake(0, 0);
         
         // Format date properly
         self.meetingDescription = [dictionary objectForKey:DESCRIPTION_KEY];

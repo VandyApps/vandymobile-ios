@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22B30ADB15DDA9BE006B5D9A /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */; };
 		522573CB15AF24E70014C7FB /* AppsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 522573C915AF24E70014C7FB /* AppsDetailViewController.m */; };
 		522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */; };
 		522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 522573CE15AF2B1B0014C7FB /* AppsCell.xib */; };
@@ -48,24 +49,32 @@
 		D2445A9B157AE0D000A7E297 /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */; };
 		D2445A9C157AE0D000A7E297 /* bullhorn-food-combo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */; };
 		D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */; };
+		D254DD7515D1F2F7008F6B41 /* SectionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D254DD7415D1F2F7008F6B41 /* SectionHeaderView.xib */; };
+		D254DD8815D1FCB7008F6B41 /* SectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D254DD8715D1FCB7008F6B41 /* SectionHeaderView.m */; };
+		D254DD9115D21229008F6B41 /* 59-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DD8F15D21229008F6B41 /* 59-info@2x.png */; };
+		D254DD9215D21229008F6B41 /* 59-info.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DD9015D21229008F6B41 /* 59-info.png */; };
+		D254DDCB15D2ADBF008F6B41 /* FirstTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */; };
+		D254DDCC15D2ADBF008F6B41 /* FirstTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */; };
+		D254DDCD15D2ADBF008F6B41 /* GetStarted.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC315D2ADBE008F6B41 /* GetStarted.png */; };
+		D254DDCE15D2ADBF008F6B41 /* IntroSlide1.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC415D2ADBE008F6B41 /* IntroSlide1.png */; };
+		D254DDCF15D2ADBF008F6B41 /* IntroSlide2.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC515D2ADBE008F6B41 /* IntroSlide2.png */; };
+		D254DDD015D2ADBF008F6B41 /* IntroSlide3.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC615D2ADBE008F6B41 /* IntroSlide3.png */; };
+		D254DDD115D2ADBF008F6B41 /* Separator.png in Resources */ = {isa = PBXBuildFile; fileRef = D254DDC715D2ADBE008F6B41 /* Separator.png */; };
+		D254DDD315D2ADBF008F6B41 /* UIViewController+Overview.m in Sources */ = {isa = PBXBuildFile; fileRef = D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */; };
 		D256B835159509D700348AB3 /* NewLoginScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = D256B834159509D700348AB3 /* NewLoginScreen.png */; };
-		D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9C15B2089A00BF8D54 /* 57-download.png */; };
-		D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */; };
-		D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */; };
-		D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */; };
 		D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA415B2096600BF8D54 /* 157-wrench.png */; };
 		D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */; };
-		D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D272919D1573DB46009AA12F /* MeetingDetailViewController.m */; };
+		D27197EA15C6423D00F10465 /* MeetingDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27197E915C6423D00F10465 /* MeetingDetailViewController.m */; };
+		D27197ED15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png in Resources */ = {isa = PBXBuildFile; fileRef = D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */; };
 		D27291A11573DB67009AA12F /* MeetingDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */; };
 		D27291A31573E401009AA12F /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A21573E401009AA12F /* MapKit.framework */; };
 		D27291A51573E408009AA12F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27291A41573E408009AA12F /* CoreLocation.framework */; };
 		D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = D27291BB15744B56009AA12F /* VMAnnotation.m */; };
-		D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16815C381F6003E5CDE /* 81-dashboard.png */; };
-		D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */; };
-		D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16A15C381F6003E5CDE /* 73-radar.png */; };
-		D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A16B15C381F6003E5CDE /* 73-radar@2x.png */; };
+		D278A18115C4CA95003E5CDE /* VandyMobileIconNeue57.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A18015C4CA94003E5CDE /* VandyMobileIconNeue57.png */; };
+		D278A18315C4CAA6003E5CDE /* VandyMobileIconNeue114.png in Resources */ = {isa = PBXBuildFile; fileRef = D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */; };
 		D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27DC598157AFF12004A9D30 /* NewsViewController.m */; };
 		D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D27DC599157AFF12004A9D30 /* NewsViewController.xib */; };
+		D291166D15CF310A009BC4B7 /* MapIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D291166C15CF310A009BC4B7 /* MapIcon.png */; };
 		D29796D215C0F26700025D01 /* ImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D29796D115C0F26700025D01 /* ImageManipulator.m */; };
 		D29796D615C0F42600025D01 /* CustomCellBackgroundView.mm in Sources */ = {isa = PBXBuildFile; fileRef = D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */; };
 		D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D29E6C9315856BAE0065E1CC /* NextMeetingCanvas@2x.png */; };
@@ -77,10 +86,28 @@
 		D2A723DB15BF92140071BBA0 /* NewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A723DA15BF92140071BBA0 /* NewsCell.xib */; };
 		D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */; };
 		D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */; };
-		D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */; };
 		D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */; };
 		D2C8FA9E158012B600932EFF /* NewsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */; };
 		D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */; };
+		D2C9244615C4D0FA0059248D /* VandyMobileIconNeueInset.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244415C4D0FA0059248D /* VandyMobileIconNeueInset.png */; };
+		D2C9244715C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */; };
+		D2C9244A15C4DF3E0059248D /* VandyMobileTextNeue.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */; };
+		D2C9244B15C4DF3E0059248D /* VandyMobileTextNeue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */; };
+		D2C9245815C629D50059248D /* NewTabBarSelectedNeue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */; };
+		D2C9245915C629D50059248D /* 57-download.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9244F15C629D40059248D /* 57-download.png */; };
+		D2C9245A15C629D50059248D /* 57-download@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245015C629D40059248D /* 57-download@2x.png */; };
+		D2C9245B15C629D50059248D /* 157-wrench@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245115C629D40059248D /* 157-wrench@2x.png */; };
+		D2C9245C15C629D50059248D /* 158-wrench-2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245215C629D40059248D /* 158-wrench-2@2x.png */; };
+		D2C9245D15C629D50059248D /* NewSegControl3-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245315C629D50059248D /* NewSegControl3-sel.png */; };
+		D2C9245E15C629D50059248D /* 81-dashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245415C629D50059248D /* 81-dashboard.png */; };
+		D2C9245F15C629D50059248D /* 81-dashboard@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245515C629D50059248D /* 81-dashboard@2x.png */; };
+		D2C9246015C629D50059248D /* 73-radar.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245615C629D50059248D /* 73-radar.png */; };
+		D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9245715C629D50059248D /* 73-radar@2x.png */; };
+		D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246215C62C580059248D /* NewTabBarV3.png */; };
+		D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */ = {isa = PBXBuildFile; fileRef = D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */; };
+		D2CA4E6F15E2D1C600DD52B8 /* SAImageManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */; };
+		D2CA4E7015E2D1C600DD52B8 /* OBGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */; };
+		D2CA4E7415E2D1FA00DD52B8 /* SAViewManipulator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */; };
 		D2D0B9AA159649DE00702102 /* IL_Share2.png in Resources */ = {isa = PBXBuildFile; fileRef = D2D0B9A9159649DE00702102 /* IL_Share2.png */; };
 		D2DBEA55157874F100B30D87 /* VandyMobileBackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */; };
 		D2DBEA581578761200B30D87 /* VandyMobileBackgroundV2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */; };
@@ -88,8 +115,6 @@
 		D2E6215E15891F6200CBC47F /* NewSegControl2-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */; };
 		D2E6215F15891F6200CBC47F /* NewSegControl2-sel-uns.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */; };
 		D2E6216015891F6200CBC47F /* NewSegControl2-uns-sel.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */; };
-		D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */; };
-		D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */ = {isa = PBXBuildFile; fileRef = D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */; };
 		F7118EDB15B7B80D002C9DFA /* VMCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7118EDA15B7B80D002C9DFA /* VMCell.m */; };
 		F71CD61815B2509900C701F9 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F71CD61715B2509900C701F9 /* User.m */; };
 		F7283E0115715DC900F6E24D /* 112-group.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFD15715DC900F6E24D /* 112-group.png */; };
@@ -97,11 +122,11 @@
 		F7283E0315715DC900F6E24D /* 125-food.png in Resources */ = {isa = PBXBuildFile; fileRef = F7283DFF15715DC900F6E24D /* 125-food.png */; };
 		F72C011115AFB6100025269F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C011015AFB6100025269F /* Security.framework */; };
 		F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */; };
-		F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */; };
-		F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */; };
+		F72CA09C15699C3F001EFBC8 /* VMAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09B15699C3F001EFBC8 /* VMAPIClient.m */; };
 		F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */ = {isa = PBXBuildFile; fileRef = F72CA09E1569A3AF001EFBC8 /* Meeting.m */; };
+		F736A5C415C7729600A47646 /* TeamTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F736A5C215C7729600A47646 /* TeamTableViewController.m */; };
+		F736A5C515C7729600A47646 /* TeamTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F736A5C315C7729600A47646 /* TeamTableViewController.xib */; };
 		F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */; };
-		F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B315A89F7600FD15B8 /* AppsAPIClient.m */; };
 		F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105B715A8A03900FD15B8 /* AppsTableViewController.m */; };
 		F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */; };
 		F76105BD15A8A27300FD15B8 /* App.m in Sources */ = {isa = PBXBuildFile; fileRef = F76105BC15A8A27300FD15B8 /* App.m */; };
@@ -116,6 +141,9 @@
 		F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7ACC58C1566903100CDE5A9 /* InfoPlist.strings */; };
 		F7ACC5901566903100CDE5A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC58F1566903100CDE5A9 /* main.m */; };
 		F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */; };
+		F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103DA15C3A51A00912184 /* GitCommit.m */; };
+		F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */; };
+		F7B103EB15C4B5B700912184 /* GithubRepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */; };
 		F7D4F06B159FF50500F80CC0 /* VMFormCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06A159FF50500F80CC0 /* VMFormCell.m */; };
 		F7D4F06E159FF52900F80CC0 /* VMTextInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7D4F06D159FF52900F80CC0 /* VMTextInputCell.m */; };
 		F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E4347415A263D70025CA3D /* VMCheckboxCell.m */; };
@@ -124,6 +152,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
 		30627BEF8DB04C51B7EE752A /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		5034C6D906544302BF10E347 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		522573C815AF24E70014C7FB /* AppsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsDetailViewController.h; sourceTree = "<group>"; };
@@ -172,27 +201,38 @@
 		D2445A91157AE0D000A7E297 /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
 		D2445A92157AE0D000A7E297 /* bullhorn-food-combo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bullhorn-food-combo@2x.png"; sourceTree = "<group>"; };
 		D2445AA1157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV3@2x.png"; sourceTree = "<group>"; };
+		D254DD7415D1F2F7008F6B41 /* SectionHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionHeaderView.xib; sourceTree = "<group>"; };
+		D254DD8615D1FCB7008F6B41 /* SectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SectionHeaderView.h; sourceTree = "<group>"; };
+		D254DD8715D1FCB7008F6B41 /* SectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SectionHeaderView.m; sourceTree = "<group>"; };
+		D254DD8F15D21229008F6B41 /* 59-info@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info@2x.png"; sourceTree = "<group>"; };
+		D254DD9015D21229008F6B41 /* 59-info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "59-info.png"; sourceTree = "<group>"; };
+		D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FirstTimeViewController.h; path = ../FirstTimeViewController.h; sourceTree = "<group>"; };
+		D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FirstTimeViewController.m; path = ../FirstTimeViewController.m; sourceTree = "<group>"; };
+		D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstTimeViewController.xib; path = ../FirstTimeViewController.xib; sourceTree = "<group>"; };
+		D254DDC315D2ADBE008F6B41 /* GetStarted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GetStarted.png; sourceTree = "<group>"; };
+		D254DDC415D2ADBE008F6B41 /* IntroSlide1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntroSlide1.png; sourceTree = "<group>"; };
+		D254DDC515D2ADBE008F6B41 /* IntroSlide2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntroSlide2.png; sourceTree = "<group>"; };
+		D254DDC615D2ADBE008F6B41 /* IntroSlide3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IntroSlide3.png; sourceTree = "<group>"; };
+		D254DDC715D2ADBE008F6B41 /* Separator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Separator.png; sourceTree = "<group>"; };
+		D254DDC915D2ADBF008F6B41 /* UIViewController+Overview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Overview.h"; sourceTree = "<group>"; };
+		D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Overview.m"; sourceTree = "<group>"; };
 		D256B834159509D700348AB3 /* NewLoginScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewLoginScreen.png; sourceTree = "<group>"; };
-		D26AAF9C15B2089A00BF8D54 /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download.png"; path = "../57-download.png"; sourceTree = "<group>"; };
-		D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "57-download@2x.png"; path = "../57-download@2x.png"; sourceTree = "<group>"; };
-		D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "157-wrench@2x.png"; path = "../157-wrench@2x.png"; sourceTree = "<group>"; };
-		D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "158-wrench-2@2x.png"; path = "../158-wrench-2@2x.png"; sourceTree = "<group>"; };
 		D26AAFA415B2096600BF8D54 /* 157-wrench.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench.png"; sourceTree = "<group>"; };
 		D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2.png"; sourceTree = "<group>"; };
+		D27197E915C6423D00F10465 /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
+		D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2012-07-29 at 11.19.13 PM.png"; sourceTree = "<group>"; };
 		D272919C1573DB46009AA12F /* MeetingDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingDetailViewController.h; sourceTree = "<group>"; };
-		D272919D1573DB46009AA12F /* MeetingDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingDetailViewController.m; sourceTree = "<group>"; };
 		D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingDetailViewController.xib; sourceTree = "<group>"; };
 		D27291A21573E401009AA12F /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		D27291A41573E408009AA12F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D27291BA15744B56009AA12F /* VMAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAnnotation.h; sourceTree = "<group>"; };
 		D27291BB15744B56009AA12F /* VMAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAnnotation.m; sourceTree = "<group>"; };
-		D278A16815C381F6003E5CDE /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard.png"; path = "../81-dashboard.png"; sourceTree = "<group>"; };
-		D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "81-dashboard@2x.png"; path = "../81-dashboard@2x.png"; sourceTree = "<group>"; };
-		D278A16A15C381F6003E5CDE /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar.png"; path = "../73-radar.png"; sourceTree = "<group>"; };
-		D278A16B15C381F6003E5CDE /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "73-radar@2x.png"; path = "../73-radar@2x.png"; sourceTree = "<group>"; };
+		D278A18015C4CA94003E5CDE /* VandyMobileIconNeue57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconNeue57.png; sourceTree = "<group>"; };
+		D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconNeue114.png; sourceTree = "<group>"; };
 		D27DC597157AFF12004A9D30 /* NewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewsViewController.h; path = VandyMobile/NewsViewController.h; sourceTree = SOURCE_ROOT; };
 		D27DC598157AFF12004A9D30 /* NewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewsViewController.m; path = VandyMobile/NewsViewController.m; sourceTree = SOURCE_ROOT; };
 		D27DC599157AFF12004A9D30 /* NewsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = NewsViewController.xib; path = VandyMobile/NewsViewController.xib; sourceTree = SOURCE_ROOT; };
+		D291166C15CF310A009BC4B7 /* MapIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MapIcon.png; sourceTree = "<group>"; };
 		D29796D015C0F26700025D01 /* ImageManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManipulator.h; sourceTree = "<group>"; };
 		D29796D115C0F26700025D01 /* ImageManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManipulator.m; sourceTree = "<group>"; };
 		D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCellBackgroundView.h; sourceTree = "<group>"; };
@@ -207,11 +247,32 @@
 		D2A723DA15BF92140071BBA0 /* NewsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsCell.xib; sourceTree = "<group>"; };
 		D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 534322_10150823513557391_1367024220_n.jpg; sourceTree = "<group>"; };
 		D2C8FA4E157BBF2C00932EFF /* NextMeeting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NextMeeting@2x.png"; sourceTree = "<group>"; };
-		D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "NewSegControl3-sel.png"; path = "../NewSegControl3-sel.png"; sourceTree = "<group>"; };
 		D2C8FA99157F049700932EFF /* NewSegControl2-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel.png"; sourceTree = "<group>"; };
 		D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsDetailViewController.h; sourceTree = "<group>"; };
 		D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsDetailViewController.m; sourceTree = "<group>"; };
 		D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsDetailViewController.xib; sourceTree = "<group>"; };
+		D2C9244415C4D0FA0059248D /* VandyMobileIconNeueInset.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconNeueInset.png; sourceTree = "<group>"; };
+		D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileIconNeueInset@2x.png"; sourceTree = "<group>"; };
+		D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileTextNeue.png; sourceTree = "<group>"; };
+		D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileTextNeue@2x.png"; sourceTree = "<group>"; };
+		D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewTabBarSelectedNeue@2x.png"; sourceTree = "<group>"; };
+		D2C9244F15C629D40059248D /* 57-download.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download.png"; sourceTree = "<group>"; };
+		D2C9245015C629D40059248D /* 57-download@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "57-download@2x.png"; sourceTree = "<group>"; };
+		D2C9245115C629D40059248D /* 157-wrench@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "157-wrench@2x.png"; sourceTree = "<group>"; };
+		D2C9245215C629D40059248D /* 158-wrench-2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "158-wrench-2@2x.png"; sourceTree = "<group>"; };
+		D2C9245315C629D50059248D /* NewSegControl3-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl3-sel.png"; sourceTree = "<group>"; };
+		D2C9245415C629D50059248D /* 81-dashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "81-dashboard.png"; sourceTree = "<group>"; };
+		D2C9245515C629D50059248D /* 81-dashboard@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "81-dashboard@2x.png"; sourceTree = "<group>"; };
+		D2C9245615C629D50059248D /* 73-radar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar.png"; sourceTree = "<group>"; };
+		D2C9245715C629D50059248D /* 73-radar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "73-radar@2x.png"; sourceTree = "<group>"; };
+		D2C9246215C62C580059248D /* NewTabBarV3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarV3.png; sourceTree = "<group>"; };
+		D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewTabBarSelectedNeue.png; sourceTree = "<group>"; };
+		D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAImageManipulator.m; sourceTree = "<group>"; };
+		D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAImageManipulator.h; sourceTree = "<group>"; };
+		D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBGradientView.h; sourceTree = "<group>"; };
+		D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBGradientView.m; sourceTree = "<group>"; };
+		D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SAViewManipulator.h; sourceTree = "<group>"; };
+		D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SAViewManipulator.m; sourceTree = "<group>"; };
 		D2D0B9A9159649DE00702102 /* IL_Share2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IL_Share2.png; sourceTree = "<group>"; };
 		D2DBEA54157874F100B30D87 /* VandyMobileBackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackground@2x.png"; sourceTree = "<group>"; };
 		D2DBEA571578761200B30D87 /* VandyMobileBackgroundV2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VandyMobileBackgroundV2@2x.png"; sourceTree = "<group>"; };
@@ -219,8 +280,6 @@
 		D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns.png"; sourceTree = "<group>"; };
 		D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-sel-uns.png"; sourceTree = "<group>"; };
 		D2E6215C15891F6200CBC47F /* NewSegControl2-uns-sel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NewSegControl2-uns-sel.png"; sourceTree = "<group>"; };
-		D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIcon.png; sourceTree = "<group>"; };
-		D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VandyMobileIconRetina.png; sourceTree = "<group>"; };
 		F7118ED915B7B80D002C9DFA /* VMCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMCell.h; sourceTree = "<group>"; };
 		F7118EDA15B7B80D002C9DFA /* VMCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMCell.m; sourceTree = "<group>"; };
 		F71CD61615B2509900C701F9 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -231,16 +290,15 @@
 		F72C011015AFB6100025269F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsTableViewController.h; sourceTree = "<group>"; };
 		F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsTableViewController.m; sourceTree = "<group>"; };
-		F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeetingsTableViewController.xib; sourceTree = "<group>"; };
-		F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetingsAPIClient.h; sourceTree = "<group>"; };
-		F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetingsAPIClient.m; sourceTree = "<group>"; };
+		F72CA09B15699C3F001EFBC8 /* VMAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMAPIClient.m; sourceTree = "<group>"; };
 		F72CA09D1569A3AF001EFBC8 /* Meeting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meeting.h; sourceTree = "<group>"; };
 		F72CA09E1569A3AF001EFBC8 /* Meeting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meeting.m; sourceTree = "<group>"; };
+		F736A5C115C7729600A47646 /* TeamTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeamTableViewController.h; sourceTree = "<group>"; };
+		F736A5C215C7729600A47646 /* TeamTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeamTableViewController.m; sourceTree = "<group>"; };
+		F736A5C315C7729600A47646 /* TeamTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamTableViewController.xib; sourceTree = "<group>"; };
 		F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMeetingViewController.h; sourceTree = "<group>"; };
 		F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMeetingViewController.m; sourceTree = "<group>"; };
 		F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddMeetingViewController.xib; sourceTree = "<group>"; };
-		F76105B215A89F7600FD15B8 /* AppsAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsAPIClient.h; sourceTree = "<group>"; };
-		F76105B315A89F7600FD15B8 /* AppsAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsAPIClient.m; sourceTree = "<group>"; };
 		F76105B615A8A03900FD15B8 /* AppsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsTableViewController.h; sourceTree = "<group>"; };
 		F76105B715A8A03900FD15B8 /* AppsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsTableViewController.m; sourceTree = "<group>"; };
 		F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AppsTableViewController.xib; sourceTree = "<group>"; };
@@ -265,6 +323,12 @@
 		F7ACC5911566903100CDE5A9 /* VandyMobile-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VandyMobile-Prefix.pch"; sourceTree = "<group>"; };
 		F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppDelegate.h; sourceTree = "<group>"; };
 		F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppDelegate.m; sourceTree = "<group>"; };
+		F7B103D915C3A51A00912184 /* GitCommit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GitCommit.h; sourceTree = "<group>"; };
+		F7B103DA15C3A51A00912184 /* GitCommit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GitCommit.m; sourceTree = "<group>"; };
+		F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GithubRepoTableViewController.h; sourceTree = "<group>"; };
+		F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GithubRepoTableViewController.m; sourceTree = "<group>"; };
+		F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GithubRepoTableViewController.xib; sourceTree = "<group>"; };
+		F7B4187915E5904200BEE833 /* VMAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMAPIClient.h; sourceTree = "<group>"; };
 		F7D4F069159FF50500F80CC0 /* VMFormCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMFormCell.h; sourceTree = "<group>"; };
 		F7D4F06A159FF50500F80CC0 /* VMFormCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VMFormCell.m; sourceTree = "<group>"; };
 		F7D4F06C159FF52900F80CC0 /* VMTextInputCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VMTextInputCell.h; sourceTree = "<group>"; };
@@ -304,9 +368,66 @@
 				D232684515C23C5D007FFAB9 /* UIImage+Color.m */,
 				D232683F15C2217E007FFAB9 /* UIView+Frame.h */,
 				D232684015C2217F007FFAB9 /* UIView+Frame.m */,
+				D254DDC915D2ADBF008F6B41 /* UIViewController+Overview.h */,
+				D254DDCA15D2ADBF008F6B41 /* UIViewController+Overview.m */,
 			);
 			name = Categories;
 			path = VandyMobile;
+			sourceTree = "<group>";
+		};
+		D254DD7715D1F305008F6B41 /* MyVM */ = {
+			isa = PBXGroup;
+			children = (
+				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
+				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
+			);
+			name = MyVM;
+			sourceTree = "<group>";
+		};
+		D254DD7815D1F30E008F6B41 /* NewsTVC */ = {
+			isa = PBXGroup;
+			children = (
+				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
+				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
+			);
+			name = NewsTVC;
+			sourceTree = "<group>";
+		};
+		D254DD7915D1F31E008F6B41 /* NewsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
+				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
+			);
+			name = NewsDetail;
+			sourceTree = "<group>";
+		};
+		D254DDC215D2ADBE008F6B41 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				D254DDBF15D2ADBD008F6B41 /* FirstTimeViewController.h */,
+				D254DDC015D2ADBE008F6B41 /* FirstTimeViewController.m */,
+				D254DDC115D2ADBE008F6B41 /* FirstTimeViewController.xib */,
+				D254DDC315D2ADBE008F6B41 /* GetStarted.png */,
+				D254DDC415D2ADBE008F6B41 /* IntroSlide1.png */,
+				D254DDC515D2ADBE008F6B41 /* IntroSlide2.png */,
+				D254DDC615D2ADBE008F6B41 /* IntroSlide3.png */,
+				D254DDC715D2ADBE008F6B41 /* Separator.png */,
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
+		D2CA4E7515E2D31500DD52B8 /* Utility Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D2CA4E6D15E2D1C600DD52B8 /* OBGradientView.h */,
+				D2CA4E6E15E2D1C600DD52B8 /* OBGradientView.m */,
+				D2CA4E6B15E2D1C600DD52B8 /* SAImageManipulator.m */,
+				D2CA4E6C15E2D1C600DD52B8 /* SAImageManipulator.h */,
+				D2CA4E7215E2D1FA00DD52B8 /* SAViewManipulator.h */,
+				D2CA4E7315E2D1FA00DD52B8 /* SAViewManipulator.m */,
+			);
+			name = "Utility Classes";
 			sourceTree = "<group>";
 		};
 		F71CD67715B35D7E00C701F9 /* Externals */ = {
@@ -320,10 +441,27 @@
 		F7283DFC15715DC900F6E24D /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				D278A16815C381F6003E5CDE /* 81-dashboard.png */,
-				D278A16915C381F6003E5CDE /* 81-dashboard@2x.png */,
-				D278A16A15C381F6003E5CDE /* 73-radar.png */,
-				D278A16B15C381F6003E5CDE /* 73-radar@2x.png */,
+				D254DD8F15D21229008F6B41 /* 59-info@2x.png */,
+				D254DD9015D21229008F6B41 /* 59-info.png */,
+				D291166C15CF310A009BC4B7 /* MapIcon.png */,
+				D27197EC15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png */,
+				D2C9246215C62C580059248D /* NewTabBarV3.png */,
+				D2C9246315C62C580059248D /* NewTabBarSelectedNeue.png */,
+				D2C9244E15C629D40059248D /* NewTabBarSelectedNeue@2x.png */,
+				D2C9244F15C629D40059248D /* 57-download.png */,
+				D2C9245015C629D40059248D /* 57-download@2x.png */,
+				D2C9245115C629D40059248D /* 157-wrench@2x.png */,
+				D2C9245215C629D40059248D /* 158-wrench-2@2x.png */,
+				D2C9245315C629D50059248D /* NewSegControl3-sel.png */,
+				D2C9245415C629D50059248D /* 81-dashboard.png */,
+				D2C9245515C629D50059248D /* 81-dashboard@2x.png */,
+				D2C9245615C629D50059248D /* 73-radar.png */,
+				D2C9245715C629D50059248D /* 73-radar@2x.png */,
+				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
+				D2C9244815C4DF3E0059248D /* VandyMobileTextNeue.png */,
+				D2C9244915C4DF3E0059248D /* VandyMobileTextNeue@2x.png */,
+				D2C9244415C4D0FA0059248D /* VandyMobileIconNeueInset.png */,
+				D2C9244515C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png */,
 				D2326A4F15C362E5007FFAB9 /* close.png */,
 				D2326A5015C362E5007FFAB9 /* close@2x.png */,
 				D23267B615C18F86007FFAB9 /* app_store_badge.png */,
@@ -333,16 +471,10 @@
 				D2B8174715B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg */,
 				D26AAFA415B2096600BF8D54 /* 157-wrench.png */,
 				D26AAFA515B2096600BF8D54 /* 158-wrench-2.png */,
-				D26AAFA015B2092D00BF8D54 /* 157-wrench@2x.png */,
-				D26AAFA115B2092D00BF8D54 /* 158-wrench-2@2x.png */,
-				D26AAF9C15B2089A00BF8D54 /* 57-download.png */,
-				D26AAF9D15B2089A00BF8D54 /* 57-download@2x.png */,
 				D2D0B9A9159649DE00702102 /* IL_Share2.png */,
 				D2429AA0158A58B700C19D3F /* NewTabBarV3@2x.png */,
-				D2429A9E158A564B00C19D3F /* NewTabBarSelected@2x.png */,
 				D2A6649B1586A1D400AD5951 /* NewTabBarV2@2x.png */,
 				D2A6649915869FDF00AD5951 /* NewTabBar@2x.png */,
-				D2C8FA93157F004F00932EFF /* NewSegControl3-sel.png */,
 				D2E6215915891F6200CBC47F /* NewSegControl2-uns-uns.png */,
 				D2E6215A15891F6200CBC47F /* NewSegControl2-uns.png */,
 				D2E6215B15891F6200CBC47F /* NewSegControl2-sel-uns.png */,
@@ -382,42 +514,41 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
-		F7874EE1156C7BAC00F81183 /* ViewControllers */ = {
+		F7874EE1156C7BAC00F81183 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F77D76E6159F9C200009AD6B /* MyVMViewController.h */,
-				F77D76E7159F9C200009AD6B /* MyVMViewController.m */,
-				D27DC597157AFF12004A9D30 /* NewsViewController.h */,
-				D27DC598157AFF12004A9D30 /* NewsViewController.m */,
-				D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */,
-				D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */,
+				D254DD7715D1F305008F6B41 /* MyVM */,
+				D254DD7815D1F30E008F6B41 /* NewsTVC */,
+				D254DD7915D1F31E008F6B41 /* NewsDetail */,
 				F77D76FA159FAB410009AD6B /* LoginViewController.h */,
 				F7E434C815A410FA0025CA3D /* LoginViewController.m */,
 				D2326A5415C364EE007FFAB9 /* LoginStageTwoViewController.h */,
 				D2326A5515C364EE007FFAB9 /* LoginStageTwoViewController.m */,
-				D2C8FA9B158012B500932EFF /* NewsDetailViewController.h */,
-				D2C8FA9C158012B500932EFF /* NewsDetailViewController.m */,
 				F72CA080156988DA001EFBC8 /* MeetingsTableViewController.h */,
 				F72CA081156988DA001EFBC8 /* MeetingsTableViewController.m */,
+				D254DD8615D1FCB7008F6B41 /* SectionHeaderView.h */,
+				D254DD8715D1FCB7008F6B41 /* SectionHeaderView.m */,
+				D27197E915C6423D00F10465 /* MeetingDetailViewController.m */,
 				D272919C1573DB46009AA12F /* MeetingDetailViewController.h */,
-				D272919D1573DB46009AA12F /* MeetingDetailViewController.m */,
 				F74346F6157BF73600AD1C26 /* AddMeetingViewController.h */,
 				F74346F7157BF73600AD1C26 /* AddMeetingViewController.m */,
 				F76105B615A8A03900FD15B8 /* AppsTableViewController.h */,
 				F76105B715A8A03900FD15B8 /* AppsTableViewController.m */,
 				522573C815AF24E70014C7FB /* AppsDetailViewController.h */,
 				522573C915AF24E70014C7FB /* AppsDetailViewController.m */,
+				F7B103E715C4B5B700912184 /* GithubRepoTableViewController.h */,
+				F7B103E815C4B5B700912184 /* GithubRepoTableViewController.m */,
+				F736A5C115C7729600A47646 /* TeamTableViewController.h */,
+				F736A5C215C7729600A47646 /* TeamTableViewController.m */,
 			);
-			name = ViewControllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		F7874EE2156C7BBB00F81183 /* APICients */ = {
 			isa = PBXGroup;
 			children = (
-				F72CA09A15699C3F001EFBC8 /* MeetingsAPIClient.h */,
-				F72CA09B15699C3F001EFBC8 /* MeetingsAPIClient.m */,
-				F76105B215A89F7600FD15B8 /* AppsAPIClient.h */,
-				F76105B315A89F7600FD15B8 /* AppsAPIClient.m */,
+				F7B4187915E5904200BEE833 /* VMAPIClient.h */,
+				F72CA09B15699C3F001EFBC8 /* VMAPIClient.m */,
 				F76105E315AA2E4000FD15B8 /* UserAPIClient.h */,
 				F76105E415AA2E4100FD15B8 /* UserAPIClient.m */,
 			);
@@ -441,6 +572,8 @@
 				F76105C715A8B00F00FD15B8 /* VMTableView.m */,
 				F71CD61615B2509900C701F9 /* User.h */,
 				F71CD61715B2509900C701F9 /* User.m */,
+				F7B103D915C3A51A00912184 /* GitCommit.h */,
+				F7B103DA15C3A51A00912184 /* GitCommit.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -448,6 +581,7 @@
 		F7874EE4156C7BF300F81183 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				F736A5C315C7729600A47646 /* TeamTableViewController.xib */,
 				D2A723DA15BF92140071BBA0 /* NewsCell.xib */,
 				522573CE15AF2B1B0014C7FB /* AppsCell.xib */,
 				F77D76E8159F9C200009AD6B /* MyVMViewController.xib */,
@@ -455,11 +589,13 @@
 				F77D76FC159FAB410009AD6B /* LoginViewController.xib */,
 				D2326A5615C364F0007FFAB9 /* LoginStageTwoViewController.xib */,
 				D2C8FA9D158012B500932EFF /* NewsDetailViewController.xib */,
-				F72CA082156988DA001EFBC8 /* MeetingsTableViewController.xib */,
+				D254DD7415D1F2F7008F6B41 /* SectionHeaderView.xib */,
 				D27291A01573DB67009AA12F /* MeetingDetailViewController.xib */,
 				F74346F8157BF73600AD1C26 /* AddMeetingViewController.xib */,
+				22B30ADA15DDA9BE006B5D9A /* MeetingsTableViewController.xib */,
 				F76105B815A8A03900FD15B8 /* AppsTableViewController.xib */,
 				522573CA15AF24E70014C7FB /* AppsDetailViewController.xib */,
+				F7B103E915C4B5B700912184 /* GithubRepoTableViewController.xib */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -476,8 +612,8 @@
 		F7ACC5741566903100CDE5A9 = {
 			isa = PBXGroup;
 			children = (
-				D2E6EFFC15AD1F4D001B6B3F /* VandyMobileIconRetina.png */,
-				D2E6EFFA15AD1F46001B6B3F /* VandyMobileIcon.png */,
+				D278A18215C4CAA6003E5CDE /* VandyMobileIconNeue114.png */,
+				D278A18015C4CA94003E5CDE /* VandyMobileIconNeue57.png */,
 				D232684315C22189007FFAB9 /* Categories */,
 				F7ACC5891566903100CDE5A9 /* VandyMobile */,
 				F71CD67715B35D7E00C701F9 /* Externals */,
@@ -518,9 +654,11 @@
 			children = (
 				F7ACC5921566903100CDE5A9 /* VMAppDelegate.h */,
 				F7ACC5931566903100CDE5A9 /* VMAppDelegate.m */,
-				F7D4F067159FF4AA00F80CC0 /* Cells */,
 				F7ACC58A1566903100CDE5A9 /* Supporting Files */,
-				F7874EE1156C7BAC00F81183 /* ViewControllers */,
+				D254DDC215D2ADBE008F6B41 /* Introduction */,
+				D2CA4E7515E2D31500DD52B8 /* Utility Classes */,
+				F7D4F067159FF4AA00F80CC0 /* Cells */,
+				F7874EE1156C7BAC00F81183 /* View Controllers */,
 				F7874EE4156C7BF300F81183 /* GUI */,
 				F7874EE2156C7BBB00F81183 /* APICients */,
 				F7874EE3156C7BCE00F81183 /* Models */,
@@ -542,6 +680,8 @@
 		F7D4F067159FF4AA00F80CC0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				D29796D415C0F42600025D01 /* CustomCellBackgroundView.h */,
+				D29796D515C0F42600025D01 /* CustomCellBackgroundView.mm */,
 				D2A723D715BF91A00071BBA0 /* NewsCell.h */,
 				D2A723D815BF91A00071BBA0 /* NewsCell.m */,
 				522573D015AF2B820014C7FB /* AppsCell.h */,
@@ -613,7 +753,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7ACC58E1566903100CDE5A9 /* InfoPlist.strings in Resources */,
-				F72CA084156988DA001EFBC8 /* MeetingsTableViewController.xib in Resources */,
 				F7283E0115715DC900F6E24D /* 112-group.png in Resources */,
 				F7283E0215715DC900F6E24D /* 124-bullhorn.png in Resources */,
 				F7283E0315715DC900F6E24D /* 125-food.png in Resources */,
@@ -642,7 +781,6 @@
 				D2445AA2157AEA4200A7E297 /* VandyMobileBackgroundV3@2x.png in Resources */,
 				D27DC59B157AFF12004A9D30 /* NewsViewController.xib in Resources */,
 				D2C8FA4F157BBF2C00932EFF /* NextMeeting@2x.png in Resources */,
-				D2C8FA94157F004F00932EFF /* NewSegControl3-sel.png in Resources */,
 				D2C8FA9A157F049700932EFF /* NewSegControl2-sel.png in Resources */,
 				D2C8FA9F158012B600932EFF /* NewsDetailViewController.xib in Resources */,
 				D29E6C9615856BAE0065E1CC /* NextMeetingCanvas@2x.png in Resources */,
@@ -661,14 +799,8 @@
 				F77D76EA159F9C200009AD6B /* MyVMViewController.xib in Resources */,
 				F77D76FE159FAB410009AD6B /* LoginViewController.xib in Resources */,
 				F76105BA15A8A03900FD15B8 /* AppsTableViewController.xib in Resources */,
-				D2E6EFFB15AD1F47001B6B3F /* VandyMobileIcon.png in Resources */,
-				D2E6EFFD15AD1F4D001B6B3F /* VandyMobileIconRetina.png in Resources */,
 				522573CC15AF24E70014C7FB /* AppsDetailViewController.xib in Resources */,
 				522573CF15AF2B1B0014C7FB /* AppsCell.xib in Resources */,
-				D26AAF9E15B2089A00BF8D54 /* 57-download.png in Resources */,
-				D26AAF9F15B2089A00BF8D54 /* 57-download@2x.png in Resources */,
-				D26AAFA215B2092D00BF8D54 /* 157-wrench@2x.png in Resources */,
-				D26AAFA315B2092D00BF8D54 /* 158-wrench-2@2x.png in Resources */,
 				D26AAFA615B2096600BF8D54 /* 157-wrench.png in Resources */,
 				D26AAFA715B2096600BF8D54 /* 158-wrench-2.png in Resources */,
 				D2B8174815B66542002F7971 /* 534322_10150823513557391_1367024220_n.jpg in Resources */,
@@ -680,10 +812,38 @@
 				D2326A5115C362E5007FFAB9 /* close.png in Resources */,
 				D2326A5215C362E5007FFAB9 /* close@2x.png in Resources */,
 				D2326A5815C364F0007FFAB9 /* LoginStageTwoViewController.xib in Resources */,
-				D278A16C15C381F6003E5CDE /* 81-dashboard.png in Resources */,
-				D278A16D15C381F6003E5CDE /* 81-dashboard@2x.png in Resources */,
-				D278A16E15C381F6003E5CDE /* 73-radar.png in Resources */,
-				D278A16F15C381F6003E5CDE /* 73-radar@2x.png in Resources */,
+				F7B103EB15C4B5B700912184 /* GithubRepoTableViewController.xib in Resources */,
+				D278A18115C4CA95003E5CDE /* VandyMobileIconNeue57.png in Resources */,
+				D278A18315C4CAA6003E5CDE /* VandyMobileIconNeue114.png in Resources */,
+				D2C9244615C4D0FA0059248D /* VandyMobileIconNeueInset.png in Resources */,
+				D2C9244715C4D0FA0059248D /* VandyMobileIconNeueInset@2x.png in Resources */,
+				D2C9244A15C4DF3E0059248D /* VandyMobileTextNeue.png in Resources */,
+				D2C9244B15C4DF3E0059248D /* VandyMobileTextNeue@2x.png in Resources */,
+				D2C9245815C629D50059248D /* NewTabBarSelectedNeue@2x.png in Resources */,
+				D2C9245915C629D50059248D /* 57-download.png in Resources */,
+				D2C9245A15C629D50059248D /* 57-download@2x.png in Resources */,
+				D2C9245B15C629D50059248D /* 157-wrench@2x.png in Resources */,
+				D2C9245C15C629D50059248D /* 158-wrench-2@2x.png in Resources */,
+				D2C9245D15C629D50059248D /* NewSegControl3-sel.png in Resources */,
+				D2C9245E15C629D50059248D /* 81-dashboard.png in Resources */,
+				D2C9245F15C629D50059248D /* 81-dashboard@2x.png in Resources */,
+				D2C9246015C629D50059248D /* 73-radar.png in Resources */,
+				D2C9246115C629D50059248D /* 73-radar@2x.png in Resources */,
+				D2C9246415C62C580059248D /* NewTabBarV3.png in Resources */,
+				D2C9246515C62C580059248D /* NewTabBarSelectedNeue.png in Resources */,
+				D27197ED15C642E400F10465 /* Screen Shot 2012-07-29 at 11.19.13 PM.png in Resources */,
+				F736A5C515C7729600A47646 /* TeamTableViewController.xib in Resources */,
+				D291166D15CF310A009BC4B7 /* MapIcon.png in Resources */,
+				D254DD7515D1F2F7008F6B41 /* SectionHeaderView.xib in Resources */,
+				D254DD9115D21229008F6B41 /* 59-info@2x.png in Resources */,
+				D254DD9215D21229008F6B41 /* 59-info.png in Resources */,
+				D254DDCC15D2ADBF008F6B41 /* FirstTimeViewController.xib in Resources */,
+				D254DDCD15D2ADBF008F6B41 /* GetStarted.png in Resources */,
+				D254DDCE15D2ADBF008F6B41 /* IntroSlide1.png in Resources */,
+				D254DDCF15D2ADBF008F6B41 /* IntroSlide2.png in Resources */,
+				D254DDD015D2ADBF008F6B41 /* IntroSlide3.png in Resources */,
+				D254DDD115D2ADBF008F6B41 /* Separator.png in Resources */,
+				22B30ADB15DDA9BE006B5D9A /* MeetingsTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,9 +875,8 @@
 				F7ACC5901566903100CDE5A9 /* main.m in Sources */,
 				F7ACC5941566903100CDE5A9 /* VMAppDelegate.m in Sources */,
 				F72CA083156988DA001EFBC8 /* MeetingsTableViewController.m in Sources */,
-				F72CA09C15699C3F001EFBC8 /* MeetingsAPIClient.m in Sources */,
+				F72CA09C15699C3F001EFBC8 /* VMAPIClient.m in Sources */,
 				F72CA09F1569A3AF001EFBC8 /* Meeting.m in Sources */,
-				D272919E1573DB46009AA12F /* MeetingDetailViewController.m in Sources */,
 				D27291BC15744B56009AA12F /* VMAnnotation.m in Sources */,
 				D27DC59A157AFF12004A9D30 /* NewsViewController.m in Sources */,
 				F74346F9157BF73600AD1C26 /* AddMeetingViewController.m in Sources */,
@@ -728,7 +887,6 @@
 				F7E4347515A263D70025CA3D /* VMCheckboxCell.m in Sources */,
 				F7E4347C15A27F9D0025CA3D /* VMDatePickerCell.m in Sources */,
 				F7E434C915A410FA0025CA3D /* LoginViewController.m in Sources */,
-				F76105B415A89F7600FD15B8 /* AppsAPIClient.m in Sources */,
 				F76105B915A8A03900FD15B8 /* AppsTableViewController.m in Sources */,
 				F76105BD15A8A27300FD15B8 /* App.m in Sources */,
 				F76105C815A8B00F00FD15B8 /* VMTableView.m in Sources */,
@@ -744,6 +902,16 @@
 				D232684115C2217F007FFAB9 /* UIView+Frame.m in Sources */,
 				D232684615C23C5D007FFAB9 /* UIImage+Color.m in Sources */,
 				D2326A5715C364F0007FFAB9 /* LoginStageTwoViewController.m in Sources */,
+				F7B103DB15C3A51A00912184 /* GitCommit.m in Sources */,
+				F7B103EA15C4B5B700912184 /* GithubRepoTableViewController.m in Sources */,
+				D27197EA15C6423D00F10465 /* MeetingDetailViewController.m in Sources */,
+				F736A5C415C7729600A47646 /* TeamTableViewController.m in Sources */,
+				D254DD8815D1FCB7008F6B41 /* SectionHeaderView.m in Sources */,
+				D254DDCB15D2ADBF008F6B41 /* FirstTimeViewController.m in Sources */,
+				D254DDD315D2ADBF008F6B41 /* UIViewController+Overview.m in Sources */,
+				D2CA4E6F15E2D1C600DD52B8 /* SAImageManipulator.m in Sources */,
+				D2CA4E7015E2D1C600DD52B8 /* OBGradientView.m in Sources */,
+				D2CA4E7415E2D1FA00DD52B8 /* SAViewManipulator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

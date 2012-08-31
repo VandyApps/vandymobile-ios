@@ -8,13 +8,18 @@
 
 #import "MeetingsTableViewController.h"
 #import "AFNetworking.h"
-#import "MeetingsAPIClient.h"
+#import "VMAPIClient.h"
 #import "Meeting.h"
 #import "MeetingDetailViewController.h"
 #import "AddMeetingViewController.h"
 #import "JSONKit.h"
 #import "VMCell.h"
 #import "User.h"
+#import <QuartzCore/QuartzCore.h>
+#import "FirstTimeViewController.h"
+#import "UIViewController+Overview.h"
+#import "SectionHeaderView.h"
+#import "UIView+Frame.h"
 
 @interface MeetingsTableViewController ()
 
@@ -29,10 +34,12 @@
 @synthesize nextMeetingButton = _nextMeetingButton;
 @synthesize nextMeetingCheckInButton = _nextMeetingCheckInButton;
 @synthesize nextMeetingMapButton = _nextMeetingMapButton;
+@synthesize nextMeetingMapButtonContainerView = _nextMeetingMapButtonContainerView;
 @synthesize nextMeetingLabel = _nextMeetingLabel;
 @synthesize nextMeeting = _nextMeeting;
 @synthesize results = _results;
-
+@synthesize sectionedResults = _sectionedResults;
+@synthesize hasShownIntro = _hasShownIntro;
 
 #pragma mark - Notifications
 
@@ -49,12 +56,19 @@
 }
 
 - (void)handleUserLoggedIn {
-	[self addNextMeetingCell];
+//	[self addNextMeetingCell];
 }
 
 - (void)handleUserLoggedOut {
-	[self addNextMeetingCell];
+//	[self addNextMeetingCell];
 }
+
+- (void)setupNextMeetingHeaderView {
+    [self addShadowToView:self.nextMeetingButton withOpacity:.9];
+    self.nextMeetingButton.layer.shouldRasterize = YES;
+//    self.nextMeetingButton.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1];
+}
+
 
 #pragma mark - View Life Cycle
 
@@ -71,6 +85,8 @@
 	
 	// Creates refresh meetings button in navbar
     [self setupRefreshMeetingsButton];
+    
+    [self setupNextMeetingHeaderView];
 	
     // Customize backgrounds
     self.backgroundImageView.image = [UIImage imageNamed:@"VandyMobileBackgroundCanvas"];
@@ -81,12 +97,26 @@
     self.nextMeetingMapButton.hidden = YES;
     self.nextMeetingLabel.hidden = YES;
     self.tableView.hidden = YES;
+//
+//    self.nextMeetingMapButton.layer.borderColor = [[UIColor grayColor] CGColor];
+//    self.nextMeetingMapButton.layer.borderWidth = .8;
+//    self.nextMeetingMapButton.layer.cornerRadius = 3;
+//    self.nextMeetingMapButton.clipsToBounds = YES;
+//
     
-	[self pullMeetingsFromCache];
-    [self pullMeetingsFromServer];
-    
-    
+	[self pullMeetingsFromCacheWithFailureCallBack:^{
+        [SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
+    }];
+    [self pullMeetingsFromServer]; 
+}
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)showIntro {
+    FirstTimeViewController *ftvc = [[FirstTimeViewController alloc] initWithNibName:@"FirstTimeViewController" bundle:nil andNumberOfSlides:6];
+    [self.tabBarController presentOverviewController:ftvc withOpacity:.7 animated:YES];
 }
 
 - (void)setupCreateMeetingButton {
@@ -101,15 +131,19 @@
 	// Create add meeting button
 	UIBarButtonItem *addMeetingButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh
 																					  target:self 
-																					  action:@selector(pullMeetingsFromServer)];
+																					  action:@selector(refreshMeetingsTapped)];
 	[self.navigationItem setRightBarButtonItem:addMeetingButton animated:NO];
+}
+
+- (void)refreshMeetingsTapped {
+    [SVProgressHUD show];
+    [self pullMeetingsFromServer];
 }
 
 
 - (void)pullMeetingsFromServer {
 	// Status indicator. Takes place of network spinner and if no meetings are loaded
-	[SVProgressHUD showWithStatus:@"Loading meetings..." maskType:SVProgressHUDMaskTypeNone];
-	[[MeetingsAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
+	[[VMAPIClient sharedInstance] getPath:@"meetings.json" parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id response) {
 											//											NSLog(@"Response: %@", response);
 											NSMutableArray *results = [NSMutableArray array];
@@ -121,19 +155,33 @@
 											self.results = results;
 											[self addNextMeetingCell];
 											
-											[self.tableView reloadData];
+                                            [self sortMeetings];
+                                            [self.tableView reloadData];
 											[SVProgressHUD dismissWithSuccess:@"Done!"];
                                             self.tableView.hidden = NO;
+                                            
+                                            if (!self.hasShownIntro) {
+                                                [self showIntro];
+                                                self.hasShownIntro = YES;
+                                                UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoLight];
+                                                button.imageEdgeInsets = UIEdgeInsetsMake(0, 7, 0, -7);
+                                                button.showsTouchWhenHighlighted = NO;
+                                                [button addTarget:self action:@selector(showIntro) forControlEvents:UIControlEventTouchUpInside];
+                                                [self.navigationItem setLeftBarButtonItem:[[UIBarButtonItem alloc] initWithCustomView:button]];
+                                                
+                                            }
 										}
 										failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 											[SVProgressHUD dismissWithError:@"Error updating meetings" afterDelay:3];
 											NSLog(@"%@",error);
 										}];
+    
+
 }
 
-- (void)pullMeetingsFromCache {
-	NSString *path = @"http://70.138.50.84/meetings.json";
-	NSURLRequest *request = [[MeetingsAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
+- (void)pullMeetingsFromCacheWithFailureCallBack:(void(^)(void))callBack {
+	NSString *path = @"http://foo:bar@vandymobile.herokuapp.com/meetings.json";
+	NSURLRequest *request = [[VMAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
 		NSData *responseData = response.data;
@@ -147,11 +195,29 @@
 		self.results = results;
 		[self addNextMeetingCell];
 		[self.tableView setHidden:NO];
-		[self.tableView reloadData];
-	}
+        [self sortMeetings];
+        [self.tableView reloadData];
+	} else {
+        /* If nothing is cached */
+        callBack();
+    }
+    
 }
 
-
+- (void)sortMeetings {
+    self.sectionedResults = [NSArray arrayWithObjects:[NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], [NSMutableOrderedSet orderedSet], nil];
+    
+    for (Meeting *meeting in self.results) {
+        [self sortMeeting:meeting inResults:self.sectionedResults];
+    }
+    NSMutableArray *remover = [self.sectionedResults mutableCopy];
+    for (NSMutableOrderedSet *section in self.sectionedResults) {
+        if (section.count == 0) {
+            [remover removeObject:section];
+        }
+    }
+    self.sectionedResults = [remover copy];
+}
 
 - (void)addNextMeetingCell {
     // Grab the next meeting
@@ -177,6 +243,17 @@
 //	}
     
     self.nextMeetingLabel.hidden = NO;
+    
+    [self addShadowToView:self.nextMeetingMapButtonContainerView withOpacity:.95];
+}
+
+- (void)addShadowToView:(UIView *)view withOpacity:(CGFloat)opacity {
+    view.layer.shadowColor = [[UIColor blackColor] CGColor];
+    if (opacity > 1) opacity = 1;
+    else if (opacity < 0) opacity = 0;
+    view.layer.shadowOpacity = opacity;
+    view.layer.shadowRadius = 2.0;
+    view.layer.shadowOffset = CGSizeMake(-1, 1);
 }
 
 - (void)viewDidUnload
@@ -190,6 +267,7 @@
     [self setNextMeetingCheckInButton:nil];
     [self setNextMeetingMapButton:nil];
     [self setNextMeetingLabel:nil];
+    [self setNextMeetingMapButtonContainerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -200,7 +278,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     // Set the logo on the navigation bar
-    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"NewNavBarText"]];
+    UIImageView *logo = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"VandyMobileTextNeue"]];
     if ([[self.navigationController.navigationBar subviews] count] > 2) {
         NSArray *navSubviews = [self.navigationController.navigationBar subviews];
         
@@ -233,9 +311,67 @@
 }
 
 #pragma mark - TableViewDatasource Methods
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.sectionedResults.count;
+}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return [self.results count];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return [[self.sectionedResults objectAtIndex:section] count];
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    switch (section) {
+//        case 0:
+//            return @"Today";
+//            break;
+//        case 1:
+//            return @"Tomorrow";
+//            break;
+//        case 2:
+//            return @"This week";
+//            break;
+//        case 3:
+//            return @"Later";
+//            break;
+//        default:
+//            break;
+//    }
+//    return @"ERROR";
+    return [self timeframeOfMeeting:[[self.sectionedResults objectAtIndex:section] firstObject]];
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+	return 25;
+}
+
+- (UIView *)tableView:(UITableView*)tableView viewForHeaderInSection:(NSInteger)section {
+    
+//    UIView *container = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 360, 25)] ;
+    SectionHeaderView *container = [[SectionHeaderView alloc] init];
+    
+    // Load the top-level objects from the custom cell XIB.
+    NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"SectionHeaderView" owner:self options:nil];
+    // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+    container = [topLevelObjects objectAtIndex:0];
+    
+    container.layer.borderColor = [UIColor grayColor].CGColor;
+    container.layer.borderWidth = 0.5f;
+    
+    
+//    UILabel *headerLabel = [[UILabel alloc] initWithFrame:CGRectMake(12,0,360, 25)] ;
+//    headerLabel.backgroundColor = [UIColor clearColor];
+//    headerLabel.font = [UIFont boldSystemFontOfSize:19.0f];
+//    headerLabel.shadowOffset = CGSizeMake(1, 1);
+//    headerLabel.textColor = [UIColor whiteColor];
+//    headerLabel.shadowColor = [UIColor darkGrayColor];
+    NSString *title = [self tableView:self.tableView titleForHeaderInSection:section];
+    container.label.text = title;
+//    [container addSubview:headerLabel];
+    [self addShadowToView:container withOpacity:.8];
+    return container;
 }
 
 // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
@@ -248,7 +384,10 @@
 	if(!cell) {
 		cell = [[VMCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
 	}
-	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    
+//	Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    Meeting *meeting = [[self.sectionedResults objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+    
 	cell.textLabel.text = meeting.topic;
 	if([meeting.topic isEqualToString:@""]) {
 		cell.textLabel.text = @"Working Meeting";
@@ -301,6 +440,124 @@
 }
 
 - (NSString *)checkMeetingDateOfMeeting:(Meeting *)meeting {
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSString *dayOfWeek = [dict objectForKey:@"englishWeekday"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
+    
+    // If date is now
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 2)) {
+        self.nextMeetingCheckInButton.hidden = YES;
+        self.nextMeetingMapButton.hidden = YES;
+    }
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        return [NSString stringWithFormat:@"%@ %@", @"Today at", meeting.time];
+    }
+    
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        return [NSString stringWithFormat:@"%@ %@", @"Tomorrow at", meeting.time];
+    }
+    
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        return [NSString stringWithFormat:@"%@ at %@", dayOfWeek, meeting.time];
+    }
+    else {
+        return [NSString stringWithFormat:@"%@ at %@", meeting.date, meeting.time];
+    }
+
+}
+
+- (NSString *)timeframeOfMeeting:(Meeting *)meeting {
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
+    
+    NSInteger index;
+    
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        index = 0;
+    }
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        index = 1;
+    }
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        index = 2;
+    }
+    else {
+        index = 3;
+    }
+    
+    switch (index) {
+        case 0:
+            return @"Today";
+            break;
+        case 1:
+            return @"Tomorrow";
+            break;
+        case 2:
+            return @"This week";
+            break;
+        case 3:
+            return @"Later";
+            break;
+        default:
+            break;
+    }
+    return @"ERROR";
+}
+
+- (void)sortMeeting:(Meeting *)meeting inResults:(NSArray *)sectionedResults {
+    
+    NSDictionary *dict = [self dateInfoFromMeeting:meeting];
+    NSDate *now = [dict objectForKey:@"now"];
+    NSInteger weekday = [[dict objectForKey:@"meetingWeekday"] integerValue];
+    NSInteger currentDay = [[dict objectForKey:@"currentWeekday"] integerValue];
+    
+    NSInteger index;
+    
+    // If date is today
+    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
+        index = 0;
+    }
+    // If date is tomorrow
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
+        index = 1;
+    }
+    // If date is in the next week
+    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
+        index = 2;
+    }
+    else {
+        index = 3;
+    }
+    
+    BOOL shouldAdd = YES;
+    for (NSMutableOrderedSet *section in sectionedResults) {
+        if (([sectionedResults indexOfObjectIdenticalTo:section] == index)) {
+            for (Meeting *otherMeeting in section) {
+                if ([otherMeeting.dateUnformatted isEqualToDate:meeting.dateUnformatted]) {
+                    shouldAdd = NO;
+                }
+            }
+            if (shouldAdd) {
+                [[sectionedResults objectAtIndex:index] addObject:meeting];
+            }
+        }
+        else if ([section containsObject:meeting]) {
+            [section removeObject:meeting];
+        }
+    }
+}
+
+- (NSDictionary *)dateInfoFromMeeting:(Meeting *)meeting {
     
     NSDate *now = [NSDate date];
     
@@ -325,29 +582,7 @@
     NSDateComponents *currentComponents = [gregorian components:(NSWeekdayCalendarUnit) fromDate:now];
     NSInteger currentDay = [currentComponents weekday];
     
-    // If date is now
-    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 2)) {
-        self.nextMeetingCheckInButton.hidden = NO;
-        self.nextMeetingMapButton.hidden = YES;
-    }
-    // If date is today
-    if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24) && currentDay == weekday) {
-        return [NSString stringWithFormat:@"%@ %@", @"Today at", meeting.time];
-    }
-    
-    // If date is tomorrow
-    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 2) && currentDay + 1 == weekday) {
-        return [NSString stringWithFormat:@"%@ %@", @"Tomorrow at", meeting.time];
-    }
-    
-    // If date is in the next week
-    else if ([meeting.dateUnformatted timeIntervalSinceDate:now] < (60 * 60 * 24 * 7)) {
-        return [NSString stringWithFormat:@"%@ at %@", dayOfWeek, meeting.time];
-    }
-    else {
-        return [NSString stringWithFormat:@"%@, %@", meeting.date, meeting.time];
-    }
-
+    return [NSDictionary dictionaryWithObjectsAndKeys:dayOfWeek, @"englishWeekday", [NSNumber numberWithInt:weekday], @"meetingWeekday", [NSNumber numberWithInt:currentDay], @"currentWeekday", now, @"now", nil];
 }
 
 - (IBAction)nextMeetingMapPressed {
@@ -390,7 +625,7 @@
     MeetingDetailViewController *meetingDVC = [[MeetingDetailViewController alloc] init];
     
     // Grab the meeting at the index path
-    Meeting *meeting = [self.results objectAtIndex:indexPath.row];
+    Meeting *meeting = [[self.sectionedResults objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
     // Prepare meetingDVC
     meetingDVC.title = meeting.topic;

@@ -8,7 +8,7 @@
 
 #import "AddMeetingViewController.h"
 #import "Meeting.h"
-#import "MeetingsAPIClient.h"
+#import "VMAPIClient.h"
 #import "SVProgressHUD.h"
 
 /* TableView Sections */
@@ -132,7 +132,7 @@ enum VMAddMeetingTags {
 	[meeting setTopic:self.topicCell.textField.text];
 	[meeting setMeetingDescription:self.descriptionCell.textField.text];
 		
-	[[MeetingsAPIClient sharedInstance] addMeetingtoServer:meeting withCompletionBlock:self.completionBlock];
+	[[VMAPIClient sharedInstance] addMeetingtoServer:meeting withCompletionBlock:self.completionBlock];
 	[self.navigationController popViewControllerAnimated:YES];
 	[SVProgressHUD showWithStatus:@"Adding Meeting..."];
 }

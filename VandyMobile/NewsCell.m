@@ -8,12 +8,14 @@
 
 #import "NewsCell.h"
 #import "UIView+Frame.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation NewsCell
 @synthesize backgroundImageView;
 @synthesize timestampLabel;
 @synthesize bodyTextLabel;
 @synthesize profilePictureLabel;
+@synthesize boundsSet = _boundsSet;
 
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

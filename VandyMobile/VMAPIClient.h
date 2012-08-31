@@ -1,5 +1,5 @@
 //
-//  MeetingsAPIClient.h
+//  VMAPIClient.h
 //  VandyMobile
 //
 //  Created by Graham Gaylor on 5/20/12.
@@ -10,8 +10,10 @@
 #import "AFHTTPClient.h"
 #import "Meeting.h"
 
-@interface MeetingsAPIClient : AFHTTPClient
+@interface VMAPIClient : AFHTTPClient
 
 + (id)sharedInstance;
 - (void)addMeetingtoServer:(Meeting *)meeting withCompletionBlock:(void(^)(void))completionBlock;
+- (void)authorizeUser:(NSString *)user withPassword:(NSString *)password withCompletionBlock:(void(^)(id))completionBlock;
+
 @end

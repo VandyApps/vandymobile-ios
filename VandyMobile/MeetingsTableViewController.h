@@ -19,8 +19,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *nextMeetingButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextMeetingCheckInButton;
 @property (weak, nonatomic) IBOutlet UIButton *nextMeetingMapButton;
+@property (weak, nonatomic) IBOutlet UIView *nextMeetingMapButtonContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *nextMeetingLabel;
 
 @property (strong, nonatomic) Meeting *nextMeeting;
 @property (strong, nonatomic) NSArray *results;
+@property (strong, nonatomic) NSArray *sectionedResults;
+@property BOOL hasShownIntro;
+
 @end

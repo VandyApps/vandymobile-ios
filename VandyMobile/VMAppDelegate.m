@@ -57,7 +57,7 @@
     //[[UI appearance] setBackgroundColor:[UIColor colorWithRed:0.969 green:0.831 blue:0.224 alpha:1] /*#f7d439*/];
     
     [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"NewTabBarV3"]];
-    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"NewTabBarSelected"]];
+    [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"NewTabBarSelectedNeue"]];
 //    [[UITabBarItem appearance] setBackgroundColor:[UIColor colorWithRed:0.188 green:0.188 blue:0.188 alpha:1] /*#303030*/ ];
      
 	// Set rootViewController

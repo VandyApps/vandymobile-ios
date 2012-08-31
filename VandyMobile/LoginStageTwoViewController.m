@@ -7,7 +7,7 @@
 //
 
 #import "LoginStageTwoViewController.h"
-#import "UserAPIClient.h"
+#import "VMAPIClient.h"
 #import "MyVMViewController.h"
 #import "User.h"
 #import "SVProgressHUD.h"
@@ -31,6 +31,7 @@ enum LoginViewControllerTags {
 @synthesize loginButton = _loginButton;
 @synthesize loginTableView = _loginTableView;
 @synthesize delegate = _delegate;
+@synthesize closeButton = _closeButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -75,6 +76,8 @@ enum LoginViewControllerTags {
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];
+    [self.navigationItem setRightBarButtonItem:barButtonItem];
     
 	[self.loginButton addTarget:self action:@selector(loginTapped) forControlEvents:UIControlEventTouchUpInside];
 }
@@ -83,7 +86,7 @@ enum LoginViewControllerTags {
 	[SVProgressHUD showWithStatus:@"Logging In"];
 	NSLog(@"Username = %@", self.userInput.text);
 	NSLog(@"Password = %@", self.passwordInput.text);
-	[[UserAPIClient sharedInstance] authorizeUser:self.userInput.text
+	[[VMAPIClient sharedInstance] authorizeUser:self.userInput.text
 									 withPassword:self.passwordInput.text
 							  withCompletionBlock:^(id response){
 								  User *user = [[User alloc] initWithResponse:response];
@@ -92,6 +95,12 @@ enum LoginViewControllerTags {
 								  [[NSNotificationCenter defaultCenter] postNotificationName:@"loggedIn" object:self];
 								  [self closeLoginScreen];
                               }];
+}
+
+- (IBAction)registerPressed {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Registration closed." message:@"Check back soon!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 - (void)closeLoginScreen {

@@ -17,8 +17,8 @@
 
 @property (nonatomic, strong) NSNumber *userID;
 @property (nonatomic, copy) NSString *email;
-@property (nonatomic, copy) NSString *team;
-@property (nonatomic, copy) NSString *app;
+@property (nonatomic, strong) NSArray *teamIds;
+@property (nonatomic, strong) NSArray *appIds;
 
 - (id)initWithResponse:(NSDictionary *)dictionary;
 - (id)initWithDictionaryFromUser:(NSDictionary *)dictionary;
@@ -26,7 +26,5 @@
 - (NSDictionary *)userDictionary;
 
 + (BOOL)loggedIn;
-
-
 
 @end

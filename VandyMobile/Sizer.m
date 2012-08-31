@@ -53,12 +53,6 @@
     
     float height = labelSize.height;
     
-    NSScanner *theScanner = [NSScanner scannerWithString:text];
-    while (![theScanner isAtEnd]) {
-        [theScanner scanUpToString:@"\n\n" intoString:nil];
-        //height += 10;
-    }
-    
     if (labelSize.height > constraintSize.height) {
         height = constraintSize.height;
     } else if (labelSize.height < minHeight) {

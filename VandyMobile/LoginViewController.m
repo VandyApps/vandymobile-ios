@@ -16,7 +16,6 @@
 @implementation LoginViewController
 
 @synthesize closeButton = _closeButton;
-@synthesize scrollView = _scrollView;
 @synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -28,15 +27,10 @@
     return self;
 }
 
-- (void)setupScrollView {
-	self.scrollView.contentSize = CGSizeMake(320, 525);
-
-}
-
 - (IBAction)loginWithVUnetIDPressed {
     LoginStageTwoViewController *stageTwo = [[LoginStageTwoViewController alloc] init];
     stageTwo.delegate = self.delegate;
-    stageTwo.title = @"Login with VUnetID";
+    stageTwo.title = @"Log In w/ Email";
     stageTwo.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self.navigationController pushViewController:stageTwo animated:YES];
 }
@@ -45,16 +39,15 @@
 - (void)setupButtons {
 	//self.closeButton.transform = CGAffineTransformMakeRotation(M_PI_4);
 	[self.closeButton addTarget:self action:@selector(closeLoginScreen) forControlEvents:UIControlEventTouchUpInside];
-//    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];//[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close.png"] style:UIBarButtonItemStylePlain target:self action:@selector(closeLoginScreen)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.closeButton];//[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close.png"] style:UIBarButtonItemStylePlain target:self action:@selector(closeLoginScreen)];
     
-//    [self.navigationController.navigationItem setRightBarButtonItem:barButtonItem];
+    [self.navigationItem setRightBarButtonItem:barButtonItem];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setupButtons];
-	[self setupScrollView];
 }
 
 - (void)closeLoginScreen {
@@ -75,7 +68,6 @@
 
 - (void)viewDidUnload {
 	[self setCloseButton:nil];
-	[self setScrollView:nil];
 	[super viewDidUnload];
 }
 

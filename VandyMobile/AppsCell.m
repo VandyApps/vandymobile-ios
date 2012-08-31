@@ -16,6 +16,7 @@
 @synthesize cellImageContainerView = _cellImageContainerView;
 @synthesize mainLabel = _mainLabel;
 @synthesize subLabel = _subLabel;
+@synthesize labelsContainerView = _labelsContainerView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -26,10 +27,17 @@
     return self;
 }
 
-- (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCellForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath withMainFont:(UIFont *)font {
 	self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-	self.mainLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
+    
+    if (!font) {
+        font = [UIFont fontWithName:@"Helvetica-Bold" size:16.0];
+    }
+    self.mainLabel.font = font;
 	self.subLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:13.0];
+    
+    self.mainLabel.lineBreakMode = UILineBreakModeWordWrap;
+    self.mainLabel.numberOfLines = 0;
 	
 	UIView *goldenColor = [[UIView alloc] init];
 	goldenColor.backgroundColor = [UIColor colorWithRed:0.925 green:0.824 blue:0.545 alpha:1]; /*#ecd28b*/
@@ -45,10 +53,23 @@
     self.cellImage.clipsToBounds = YES;
     self.cellImage.layer.borderColor = [[UIColor grayColor] CGColor];
     self.cellImage.layer.borderWidth = .5;
-    [self addShadowToView:self.cellImageContainerView];
     
-    self.cellImage.centerY = self.centerY;
+    CGFloat oldHeight = self.mainLabel.height;
+    self.mainLabel.height = [Sizer sizeText:self.mainLabel.text withConstraint:CGSizeMake(self.mainLabel.width, MAXFLOAT) font:self.mainLabel.font andMinimumHeight:21];
     
+    self.labelsContainerView.height += self.mainLabel.height - oldHeight;
+    
+    self.subLabel.top = self.mainLabel.bottom + 2;
+    
+    oldHeight = self.subLabel.height;
+    self.subLabel.height = [Sizer sizeText:self.subLabel.text withConstraint:CGSizeMake(self.subLabel.width, MAXFLOAT) font:self.subLabel.font andMinimumHeight:21];
+    
+    self.labelsContainerView.height += self.subLabel.height - oldHeight;
+    
+//    self.labelsContainerView.layer.borderWidth = 2;
+//    self.labelsContainerView.layer.borderColor = [[UIColor redColor] CGColor];
+    
+    self.labelsContainerView.centerY = self.cellImageContainerView.centerY;
 }
 
 //+ (CGFloat)cellHeightForTableView:(UITableView *)tableView atIndexPath:(NSIndexPath *)indexPath {
@@ -68,15 +89,6 @@
 //        }
 //    }
 //}
-
-- (id)addShadowToView:(UIView *)view {
-    view.layer.shadowColor = [[UIColor blackColor] CGColor];
-    view.layer.shadowOpacity = .6;
-    view.layer.shadowRadius = 2.0;
-    view.layer.shadowOffset = CGSizeMake(-1, 1);
-    
-    return view;
-}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
