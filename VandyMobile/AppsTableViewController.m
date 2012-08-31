@@ -114,7 +114,7 @@
 }
 
 - (void)pullAppsFromCacheWithFailureCallBack:(void(^)(void))callBack {
-	NSString *path = @"http://foo:bar@70.138.50.84/apps.json";
+	NSString *path = @"http://foo:bar@vandymobile.herokuapp.com/apps.json";
 	NSURLRequest *request = [[VMAPIClient sharedInstance] requestWithMethod:@"POST" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {
