@@ -392,13 +392,15 @@
                                                     if ([self.user.teamIds containsObject:teamId]) {
                                                         NSString *teamName = [[response objectAtIndex:i] objectForKey:NAME_KEY];
                                                         NSArray *teammates = [[response objectAtIndex:i] objectForKey:USERS_KEY];
-                                                        NSArray *repoURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:REPO_KEY];
-                                                        NSArray *imageURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:IMAGE_KEY];
-
+                                                        NSString *repoURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:REPO_KEY];
+                                                        NSString *imageURL = [[[response objectAtIndex:i] objectForKey:APP_KEY ] objectForKey:IMAGE_KEY];
+                                                    
+                                                        
                                                         [resultsTeamNames addObject:teamName];
                                                         [resultsTeammates addObject:teammates];
-                                                        [resultsRepoURLs addObject:repoURL];
+                                                        [resultsRepoURLs  addObject:repoURL];
                                                         [resultsImageURLs addObject:imageURL];
+
                                                     }
                                                 }
                                                 self.teamNames = resultsTeamNames;

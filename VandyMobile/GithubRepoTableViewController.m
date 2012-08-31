@@ -116,7 +116,7 @@
 #pragma mark - APICalls
 
 - (void)pullCommits {
-	// Get the Github url.
+	// Get the Github url if it exists
     NSURL *url = [NSURL URLWithString:self.repoURL];
 	NSURLRequest *request = [NSURLRequest requestWithURL:url];
 	AFJSONRequestOperation *operation;
@@ -133,7 +133,7 @@
                                                                     [self.tableView reloadData];
 																}
 																failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id jsonObject) {
-																	NSLog(@"Error fetching meetings!");
+																	NSLog(@"Error pulling commit!");
 																	NSLog(@"%@",error);
 																}];
 	
