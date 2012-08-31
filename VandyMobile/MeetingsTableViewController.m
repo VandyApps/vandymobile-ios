@@ -180,7 +180,7 @@
 }
 
 - (void)pullMeetingsFromCacheWithFailureCallBack:(void(^)(void))callBack {
-	NSString *path = @"http://foo:bar@70.138.50.84/meetings.json";
+	NSString *path = @"http://foo:bar@vandymobile.herokuapp.com/meetings.json";
 	NSURLRequest *request = [[VMAPIClient sharedInstance] requestWithMethod:@"GET" path:path parameters:nil];
 	NSCachedURLResponse *response = [[NSURLCache sharedURLCache] cachedResponseForRequest:request];
 	if (response) {

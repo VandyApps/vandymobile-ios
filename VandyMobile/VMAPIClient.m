@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 
 
-#define VMAPIBaseURLString @"http://foo:bar@70.138.50.84"
+#define VMAPIBaseURLString @"http://foo:bar@vandymobile.herokuapp.com"
 #define VMAPIToken @"1234abcd"
 
 @implementation VMAPIClient
