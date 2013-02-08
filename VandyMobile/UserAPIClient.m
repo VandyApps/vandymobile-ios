@@ -12,7 +12,7 @@
 #import "SVProgressHUD.h"
 
 
-#define UserAPIBaseURLString @"http://foo:bar@vandymobile.herokuapp.com/"
+#define UserAPIBaseURLString @"http://vandymobile.herokuapp.com/"
 #define UserAPIToken @"1234abcd"
 
 @implementation UserAPIClient
